@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&family=Roboto+Condensed:wght@300;400;700&family=Arvo:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-roboto-condensed;
+  }
+}
+
+@layer components {
+  /* Old-school retro styling */
+  .retro-card {
+    @apply bg-white border-2 border-navy shadow-retro rounded-lg overflow-hidden;
+  }
+  
+  .retro-button {
+    @apply bg-yellow text-navy font-bold py-3 px-6 rounded-lg shadow-retro-yellow 
+           border-2 border-navy hover:translate-x-1 hover:translate-y-1 
+           hover:shadow-none transition-all duration-200 uppercase tracking-wide;
+  }
+  
+  .retro-button-navy {
+    @apply bg-navy text-white font-bold py-3 px-6 rounded-lg shadow-retro 
+           border-2 border-navy hover:translate-x-1 hover:translate-y-1 
+           hover:shadow-none transition-all duration-200 uppercase tracking-wide;
+  }
+  
+  .retro-badge {
+    @apply bg-yellow text-navy px-4 py-2 rounded-full font-bold text-sm 
+           border-2 border-navy shadow-retro-yellow uppercase tracking-wide;
+  }
+  
+  .polaroid-frame {
+    @apply bg-white p-4 shadow-retro border-2 border-gray-300 rotate-2 
+           hover:rotate-0 transition-transform duration-300;
+  }
+  
+  .vintage-border {
+    @apply border-4 border-double border-navy rounded-lg p-6;
+  }
+  
+  /* Typography classes */
+  .heading-decorative {
+    @apply font-yellowtail text-yellow;
+  }
+  
+  .heading-primary {
+    @apply font-arvo font-bold text-navy;
+  }
+  
+  .body-text {
+    @apply font-roboto-condensed text-gray-800;
+  }
+  
+  /* Jobber form skeleton */
+  .jobber-skeleton {
+    @apply animate-pulse bg-gray-200 rounded-lg;
+  }
+  
+  .jobber-skeleton-field {
+    @apply h-12 bg-gray-300 rounded mb-4;
+  }
+  
+  .jobber-skeleton-button {
+    @apply h-12 bg-navy rounded;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-navy rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-navy-600;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+.focus-visible:focus-visible {
+  @apply outline-2 outline-offset-2 outline-navy;
+}
