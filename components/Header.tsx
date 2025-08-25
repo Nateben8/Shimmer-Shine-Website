@@ -70,7 +70,7 @@ export default function Header() {
             {/* Centered Logo */}
             <div className="flex justify-center col-span-3 lg:col-span-1">
               <Link href="/" className="block">
-                <div className="relative w-36 h-36 md:w-40 md:h-40 lg:w-44 lg:h-44 hover:scale-105 transition-transform">
+                <div className="relative w-44 h-44 md:w-40 md:h-40 lg:w-44 lg:h-44 hover:scale-105 transition-transform">
                   <Image
                     src="/logo.png"
                     alt="Shimmer Shine Property Detailing - Professional Window Cleaning, Pressure Washing & Solar Panel Cleaning Orange County"
@@ -78,7 +78,7 @@ export default function Header() {
                     fill
                     className="object-contain"
                     priority
-                    sizes="(max-width: 768px) 144px, (max-width: 1024px) 160px, 176px"
+                    sizes="(max-width: 768px) 176px, (max-width: 1024px) 160px, 176px"
                   />
                 </div>
               </Link>
