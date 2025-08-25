@@ -162,18 +162,18 @@ export default function HomePage() {
       </section>
 
       {/* High-Intent Keywords Section */}
-      <section className="py-12 sm:py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-8 sm:mb-12">
-                    <h2 className="heading-primary text-3xl sm:text-4xl md:text-5xl mb-4">
-          Commercial Cleaning Near Me Orange County
-        </h2>
-        <p className="body-text text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto">
-          Looking for commercial cleaning near me Orange County or business services? We provide office cleaning services Orange County with B2B contract solutions. Our services include recurring commercial cleaning Orange County, medical office cleaning Orange County, restaurant cleaning services Orange County, and commercial janitorial services Orange County with professional results.
-        </p>
+      <section className="py-8 sm:py-12 lg:py-16 bg-white">
+        <div className="container mx-auto px-3 sm:px-4">
+          <div className="text-center mb-6 sm:mb-8 lg:mb-12">
+            <h2 className="heading-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-3 sm:mb-4">
+              Commercial Cleaning Near Me Orange County
+            </h2>
+            <p className="body-text text-base sm:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto px-2">
+              Looking for commercial cleaning near me Orange County or business services? We provide office cleaning services Orange County with B2B contract solutions. Our services include recurring commercial cleaning Orange County, medical office cleaning Orange County, restaurant cleaning services Orange County, and commercial janitorial services Orange County with professional results.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
             <div className="text-center p-6 bg-gray-50 rounded-lg">
               <h3 className="heading-primary text-lg mb-2">B2B Contracts</h3>
               <p className="body-text text-sm">Commercial cleaning contracts Orange County with recurring service</p>

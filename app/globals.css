@@ -288,30 +288,81 @@ html {
   @apply outline-2 outline-offset-2 outline-navy;
 }
 
-/* Mobile touch target improvements */
+/* Enhanced Mobile Optimizations */
 @media (max-width: 640px) {
-  /* Ensure all interactive elements meet minimum touch target size */
+  /* Enhanced touch targets for better usability */
   button, 
   a[role="button"], 
   input[type="button"], 
   input[type="submit"], 
   .btn {
-    min-height: 44px;
-    min-width: 44px;
+    min-height: 56px;
+    min-width: 56px;
+    @apply text-base font-semibold px-6 py-4;
   }
-  
-  /* Improve spacing for mobile interactions */
+
+  /* Form elements optimization */
+  input, select, textarea {
+    min-height: 52px;
+    @apply text-base px-4 py-3 rounded-lg;
+  }
+
+  /* Card optimizations */
+  .retro-card .card-header,
+  .retro-card .card-content {
+    @apply p-5;
+  }
+
+  .retro-card {
+    @apply mx-3;
+  }
+
+  /* Badge and component sizing */
+  .retro-badge {
+    @apply px-4 py-2 text-sm;
+  }
+
+  /* Typography improvements */
+  h1, h2, h3 {
+    @apply leading-tight;
+  }
+
+  p, li {
+    @apply leading-relaxed text-base;
+  }
+
+  /* Improved spacing for mobile interactions */
   .mobile-touch-spacing > * + * {
-    margin-top: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .space-y-2 > * + * {
+    margin-top: 1.25rem;
+  }
+
+  .space-y-3 > * + * {
+    margin-top: 1.5rem;
+  }
+
+  /* Container padding adjustments */
+  .container {
+    @apply px-3;
+  }
+
+  /* Mobile navigation improvements */
+  .mobile-nav-item {
+    @apply min-h-[56px] text-lg px-5 py-4;
   }
   
   /* Mobile-friendly hover states (remove on touch devices) */
   @media (hover: none) {
-    .hover\\:scale-105:hover {
+    .hover\\:scale-105:hover,
+    .hover\\:scale-\\[1\\.02\\]:hover {
       transform: none;
     }
     
-    .hover\\:shadow-xl:hover {
+    .hover\\:shadow-xl:hover,
+    .hover\\:shadow-lg:hover {
       box-shadow: inherit;
     }
   }

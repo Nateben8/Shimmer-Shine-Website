@@ -68,61 +68,550 @@ function WindowCleaningContent() {
     <div className="space-y-8">
       <div>
         <p className="text-lg leading-relaxed text-gray-700 mb-6">
-          Orange County's beautiful weather and coastal climate make it a paradise for residents, but they also present unique challenges for maintaining crystal-clear windows. Whether you're in <strong>Costa Mesa</strong>, <strong>Newport Beach</strong>, <strong>Irvine</strong>, or anywhere else in Orange County, professional window cleaning is essential for maintaining your property's appearance and value.
+          Orange County's beautiful weather and coastal climate make it a paradise for residents, but they also present unique challenges for maintaining crystal-clear windows. Whether you're in <strong>Costa Mesa</strong>, <strong>Newport Beach</strong>, <strong>Irvine</strong>, or anywhere else in Orange County, professional <strong>window cleaning Orange County</strong> services are essential for maintaining your property's appearance and value. Our <strong>same day window cleaning Orange County</strong> ensures your windows stay spotless year-round.
         </p>
+        
+        <div className="bg-blue-50 border-l-4 border-blue-400 p-6 mb-6">
+          <h3 className="text-lg font-semibold text-blue-800 mb-2">Quick Navigation</h3>
+          <ul className="text-blue-700 space-y-1">
+            <li>• <a href="#why-professional" className="hover:underline">Why Choose Professional Window Cleaning</a></li>
+            <li>• <a href="#city-specific" className="hover:underline">City-Specific Window Cleaning Services</a></li>
+            <li>• <a href="#residential-commercial" className="hover:underline">Residential vs Commercial Services</a></li>
+            <li>• <a href="#pricing-guide" className="hover:underline">Orange County Window Cleaning Pricing</a></li>
+            <li>• <a href="#seasonal-tips" className="hover:underline">Seasonal Maintenance Tips</a></li>
+            <li>• <a href="#choosing-company" className="hover:underline">How to Choose the Right Company</a></li>
+          </ul>
+        </div>
       </div>
 
-      <div>
-        <h2 className="heading-primary text-2xl text-gray-900 font-bold bg-yellow/20 p-3 rounded-lg border-l-4 border-yellow mb-4 font-bold">Why Orange County Properties Need Professional Window Cleaning</h2>
+      <div id="why-professional">
+        <h2 className="heading-primary text-2xl text-gray-900 font-bold bg-yellow/20 p-3 rounded-lg border-l-4 border-yellow mb-4">Why Orange County Properties Need Professional Window Cleaning</h2>
+        
+        <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
+          <h3 className="text-lg font-semibold text-green-800 mb-3">Professional Window Cleaning Benefits</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">Residential Benefits:</h4>
+              <ul className="text-green-600 space-y-1 text-sm">
+                <li>• Increased natural light (up to 30% more)</li>
+                <li>• Enhanced curb appeal and property value</li>
+                <li>• Extended window lifespan</li>
+                <li>• Professional streak-free results</li>
+                <li>• Safety (no ladder climbing required)</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">Commercial Benefits:</h4>
+              <ul className="text-green-600 space-y-1 text-sm">
+                <li>• Professional business appearance</li>
+                <li>• Improved employee productivity</li>
+                <li>• Customer impression enhancement</li>
+                <li>• Regular maintenance schedules</li>
+                <li>• Liability insurance coverage</li>
+              </ul>
+            </div>
+          </div>
+        </div>
         
         <h3 className="heading-primary text-xl text-gray-800 font-semibold bg-gray-100 px-3 py-2 rounded border-l-4 border-navy mb-3">Coastal Salt Air Challenges</h3>
         <p className="text-gray-700 mb-4">
-          The proximity to the Pacific Ocean means properties throughout Orange County deal with salt air deposits that create stubborn spots and film on windows. Cities like <strong>Huntington Beach</strong>, <strong>Newport Beach</strong>, and <strong>Dana Point</strong> are particularly affected by this coastal phenomenon.
+          The proximity to the Pacific Ocean means properties throughout Orange County deal with salt air deposits that create stubborn spots and film on windows. Our <strong>professional window cleaning Orange County</strong> services use specialized techniques to combat these coastal challenges. Cities like <strong>Huntington Beach window cleaning</strong>, <strong>Newport Beach window cleaning</strong>, and <strong>Dana Point window cleaning</strong> require specific expertise to handle salt air deposits effectively.
         </p>
+
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
+          <h4 className="font-semibold text-blue-800 mb-2">Salt Air Impact by Distance from Coast:</h4>
+          <ul className="text-blue-700 text-sm space-y-1">
+            <li>• <strong>0-2 miles from coast</strong>: Heavy salt deposits, weekly cleaning recommended</li>
+            <li>• <strong>2-5 miles from coast</strong>: Moderate salt impact, bi-weekly cleaning ideal</li>
+            <li>• <strong>5+ miles from coast</strong>: Minimal salt impact, monthly cleaning sufficient</li>
+          </ul>
+        </div>
 
         <h3 className="heading-primary text-xl text-gray-800 font-semibold bg-gray-100 px-3 py-2 rounded border-l-4 border-navy mb-3">Year-Round Sun Exposure</h3>
         <p className="text-gray-700 mb-4">
-          Orange County's abundant sunshine means windows are constantly exposed to UV rays, which can cause cleaning solutions to dry too quickly when not applied professionally. This is especially true in inland cities like <strong>Anaheim</strong>, <strong>Santa Ana</strong>, and <strong>Fullerton</strong>.
+          Orange County's abundant sunshine means windows are constantly exposed to UV rays, which can cause cleaning solutions to dry too quickly when not applied professionally. Our <strong>licensed window cleaning Orange County</strong> team understands the optimal timing and techniques for different sun exposures. This is especially critical for <strong>Anaheim window cleaning</strong>, <strong>Santa Ana window cleaning</strong>, and <strong>Fullerton window cleaning</strong> services where inland heat intensifies the challenge.
         </p>
 
-        <h3 className="heading-primary text-xl text-gray-800 font-semibold bg-gray-100 px-3 py-2 rounded border-l-4 border-navy mb-3">Seasonal Considerations</h3>
-        <ul className="list-disc pl-6 text-gray-700 mb-6">
-          <li><strong>Spring</strong>: Pollen from blooming plants affects all Orange County cities</li>
-          <li><strong>Summer</strong>: Increased dust and smog, particularly in <strong>Irvine</strong> and <strong>Tustin</strong></li>
-          <li><strong>Fall</strong>: Leaves and debris, especially in tree-lined areas of <strong>Mission Viejo</strong> and <strong>Lake Forest</strong></li>
-          <li><strong>Winter</strong>: Rain spots and mineral deposits throughout the region</li>
-        </ul>
+        <h3 className="heading-primary text-xl text-gray-800 font-semibold bg-gray-100 px-3 py-2 rounded border-l-4 border-navy mb-3">Seasonal Considerations for Orange County Window Cleaning</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+            <h4 className="font-semibold text-yellow-800 mb-2">Spring (March-May)</h4>
+            <ul className="text-yellow-700 text-sm space-y-1">
+              <li>• Heavy pollen from blooming plants</li>
+              <li>• Increased bird activity and droppings</li>
+              <li>• Perfect weather for <strong>spring window cleaning Orange County</strong></li>
+              <li>• Recommended frequency: Every 2-3 weeks</li>
+            </ul>
+          </div>
+          <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
+            <h4 className="font-semibold text-orange-800 mb-2">Summer (June-August)</h4>
+            <ul className="text-orange-700 text-sm space-y-1">
+              <li>• Dust and smog accumulation</li>
+              <li>• Hard water spots from sprinkler systems</li>
+              <li>• Early morning cleaning prevents streaking</li>
+              <li>• Recommended frequency: Monthly</li>
+            </ul>
+          </div>
+          <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+            <h4 className="font-semibold text-red-800 mb-2">Fall (September-November)</h4>
+            <ul className="text-red-700 text-sm space-y-1">
+              <li>• Leaves and organic debris</li>
+              <li>• Santa Ana winds bring dust</li>
+              <li>• Preparation for winter rains</li>
+              <li>• Recommended frequency: Every 3-4 weeks</li>
+            </ul>
+          </div>
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+            <h4 className="font-semibold text-blue-800 mb-2">Winter (December-February)</h4>
+            <ul className="text-blue-700 text-sm space-y-1">
+              <li>• Rain spots and mineral deposits</li>
+              <li>• Reduced natural evaporation</li>
+              <li>• Post-storm cleanup needed</li>
+              <li>• Recommended frequency: After each storm</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <div>
+      <div id="city-specific">
         <h2 className="heading-primary text-2xl text-gray-900 font-bold bg-yellow/20 p-3 rounded-lg border-l-4 border-yellow mb-4">Professional Window Cleaning Services by Orange County City</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-          <div className="bg-gray-50 p-4 rounded-lg">
-            <h3 className="heading-primary text-lg text-gray-800 font-semibold bg-gray-50 px-2 py-1 rounded mb-3">Coastal Communities</h3>
-            <ul className="text-sm text-gray-700 space-y-2">
-              <li><strong>Newport Beach Window Cleaning</strong>: Specializing in salt air removal and high-end residential properties</li>
-              <li><strong>Huntington Beach Window Cleaning</strong>: Expert in beachfront property maintenance and commercial storefronts</li>
-              <li><strong>Laguna Beach Window Cleaning</strong>: Boutique service for unique architectural styles and art galleries</li>
-            </ul>
+        <p className="text-gray-700 mb-6">
+          Each Orange County city presents unique challenges for window cleaning. Our <strong>local window cleaners near me Orange County</strong> understand these specific needs and provide tailored solutions for optimal results.
+        </p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+            <h3 className="font-bold text-navy mb-3">Coastal Cities</h3>
+            <div className="space-y-3">
+              <div>
+                <h4 className="font-semibold text-gray-800">Newport Beach Window Cleaning</h4>
+                <p className="text-sm text-gray-600">Luxury homes, salt air challenges, high-end commercial properties</p>
+                <p className="text-xs text-blue-600">Avg. Price: $8-15 per window</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-gray-800">Huntington Beach Window Cleaning</h4>
+                <p className="text-sm text-gray-600">Beach proximity, surf shops, residential condos</p>
+                <p className="text-xs text-blue-600">Avg. Price: $6-12 per window</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-gray-800">Laguna Beach Window Cleaning</h4>
+                <p className="text-sm text-gray-600">Art galleries, boutique hotels, hillside homes</p>
+                <p className="text-xs text-blue-600">Avg. Price: $10-18 per window</p>
+              </div>
+            </div>
           </div>
           
-          <div className="bg-gray-50 p-4 rounded-lg">
-            <h3 className="heading-primary text-lg text-gray-800 font-semibold bg-gray-50 px-2 py-1 rounded mb-3">Central Orange County</h3>
-            <ul className="text-sm text-gray-700 space-y-2">
-              <li><strong>Costa Mesa Window Cleaning</strong>: Comprehensive residential and commercial services for this business hub</li>
-              <li><strong>Irvine Window Cleaning</strong>: Serving planned communities, corporate offices, and modern residential complexes</li>
-              <li><strong>Santa Ana Window Cleaning</strong>: Historic building expertise and diverse property types</li>
-            </ul>
+          <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+            <h3 className="font-bold text-navy mb-3">Central Cities</h3>
+            <div className="space-y-3">
+              <div>
+                <h4 className="font-semibold text-gray-800">Irvine Window Cleaning</h4>
+                <p className="text-sm text-gray-600">Tech companies, master-planned communities, modern architecture</p>
+                <p className="text-xs text-blue-600">Avg. Price: $7-14 per window</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-gray-800">Costa Mesa Window Cleaning</h4>
+                <p className="text-sm text-gray-600">Shopping centers, office buildings, residential neighborhoods</p>
+                <p className="text-xs text-blue-600">Avg. Price: $6-11 per window</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-gray-800">Orange Window Cleaning</h4>
+                <p className="text-sm text-gray-600">Historic homes, tree-lined streets, Chapman University area</p>
+                <p className="text-xs text-blue-600">Avg. Price: $5-10 per window</p>
+              </div>
+            </div>
           </div>
           
-          <div className="bg-gray-50 p-4 rounded-lg">
-            <h3 className="heading-primary text-lg text-gray-800 font-semibold bg-gray-50 px-2 py-1 rounded mb-3">North Orange County</h3>
-            <ul className="text-sm text-gray-700 space-y-2">
-              <li><strong>Anaheim Window Cleaning</strong>: Theme park area expertise and high-volume commercial properties</li>
-              <li><strong>Fullerton Window Cleaning</strong>: University area and established neighborhood specialists</li>
-              <li><strong>Brea Window Cleaning</strong>: Hills area access and luxury home services</li>
-            </ul>
+          <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+            <h3 className="font-bold text-navy mb-3">North County Cities</h3>
+            <div className="space-y-3">
+              <div>
+                <h4 className="font-semibold text-gray-800">Anaheim Window Cleaning</h4>
+                <p className="text-sm text-gray-600">Disneyland area, hotels, family neighborhoods</p>
+                <p className="text-xs text-blue-600">Avg. Price: $5-9 per window</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-gray-800">Fullerton Window Cleaning</h4>
+                <p className="text-sm text-gray-600">Cal State Fullerton, downtown district, suburban homes</p>
+                <p className="text-xs text-blue-600">Avg. Price: $4-8 per window</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-gray-800">Brea Window Cleaning</h4>
+                <p className="text-sm text-gray-600">Hillside homes, shopping centers, oil industry heritage</p>
+                <p className="text-xs text-blue-600">Avg. Price: $5-9 per window</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div id="residential-commercial" className="bg-gray-50 rounded-lg p-6 mb-8">
+          <h3 className="text-xl font-bold text-gray-900 mb-4">Residential vs Commercial Window Cleaning Orange County</h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white rounded-lg p-5 border border-gray-200">
+              <h4 className="font-bold text-green-700 mb-3">🏠 Residential Window Cleaning Orange County</h4>
+              <div className="space-y-3">
+                <div>
+                  <h5 className="font-semibold text-gray-800">Service Features:</h5>
+                  <ul className="text-sm text-gray-600 space-y-1 mt-1">
+                    <li>• Interior and exterior cleaning</li>
+                    <li>• Screen cleaning and repair</li>
+                    <li>• Sill and frame cleaning</li>
+                    <li>• Post-construction cleanup</li>
+                    <li>• Holiday preparation services</li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 className="font-semibold text-gray-800">Typical Pricing:</h5>
+                  <ul className="text-sm text-gray-600 space-y-1 mt-1">
+                    <li>• Single-story homes: $150-$300</li>
+                    <li>• Two-story homes: $250-$500</li>
+                    <li>• Luxury estates: $400-$800+</li>
+                    <li>• Per window: $4-$15 each</li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 className="font-semibold text-gray-800">Popular Cities:</h5>
+                  <p className="text-sm text-gray-600 mt-1">
+                    <strong>Mission Viejo window cleaning</strong>, <strong>Lake Forest window cleaning</strong>, <strong>Aliso Viejo window cleaning</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-lg p-5 border border-gray-200">
+              <h4 className="font-bold text-blue-700 mb-3">🏢 Commercial Window Cleaning Orange County</h4>
+              <div className="space-y-3">
+                <div>
+                  <h5 className="font-semibold text-gray-800">Service Features:</h5>
+                  <ul className="text-sm text-gray-600 space-y-1 mt-1">
+                    <li>• High-rise window cleaning</li>
+                    <li>• Scheduled maintenance programs</li>
+                    <li>• Emergency cleaning services</li>
+                    <li>• Post-event cleanup</li>
+                    <li>• Pressure washing integration</li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 className="font-semibold text-gray-800">Typical Pricing:</h5>
+                  <ul className="text-sm text-gray-600 space-y-1 mt-1">
+                    <li>• Office buildings: $0.50-$2.00/sq ft</li>
+                    <li>• Retail storefronts: $100-$500</li>
+                    <li>• High-rise buildings: $1,000-$5,000+</li>
+                    <li>• Monthly contracts: 15-25% discount</li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 className="font-semibold text-gray-800">Business Districts:</h5>
+                  <p className="text-sm text-gray-600 mt-1">
+                    <strong>Irvine Spectrum</strong>, <strong>Newport Center</strong>, <strong>South Coast Plaza area</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div id="pricing-guide" className="bg-white border border-gray-200 rounded-lg p-6 mb-8">
+          <h3 className="text-xl font-bold text-gray-900 mb-4">Complete Orange County Window Cleaning Pricing Guide 2024</h3>
+          
+          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
+            <h4 className="font-semibold text-yellow-800 mb-2">💡 Pricing Factors That Affect Your Quote:</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <ul className="text-yellow-700 text-sm space-y-1">
+                <li>• Number of windows and size</li>
+                <li>• Building height and accessibility</li>
+                <li>• Frequency of service</li>
+                <li>• Interior vs exterior only</li>
+              </ul>
+              <ul className="text-yellow-700 text-sm space-y-1">
+                <li>• Screen cleaning inclusion</li>
+                <li>• Geographic location in OC</li>
+                <li>• Condition of windows</li>
+                <li>• Additional services needed</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse border border-gray-300 text-sm">
+              <thead>
+                <tr className="bg-navy text-white">
+                  <th className="border border-gray-300 p-3 text-left">Service Type</th>
+                  <th className="border border-gray-300 p-3 text-left">Typical Range</th>
+                  <th className="border border-gray-300 p-3 text-left">Premium Areas</th>
+                  <th className="border border-gray-300 p-3 text-left">Frequency Discount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border border-gray-300 p-3 font-semibold">Residential (1-story)</td>
+                  <td className="border border-gray-300 p-3">$150-$300</td>
+                  <td className="border border-gray-300 p-3">$200-$400</td>
+                  <td className="border border-gray-300 p-3">15-20% off</td>
+                </tr>
+                <tr className="bg-gray-50">
+                  <td className="border border-gray-300 p-3 font-semibold">Residential (2-story)</td>
+                  <td className="border border-gray-300 p-3">$250-$500</td>
+                  <td className="border border-gray-300 p-3">$350-$650</td>
+                  <td className="border border-gray-300 p-3">15-20% off</td>
+                </tr>
+                <tr>
+                  <td className="border border-gray-300 p-3 font-semibold">Commercial Storefront</td>
+                  <td className="border border-gray-300 p-3">$100-$400</td>
+                  <td className="border border-gray-300 p-3">$150-$600</td>
+                  <td className="border border-gray-300 p-3">20-30% off</td>
+                </tr>
+                <tr className="bg-gray-50">
+                  <td className="border border-gray-300 p-3 font-semibold">Office Building</td>
+                  <td className="border border-gray-300 p-3">$0.50-$2.00/sq ft</td>
+                  <td className="border border-gray-300 p-3">$1.00-$3.00/sq ft</td>
+                  <td className="border border-gray-300 p-3">25-35% off</td>
+                </tr>
+                <tr>
+                  <td className="border border-gray-300 p-3 font-semibold">High-rise Building</td>
+                  <td className="border border-gray-300 p-3">$1,000-$5,000+</td>
+                  <td className="border border-gray-300 p-3">$2,000-$8,000+</td>
+                  <td className="border border-gray-300 p-3">30-40% off</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+              <h5 className="font-semibold text-green-800 mb-2">💰 Budget-Friendly Options</h5>
+              <ul className="text-green-700 text-sm space-y-1">
+                <li>• Exterior-only cleaning</li>
+                <li>• Bi-annual service</li>
+                <li>• Group neighborhood discounts</li>
+                <li>• Off-season scheduling</li>
+              </ul>
+            </div>
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+              <h5 className="font-semibold text-blue-800 mb-2">⭐ Standard Service</h5>
+              <ul className="text-blue-700 text-sm space-y-1">
+                <li>• Interior & exterior cleaning</li>
+                <li>• Quarterly service</li>
+                <li>• Screen cleaning included</li>
+                <li>• Sill and frame cleaning</li>
+              </ul>
+            </div>
+            <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
+              <h5 className="font-semibold text-purple-800 mb-2">👑 Premium Service</h5>
+              <ul className="text-purple-700 text-sm space-y-1">
+                <li>• Monthly maintenance</li>
+                <li>• Post-storm emergency calls</li>
+                <li>• Pressure washing combo</li>
+                <li>• White-glove treatment</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div id="seasonal-tips" className="bg-gradient-to-r from-blue-50 to-green-50 rounded-lg p-6 mb-8">
+          <h3 className="text-xl font-bold text-gray-900 mb-4">Seasonal Window Cleaning Tips for Orange County</h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 className="font-semibold text-blue-800 mb-3">🌸 Spring Window Cleaning (March-May)</h4>
+              <div className="bg-white rounded-lg p-4 border border-blue-200">
+                <h5 className="font-semibold text-gray-800 mb-2">Challenges:</h5>
+                <ul className="text-sm text-gray-600 space-y-1 mb-3">
+                  <li>• Heavy pollen from jacaranda and oak trees</li>
+                  <li>• Bird nesting season increases droppings</li>
+                  <li>• Spring rains create water spots</li>
+                </ul>
+                <h5 className="font-semibold text-gray-800 mb-2">Best Practices:</h5>
+                <ul className="text-sm text-gray-600 space-y-1">
+                  <li>• Schedule after pollen season peaks</li>
+                  <li>• Use anti-static treatments</li>
+                  <li>• Clean screens thoroughly</li>
+                  <li>• Perfect time for <strong>spring window cleaning Orange County</strong></li>
+                </ul>
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold text-orange-800 mb-3">☀️ Summer Window Cleaning (June-August)</h4>
+              <div className="bg-white rounded-lg p-4 border border-orange-200">
+                <h5 className="font-semibold text-gray-800 mb-2">Challenges:</h5>
+                <ul className="text-sm text-gray-600 space-y-1 mb-3">
+                  <li>• Intense UV rays cause rapid drying</li>
+                  <li>• Dust and smog accumulation</li>
+                  <li>• Hard water spots from sprinklers</li>
+                </ul>
+                <h5 className="font-semibold text-gray-800 mb-2">Best Practices:</h5>
+                <ul className="text-sm text-gray-600 space-y-1">
+                  <li>• Clean early morning or late afternoon</li>
+                  <li>• Use professional-grade solutions</li>
+                  <li>• Work in shaded areas when possible</li>
+                  <li>• Ideal for <strong>commercial window cleaning Orange County</strong></li>
+                </ul>
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold text-red-800 mb-3">🍂 Fall Window Cleaning (September-November)</h4>
+              <div className="bg-white rounded-lg p-4 border border-red-200">
+                <h5 className="font-semibold text-gray-800 mb-2">Challenges:</h5>
+                <ul className="text-sm text-gray-600 space-y-1 mb-3">
+                  <li>• Santa Ana winds bring dust and debris</li>
+                  <li>• Falling leaves and organic matter</li>
+                  <li>• Preparation for winter rains</li>
+                </ul>
+                <h5 className="font-semibold text-gray-800 mb-2">Best Practices:</h5>
+                <ul className="text-sm text-gray-600 space-y-1">
+                  <li>• Clean gutters simultaneously</li>
+                  <li>• Apply protective treatments</li>
+                  <li>• Schedule before first rains</li>
+                  <li>• Great for <strong>affordable window cleaning Orange County</strong></li>
+                </ul>
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold text-blue-800 mb-3">🌧️ Winter Window Cleaning (December-February)</h4>
+              <div className="bg-white rounded-lg p-4 border border-blue-200">
+                <h5 className="font-semibold text-gray-800 mb-2">Challenges:</h5>
+                <ul className="text-sm text-gray-600 space-y-1 mb-3">
+                  <li>• Rain spots and mineral deposits</li>
+                  <li>• Slower drying times</li>
+                  <li>• Limited working hours</li>
+                </ul>
+                <h5 className="font-semibold text-gray-800 mb-2">Best Practices:</h5>
+                <ul className="text-sm text-gray-600 space-y-1">
+                  <li>• Post-storm cleanup essential</li>
+                  <li>• Use rain-repellent treatments</li>
+                  <li>• Focus on interior cleaning</li>
+                  <li>• Perfect for <strong>emergency window cleaning Orange County</strong></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div id="choosing-company" className="bg-white border border-gray-200 rounded-lg p-6 mb-8">
+          <h3 className="text-xl font-bold text-gray-900 mb-4">How to Choose the Best Window Cleaning Company in Orange County</h3>
+          
+          <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
+            <h4 className="font-semibold text-red-800 mb-2">🚨 Red Flags to Avoid:</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <ul className="text-red-700 text-sm space-y-1">
+                <li>• No insurance or licensing</li>
+                <li>• Door-to-door solicitation</li>
+                <li>• Extremely low prices</li>
+                <li>• No written estimates</li>
+              </ul>
+              <ul className="text-red-700 text-sm space-y-1">
+                <li>• Cash-only payments</li>
+                <li>• No local references</li>
+                <li>• Pressure for immediate decision</li>
+                <li>• No business address</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 className="font-semibold text-green-800 mb-3">✅ What to Look For:</h4>
+              <div className="space-y-4">
+                <div className="bg-green-50 border border-green-200 rounded-lg p-3">
+                  <h5 className="font-semibold text-green-700 mb-1">Licensing & Insurance</h5>
+                  <p className="text-sm text-green-600">Verify California contractor's license and liability insurance coverage</p>
+                </div>
+                <div className="bg-green-50 border border-green-200 rounded-lg p-3">
+                  <h5 className="font-semibold text-green-700 mb-1">Local Experience</h5>
+                  <p className="text-sm text-green-600">5+ years serving Orange County with local references</p>
+                </div>
+                <div className="bg-green-50 border border-green-200 rounded-lg p-3">
+                  <h5 className="font-semibold text-green-700 mb-1">Professional Equipment</h5>
+                  <p className="text-sm text-green-600">Commercial-grade tools, safety equipment, and eco-friendly solutions</p>
+                </div>
+                <div className="bg-green-50 border border-green-200 rounded-lg p-3">
+                  <h5 className="font-semibold text-green-700 mb-1">Written Guarantees</h5>
+                  <p className="text-sm text-green-600">Satisfaction guarantee and clear service agreements</p>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold text-blue-800 mb-3">❓ Questions to Ask:</h4>
+              <div className="space-y-3">
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                  <p className="text-sm text-blue-700 font-medium">"Are you licensed and insured in California?"</p>
+                  <p className="text-xs text-blue-600">Request to see certificates</p>
+                </div>
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                  <p className="text-sm text-blue-700 font-medium">"How long have you been serving Orange County?"</p>
+                  <p className="text-xs text-blue-600">Look for 3+ years minimum</p>
+                </div>
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                  <p className="text-sm text-blue-700 font-medium">"What's included in your service?"</p>
+                  <p className="text-xs text-blue-600">Screens, sills, frames, etc.</p>
+                </div>
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                  <p className="text-sm text-blue-700 font-medium">"Do you offer satisfaction guarantees?"</p>
+                  <p className="text-xs text-blue-600">Should include re-cleaning if needed</p>
+                </div>
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                  <p className="text-sm text-blue-700 font-medium">"Can you provide local references?"</p>
+                  <p className="text-xs text-blue-600">Recent customers in your area</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-6 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+            <h4 className="font-semibold text-yellow-800 mb-2">💡 Pro Tip: Getting the Best Value</h4>
+            <p className="text-yellow-700 text-sm mb-2">
+              The <strong>best window cleaning Orange County</strong> companies offer transparent pricing, detailed estimates, and flexible scheduling. Don't just choose the cheapest option – consider value, reliability, and service quality.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-3">
+              <div className="text-center">
+                <div className="text-lg font-bold text-yellow-800">$5-15</div>
+                <div className="text-xs text-yellow-600">Per window average</div>
+              </div>
+              <div className="text-center">
+                <div className="text-lg font-bold text-yellow-800">15-25%</div>
+                <div className="text-xs text-yellow-600">Recurring service discount</div>
+              </div>
+              <div className="text-center">
+                <div className="text-lg font-bold text-yellow-800">24-48hrs</div>
+                <div className="text-xs text-yellow-600">Typical response time</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="bg-navy text-white rounded-lg p-6 mb-8">
+          <h3 className="text-xl font-bold mb-4">Ready for Professional Window Cleaning in Orange County?</h3>
+          <p className="mb-4">
+            Get crystal-clear windows with our <strong>same day window cleaning Orange County</strong> service. We're <strong>licensed window cleaning Orange County</strong> professionals serving all cities from Newport Beach to Anaheim.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <h4 className="font-semibold text-yellow mb-2">Why Choose Shimmer Shine:</h4>
+              <ul className="text-sm space-y-1">
+                <li>• Licensed & insured professionals</li>
+                <li>• Same-day service available</li>
+                <li>• 500+ satisfied Orange County customers</li>
+                <li>• Free estimates in 60 seconds</li>
+                <li>• Eco-friendly cleaning solutions</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-yellow mb-2">Service Areas:</h4>
+              <p className="text-sm">
+                <strong>Newport Beach</strong>, <strong>Irvine</strong>, <strong>Costa Mesa</strong>, <strong>Huntington Beach</strong>, <strong>Anaheim</strong>, <strong>Santa Ana</strong>, <strong>Fullerton</strong>, <strong>Orange</strong>, and all Orange County cities.
+              </p>
+              <div className="mt-3">
+                <a href="/get-a-quote" className="bg-yellow text-navy px-6 py-2 rounded font-bold hover:bg-yellow/90 transition-colors">
+                  Get Free Quote Now
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

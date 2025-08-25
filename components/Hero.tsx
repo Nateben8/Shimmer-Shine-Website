@@ -15,14 +15,14 @@ export default function Hero() {
         }} />
       </div>
 
-      <div className="container mx-auto px-4 py-12 sm:py-16 lg:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
           {/* Content */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* Trust Badge */}
-            <div className="flex items-center mb-4">
-              <div className="retro-badge">
-                <Award className="h-4 w-4 mr-1" />
+            <div className="flex items-center mb-3 sm:mb-4">
+              <div className="retro-badge text-sm sm:text-base">
+                <Award className="h-4 w-4 sm:h-5 sm:w-5 mr-1 sm:mr-2" />
                 Licensed & Insured
               </div>
             </div>
@@ -38,7 +38,7 @@ export default function Hero() {
             </div>
 
             {/* Subheading */}
-            <p className="body-text text-lg sm:text-xl md:text-2xl text-gray-100 leading-relaxed">
+            <p className="body-text text-base sm:text-lg md:text-xl text-gray-100 leading-relaxed">
               Same day window cleaning Orange County with free quotes. Licensed and insured residential and commercial window cleaning services across Orange County, Los Angeles, and San Diego.
             </p>
 
@@ -71,15 +71,16 @@ export default function Hero() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <Link href="/get-a-quote" className="w-full sm:w-auto">
-                <Button variant="retro" size="lg" className="w-full text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 min-h-[48px]">
+            <div className="flex flex-col gap-4">
+              <Link href="/get-a-quote" className="w-full">
+                <Button variant="retro" size="lg" className="w-full text-lg px-8 py-5 min-h-[60px] font-bold shadow-lg hover:shadow-xl transition-all duration-200">
+                  <span className="mr-2">🌟</span>
                   Get Free Quote in 60 Seconds
                 </Button>
               </Link>
-              <Link href={`tel:${BUSINESS_INFO.phone}`} className="w-full sm:w-auto">
-                <Button variant="retro-navy" size="lg" className="w-full text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 bg-white text-navy hover:bg-gray-100 min-h-[48px]">
-                  <Phone className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
+              <Link href={`tel:${BUSINESS_INFO.phone}`} className="w-full">
+                <Button variant="retro-navy" size="lg" className="w-full text-lg px-8 py-5 bg-white text-navy hover:bg-gray-100 min-h-[60px] font-bold transition-all duration-200">
+                  <Phone className="h-6 w-6 mr-3" />
                   Call {BUSINESS_INFO.phone}
                 </Button>
               </Link>

@@ -121,19 +121,19 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Mobile Navigation */}
-          <div className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
-          }`}>
-            <div className="border-t border-gray-200 bg-white shadow-lg">
-              <nav className="px-4 py-6 space-y-6">
+                  {/* Mobile Navigation */}
+        <div className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+        }`}>
+          <div className="border-t border-gray-200 bg-white shadow-lg">
+            <nav className="px-3 py-4 space-y-4">
                 {/* Navigation Links */}
                 <div className="space-y-2">
                   {navigation.map((item, index) => (
                     <Link
                       key={item.name}
                       href={item.href}
-                      className={`block w-full text-left text-gray-800 hover:text-navy hover:bg-gray-50 font-semibold py-4 px-6 rounded-xl border border-gray-100 hover:border-navy/20 transition-all duration-200 text-base tracking-wide transform hover:scale-[1.02] ${
+                      className={`block w-full text-left text-gray-800 hover:text-navy hover:bg-gray-50 font-semibold py-5 px-5 rounded-xl border border-gray-100 hover:border-navy/20 transition-all duration-200 text-lg tracking-wide transform hover:scale-[1.02] min-h-[56px] flex items-center ${
                         item.name === 'Get Quote' ? 'hidden' : ''
                       }`}
                       onClick={() => setIsMenuOpen(false)}
@@ -151,26 +151,26 @@ export default function Header() {
                 </div>
                 
                 {/* Contact Info */}
-                <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
-                  <div className="flex items-center justify-center space-x-2 text-navy mb-2">
-                    <Phone className="h-4 w-4 text-yellow" />
-                    <span className="font-bold text-lg">{BUSINESS_INFO.phone}</span>
+                <div className="bg-gray-50 rounded-xl p-5 border border-gray-100">
+                  <div className="flex items-center justify-center space-x-3 text-navy mb-3">
+                    <Phone className="h-5 w-5 text-yellow" />
+                    <span className="font-bold text-xl">{BUSINESS_INFO.phone}</span>
                   </div>
-                  <div className="flex items-center justify-center space-x-2 text-gray-600 text-sm">
-                    <MapPin className="h-3 w-3 text-yellow" />
+                  <div className="flex items-center justify-center space-x-2 text-gray-600 text-base">
+                    <MapPin className="h-4 w-4 text-yellow" />
                     <span>Orange County, LA & San Diego</span>
                   </div>
                 </div>
                 
                 {/* CTA Buttons */}
-                <div className="space-y-3 pt-2">
+                <div className="space-y-4 pt-3">
                   <Link href="/get-a-quote" onClick={() => setIsMenuOpen(false)}>
                     <Button 
                       variant="default" 
                       size="lg" 
-                      className="w-full bg-yellow hover:bg-yellow/90 font-bold text-navy shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] border-2 border-navy text-base py-4 rounded-xl"
+                      className="w-full bg-yellow hover:bg-yellow/90 font-bold text-navy shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] border-2 border-navy text-lg py-5 rounded-xl min-h-[60px]"
                     >
-                      <span className="mr-2">🌟</span>
+                      <span className="mr-3 text-xl">🌟</span>
                       GET FREE QUOTE
                     </Button>
                   </Link>
@@ -178,33 +178,33 @@ export default function Header() {
                     <Button 
                       variant="outline" 
                       size="lg" 
-                      className="w-full border-2 border-navy text-navy font-bold hover:bg-navy hover:text-white transition-all duration-200 hover:scale-[1.02] text-base py-4 rounded-xl"
+                      className="w-full border-2 border-navy text-navy font-bold hover:bg-navy hover:text-white transition-all duration-200 hover:scale-[1.02] text-lg py-5 rounded-xl min-h-[60px]"
                     >
-                      <Phone className="h-5 w-5 mr-2" />
+                      <Phone className="h-6 w-6 mr-3" />
                       CALL NOW
                     </Button>
                   </Link>
                 </div>
 
                 {/* Service Highlights */}
-                <div className="bg-navy/5 rounded-xl p-4 border border-navy/10">
+                <div className="bg-navy/5 rounded-xl p-5 border border-navy/10">
                   <div className="text-center">
-                    <div className="text-navy font-bold text-sm mb-2">🏆 Why Choose Us?</div>
-                    <div className="grid grid-cols-2 gap-2 text-xs text-gray-600">
-                      <div className="flex items-center space-x-1">
-                        <span className="text-yellow">✓</span>
+                    <div className="text-navy font-bold text-base mb-3">🏆 Why Choose Us?</div>
+                    <div className="grid grid-cols-2 gap-3 text-sm text-gray-600">
+                      <div className="flex items-center space-x-2">
+                        <span className="text-yellow text-lg">✓</span>
                         <span>Licensed & Insured</span>
                       </div>
-                      <div className="flex items-center space-x-1">
-                        <span className="text-yellow">✓</span>
+                      <div className="flex items-center space-x-2">
+                        <span className="text-yellow text-lg">✓</span>
                         <span>Same Day Service</span>
                       </div>
-                      <div className="flex items-center space-x-1">
-                        <span className="text-yellow">✓</span>
+                      <div className="flex items-center space-x-2">
+                        <span className="text-yellow text-lg">✓</span>
                         <span>500+ 5-Star Reviews</span>
                       </div>
-                      <div className="flex items-center space-x-1">
-                        <span className="text-yellow">✓</span>
+                      <div className="flex items-center space-x-2">
+                        <span className="text-yellow text-lg">✓</span>
                         <span>Free Estimates</span>
                       </div>
                     </div>
