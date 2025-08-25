@@ -1,5 +1,16 @@
 import { getPageSEO } from "@/lib/seo"
 import { BLOG_CATEGORIES, BUSINESS_INFO } from "@/lib/constants"
+
+// Helper function to create URL-safe slugs (same as in category page)
+function createSlug(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/&/g, 'and')  // Replace & with 'and'
+    .replace(/[^a-z0-9\s-]/g, '')  // Remove special characters except spaces and hyphens
+    .replace(/\s+/g, '-')  // Replace spaces with hyphens
+    .replace(/-+/g, '-')   // Replace multiple hyphens with single hyphen
+    .trim()
+}
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
@@ -505,7 +516,7 @@ export default function BlogPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {BLOG_CATEGORIES.map((category) => (
-              <Link key={category} href={`/blog/category/${category.toLowerCase().replace(/\s+/g, '-')}`}>
+              <Link key={category} href={`/blog/category/${createSlug(category)}`}>
                 <Card className="retro-card hover:shadow-retro-yellow transition-all duration-300 group cursor-pointer">
                   <CardContent className="p-6 text-center">
                     <h4 className="heading-primary text-lg text-navy group-hover:text-yellow transition-colors">

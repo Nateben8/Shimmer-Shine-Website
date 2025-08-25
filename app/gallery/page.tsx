@@ -226,8 +226,8 @@ const galleryCategories = [
         title: "Wood Deck Soft Wash",
         location: "San Diego County, CA",
         service: "Gentle Deck Cleaning",
-        beforeImage: "/Before%20and%20After%20images/Wood%20deck%20soft%20wash%203.jpg",
-        afterImage: "/Before%20and%20After%20images/Wood%20deck%20soft%20wash%203.jpg",
+        beforeImage: "/Before%20and%20After%20images/wood%20deck%20soft%20wash%203.jpg",
+        afterImage: "/Before%20and%20After%20images/wood%20deck%20soft%20wash%203.jpg",
         description: "Delicate wood deck cleaned with soft wash technique"
       },
       {
