@@ -64,7 +64,7 @@ export default function FallSpecial() {
           </div>
           
           <div className="flex items-center justify-center sm:justify-start space-x-2">
-            <span className="bg-yellow-400 text-orange-900 px-2 py-1 rounded-full font-black text-lg animate-pulse">
+            <span className="bg-yellow-400 text-orange-900 px-2 py-1 rounded-full font-black text-lg">
               20% OFF
             </span>
             <span className="text-sm font-semibold">Bundle 2+ Services!</span>
@@ -96,7 +96,7 @@ export default function FallSpecial() {
         {/* Compact CTA Buttons */}
         <div className="flex space-x-2">
           <Link href="/get-a-quote">
-            <button className="bg-yellow-400 hover:bg-yellow-300 text-orange-900 font-bold py-2 px-4 rounded-full transition-all duration-200 hover:scale-105 shadow-lg text-sm animate-pulse">
+            <button className="bg-yellow-400 hover:bg-yellow-300 text-orange-900 font-bold py-2 px-4 rounded-full transition-all duration-200 hover:scale-105 shadow-lg text-sm">
               🍂 CLAIM OFFER
             </button>
           </Link>
