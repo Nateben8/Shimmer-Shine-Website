@@ -283,20 +283,7 @@ export default function JobberForm() {
         </div>
       </div>
       
-      {/* Enhanced Conversion Booster */}
-      <div className="conversion-booster">
-        <div className="bg-gradient-to-r from-red-50 to-yellow-50 border-2 border-yellow rounded-lg p-3">
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-yellow rounded-full flex items-center justify-center animate-pulse">
-              <span className="text-navy font-bold text-sm">🔥</span>
-            </div>
-            <div>
-              <p className="font-bold text-navy text-sm">🚨 LAST CHANCE: 10% Off + FREE Quote Expires Soon!</p>
-              <p className="text-xs text-gray-600">Join 47 customers who saved $50-200 this week</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      
       
       <Suspense fallback={<JobberFormSkeleton />}>
         <JobberFormContent />
