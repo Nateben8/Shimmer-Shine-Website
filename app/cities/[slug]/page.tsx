@@ -56,7 +56,7 @@ export default function CityPage({ params }: CityPageProps) {
   const decodedSlug = decodeURIComponent(params.slug)
   
   // Special handling for La Cañada Flintridge URL encoding issues
-  const specialCases = {
+  const specialCases: Record<string, string> = {
     'la-caada-flintridge': 'La Cañada Flintridge',
     'la-canada-flintridge': 'La Cañada Flintridge',
     'la-cañada-flintridge': 'La Cañada Flintridge'
@@ -89,7 +89,7 @@ export default function CityPage({ params }: CityPageProps) {
       'la-canada-flintridge': 'la-cañada-flintridge'
     }
     
-    const resolvedSlug = specialCases[params.slug] || params.slug
+    const resolvedSlug = (specialCases as Record<string, string>)[params.slug] || params.slug
     
     // Check multiple variations to handle URL encoding issues
     return normalizedCity === normalizedSlug || 

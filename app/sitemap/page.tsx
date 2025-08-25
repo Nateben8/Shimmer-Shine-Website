@@ -293,7 +293,7 @@ export default function SitemapPage() {
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-900">Business Hours</h4>
-                  <p className="text-gray-600">{BUSINESS_INFO.hours}</p>
+                  <p className="text-gray-600">Mon-Fri: 7:00 AM - 6:00 PM<br />Saturday: 8:00 AM - 4:00 PM<br />Sunday: Closed</p>
                 </div>
               </div>
             </CardContent>

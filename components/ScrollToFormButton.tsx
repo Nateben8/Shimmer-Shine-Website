@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 interface ScrollToFormButtonProps {
   children: React.ReactNode
   className?: string
-  variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link" | "retro" | "retro-navy" | "retro-yellow"
+  variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link" | "retro" | "retro-navy"
   size?: "default" | "sm" | "lg" | "icon"
 }
 
