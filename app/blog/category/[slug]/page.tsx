@@ -18,7 +18,7 @@ const blogPosts = [
     author: "Shimmer Shine Property Detailing",
     publishedAt: "2025-01-15",
     readingTime: 8,
-    image: "/blog/window-cleaning-orange-county.jpg",
+    image: "/blog/window-cleaning-orange-county-guide.jpg",
     tags: ["Orange County", "Window Cleaning", "Costa Mesa", "Newport Beach", "Irvine"]
   },
   {
@@ -30,7 +30,7 @@ const blogPosts = [
     author: "Shimmer Shine Property Detailing",
     publishedAt: "2025-01-16",
     readingTime: 10,
-    image: "/blog/pressure-washing-los-angeles.jpg",
+    image: "/blog/pressure-washing-los-angeles-county.jpg",
     tags: ["Los Angeles County", "Pressure Washing", "Beverly Hills", "Santa Monica", "Manhattan Beach"]
   },
   {
@@ -42,7 +42,7 @@ const blogPosts = [
     author: "Shimmer Shine Property Detailing",
     publishedAt: "2025-01-17",
     readingTime: 9,
-    image: "/blog/gutter-cleaning-san-diego.jpg",
+    image: "/blog/gutter-cleaning-san-diego-county.jpg",
     tags: ["San Diego County", "Gutter Cleaning", "La Jolla", "Encinitas", "Carlsbad"]
   },
   {
@@ -54,7 +54,7 @@ const blogPosts = [
     author: "Shimmer Shine Property Detailing",
     publishedAt: "2025-01-18",
     readingTime: 12,
-    image: "/blog/solar-panel-cleaning-california.jpg",
+    image: "/blog/solar-panel-cleaning-southern-california.jpg",
     tags: ["Solar Panel Cleaning", "Southern California", "Energy Efficiency"]
   },
   {
