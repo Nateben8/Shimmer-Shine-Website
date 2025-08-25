@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Terms of Service | Shimmer Shine Property Detailing',
     description: 'Terms of Service for Shimmer Shine Property Detailing. Read our terms and conditions for using our professional cleaning and property detailing services.',
-    url: 'https://shimmershinepd.com/terms-of-service',
+    url: 'https://www.shimmershinepropertydetailing.com/terms-of-service',
     siteName: 'Shimmer Shine Property Detailing',
     locale: 'en_US',
     type: 'website',
@@ -44,7 +44,7 @@ export default function TermsOfServicePage() {
               <h2 className="heading-primary text-3xl text-navy mb-6">Agreement to Terms</h2>
               <p className="body-text text-gray-700 leading-relaxed mb-4">
                 These Terms of Service ("Terms") govern your use of the website located at{' '}
-                <Link href="/" className="text-navy hover:text-yellow">shimmershinepd.com</Link>{' '}
+                <Link href="/" className="text-navy hover:text-yellow">www.shimmershinepropertydetailing.com</Link>{' '}
                 (the "Service") operated by Shimmer Shine Property Detailing ("us", "we", or "our").
               </p>
               <p className="body-text text-gray-700 leading-relaxed mb-4">

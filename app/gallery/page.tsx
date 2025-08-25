@@ -21,10 +21,10 @@ export const metadata = {
   openGraph: {
     title: "Gallery - Before & After Results | Shimmer Shine Property Detailing",
     description: "View our amazing before and after results from window cleaning, pressure washing, and property detailing services across Orange County, Los Angeles, and San Diego.",
-    url: "https://shimmershinepd.com/gallery",
+    url: "https://www.shimmershinepropertydetailing.com/gallery",
     images: [
       {
-        url: "https://shimmershinepd.com/logo.png",
+        url: "https://www.shimmershinepropertydetailing.com/logo.png",
         width: 1200,
         height: 630,
         alt: "Shimmer Shine Property Detailing Gallery"

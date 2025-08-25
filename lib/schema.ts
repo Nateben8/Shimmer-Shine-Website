@@ -4,16 +4,16 @@ import { BUSINESS_INFO, SERVICES } from './constants'
 export const getLocalBusinessSchema = () => ({
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://shimmershinepd.com/#business",
+  "@id": "https://www.shimmershinepropertydetailing.com/#business",
   "name": "Shimmer Shine Property Detailing",
   "alternateName": "Shimmer Shine Window Cleaning",
   "description": "Professional window cleaning, pressure washing, and property detailing services in Orange County, Los Angeles County, and San Diego County. Licensed, insured, and eco-friendly cleaning solutions since 2021.",
-  "url": "https://shimmershinepd.com",
-  "logo": "https://shimmershinepd.com/logo.png",
+  "url": "https://www.shimmershinepropertydetailing.com",
+  "logo": "https://www.shimmershinepropertydetailing.com/logo.png",
   "image": [
-    "https://shimmershinepd.com/window-cleaning-before-after.png",
-    "https://shimmershinepd.com/pressure-washing-before-after.png",
-    "https://shimmershinepd.com/logo.png"
+    "https://www.shimmershinepropertydetailing.com/window-cleaning-before-after.png",
+    "https://www.shimmershinepropertydetailing.com/pressure-washing-before-after.png",
+    "https://www.shimmershinepropertydetailing.com/logo.png"
   ],
   "telephone": BUSINESS_INFO.phone,
   "email": BUSINESS_INFO.email,
@@ -90,7 +90,7 @@ export const getLocalBusinessSchema = () => ({
       "priceRange": service.priceRange,
       "availability": "https://schema.org/InStock",
       "validFrom": "2021-01-01",
-      "url": `https://shimmershinepd.com/services/${service.id}`
+      "url": `https://www.shimmershinepropertydetailing.com/services/${service.id}`
     }))
   },
   "aggregateRating": {
@@ -141,13 +141,13 @@ export const getLocalBusinessSchema = () => ({
 export const getServiceSchema = (service: any) => ({
   "@context": "https://schema.org",
   "@type": "Service",
-  "@id": `https://shimmershinepd.com/services/${service.id}#service`,
+  "@id": `https://www.shimmershinepropertydetailing.com/services/${service.id}#service`,
   "name": service.name,
   "description": service.description,
   "provider": {
     "@type": "LocalBusiness",
     "name": "Shimmer Shine Property Detailing",
-    "url": "https://shimmershinepd.com"
+    "url": "https://www.shimmershinepropertydetailing.com"
   },
   "areaServed": [
     "Orange County, CA",
@@ -156,7 +156,7 @@ export const getServiceSchema = (service: any) => ({
   ],
   "availableChannel": {
     "@type": "ServiceChannel",
-    "serviceUrl": `https://shimmershinepd.com/services/${service.id}`,
+    "serviceUrl": `https://www.shimmershinepropertydetailing.com/services/${service.id}`,
     "servicePhone": BUSINESS_INFO.phone,
     "serviceSmsNumber": BUSINESS_INFO.phone
   },
@@ -203,11 +203,11 @@ export const getBreadcrumbSchema = (items: Array<{name: string, url: string}>) =
 export const getOrganizationSchema = () => ({
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://shimmershinepd.com/#organization",
+  "@id": "https://www.shimmershinepropertydetailing.com/#organization",
   "name": "Shimmer Shine Property Detailing",
   "alternateName": "Shimmer Shine Window Cleaning",
-  "url": "https://shimmershinepd.com",
-  "logo": "https://shimmershinepd.com/logo.png",
+  "url": "https://www.shimmershinepropertydetailing.com",
+  "logo": "https://www.shimmershinepropertydetailing.com/logo.png",
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": BUSINESS_INFO.phone,
@@ -224,18 +224,18 @@ export const getOrganizationSchema = () => ({
 export const getWebsiteSchema = () => ({
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "@id": "https://shimmershinepd.com/#website",
-  "url": "https://shimmershinepd.com",
+  "@id": "https://www.shimmershinepropertydetailing.com/#website",
+  "url": "https://www.shimmershinepropertydetailing.com",
   "name": "Shimmer Shine Property Detailing",
   "description": "Professional window cleaning, pressure washing, and property detailing services in Southern California",
   "publisher": {
-    "@id": "https://shimmershinepd.com/#organization"
+    "@id": "https://www.shimmershinepropertydetailing.com/#organization"
   },
   "potentialAction": {
     "@type": "SearchAction",
     "target": {
       "@type": "EntryPoint",
-      "urlTemplate": "https://shimmershinepd.com/search?q={search_term_string}"
+      "urlTemplate": "https://www.shimmershinepropertydetailing.com/search?q={search_term_string}"
     },
     "query-input": "required name=search_term_string"
   }

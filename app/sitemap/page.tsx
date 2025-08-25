@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Sitemap | Shimmer Shine Property Detailing',
     description: 'Complete sitemap of Shimmer Shine Property Detailing website. Find all our services, service areas, blog posts, and important pages.',
-    url: 'https://shimmershinepd.com/sitemap',
+    url: 'https://www.shimmershinepropertydetailing.com/sitemap',
     siteName: 'Shimmer Shine Property Detailing',
     locale: 'en_US',
     type: 'website',

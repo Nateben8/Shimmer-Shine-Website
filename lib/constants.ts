@@ -1,7 +1,7 @@
 export const SITE_CONFIG = {
   name: "Shimmer Shine Property Detailing",
   description: "Professional window cleaning, pressure washing, and property detailing services in Orange County, Los Angeles, and San Diego. Family-owned since 2021 with old-school quality and modern reliability.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://shimmershinepd.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.shimmershinepropertydetailing.com",
   ogImage: "/logo.png",
   links: {
     phone: "(714) 497-0035",

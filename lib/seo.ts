@@ -119,6 +119,7 @@ export function getPageSEO(page: string, city?: string) {
           return generateSEO({
             title: `Commercial Cleaning & Business Services Orange County | B2B Contracts`,
             description: `Professional commercial cleaning near me Orange County with B2B contract solutions. Office cleaning services Orange County, medical office cleaning Orange County & business cleaning services Orange County with free estimates!`,
+            canonical: SITE_CONFIG.url,
             keywords: [
           // Tier 1 - Highest ROI Focus (Purchase Stage) - Commercial Cleaning
           "commercial cleaning near me Orange County",
@@ -185,6 +186,7 @@ export function getPageSEO(page: string, city?: string) {
       return generateSEO({
         title: `Free Quote Window Cleaning Orange County | Same Day Service Available`,
         description: `Free quote window cleaning Orange County in 60 seconds! Same day window cleaning Orange County available. Licensed and insured residential and commercial window cleaning services. Call now!`,
+        canonical: `${SITE_CONFIG.url}/get-a-quote`,
         keywords: [
           "free quote window cleaning Orange County",
           "same day window cleaning Orange County",
@@ -206,6 +208,7 @@ export function getPageSEO(page: string, city?: string) {
       return generateSEO({
         title: `Professional Cleaning Services${cityName ? ` in ${cityName}` : ''} - Windows, Pressure Washing & More`,
         description: `Complete property detailing services${cityName ? ` in ${cityName}` : ''}: window cleaning, pressure washing, solar panel cleaning, gutter maintenance, and post-construction cleanup.`,
+        canonical: `${SITE_CONFIG.url}/services`,
         keywords: [
           "window cleaning services",
           "pressure washing services",
@@ -221,6 +224,7 @@ export function getPageSEO(page: string, city?: string) {
       return generateSEO({
         title: `About ${BUSINESS_INFO.name} - Professional Since ${BUSINESS_INFO.foundedYear}`,
         description: `Learn about ${BUSINESS_INFO.name}, a professional property detailing company serving ${BUSINESS_INFO.serviceAreas.join(', ')} since ${BUSINESS_INFO.foundedYear}. Old-school quality, modern reliability.`,
+        canonical: `${SITE_CONFIG.url}/about`,
         keywords: [
           "family owned cleaning company",
           "established window cleaning business",
@@ -234,6 +238,7 @@ export function getPageSEO(page: string, city?: string) {
       return generateSEO({
         title: `Property Maintenance Blog - Tips & Guides for ${BUSINESS_INFO.serviceAreas.join(', ')}`,
         description: `Expert tips and guides for window cleaning, pressure washing, solar panel maintenance, and property care from ${BUSINESS_INFO.name}'s experienced professionals.`,
+        canonical: `${SITE_CONFIG.url}/blog`,
         keywords: [
           "window cleaning tips",
           "pressure washing guide",
@@ -248,6 +253,7 @@ export function getPageSEO(page: string, city?: string) {
       return generateSEO({
         title: `Service Areas - Professional Property Detailing Across Southern California`,
         description: `Professional window cleaning, pressure washing, and property detailing services in over 139 cities across Orange County, Los Angeles County, and San Diego County. Find your city and get a free quote today.`,
+        canonical: `${SITE_CONFIG.url}/cities`,
         keywords: [
           "service areas",
           "Orange County cities",
@@ -330,7 +336,8 @@ export function getServiceSEO(serviceId: string, city?: string) {
     title: service.title,
     description: service.description,
     keywords: service.keywords,
-    type: "website"
+    type: "website",
+    canonical: `${SITE_CONFIG.url}/services/${serviceId}`
   })
 }
 
@@ -350,6 +357,7 @@ export function getCitySEO(citySlug: string) {
       `property maintenance ${cityName}`,
       `residential cleaning ${cityName}`,
       `commercial cleaning ${cityName}`
-    ]
+    ],
+    canonical: `${SITE_CONFIG.url}/cities/${citySlug}`
   })
 }

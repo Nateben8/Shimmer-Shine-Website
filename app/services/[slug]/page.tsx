@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation"
 import { getServiceSEO } from "@/lib/seo"
-import { getServiceSchema } from "@/lib/schema"
+import { getServiceSchema, getFAQSchema } from "@/lib/schema"
 import { SERVICES, BUSINESS_INFO } from "@/lib/constants"
 import GoogleReviews from "@/components/GoogleReviews"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -48,6 +48,121 @@ export default function ServicePage({ params }: ServicePageProps) {
   }
 
   const serviceSchema = getServiceSchema(service.id)
+  
+  // FAQ data for each service
+  const serviceFAQs = {
+    'window-cleaning': [
+      {
+        question: `How much does professional window cleaning cost in Orange County?`,
+        answer: `Professional window cleaning in Orange County typically costs $8-15 per window for residential properties and $3-8 per window for commercial buildings. Factors affecting price include window size, accessibility, frequency of service, and additional services like screen cleaning. We provide free estimates with transparent pricing.`
+      },
+      {
+        question: `How often should I have my windows professionally cleaned?`,
+        answer: `For residential properties, we recommend professional window cleaning every 2-3 months, or quarterly for optimal results. Commercial buildings benefit from monthly cleaning to maintain professional appearance. Properties near the coast may need more frequent cleaning due to salt air deposits.`
+      },
+      {
+        question: `Do you clean both interior and exterior windows?`,
+        answer: `Yes! Our comprehensive window cleaning service includes both interior and exterior window cleaning, screen cleaning, sill wiping, and frame cleaning. We use professional-grade equipment and eco-friendly solutions for streak-free, crystal-clear results.`
+      },
+      {
+        question: `Are you licensed and insured for window cleaning?`,
+        answer: `Absolutely! We are fully licensed and insured with comprehensive liability coverage. Our team is trained in safety protocols and uses professional equipment. We're bonded for your peace of mind and protection.`
+      }
+    ],
+    'pressure-washing': [
+      {
+        question: `How much does pressure washing cost in Orange County?`,
+        answer: `Pressure washing costs in Orange County range from $150-400 for residential driveways and $200-800 for commercial properties. Pricing depends on surface area, cleaning difficulty, and additional services. We provide free estimates with competitive, transparent pricing.`
+      },
+      {
+        question: `What surfaces can you pressure wash?`,
+        answer: `We safely pressure wash driveways, sidewalks, patios, decks, building exteriors, parking lots, and more. Our team uses appropriate pressure settings for each surface type - from delicate wood decks to tough concrete surfaces.`
+      },
+      {
+        question: `How often should I pressure wash my property?`,
+        answer: `Most residential properties benefit from annual pressure washing, while commercial properties may need quarterly service. High-traffic areas and properties with heavy dirt, mold, or staining may require more frequent cleaning.`
+      },
+      {
+        question: `Do you use eco-friendly cleaning solutions?`,
+        answer: `Yes! We use biodegradable, eco-friendly cleaning solutions that are safe for plants, pets, and the environment. Our cleaning methods are effective yet gentle on your property and surrounding landscape.`
+      }
+    ],
+    'solar-panel-cleaning': [
+      {
+        question: `How much does solar panel cleaning cost?`,
+        answer: `Solar panel cleaning typically costs $150-300 for residential systems and $200-600 for commercial installations. Pricing depends on system size, accessibility, and cleaning frequency. Regular cleaning can improve energy efficiency by 15-25%.`
+      },
+      {
+        question: `How often should solar panels be cleaned?`,
+        answer: `In Orange County, we recommend cleaning solar panels every 3-6 months due to dust, pollen, and coastal salt air. Properties near construction sites or heavy traffic may need more frequent cleaning to maintain optimal efficiency.`
+      },
+      {
+        question: `Will cleaning damage my solar panels or void the warranty?`,
+        answer: `No! We use gentle, warranty-safe cleaning methods specifically designed for solar panels. Our deionized water system and soft-bristle brushes safely remove dirt and debris without scratching or damaging panels.`
+      },
+      {
+        question: `How much can clean solar panels improve energy production?`,
+        answer: `Clean solar panels can improve energy production by 15-25% compared to dirty panels. In Orange County's dusty environment, regular cleaning is essential for maintaining optimal solar system performance and maximizing your investment.`
+      }
+    ],
+    'gutter-cleaning': [
+      {
+        question: `How much does gutter cleaning cost in Orange County?`,
+        answer: `Gutter cleaning in Orange County typically costs $150-400 for residential properties and $200-800 for commercial buildings. Our affordable gutter cleaning includes downspout cleaning and debris removal. We provide free quotes with transparent pricing and seasonal discounts.`
+      },
+      {
+        question: `Do you provide same day gutter cleaning service?`,
+        answer: `Yes! Our same day gutter cleaning Orange County is available for urgent needs and emergency gutter cleaning situations. As gutter cleaning near me Orange County specialists, we understand the importance of immediate service for clogged gutters and storm damage.`
+      },
+      {
+        question: `What's included in professional gutter cleaning?`,
+        answer: `Our professional gutter cleaning includes leaf removal, downspout cleaning, clogged gutter cleaning, and gutter inspection. We provide seasonal gutter cleaning with fall and spring maintenance programs for optimal water flow protection.`
+      },
+      {
+        question: `Do you offer seasonal gutter cleaning programs?`,
+        answer: `Yes! Our seasonal gutter cleaning programs include fall leaf removal and spring inspection services. We offer annual gutter cleaning contracts and routine gutter maintenance. Our programs are perfect for rain gutter cleaning preparation.`
+      }
+    ],
+    'commercial-cleaning': [
+      {
+        question: `How much does commercial cleaning cost in Orange County?`,
+        answer: `Commercial cleaning costs typically range from $0.05-$0.15 per square foot for office cleaning services. Our commercial cleaning contracts provide volume discounts for recurring commercial cleaning. We offer commercial cleaning estimates with transparent B2B pricing.`
+      },
+      {
+        question: `Do you provide medical office cleaning?`,
+        answer: `Yes! Our medical office cleaning services meet healthcare compliance standards with OSHA protocols. We provide dental office cleaning and specialized sanitization for healthcare facilities. Our team is trained in medical facility cleaning requirements and disinfecting services.`
+      },
+      {
+        question: `What industries do you serve for commercial cleaning?`,
+        answer: `Our business cleaning services cover all industries: restaurant cleaning services, hotel cleaning services, retail store cleaning, warehouse cleaning services, school cleaning services, and gym cleaning services with industry-specific compliance.`
+      },
+      {
+        question: `Do you offer after-hours commercial cleaning?`,
+        answer: `Absolutely! Our after hours commercial cleaning services ensure minimal business disruption. We provide day porter services for ongoing maintenance and emergency commercial cleaning for urgent situations. Our flexible scheduling accommodates your business operations.`
+      }
+    ],
+    'post-construction-cleanup': [
+      {
+        question: `How much does post-construction cleanup cost?`,
+        answer: `Post-construction cleanup costs vary by project size and debris amount, typically ranging from $300-1,500 for residential projects and $500-3,000 for commercial construction. We provide detailed estimates based on square footage and cleanup requirements.`
+      },
+      {
+        question: `What's included in post-construction cleanup?`,
+        answer: `Our comprehensive post-construction cleanup includes debris removal, dust cleaning, window cleaning, floor cleaning, fixture cleaning, and final detailing. We handle everything from rough cleanup to final move-in ready preparation.`
+      },
+      {
+        question: `How soon can you start post-construction cleanup?`,
+        answer: `We typically provide post-construction cleanup within 24-48 hours of your call. Our team coordinates with contractors and project managers to ensure timely completion and move-in readiness.`
+      },
+      {
+        question: `Do you handle hazardous material cleanup?`,
+        answer: `We handle standard construction debris and dust cleanup. For hazardous materials like asbestos or lead paint, we work with certified specialists to ensure safe, compliant removal and disposal.`
+      }
+    ]
+  }
+  
+  const faqSchema = getFAQSchema(serviceFAQs[service.id as keyof typeof serviceFAQs] || [])
+  
   // const breadcrumbs = generateBreadcrumbs('service', { 
   //   serviceName: service.name, 
   //   slug: service.id 
@@ -65,6 +180,12 @@ export default function ServicePage({ params }: ServicePageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(serviceSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
         }}
       />
 

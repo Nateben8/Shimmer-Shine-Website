@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Privacy Policy | Shimmer Shine Property Detailing',
     description: 'Privacy Policy for Shimmer Shine Property Detailing. Learn how we collect, use, and protect your personal information when you use our services.',
-    url: 'https://shimmershinepd.com/privacy-policy',
+    url: 'https://www.shimmershinepropertydetailing.com/privacy-policy',
     siteName: 'Shimmer Shine Property Detailing',
     locale: 'en_US',
     type: 'website',
@@ -45,7 +45,7 @@ export default function PrivacyPolicyPage() {
               <p className="body-text text-gray-700 leading-relaxed mb-4">
                 Shimmer Shine Property Detailing ("we," "our," or "us") is committed to protecting your privacy. 
                 This Privacy Policy explains how we collect, use, disclose, and safeguard your information when 
-                you visit our website <Link href="/" className="text-navy hover:text-yellow">shimmershinepd.com</Link> 
+                you visit our website <Link href="/" className="text-navy hover:text-yellow">www.shimmershinepropertydetailing.com</Link> 
                 or use our services.
               </p>
               <p className="body-text text-gray-700 leading-relaxed">

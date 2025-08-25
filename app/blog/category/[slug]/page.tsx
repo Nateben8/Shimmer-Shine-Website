@@ -353,7 +353,7 @@ export async function generateMetadata({ params }: CategoryPageProps) {
     openGraph: {
       title: `${categoryName} Articles | Shimmer Shine Property Detailing Blog`,
       description: `Expert ${categoryName.toLowerCase()} articles and guides for Southern California property owners.`,
-      url: `https://shimmershinepd.com/blog/category/${categorySlug}`,
+      url: `https://www.shimmershinepropertydetailing.com/blog/category/${categorySlug}`,
       type: 'website'
     }
   }
