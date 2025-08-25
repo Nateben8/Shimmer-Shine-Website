@@ -153,35 +153,35 @@ export default function CityPage({ params }: CityPageProps) {
                 Serving {county}
               </div>
               
-              <h1 className="heading-decorative text-5xl md:text-6xl text-yellow mb-4">
-                {cityName}
+                            <h1 className="heading-decorative text-5xl md:text-6xl text-yellow mb-4">
+                {cityName} Solar Panel & Pressure Washing Services
               </h1>
-              
+
               <h2 className="heading-primary text-2xl md:text-3xl text-white mb-6">
-                Professional Property Detailing Services
+                Solar Panel Cleaning {cityName} | Same Day Service Available
               </h2>
-              
+
               <p className="body-text text-xl text-gray-100 mb-8 leading-relaxed">
-                Shimmer Shine Property Detailing proudly serves {cityName} residents and businesses with professional window cleaning, pressure washing, and property maintenance services. Professional since 2021 with old-school quality you can trust.
+                Professional solar panel cleaning {cityName} and pressure washing services. Our solar panel cleaning near me {cityName} improves efficiency by 30%. Licensed residential solar panel cleaning {cityName} and commercial solar panel cleaning {cityName} with same day service. Serving {county} since 2021.
               </p>
 
               {/* Local Benefits */}
               <div className="grid grid-cols-2 gap-4 mb-8">
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="h-5 w-5 text-yellow" />
-                  <span>Local {cityName} Service</span>
+                  <span>Local {cityName} Pressure Washing</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="h-5 w-5 text-yellow" />
-                  <span>Same Day Available</span>
+                  <span>Same Day Pressure Washing</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="h-5 w-5 text-yellow" />
-                  <span>Licensed & Insured</span>
+                  <span>Licensed Pressure Washing</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="h-5 w-5 text-yellow" />
-                  <span>5-Star Rated</span>
+                  <span>Best Pressure Washing</span>
                 </div>
               </div>
 
@@ -189,7 +189,7 @@ export default function CityPage({ params }: CityPageProps) {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/get-a-quote">
                   <Button variant="retro" size="lg" className="text-lg px-8 py-4">
-                    Get Free {cityName} Quote
+                    Free Quote {cityName} Pressure Washing
                   </Button>
                 </Link>
                 <Link href={`tel:${BUSINESS_INFO.phone}`}>
@@ -388,8 +388,63 @@ export default function CityPage({ params }: CityPageProps) {
         </div>
       </section>
 
+      {/* High-Converting Keywords Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+                      <div className="text-center mb-12">
+              <h2 className="heading-primary text-3xl md:text-4xl mb-4">
+                {cityName} Solar Panel Cleaning & Pressure Washing Services
+              </h2>
+              <p className="body-text text-xl text-gray-600 max-w-4xl mx-auto">
+                Looking for solar panel cleaning near me {cityName} or pressure washing {cityName}? We provide same day solar panel cleaning {cityName} and pressure washing with free quotes. Our services include residential solar panel cleaning {cityName}, commercial solar panel cleaning {cityName}, recurring solar panel cleaning {cityName}, and improve solar panel efficiency {cityName} by up to 30%.
+              </p>
+            </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div className="text-center p-6 bg-gray-50 rounded-lg">
+              <h3 className="heading-primary text-lg mb-2">Solar Panel Cleaning</h3>
+              <p className="body-text text-sm">Solar panel cleaning near me {cityName} improves efficiency by 30%</p>
+            </div>
+            <div className="text-center p-6 bg-gray-50 rounded-lg">
+              <h3 className="heading-primary text-lg mb-2">Same Day Service</h3>
+              <p className="body-text text-sm">Same day solar panel cleaning {cityName} and pressure washing</p>
+            </div>
+            <div className="text-center p-6 bg-gray-50 rounded-lg">
+              <h3 className="heading-primary text-lg mb-2">Free Quotes</h3>
+              <p className="body-text text-sm">Solar panel cleaning quotes {cityName} in 60 seconds</p>
+            </div>
+            <div className="text-center p-6 bg-gray-50 rounded-lg">
+              <h3 className="heading-primary text-lg mb-2">Licensed & Insured</h3>
+              <p className="body-text text-sm">Licensed solar panel cleaning {cityName} with full coverage</p>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <h3 className="heading-primary text-2xl mb-4">
+              Best Solar Panel Cleaning in {cityName}
+            </h3>
+            <p className="body-text text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+              Professional solar panel cleaning {cityName} with improve solar panel efficiency {cityName} results. Our residential solar panel cleaning {cityName} and commercial solar panel cleaning {cityName} includes recurring solar panel cleaning {cityName}, monthly solar panel cleaning {cityName}, and increase solar panel output {cityName} services.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/get-a-quote">
+                <Button variant="retro" size="lg" className="text-lg px-8 py-4">
+                  Get Free {cityName} Solar Quote
+                </Button>
+              </Link>
+              <Link href={`tel:${BUSINESS_INFO.phone}`}>
+                <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-navy text-navy hover:bg-navy hover:text-white">
+                  <Phone className="h-5 w-5 mr-2" />
+                  Call Now
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* City-Specific Content */}
-      <section className="py-16">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <Card className="retro-card">
@@ -445,7 +500,7 @@ export default function CityPage({ params }: CityPageProps) {
 
       {/* Local FAQ Section */}
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h3 className="heading-decorative text-4xl md:text-5xl text-navy mb-4">
@@ -460,12 +515,12 @@ export default function CityPage({ params }: CityPageProps) {
               <Card className="retro-card">
                 <CardHeader>
                   <CardTitle className="heading-primary text-xl text-navy">
-                    How much does window cleaning cost in {cityName}?
+                    How much does pressure washing cost in {cityName}?
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="body-text text-gray-700">
-                    Window cleaning costs in {cityName} typically range from $150-$400 for residential homes and $200-$800 for commercial properties, depending on size, number of windows, and accessibility. We provide free, detailed quotes for all {cityName} properties with transparent pricing and no hidden fees.
+                    <strong>Pressure washing {cityName}</strong> costs typically range from $200-$600 for residential properties and $300-$1200 for commercial buildings. <strong>Driveway pressure washing {cityName}</strong> starts at $150, while <strong>oil stain removal {cityName}</strong> may require specialized pricing. Our <strong>pressure washing quotes {cityName}</strong> service provides detailed estimates with no hidden fees.
                   </p>
                 </CardContent>
               </Card>
@@ -473,21 +528,86 @@ export default function CityPage({ params }: CityPageProps) {
               <Card className="retro-card">
                 <CardHeader>
                   <CardTitle className="heading-primary text-xl text-navy">
-                    Do you offer same-day service in {cityName}?
+                    Do you offer same day pressure washing in {cityName}?
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="body-text text-gray-700">
-                    Yes! We offer same-day and emergency cleaning services for {cityName} residents when our schedule permits. For urgent cleaning needs like event preparation or emergency situations, call us at {BUSINESS_INFO.phone} and we'll prioritize your {cityName} service request.
+                    Yes! Our <strong>same day pressure washing {cityName}</strong> is available for urgent cleaning needs. As <strong>local pressure washing near me {cityName}</strong> experts, we can handle <strong>emergency pressure washing {cityName}</strong>, <strong>graffiti removal {cityName}</strong>, and urgent <strong>commercial pressure washing {cityName}</strong> requests. Call {BUSINESS_INFO.phone} for immediate service.
                   </p>
                 </CardContent>
               </Card>
 
               <Card className="retro-card">
                 <CardHeader>
+                  <CardTitle className="heading-primary text-xl text-navy">
+                    Can you remove oil stains from driveways in {cityName}?
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="body-text text-gray-700">
+                    Absolutely! Our <strong>oil stain removal {cityName}</strong> service uses advanced degreasing techniques and specialized equipment. We're experts in <strong>driveway pressure washing {cityName}</strong> and can remove stubborn oil stains, grease spots, and automotive fluid stains from concrete surfaces throughout {cityName} and {county}.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="retro-card">
+                <CardHeader>
+                  <CardTitle className="heading-primary text-xl text-navy">
+                    Do you provide commercial pressure washing in {cityName}?
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="body-text text-gray-700">
+                    Yes! Our <strong>commercial pressure washing {cityName}</strong> services include storefront cleaning, parking lot maintenance, building exterior washing, and <strong>graffiti removal {cityName}</strong>. We provide <strong>professional pressure washing {cityName}</strong> for restaurants, retail stores, office buildings, and industrial facilities with flexible scheduling and competitive pricing.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="retro-card">
+                <CardHeader>
+                  <CardTitle className="heading-primary text-xl text-navy">
+                    Are you licensed for pressure washing in {cityName}?
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="body-text text-gray-700">
+                    Absolutely! We are fully <strong>licensed pressure washing {cityName}</strong> professionals with comprehensive insurance coverage. Our <strong>professional pressure washing {cityName}</strong> team is bonded and insured for your complete peace of mind. We're the <strong>best pressure washing {cityName}</strong> company with proven results and satisfied customers.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="retro-card">
+                <CardHeader>
+                  <CardTitle className="heading-primary text-xl text-navy">
+                    Do you provide solar panel cleaning in {cityName}?
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="body-text text-gray-700">
+                    Yes! Our <strong>solar panel cleaning near me {cityName}</strong> service can <strong>improve solar panel efficiency {cityName}</strong> by up to 30%. We provide <strong>residential solar panel cleaning {cityName}</strong> and <strong>commercial solar panel cleaning {cityName}</strong> with <strong>recurring solar panel cleaning {cityName}</strong> programs. Our <strong>same day solar panel cleaning {cityName}</strong> is available for urgent needs.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="retro-card">
+                <CardHeader>
+                  <CardTitle className="heading-primary text-xl text-navy">
+                    How much does solar panel cleaning cost in {cityName}?
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="body-text text-gray-700">
+                    <strong>Solar panel cleaning {cityName}</strong> costs typically range from $150-$400 for residential systems and $300-$1200 for commercial installations. Our <strong>solar panel cleaning quotes {cityName}</strong> service provides detailed estimates. <strong>Monthly solar panel cleaning {cityName}</strong> programs offer significant savings and help <strong>increase solar panel output {cityName}</strong> consistently.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="retro-card">
+                  <CardHeader>
                   <CardTitle className="heading-primary text-xl text-navy">
                     What areas of {cityName} do you serve?
-                  </CardTitle>
+                    </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="body-text text-gray-700">
@@ -501,17 +621,17 @@ export default function CityPage({ params }: CityPageProps) {
                   <CardTitle className="heading-primary text-xl text-navy">
                     Why choose Shimmer Shine for {cityName} property cleaning?
                   </CardTitle>
-                </CardHeader>
-                <CardContent>
+                  </CardHeader>
+                  <CardContent>
                   <p className="body-text text-gray-700">
                     {cityName} residents choose Shimmer Shine because we're locally owned, fully licensed and insured, use eco-friendly cleaning solutions, and have served {county} since 2021. Our 5-star rated service, free estimates, and satisfaction guarantee make us {cityName}'s trusted choice for property detailing.
-                  </p>
-                </CardContent>
-              </Card>
+                    </p>
+                  </CardContent>
+                </Card>
+            </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
       {/* CTA Section */}
       <section className="py-16 bg-yellow">

@@ -39,7 +39,7 @@ export default function Hero() {
 
             {/* Subheading */}
             <p className="body-text text-lg sm:text-xl md:text-2xl text-gray-100 leading-relaxed">
-              Professional window cleaning, pressure washing, and property detailing services across Orange County, Los Angeles, and San Diego.
+              Same day window cleaning Orange County with free quotes. Licensed and insured residential and commercial window cleaning services across Orange County, Los Angeles, and San Diego.
             </p>
 
             {/* Social Proof */}
@@ -88,7 +88,7 @@ export default function Hero() {
             {/* Urgency Message */}
             <div className="bg-yellow text-navy px-3 sm:px-4 py-2 sm:py-3 rounded-lg shadow-retro-yellow">
               <p className="font-bold text-center text-sm sm:text-base">
-                🚨 Limited Slots Available - Book Now for 10% Off Your First Service!
+                🚨 Same Day Window Cleaning Available - Free Quote in 60 Seconds!
               </p>
             </div>
           </div>

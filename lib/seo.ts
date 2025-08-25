@@ -117,45 +117,103 @@ export function getPageSEO(page: string, city?: string) {
   switch (page) {
     case 'home':
       return generateSEO({
-        title: `#1 Window Cleaning & Pressure Washing Orange County | 5-Star Rated`,
-        description: `⭐ Top-Rated Window Cleaning & Pressure Washing in Orange County! ✅ Licensed & Insured ✅ Eco-Friendly ✅ Free Quotes ✅ Same-Day Service Available. Call (714) 497-0035 for crystal-clear results!`,
+        title: `Solar Panel Cleaning & Pressure Washing Orange County | 30% Efficiency Boost`,
+        description: `Professional solar panel cleaning near me Orange County improves efficiency by 30%. Same day solar panel cleaning Orange County and pressure washing. Residential & commercial solar panel cleaning Orange County with free quotes!`,
         keywords: [
-          "window cleaning Orange County",
-          "pressure washing Orange County", 
-          "window cleaning Los Angeles",
-          "pressure washing Los Angeles",
-          "residential window cleaning",
-          "commercial pressure washing",
-          "solar panel cleaning service",
-          "gutter cleaning Orange County",
-          "house washing service",
-          "property detailing Southern California",
-          "eco-friendly cleaning",
-          "licensed insured cleaning",
-          "5 star rated cleaning service",
-          "same day cleaning service",
-          "free cleaning estimates",
-          "Yorba Linda window cleaning",
-          "Costa Mesa pressure washing",
+          // Tier 1 - Highest ROI Focus (Purchase Stage) - Solar Panel Cleaning
+          "solar panel cleaning near me Orange County",
+          "solar panel cleaning quotes Orange County", 
+          "residential solar panel cleaning Orange County",
+          "commercial solar panel cleaning Orange County",
+          "recurring solar panel cleaning Orange County",
+          
+          // Tier 1 - Pressure Washing
+          "same day pressure washing Orange County",
+          "local pressure washing near me Orange County", 
+          "pressure washing quotes Orange County",
+          "residential pressure washing Orange County",
+          "commercial pressure washing Orange County",
+          "driveway pressure washing Orange County",
+          
+          // Tier 1 - Window Cleaning
+          "same day window cleaning Orange County",
+          "local window cleaners near me Orange County", 
+          "free quote window cleaning Orange County",
+          "residential window cleaning Orange County",
+          "commercial window cleaning Orange County",
+          
+          // Tier 2 - Strong Converting Keywords - Solar Panel Cleaning
+          "Irvine solar panel cleaning",
+          "Newport Beach solar panel cleaning",
+          "affordable solar panel cleaning Orange County",
+          "same day solar panel cleaning Orange County",
+          "monthly solar panel cleaning Orange County",
+          
+          // Tier 2 - Pressure Washing
+          "oil stain removal Orange County",
+          "graffiti removal Orange County",
+          "Newport Beach pressure washing",
+          "affordable pressure washing Orange County",
+          "best pressure washing Orange County",
+          
+          // Tier 2 - Window Cleaning
           "Newport Beach window cleaning",
-          "Irvine pressure washing",
-          "Huntington Beach cleaning",
-          "Santa Ana window cleaning",
-          "Anaheim pressure washing"
+          "Irvine window cleaning services",
+          "licensed window cleaning Orange County",
+          "affordable window cleaning Orange County",
+          "recurring window cleaning Orange County",
+          
+          // Tier 3 - Brand Building & Awareness - Solar Panel Cleaning
+          "best solar panel cleaners in Orange County",
+          "professional solar panel cleaning Orange County",
+          "eco-friendly solar panel cleaning Orange County",
+          
+          // Tier 3 - Other Services
+          "best window cleaners in Orange County",
+          "professional window cleaning Orange County",
+          "top rated window cleaners Orange County",
+          
+          // High-Value Specialized Services - Solar Panel Cleaning
+          "improve solar panel efficiency Orange County",
+          "increase solar panel output Orange County",
+          "solar panel maintenance Orange County",
+          "solar panel inspection Orange County",
+          "solar farm cleaning Orange County",
+          "industrial solar panel cleaning Orange County",
+          
+          // Supporting Keywords - Solar Panel Cleaning
+          "solar panel dirt removal Orange County",
+          "solar panel dust removal Orange County",
+          "waterless solar panel cleaning Orange County",
+          "safe solar panel cleaning Orange County",
+          "licensed solar panel cleaning Orange County",
+          
+          // Geographic Expansion - Solar Panel Cleaning
+          "Laguna Beach solar panel cleaning",
+          "Costa Mesa solar panel cleaning",
+          "Anaheim solar panel cleaning",
+          "Santa Ana solar panel cleaning"
         ]
       })
 
     case 'get-a-quote':
       return generateSEO({
-        title: `Get a Free Quote - ${cityName ? `${cityName} ` : ''}Property Detailing Services`,
-        description: `Get your free quote for professional window cleaning, pressure washing, and property detailing services${cityName ? ` in ${cityName}` : ''}. Fast response, competitive pricing, satisfaction guaranteed.`,
+        title: `Free Quote Window Cleaning Orange County | Same Day Service Available`,
+        description: `Free quote window cleaning Orange County in 60 seconds! Same day window cleaning Orange County available. Licensed and insured residential and commercial window cleaning services. Call now!`,
         keywords: [
-          "free quote window cleaning",
-          "property detailing estimate",
-          "pressure washing quote",
-          `${cityName} cleaning services`,
-          "residential commercial cleaning",
-          "same day service available"
+          "free quote window cleaning Orange County",
+          "same day window cleaning Orange County",
+          "residential window cleaning Orange County",
+          "commercial window cleaning Orange County",
+          "licensed window cleaning Orange County",
+          "affordable window cleaning Orange County",
+          "local window cleaners near me Orange County",
+          "reliable window cleaning company Orange County",
+          "emergency window cleaning Orange County",
+          "move in move out window cleaning Orange County",
+          "post remodel window cleaning Orange County",
+          "construction window cleaning Orange County",
+          "real estate window cleaning Orange County"
         ]
       })
 

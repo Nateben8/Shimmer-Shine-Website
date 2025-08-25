@@ -30,10 +30,10 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="heading-primary text-3xl sm:text-4xl md:text-5xl mb-4">
-              Our Professional Services
+              Best Window Cleaners in Orange County
             </h2>
             <p className="body-text text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-              From sparkling windows to pristine driveways, we bring old-school craftsmanship to every job across Orange County, Los Angeles, and San Diego.
+              Top rated window cleaning Orange County with same day service. Licensed and insured residential and commercial window cleaning, pressure washing, and solar panel cleaning across Orange County, Los Angeles, and San Diego.
             </p>
           </div>
 
@@ -161,6 +161,39 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* High-Intent Keywords Section */}
+      <section className="py-12 sm:py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="heading-primary text-3xl sm:text-4xl md:text-5xl mb-4">
+              Solar Panel Cleaning Near Me Orange County
+            </h2>
+            <p className="body-text text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto">
+              Looking for solar panel cleaning near me Orange County or pressure washing services? We provide same day solar panel cleaning Orange County that improves solar panel efficiency Orange County by 30%. Our services include residential solar panel cleaning Orange County, commercial solar panel cleaning Orange County, recurring solar panel cleaning Orange County, and increase solar panel output Orange County with professional results.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-12">
+            <div className="text-center p-6 bg-gray-50 rounded-lg">
+              <h3 className="heading-primary text-lg mb-2">30% Efficiency Boost</h3>
+              <p className="body-text text-sm">Improve solar panel efficiency Orange County by up to 30%</p>
+            </div>
+            <div className="text-center p-6 bg-gray-50 rounded-lg">
+              <h3 className="heading-primary text-lg mb-2">Same Day Service</h3>
+              <p className="body-text text-sm">Same day solar panel cleaning Orange County available</p>
+            </div>
+            <div className="text-center p-6 bg-gray-50 rounded-lg">
+              <h3 className="heading-primary text-lg mb-2">Free Quotes</h3>
+              <p className="body-text text-sm">Solar panel cleaning quotes Orange County in 60 seconds</p>
+            </div>
+            <div className="text-center p-6 bg-gray-50 rounded-lg">
+              <h3 className="heading-primary text-lg mb-2">Licensed & Insured</h3>
+              <p className="body-text text-sm">Licensed solar panel cleaning Orange County with full coverage</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us Section */}
       <section className="py-12 sm:py-16 bg-navy text-white">
         <div className="container mx-auto px-4">
@@ -169,7 +202,7 @@ export default function HomePage() {
               Why Choose Shimmer Shine?
             </h2>
             <p className="body-text text-lg sm:text-xl text-gray-100">
-              Three decades of experience, thousands of satisfied customers
+              Best window cleaners in Orange County with three decades of experience
             </p>
           </div>
 

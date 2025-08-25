@@ -36,15 +36,15 @@ export default function ServicesPage() {
             </div>
             
             <h1 className="heading-decorative text-4xl sm:text-5xl md:text-7xl text-yellow mb-4">
-              Our Services
+              Professional Services Orange County
             </h1>
             
             <h2 className="heading-primary text-xl sm:text-2xl md:text-3xl text-white mb-4 sm:mb-6">
-              Complete Property Detailing in Orange County, LA & San Diego
+              Same Day Pressure Washing & Window Cleaning Orange County
             </h2>
             
             <p className="body-text text-lg sm:text-xl text-gray-100 mb-6 sm:mb-8 leading-relaxed">
-              From sparkling windows to pristine driveways, we bring three decades of expertise to every job. Old-school craftsmanship meets modern reliability.
+              Best pressure washing Orange County and window cleaners with same day service. Professional pressure washing Orange County and licensed window cleaning Orange County for residential and commercial properties. Pressure washing quotes Orange County and free window cleaning quotes with affordable pricing.
             </p>
 
             {/* Service Areas */}
