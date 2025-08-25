@@ -26,14 +26,14 @@ function JobberFormSkeleton() {
   )
 }
 
-// Optimized Jobber form component - faster loading
+// Simplified and more reliable Jobber form component
 function JobberFormContent() {
   const [isLoaded, setIsLoaded] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [isVisible, setIsVisible] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
 
-  // Enhanced Intersection Observer for faster loading
+  // Intersection Observer for lazy loading
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -43,8 +43,8 @@ function JobberFormContent() {
         }
       },
       { 
-        threshold: 0.05, // Reduced threshold for earlier loading
-        rootMargin: '100px' // Start loading 100px before form is visible
+        threshold: 0.1,
+        rootMargin: '50px'
       }
     )
 
@@ -55,108 +55,87 @@ function JobberFormContent() {
     return () => observer.disconnect()
   }, [])
 
-  // Load Jobber form when visible with enhanced performance
+  // Simplified Jobber form loading
   useEffect(() => {
     if (!isVisible) return
 
-    console.log('Loading Jobber form with enhanced performance...')
+    console.log('Loading Jobber form...')
     
-    // Check if resources are already preloaded from layout.tsx
-    const existingCSS = document.querySelector('link[href*="work_request_embed.css"]')
+    // Clean up any existing scripts/styles first
     const existingScript = document.querySelector('script[src*="work_request_embed_snippet.js"]')
+    if (existingScript) {
+      existingScript.remove()
+    }
     
-    // If CSS isn't loaded yet, load it immediately
-    if (!existingCSS) {
-      const cssLink = document.createElement('link')
-      cssLink.rel = 'stylesheet'
-      cssLink.href = JOBBER_CSS_URL
-      cssLink.media = 'all'
-      document.head.appendChild(cssLink)
-    } else if (existingCSS.getAttribute('rel') === 'preload') {
-      // Convert preload to stylesheet
-      existingCSS.setAttribute('rel', 'stylesheet')
-      existingCSS.setAttribute('media', 'all')
-    }
+    // Load CSS
+    const cssLink = document.createElement('link')
+    cssLink.rel = 'stylesheet'
+    cssLink.href = JOBBER_CSS_URL
+    cssLink.media = 'all'
+    document.head.appendChild(cssLink)
 
-    // Enhanced script loading with immediate execution
-    if (!existingScript) {
-      const script = document.createElement('script')
-      script.src = JOBBER_JS_URL
-      script.setAttribute('clienthub_id', CLIENT_HUB_ID)
-      script.setAttribute('form_url', FORM_URL)
+    // Load and execute script
+    const script = document.createElement('script')
+    script.src = JOBBER_JS_URL
+    script.setAttribute('clienthub_id', CLIENT_HUB_ID)
+    script.setAttribute('form_url', FORM_URL)
+    script.async = true
+    
+    script.onload = () => {
+      console.log('Jobber script loaded successfully')
       
-      // Remove defer for faster execution
-      script.async = true
-      
-      // Enhanced loading detection
-      script.onload = () => {
-        console.log('Jobber script loaded - checking form readiness')
-        
-        // Immediate check for form readiness
-        const checkFormReady = (attempts = 0) => {
-          const formElement = document.getElementById(CLIENT_HUB_ID)
-          
-          if (formElement && (formElement.children.length > 0 || formElement.innerHTML.trim())) {
-            console.log('Form ready after', attempts, 'attempts')
-            setIsLoaded(true)
-          } else if (attempts < 20) { // Reduced attempts for faster timeout
-            setTimeout(() => checkFormReady(attempts + 1), 50) // Faster polling
-          } else {
-            console.log('Form ready timeout - showing anyway')
-            setIsLoaded(true)
-          }
-        }
-        
-        // Start checking immediately
-        checkFormReady()
-      }
-      
-      script.onerror = () => {
-        console.error('Jobber script failed to load')
-        setError('Form temporarily unavailable. Please call us directly.')
-      }
-      
-      document.head.appendChild(script)
-    } else {
-      // Script already exists - enhanced readiness check
-      console.log('Script exists - checking form readiness')
-      
-      const checkFormReady = (attempts = 0) => {
+      // Simple form ready check
+      const checkForm = () => {
         const formElement = document.getElementById(CLIENT_HUB_ID)
-        
-        if (formElement && (formElement.children.length > 0 || formElement.innerHTML.trim())) {
-          console.log('Existing form ready after', attempts, 'attempts')
+        if (formElement) {
+          console.log('Form element found')
           setIsLoaded(true)
-        } else if (attempts < 15) {
-          setTimeout(() => checkFormReady(attempts + 1), 50)
         } else {
-          console.log('Existing form timeout - showing anyway')
-          setIsLoaded(true)
+          console.log('Form element not found, retrying...')
+          setTimeout(checkForm, 100)
         }
       }
       
-      checkFormReady()
+      // Start checking after a brief delay
+      setTimeout(checkForm, 200)
     }
+    
+    script.onerror = (e) => {
+      console.error('Jobber script failed to load:', e)
+      setError('Form temporarily unavailable. Please call us directly at (714) 497-0035.')
+    }
+    
+    document.head.appendChild(script)
 
-    // Reduced fallback timer for faster perceived loading
+    // Fallback timer
     const fallbackTimer = setTimeout(() => {
-      console.log('Fallback timer - showing form (enhanced)')
+      console.log('Fallback timer triggered')
       setIsLoaded(true)
-    }, 750) // Reduced from 1000ms to 750ms
+    }, 3000)
 
-    return () => clearTimeout(fallbackTimer)
+    return () => {
+      clearTimeout(fallbackTimer)
+    }
   }, [isVisible])
 
   if (error) {
     return (
       <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
         <p className="text-red-800 mb-4">{error}</p>
-        <a 
-          href="tel:(714) 497-0035" 
-          className="retro-button inline-block"
-        >
-          Call (714) 497-0035
-        </a>
+        <div className="space-y-4">
+          <a 
+            href="tel:(714) 497-0035" 
+            className="retro-button inline-block mr-4"
+          >
+            📞 Call (714) 497-0035
+          </a>
+          <a 
+            href="mailto:support@shimmershinepropertydetailing.com?subject=Free Quote Request&body=Hi! I'd like to request a free quote for window cleaning services. Please contact me at your earliest convenience."
+            className="retro-button-navy inline-block"
+          >
+            ✉️ Email for Quote
+          </a>
+        </div>
       </div>
     )
   }
@@ -193,6 +172,18 @@ function JobberFormContent() {
           <div className="flex flex-col items-center space-y-2 text-navy">
             <div className="text-sm font-medium">Form ready to load...</div>
           </div>
+        </div>
+      )}
+      
+      {/* Manual refresh option if form doesn't load */}
+      {isVisible && !isLoaded && !error && (
+        <div className="absolute bottom-4 right-4 z-30">
+          <button
+            onClick={() => window.location.reload()}
+            className="bg-yellow text-navy px-3 py-1 rounded text-xs font-medium hover:bg-yellow-400 transition-colors"
+          >
+            Refresh Form
+          </button>
         </div>
       )}
     </div>
