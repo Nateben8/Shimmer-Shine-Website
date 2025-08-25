@@ -13,9 +13,10 @@ export default function Header() {
   const navigation = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
+    { name: "Gallery", href: "/gallery" },
     { name: "About", href: "/about" },
     { name: "Blog", href: "/blog" },
-    { name: "Get Quote", href: "/contact" },
+    { name: "Get Quote", href: "/get-a-quote" },
   ]
 
   return (
@@ -45,7 +46,7 @@ export default function Header() {
           <div className="grid grid-cols-3 items-center -my-2">
             
             {/* Left Navigation */}
-            <div className="hidden lg:flex items-center space-x-10">
+            <div className="hidden lg:flex items-center space-x-8">
               <Link
                 href="/"
                 className="text-gray-800 hover:text-navy font-bold transition-colors text-lg tracking-wide"
@@ -57,6 +58,12 @@ export default function Header() {
                 className="text-gray-800 hover:text-navy font-bold transition-colors text-lg tracking-wide"
               >
                 SERVICES
+              </Link>
+              <Link
+                href="/gallery"
+                className="text-gray-800 hover:text-navy font-bold transition-colors text-lg tracking-wide"
+              >
+                GALLERY
               </Link>
             </div>
 
@@ -76,7 +83,7 @@ export default function Header() {
             </div>
 
             {/* Right Navigation */}
-            <div className="hidden lg:flex items-center justify-end space-x-10">
+            <div className="hidden lg:flex items-center justify-end space-x-8">
               <Link
                 href="/about"
                 className="text-gray-800 hover:text-navy font-bold transition-colors text-lg tracking-wide"
@@ -89,7 +96,7 @@ export default function Header() {
               >
                 BLOG
               </Link>
-              <Link href="/contact">
+              <Link href="/get-a-quote">
                 <Button variant="default" size="lg" className="bg-yellow hover:bg-yellow/90 font-bold text-navy shadow-lg hover:shadow-xl transition-all hover:scale-105 animate-pulse border-2 border-navy">
                   GET QUOTE
                 </Button>
@@ -132,7 +139,7 @@ export default function Header() {
                 
                 {/* CTA Buttons */}
                 <div className="space-y-3">
-                  <Link href="/contact">
+                  <Link href="/get-a-quote">
                     <Button variant="default" size="lg" className="w-full bg-yellow hover:bg-yellow/90 font-bold text-navy shadow-lg hover:shadow-xl transition-all hover:scale-105 animate-pulse border-2 border-navy">
                       GET FREE QUOTE
                     </Button>

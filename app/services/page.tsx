@@ -4,6 +4,7 @@ import { SERVICES, BUSINESS_INFO } from "@/lib/constants"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowRight, MapPin, Phone, Star, Clock, CheckCircle } from "lucide-react"
 
 export const metadata = getPageSEO('services')
@@ -64,7 +65,19 @@ export default function ServicesPage() {
                 {services.map((service) => (
                   <Card key={service.id} className="retro-card hover:shadow-retro-yellow transition-all duration-300 group h-full">
                     <CardHeader className="text-center">
-                      <div className="text-5xl mb-4">{service.icon}</div>
+                      <div className="mb-4 flex items-center justify-center">
+                        {service.iconType === "image" ? (
+                          <Image
+                            src={service.icon}
+                            alt={`${service.name} icon`}
+                            width={80}
+                            height={80}
+                            className="w-20 h-20"
+                          />
+                        ) : (
+                          <div className="text-6xl">{service.icon}</div>
+                        )}
+                      </div>
                       <CardTitle className="heading-primary text-2xl mb-2">
                         {service.name}
                       </CardTitle>
@@ -113,7 +126,7 @@ export default function ServicesPage() {
                             <ArrowRight className="h-4 w-4 ml-2" />
                           </Button>
                         </Link>
-                        <Link href="/contact">
+                        <Link href="/get-a-quote">
                           <Button variant="outline" className="w-full">
                             Quick Quote
                           </Button>
@@ -245,7 +258,7 @@ export default function ServicesPage() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link href="/contact">
+            <Link href="/get-a-quote">
               <Button variant="retro-navy" size="lg" className="text-lg px-8 py-4">
                 Get Free Quote Now
               </Button>

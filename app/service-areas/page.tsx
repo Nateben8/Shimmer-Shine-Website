@@ -75,13 +75,13 @@ export default function ServiceAreasPage() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/contact">
+                <Link href="/get-a-quote">
                   <Button variant="default" size="lg" className="bg-yellow hover:bg-yellow/90 font-bold text-navy shadow-lg">
                     Get Free Quote
                   </Button>
                 </Link>
                 <Link href={`tel:${BUSINESS_INFO.phone}`}>
-                  <Button variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-navy">
+                  <Button variant="outline" size="lg" className="border-2 border-yellow text-yellow hover:bg-yellow hover:text-navy">
                     <Phone className="h-5 w-5 mr-2" />
                     Call {BUSINESS_INFO.phone}
                   </Button>
@@ -258,13 +258,13 @@ export default function ServiceAreasPage() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <Link href="/contact">
+            <Link href="/get-a-quote">
               <Button variant="default" size="lg" className="bg-yellow hover:bg-yellow/90 font-bold text-navy text-lg px-8 py-4">
                 Get Free Quote
               </Button>
             </Link>
             <Link href={`tel:${BUSINESS_INFO.phone}`}>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-navy">
+              <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-yellow text-yellow hover:bg-yellow hover:text-navy">
                 <Phone className="h-5 w-5 mr-2" />
                 Call {BUSINESS_INFO.phone}
               </Button>

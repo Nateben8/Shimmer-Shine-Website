@@ -211,7 +211,7 @@ export default function CitiesPage() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link href="/contact">
+            <Link href="/get-a-quote">
               <Button variant="retro-navy" size="lg" className="text-lg px-8 py-4">
                 Get Free Quote
               </Button>

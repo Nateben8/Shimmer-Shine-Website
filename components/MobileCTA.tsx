@@ -42,7 +42,7 @@ export default function MobileCTA() {
                 className="bg-white border-t border-gray-200 shadow-lg overflow-hidden"
               >
                 <div className="p-4 space-y-3">
-                  <Link href="/contact" onClick={() => setIsExpanded(false)}>
+                  <Link href="/get-a-quote" onClick={() => setIsExpanded(false)}>
                     <Button variant="retro" className="w-full">
                       <MessageSquare className="h-4 w-4 mr-2" />
                       Get Free Quote
@@ -97,7 +97,7 @@ export default function MobileCTA() {
 
               {/* Quote Button */}
               <Link 
-                href="/contact" 
+                href="/get-a-quote" 
                 className="flex-1 flex items-center justify-center py-4 bg-yellow text-navy hover:bg-yellow-400 transition-colors"
               >
                 <MessageSquare className="h-5 w-5 mr-2" />

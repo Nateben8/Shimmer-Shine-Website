@@ -158,6 +158,9 @@ export default function Footer() {
               © {currentYear} {BUSINESS_INFO.name}. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-2 md:mt-0">
+              <Link href="/gallery" className="hover:text-yellow">
+                Gallery
+              </Link>
               <Link href="/privacy-policy" className="hover:text-yellow">
                 Privacy Policy
               </Link>

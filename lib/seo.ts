@@ -7,7 +7,7 @@ interface SEOProps {
   keywords?: string[]
   image?: string
   url?: string
-  type?: "website" | "article" | "service"
+  type?: "website" | "article"
   publishedTime?: string
   modifiedTime?: string
   author?: string
@@ -131,7 +131,7 @@ export function getPageSEO(page: string, city?: string) {
         ]
       })
 
-    case 'contact':
+    case 'get-a-quote':
       return generateSEO({
         title: `Get a Free Quote - ${cityName ? `${cityName} ` : ''}Property Detailing Services`,
         description: `Get your free quote for professional window cleaning, pressure washing, and property detailing services${cityName ? ` in ${cityName}` : ''}. Fast response, competitive pricing, satisfaction guaranteed.`,
@@ -184,6 +184,23 @@ export function getPageSEO(page: string, city?: string) {
           "property maintenance blog",
           "cleaning tips Orange County",
           "home maintenance advice"
+        ]
+      })
+
+    case 'cities':
+      return generateSEO({
+        title: `Service Areas - Professional Property Detailing Across Southern California`,
+        description: `Professional window cleaning, pressure washing, and property detailing services in over 139 cities across Orange County, Los Angeles County, and San Diego County. Find your city and get a free quote today.`,
+        keywords: [
+          "service areas",
+          "Orange County cities",
+          "Los Angeles County cities", 
+          "San Diego County cities",
+          "window cleaning locations",
+          "pressure washing areas",
+          "property detailing coverage",
+          "Southern California cleaning",
+          "Costa Mesa", "Newport Beach", "Irvine", "Beverly Hills", "Santa Monica", "La Jolla"
         ]
       })
 
@@ -256,7 +273,7 @@ export function getServiceSEO(serviceId: string, city?: string) {
     title: service.title,
     description: service.description,
     keywords: service.keywords,
-    type: "service"
+    type: "website"
   })
 }
 

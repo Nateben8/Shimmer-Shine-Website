@@ -25,20 +25,38 @@ export default function RootLayout({
       <head>
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/logo.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/logo.png" />
-        <link rel="apple-touch-icon" href="/logo.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/NewFavicon.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/NewFavicon.png" />
+        <link rel="apple-touch-icon" href="/NewFavicon.png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
         
         {/* Preload Jobber form resources */}
+        {/* DNS prefetch for faster connection */}
+        <link rel="dns-prefetch" href="https://d3ey4dbjkt2f6s.cloudfront.net" />
+        <link rel="dns-prefetch" href="https://clienthub.getjobber.com" />
+        
+        {/* Preconnect for critical resources */}
+        <link rel="preconnect" href="https://d3ey4dbjkt2f6s.cloudfront.net" crossOrigin="" />
+        <link rel="preconnect" href="https://clienthub.getjobber.com" crossOrigin="" />
+        
+        {/* Preload Jobber resources with high priority */}
         <link 
           rel="preload" 
           href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css" 
           as="style"
+          fetchPriority="high"
         />
         <link 
           rel="preload" 
           href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js" 
           as="script"
+          fetchPriority="high"
+        />
+        
+        {/* Prefetch the form endpoint */}
+        <link 
+          rel="prefetch" 
+          href="https://clienthub.getjobber.com/client_hubs/c6041d28-0ae8-4628-a9c4-14a29c7ff3e8/public/work_request/embedded_work_request_form"
         />
         
         {/* Structured Data */}

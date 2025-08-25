@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation"
 import { getCitySEO } from "@/lib/seo"
 import { getLocalBusinessSchema, getBreadcrumbSchema } from "@/lib/schema"
-import { BUSINESS_INFO, SERVICES, TESTIMONIALS } from "@/lib/constants"
+import { BUSINESS_INFO, SERVICES } from "@/lib/constants"
+import GoogleReviews from "@/components/GoogleReviews"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
@@ -28,16 +29,76 @@ export async function generateMetadata({ params }: CityPageProps) {
 }
 
 export async function generateStaticParams() {
-  return BUSINESS_INFO.cities.map((city) => ({
-    slug: city.toLowerCase().replace(/\s+/g, '-'),
-  }))
+  return BUSINESS_INFO.cities.map((city) => {
+    // Generate both normalized and original slugs for special characters
+    const originalSlug = city.toLowerCase().replace(/\s+/g, '-')
+    const normalizedSlug = city.toLowerCase()
+      .replace(/\s+/g, '-')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '') // Remove diacritics
+    
+    return { slug: originalSlug }
+  }).concat(
+    // Add normalized versions for cities with special characters
+    BUSINESS_INFO.cities
+      .filter(city => city.normalize('NFD') !== city) // Only cities with special chars
+      .map(city => ({
+        slug: city.toLowerCase()
+          .replace(/\s+/g, '-')
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+      }))
+  )
 }
 
 export default function CityPage({ params }: CityPageProps) {
-  const cityName = params.slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
-  const isValidCity = BUSINESS_INFO.cities.some(city => 
-    city.toLowerCase().replace(/\s+/g, '-') === params.slug
-  )
+  // Decode URL and handle special characters
+  const decodedSlug = decodeURIComponent(params.slug)
+  
+  // Special handling for La Cañada Flintridge URL encoding issues
+  const specialCases = {
+    'la-caada-flintridge': 'La Cañada Flintridge',
+    'la-canada-flintridge': 'La Cañada Flintridge',
+    'la-cañada-flintridge': 'La Cañada Flintridge'
+  }
+  
+  const cityName = specialCases[params.slug] || decodedSlug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
+  
+  // Function to normalize city names for comparison (handle special characters)
+  const normalizeForSlug = (name: string) => {
+    return name.toLowerCase()
+      .replace(/\s+/g, '-')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '') // Remove diacritics
+  }
+  
+  const normalizeSlugForComparison = (slug: string) => {
+    return decodeURIComponent(slug)
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '') // Remove diacritics
+  }
+  
+  const isValidCity = BUSINESS_INFO.cities.some(city => {
+    const normalizedCity = normalizeForSlug(city)
+    const normalizedSlug = normalizeSlugForComparison(params.slug)
+    const originalSlug = city.toLowerCase().replace(/\s+/g, '-')
+    
+    // Special handling for La Cañada Flintridge URL encoding issues
+    const specialCases = {
+      'la-caada-flintridge': 'la-cañada-flintridge',
+      'la-canada-flintridge': 'la-cañada-flintridge'
+    }
+    
+    const resolvedSlug = specialCases[params.slug] || params.slug
+    
+    // Check multiple variations to handle URL encoding issues
+    return normalizedCity === normalizedSlug || 
+           originalSlug === decodedSlug ||
+           normalizedCity === params.slug ||
+           originalSlug === params.slug ||
+           originalSlug === resolvedSlug ||
+           normalizedCity === resolvedSlug.toLowerCase().replace(/\s+/g, '-').normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+  })
   
   if (!isValidCity) {
     notFound()
@@ -64,7 +125,6 @@ export default function CityPage({ params }: CityPageProps) {
   ])
 
   const featuredServices = SERVICES.slice(0, 4)
-  const cityTestimonials = TESTIMONIALS.filter(t => t.location.includes(cityName)).slice(0, 2)
 
   return (
     <>
@@ -110,7 +170,7 @@ export default function CityPage({ params }: CityPageProps) {
               </h2>
               
               <p className="body-text text-xl text-gray-100 mb-8 leading-relaxed">
-                Shimmer Shine Property Detailing proudly serves {cityName} residents and businesses with professional window cleaning, pressure washing, and property maintenance services. Professional since 1995 with old-school quality you can trust.
+                Shimmer Shine Property Detailing proudly serves {cityName} residents and businesses with professional window cleaning, pressure washing, and property maintenance services. Professional since 2021 with old-school quality you can trust.
               </p>
 
               {/* Local Benefits */}
@@ -129,19 +189,19 @@ export default function CityPage({ params }: CityPageProps) {
                 </div>
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="h-5 w-5 text-yellow" />
-                  <span>500+ 5-Star Reviews</span>
+                  <span>5-Star Rated</span>
                 </div>
               </div>
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/contact">
+                <Link href="/get-a-quote">
                   <Button variant="retro" size="lg" className="text-lg px-8 py-4">
                     Get Free {cityName} Quote
                   </Button>
                 </Link>
                 <Link href={`tel:${BUSINESS_INFO.phone}`}>
-                  <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-navy">
+                  <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-yellow text-yellow hover:bg-yellow hover:text-navy">
                     <Phone className="h-5 w-5 mr-2" />
                     Call {BUSINESS_INFO.phone}
                   </Button>
@@ -149,22 +209,21 @@ export default function CityPage({ params }: CityPageProps) {
               </div>
             </div>
 
-            {/* City Image */}
+            {/* City Video */}
             <div className="relative">
               <div className="polaroid-frame">
                 <div className="relative h-96 rounded-lg overflow-hidden">
-                  <Image
-                    src={`/cities/${params.slug}-hero.jpg`}
-                    alt={`Professional property detailing services in ${cityName}, California`}
-                    fill
-                    className="object-cover"
-                    priority
-                    placeholder="blur"
-                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                  <video
+                    src="/Solar Panel Video 1.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="text-center mt-4 text-navy">
-                  <p className="font-arvo font-bold">Serving {cityName} Since 1995</p>
+                  <p className="font-arvo font-bold">Serving {cityName} Since 2021</p>
                   <p className="text-sm text-gray-600">{county}, California</p>
                 </div>
               </div>
@@ -185,11 +244,76 @@ export default function CityPage({ params }: CityPageProps) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {featuredServices.map((service) => (
               <Card key={service.id} className="retro-card hover:shadow-retro-yellow transition-all duration-300 group">
                 <CardHeader className="text-center">
-                  <div className="text-4xl mb-4">{service.icon}</div>
+                  {/* Service Hero Image/Video */}
+                  <div className="relative h-48 rounded-lg overflow-hidden mb-4">
+                    {service.id === 'window-cleaning' ? (
+                      <video
+                        src="/window-cleaning-hero.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-full object-cover"
+                      />
+                    ) : service.id === 'solar-panel-cleaning' ? (
+                      <video
+                        src="/solar-panel-cleaning-hero.mov"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-full object-cover"
+                      />
+                    ) : service.id === 'pressure-washing' ? (
+                      <video
+                        src="/pressure-washing-hero.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-full object-cover"
+                      />
+                    ) : service.id === 'gutter-cleaning' ? (
+                      <Image
+                        src="/gutter-cleaning-hero.jpg"
+                        alt={`Professional ${service.name} service in ${cityName}`}
+                        fill
+                        className="object-cover"
+                      />
+                    ) : service.id === 'commercial-cleaning' ? (
+                      <Image
+                        src="/commercial-cleaning-hero.jpg"
+                        alt={`Professional ${service.name} service in ${cityName}`}
+                        fill
+                        className="object-cover"
+                      />
+                    ) : service.id === 'post-construction-cleanup' ? (
+                      <Image
+                        src="/Post-Construction%20Cleanup-hero.jpeg"
+                        alt={`Professional ${service.name} service in ${cityName}`}
+                        fill
+                        className="object-cover"
+                      />
+                    ) : service.iconType === "image" ? (
+                      <div className="absolute inset-0 bg-gray-100 flex items-center justify-center">
+                        <Image
+                          src={service.icon}
+                          alt={`${service.name} icon`}
+                          width={80}
+                          height={80}
+                          className="object-contain"
+                        />
+                      </div>
+                    ) : (
+                      <div className="absolute inset-0 bg-gray-100 flex items-center justify-center">
+                        <div className="text-6xl text-gray-600">{service.icon}</div>
+                      </div>
+                    )}
+                  </div>
                   <CardTitle className="heading-primary text-xl">
                     {service.name} in {cityName}
                   </CardTitle>
@@ -200,7 +324,7 @@ export default function CityPage({ params }: CityPageProps) {
                 <CardContent className="text-center">
                   <div className="space-y-3">
                     <div className="retro-badge">
-                      Get Quote
+                      {service.priceRange}
                     </div>
                     <Link href={`/services/${service.id}`}>
                       <Button variant="outline" className="w-full group-hover:bg-yellow group-hover:text-navy transition-colors">
@@ -319,46 +443,13 @@ export default function CityPage({ params }: CityPageProps) {
         </div>
       </section>
 
-      {/* Testimonials */}
-      {cityTestimonials.length > 0 && (
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h3 className="heading-primary text-3xl mb-4">
-                What {cityName} Customers Say
-              </h3>
-              <p className="body-text text-gray-600">
-                Real reviews from your neighbors
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {cityTestimonials.map((testimonial) => (
-                <Card key={testimonial.id} className="retro-card">
-                  <CardHeader>
-                    <div className="flex items-center space-x-1 mb-2">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 text-yellow fill-current" />
-                      ))}
-                    </div>
-                    <CardTitle className="heading-primary text-lg">
-                      {testimonial.name}
-                    </CardTitle>
-                    <p className="text-sm text-gray-600">
-                      {testimonial.location} • {testimonial.service}
-                    </p>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="body-text text-gray-700 italic">
-                      "{testimonial.text}"
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+      {/* Google Reviews */}
+      <GoogleReviews 
+        maxReviews={2} 
+        compact={true} 
+        sectionClassName="bg-gray-50"
+        headerTitle={`What ${cityName} Customers Say`}
+      />
 
       {/* CTA Section */}
       <section className="py-16 bg-yellow">
@@ -371,7 +462,7 @@ export default function CityPage({ params }: CityPageProps) {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link href="/contact">
+            <Link href="/get-a-quote">
               <Button variant="retro-navy" size="lg" className="text-lg px-8 py-4">
                 Get Free {cityName} Quote
               </Button>

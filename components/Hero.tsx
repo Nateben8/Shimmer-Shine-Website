@@ -72,7 +72,7 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact">
+              <Link href="/get-a-quote">
                 <Button variant="retro" size="lg" className="w-full sm:w-auto text-lg px-8 py-4">
                   Get Free Quote in 60 Seconds
                 </Button>
@@ -99,35 +99,27 @@ export default function Hero() {
               <div className="relative h-96 md:h-[500px] rounded-lg overflow-hidden">
                 <div className="bg-gradient-to-br from-blue-100 to-yellow-100 flex items-center justify-center h-full border-4 border-navy shadow-lg">
                   <div className="relative w-full h-full flex items-center justify-center">
-                    <Image
-                      src="/mascot.png"
-                      alt="Shimmy Shinny - Our Brand Mascot Timmy"
-                      fill
-                      className="object-contain"
-                      priority
-                    />
+                    <video
+                      src="/Homepage video1.MOV"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover rounded-lg"
+                      style={{ objectFit: 'cover' }}
+                    >
+                      Your browser does not support the video tag.
+                    </video>
                   </div>
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent" />
               </div>
               <div className="text-center mt-4 text-navy">
-                <p className="font-arvo font-bold">Meet Timmy - Our Mascot!</p>
-                <p className="text-sm text-gray-600">Shimmer Shine Property Detailing</p>
+                <p className="font-arvo font-bold">See Our Work in Action!</p>
+                <p className="text-sm text-gray-600">Professional Property Detailing</p>
               </div>
             </div>
 
-            {/* Floating Testimonial */}
-            <div className="absolute -bottom-6 -left-6 bg-white text-navy p-4 rounded-lg shadow-retro max-w-xs">
-              <div className="flex items-center space-x-1 mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 text-yellow fill-current" />
-                ))}
-              </div>
-              <p className="text-sm font-medium">
-                "Best window cleaning service in Orange County! They've been taking care of our home for 5 years."
-              </p>
-              <p className="text-xs text-gray-600 mt-1">- Sarah J., Costa Mesa</p>
-            </div>
           </div>
         </div>
       </div>

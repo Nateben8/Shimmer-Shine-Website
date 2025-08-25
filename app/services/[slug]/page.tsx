@@ -1,12 +1,13 @@
 import { notFound } from "next/navigation"
 import { getServiceSEO } from "@/lib/seo"
 import { getServiceSchema, getBreadcrumbSchema } from "@/lib/schema"
-import { SERVICES, BUSINESS_INFO, TESTIMONIALS } from "@/lib/constants"
+import { SERVICES, BUSINESS_INFO } from "@/lib/constants"
+import GoogleReviews from "@/components/GoogleReviews"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
-import BeforeAfterSlider from "@/components/BeforeAfterSlider"
+
 import { 
   CheckCircle, 
   Star, 
@@ -51,8 +52,10 @@ export default function ServicePage({ params }: ServicePageProps) {
     { name: service.name, url: `/services/${service.id}` }
   ])
 
-  const relatedServices = SERVICES.filter(s => s.id !== service.id && s.category === service.category).slice(0, 3)
-  const serviceTestimonials = TESTIMONIALS.filter(t => t.service.toLowerCase().includes(service.name.toLowerCase())).slice(0, 2)
+  // Get related services - prioritize same category, then others, show up to 6 services
+  const sameCategory = SERVICES.filter(s => s.id !== service.id && s.category === service.category)
+  const otherServices = SERVICES.filter(s => s.id !== service.id && s.category !== service.category)
+  const relatedServices = [...sameCategory, ...otherServices].slice(0, 6)
 
   return (
     <>
@@ -125,13 +128,13 @@ export default function ServicePage({ params }: ServicePageProps) {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/contact">
+                <Link href="/get-a-quote">
                   <Button variant="retro" size="lg" className="text-lg px-8 py-4">
                     Get Free Quote
                   </Button>
                 </Link>
                 <Link href={`tel:${BUSINESS_INFO.phone}`}>
-                  <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-navy">
+                  <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-yellow text-yellow hover:bg-yellow hover:text-navy">
                     <Phone className="h-5 w-5 mr-2" />
                     Call Now
                   </Button>
@@ -143,15 +146,65 @@ export default function ServicePage({ params }: ServicePageProps) {
             <div className="relative">
               <div className="polaroid-frame">
                 <div className="relative h-96 rounded-lg overflow-hidden">
-                  <Image
-                    src={`/services/${service.id}-hero.jpg`}
-                    alt={`Professional ${service.name} service in Orange County`}
-                    fill
-                    className="object-cover"
-                    priority
-                    placeholder="blur"
-                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-                  />
+                  {service.id === 'window-cleaning' ? (
+                    <video
+                      src="/window-cleaning-hero.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover"
+                    />
+                  ) : service.id === 'solar-panel-cleaning' ? (
+                    <video
+                      src="/solar-panel-cleaning-hero.mov"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover"
+                    />
+                  ) : service.id === 'pressure-washing' ? (
+                    <video
+                      src="/pressure-washing-hero.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover"
+                    />
+                  ) : service.id === 'gutter-cleaning' ? (
+                    <Image
+                      src="/gutter-cleaning-hero.jpg"
+                      alt="Professional gutter cleaning service showing debris removal and maintenance"
+                      fill
+                      className="object-cover"
+                      priority
+                    />
+                  ) : service.id === 'commercial-cleaning' ? (
+                    <Image
+                      src="/commercial-cleaning-hero.jpg"
+                      alt="Professional commercial cleaning service for offices and business facilities"
+                      fill
+                      className="object-cover"
+                      priority
+                    />
+                  ) : service.id === 'post-construction-cleanup' ? (
+                    <Image
+                      src="/Post-Construction%20Cleanup-hero.jpeg"
+                      alt="Professional post-construction cleanup service showing debris removal and site cleaning"
+                      fill
+                      className="object-cover"
+                      priority
+                    />
+                  ) : (
+                    <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
+                      <div className="text-center text-gray-600">
+                        <div className="text-6xl mb-4">{service.icon}</div>
+                        <p className="font-bold">Professional {service.name}</p>
+                      </div>
+                    </div>
+                  )}
                 </div>
                 <div className="text-center mt-4 text-navy">
                   <p className="font-arvo font-bold">Professional {service.name}</p>
@@ -240,32 +293,7 @@ export default function ServicePage({ params }: ServicePageProps) {
                 </CardContent>
               </Card>
 
-              {/* Before/After Gallery */}
-              {service.id === 'window-cleaning' && (
-                <Card className="retro-card mb-8">
-                  <CardHeader>
-                    <CardTitle className="heading-primary text-2xl text-navy">
-                      Before & After Results
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-6">
-                      <BeforeAfterSlider
-                        beforeImage={`/before-${service.id}-1.jpg`}
-                        afterImage={`/after-${service.id}-1.jpg`}
-                        beforeAlt={`Before ${service.name} service`}
-                        afterAlt={`After professional ${service.name}`}
-                      />
-                      <BeforeAfterSlider
-                        beforeImage={`/before-${service.id}-2.jpg`}
-                        afterImage={`/after-${service.id}-2.jpg`}
-                        beforeAlt={`Before ${service.name} service`}
-                        afterAlt={`After professional ${service.name}`}
-                      />
-                    </div>
-                  </CardContent>
-                </Card>
-              )}
+
             </div>
 
             {/* Sidebar */}
@@ -293,7 +321,7 @@ export default function ServicePage({ params }: ServicePageProps) {
                   </div>
                   
                   <div className="pt-4 border-t border-gray-200">
-                    <Link href="/contact">
+                    <Link href="/get-a-quote">
                       <Button variant="retro" className="w-full mb-3">
                         Get Free Quote
                       </Button>
@@ -358,46 +386,13 @@ export default function ServicePage({ params }: ServicePageProps) {
         </div>
       </section>
 
-      {/* Testimonials */}
-      {serviceTestimonials.length > 0 && (
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h3 className="heading-primary text-3xl mb-4">
-                What Our Customers Say
-              </h3>
-              <p className="body-text text-gray-600">
-                Real reviews from satisfied customers
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {serviceTestimonials.map((testimonial) => (
-                <Card key={testimonial.id} className="retro-card">
-                  <CardHeader>
-                    <div className="flex items-center space-x-1 mb-2">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 text-yellow fill-current" />
-                      ))}
-                    </div>
-                    <CardTitle className="heading-primary text-lg">
-                      {testimonial.name}
-                    </CardTitle>
-                    <p className="text-sm text-gray-600">
-                      {testimonial.location} • {testimonial.service}
-                    </p>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="body-text text-gray-700 italic">
-                      "{testimonial.text}"
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+      {/* Google Reviews */}
+      <GoogleReviews 
+        maxReviews={2} 
+        compact={true} 
+        sectionClassName="bg-gray-50"
+        headerTitle="What Our Customers Say"
+      />
 
       {/* Related Services */}
       {relatedServices.length > 0 && (
@@ -412,21 +407,33 @@ export default function ServicePage({ params }: ServicePageProps) {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedServices.map((relatedService) => (
                 <Card key={relatedService.id} className="retro-card hover:shadow-retro-yellow transition-all duration-300 group">
                   <CardHeader className="text-center">
-                    <div className="text-4xl mb-4">{relatedService.icon}</div>
+                    <div className="flex justify-center mb-4">
+                      {relatedService.iconType === "image" ? (
+                        <Image
+                          src={relatedService.icon}
+                          alt={`${relatedService.name} icon`}
+                          width={64}
+                          height={64}
+                          className="object-contain"
+                        />
+                      ) : (
+                        <div className="text-4xl">{relatedService.icon}</div>
+                      )}
+                    </div>
                     <CardTitle className="heading-primary text-xl">
                       {relatedService.name}
                     </CardTitle>
-                    <p className="body-text text-gray-600">
+                    <p className="body-text text-gray-600 text-sm">
                       {relatedService.shortDescription}
                     </p>
                   </CardHeader>
                   <CardContent className="text-center">
                     <div className="retro-badge mb-4">
-                      Get Quote
+                      {relatedService.priceRange}
                     </div>
                     <Link href={`/services/${relatedService.id}`}>
                       <Button variant="outline" className="w-full group-hover:bg-yellow group-hover:text-navy transition-colors">
@@ -453,13 +460,13 @@ export default function ServicePage({ params }: ServicePageProps) {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
+            <Link href="/get-a-quote">
               <Button variant="retro" size="lg" className="text-lg px-8 py-4">
                 Get Free Quote
               </Button>
             </Link>
             <Link href={`tel:${BUSINESS_INFO.phone}`}>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-navy">
+              <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-yellow text-yellow hover:bg-yellow hover:text-navy">
                 <Phone className="h-5 w-5 mr-2" />
                 Call {BUSINESS_INFO.phone}
               </Button>

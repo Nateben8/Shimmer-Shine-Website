@@ -1,11 +1,11 @@
 export const SITE_CONFIG = {
   name: "Shimmer Shine Property Detailing",
-  description: "Professional window cleaning, pressure washing, and property detailing services in Orange County, Los Angeles, and San Diego. Family-owned since 1995 with old-school quality and modern reliability.",
+  description: "Professional window cleaning, pressure washing, and property detailing services in Orange County, Los Angeles, and San Diego. Family-owned since 2021 with old-school quality and modern reliability.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://shimmershinepd.com",
   ogImage: "/logo.png",
   links: {
-    phone: "(714) 555-0123",
-    email: "info@shimmershinepd.com",
+    phone: "(714) 497-0035",
+    email: "support@shimmershinepropertydetailing.com",
     facebook: "https://facebook.com/shimmershinepd",
     instagram: "https://instagram.com/shimmershinepd",
     yelp: "https://yelp.com/biz/shimmer-shine-property-detailing",
@@ -16,14 +16,14 @@ export const SITE_CONFIG = {
 export const BUSINESS_INFO = {
   name: "Shimmer Shine Property Detailing",
   legalName: "Shimmer Shine Property Detailing LLC",
-  foundedYear: 1995,
-  phone: "(714) 555-0123",
-  email: "info@shimmershinepd.com",
+  foundedYear: 2021,
+  phone: "(714) 497-0035",
+  email: "support@shimmershinepropertydetailing.com",
   address: {
-    street: "1234 Main Street",
-    city: "Costa Mesa",
+    street: "",
+    city: "Yorba Linda",
     state: "CA",
-    zipCode: "92627",
+    zipCode: "92886",
     county: "Orange County"
   },
   serviceAreas: [
@@ -41,7 +41,7 @@ export const BUSINESS_INFO = {
     "Santa Ana", "Seal Beach", "Stanton", "Tustin", "Villa Park", "Westminster", "Yorba Linda",
     
     // Los Angeles County
-    "Alhambra", "Arcadia", "Artesia", "Avalon", "Azusa", "Baldwin Park", "Bell", 
+    "Agoura Hills", "Alhambra", "Arcadia", "Artesia", "Avalon", "Azusa", "Baldwin Park", "Bell", 
     "Bell Gardens", "Bellflower", "Beverly Hills", "Bradbury", "Burbank", "Calabasas", 
     "Carson", "Cerritos", "Claremont", "Commerce", "Compton", "Covina", "Cudahy", 
     "Culver City", "Diamond Bar", "Downey", "Duarte", "El Monte", "El Segundo", 
@@ -78,7 +78,8 @@ export const SERVICES = [
     features: ["Interior & exterior cleaning", "Screen cleaning", "Sill wiping", "Streak-free guarantee"],
     priceRange: "Custom Quote",
     duration: "1-3 hours",
-    icon: "🪟",
+    icon: "/interior window cleaning icon.png",
+    iconType: "image",
     category: "cleaning"
   },
   {
@@ -89,7 +90,8 @@ export const SERVICES = [
     features: ["Driveway cleaning", "Patio & deck cleaning", "Building exterior wash", "Concrete restoration"],
     priceRange: "Custom Quote",
     duration: "2-4 hours", 
-    icon: "💧",
+    icon: "/pressure washing icon.png",
+    iconType: "image",
     category: "cleaning"
   },
   {
@@ -100,7 +102,8 @@ export const SERVICES = [
     features: ["Efficiency optimization", "Warranty-safe cleaning", "Bird dropping removal", "Monthly maintenance plans"],
     priceRange: "Custom Quote",
     duration: "1-2 hours",
-    icon: "☀️",
+    icon: "/Solar panel cleaning icon.png",
+    iconType: "image",
     category: "specialty"
   },
   {
@@ -111,7 +114,8 @@ export const SERVICES = [
     features: ["Debris removal", "Downspout clearing", "Gutter inspection", "Minor repairs"],
     priceRange: "Custom Quote",
     duration: "1-3 hours",
-    icon: "🏠",
+    icon: "/Gutter Cleaning icon.png",
+    iconType: "image",
     category: "maintenance"
   },
   {
@@ -122,7 +126,8 @@ export const SERVICES = [
     features: ["Construction dust removal", "Window cleaning", "Floor cleaning", "Fixture cleaning"],
     priceRange: "Custom Quote",
     duration: "4-8 hours",
-    icon: "🔨",
+    icon: "/House Washing Icon.png",
+    iconType: "image",
     category: "specialty"
   },
   {
@@ -133,7 +138,8 @@ export const SERVICES = [
     features: ["Scheduled service", "Office buildings", "Retail storefronts", "Industrial facilities"],
     priceRange: "Custom Quote",
     duration: "2-8 hours",
-    icon: "🏢",
+    icon: "/Roof Washing Icon.png",
+    iconType: "image",
     category: "commercial"
   }
 ]
@@ -200,7 +206,7 @@ export const FAQ_DATA = [
   },
   {
     question: "What makes Shimmer Shine different from other cleaning companies?",
-    answer: "We've been family-owned since 1995, combining old-school craftsmanship with modern reliability. Our attention to detail, eco-friendly practices, and commitment to customer satisfaction set us apart."
+    answer: "We've been family-owned since 2021, combining old-school craftsmanship with modern reliability. Our attention to detail, eco-friendly practices, and commitment to customer satisfaction set us apart."
   }
 ]
 

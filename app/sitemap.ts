@@ -25,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/contact`,
+      url: `${baseUrl}/get-a-quote`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.9,
@@ -37,10 +37,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/service-areas`,
+      url: `${baseUrl}/gallery`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/cities`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
-      priority: 0.6,
+      priority: 0.8,
     },
   ]
 
@@ -92,14 +98,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }))
 
-  // Sample blog posts
+  // Real blog posts
   const blogPosts = [
-    'signs-windows-need-professional-cleaning-orange-county',
-    'pressure-washing-vs-soft-washing-los-angeles',
-    'solar-panel-cleaning-san-diego-efficiency',
-    'gutter-cleaning-winter-prep-southern-california',
-    'commercial-property-maintenance-orange-county',
-    'before-after-window-cleaning-newport-beach'
+    'window-cleaning-orange-county-guide',
+    'pressure-washing-los-angeles-county',
+    'gutter-cleaning-san-diego-county',
+    'solar-panel-cleaning-southern-california',
+    'post-construction-cleanup-orange-county',
+    'commercial-property-maintenance-los-angeles',
+    'seasonal-property-maintenance-san-diego',
+    'eco-friendly-cleaning-southern-california',
+    'residential-window-cleaning-san-diego',
+    'commercial-window-cleaning-los-angeles',
+    'driveway-pressure-washing-orange-county',
+    'concrete-pressure-washing-san-diego',
+    'gutter-repair-orange-county',
+    'gutter-installation-los-angeles',
+    'solar-panel-efficiency-orange-county',
+    'solar-panel-maintenance-los-angeles',
+    'exterior-house-washing-orange-county',
+    'roof-cleaning-los-angeles',
+    'spring-cleaning-orange-county',
+    'fall-property-preparation-los-angeles',
+    'restaurant-cleaning-orange-county',
+    'office-building-cleaning-san-diego',
+    'amazing-transformations-orange-county',
+    'cleaning-results-showcase-los-angeles'
   ]
 
   const blogPostPages = blogPosts.map((slug) => ({

@@ -106,8 +106,8 @@ Shimmer Shine Property Detailing has been serving Southern California since 1995
 
 ## Contact Information
 
-- **Phone**: (714) 555-0123
-- **Email**: info@shimmershinepd.com
+- **Phone**: (714) 497-0035
+- **Email**: support@shimmershinepropertydetailing.com
 - **Service Areas**: Orange County, Los Angeles County, San Diego County
 - **Hours**: Mon-Fri 7AM-6PM, Sat 8AM-4PM
 

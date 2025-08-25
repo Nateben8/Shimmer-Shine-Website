@@ -104,17 +104,96 @@
     @apply font-roboto-condensed text-gray-800;
   }
   
-  /* Jobber form skeleton */
+  /* Enhanced Jobber form styling */
+  .jobber-form-container {
+    @apply bg-white border-2 border-navy rounded-xl shadow-retro p-8 relative overflow-hidden w-full;
+  }
+  
+  /* Override Jobber form internal width constraints */
+  .jobber-form-container iframe,
+  .jobber-form-container form,
+  .jobber-form-container .form-container,
+  .jobber-form-container .work-request-form {
+    width: 100% !important;
+    max-width: none !important;
+  }
+  
+  /* Make form fields wider */
+  .jobber-form-container input,
+  .jobber-form-container select,
+  .jobber-form-container textarea {
+    width: 100% !important;
+    max-width: none !important;
+  }
+  
+  /* Ensure form sections use full width */
+  .jobber-form-container .form-section,
+  .jobber-form-container .form-row,
+  .jobber-form-container .form-group {
+    width: 100% !important;
+    max-width: none !important;
+  }
+  
+  .jobber-form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #fdc737, #00357a, #fdc737);
+  }
+  
   .jobber-skeleton {
-    @apply animate-pulse bg-gray-200 rounded-lg;
+    @apply bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6;
   }
   
   .jobber-skeleton-field {
-    @apply h-12 bg-gray-300 rounded mb-4;
+    @apply h-14 bg-gray-200 rounded-lg mb-6 relative overflow-hidden;
+    background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
   }
   
   .jobber-skeleton-button {
-    @apply h-12 bg-navy rounded;
+    @apply h-14 bg-gradient-to-r from-yellow to-yellow-600 rounded-lg shadow-retro-yellow border-2 border-navy;
+    background: linear-gradient(90deg, #fdc737 25%, #f59e0b 50%, #fdc737 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+  
+  /* Form enhancement styles */
+  .form-section-header {
+    @apply text-center mb-8 relative;
+  }
+  
+  .form-section-header::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #fdc737, #00357a);
+    border-radius: 2px;
+  }
+  
+  .trust-indicator {
+    @apply flex items-center justify-center space-x-2 text-sm text-gray-600 mb-4;
+  }
+  
+  .conversion-booster {
+    @apply bg-gradient-to-r from-yellow-50 to-blue-50 border-l-4 border-yellow p-4 rounded-r-lg mb-6;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
   }
 }
 
