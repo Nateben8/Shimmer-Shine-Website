@@ -306,9 +306,20 @@ interface CategoryPageProps {
 }
 
 // Generate static params for all categories
+// Helper function to create URL-safe slugs
+function createSlug(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/&/g, 'and')  // Replace & with 'and'
+    .replace(/[^a-z0-9\s-]/g, '')  // Remove special characters except spaces and hyphens
+    .replace(/\s+/g, '-')  // Replace spaces with hyphens
+    .replace(/-+/g, '-')   // Replace multiple hyphens with single hyphen
+    .trim()
+}
+
 export async function generateStaticParams() {
   return BLOG_CATEGORIES.map((category) => ({
-    slug: category.toLowerCase().replace(/\s+/g, '-')
+    slug: createSlug(category)
   }))
 }
 
@@ -316,7 +327,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: CategoryPageProps) {
   const categorySlug = params.slug
   const categoryName = BLOG_CATEGORIES.find(cat => 
-    cat.toLowerCase().replace(/\s+/g, '-') === categorySlug
+    createSlug(cat) === categorySlug
   )
   
   if (!categoryName) {
@@ -351,7 +362,7 @@ export async function generateMetadata({ params }: CategoryPageProps) {
 export default function CategoryPage({ params }: CategoryPageProps) {
   const categorySlug = params.slug
   const categoryName = BLOG_CATEGORIES.find(cat => 
-    cat.toLowerCase().replace(/\s+/g, '-') === categorySlug
+    createSlug(cat) === categorySlug
   )
   
   if (!categoryName) {
@@ -360,7 +371,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
 
   // Filter posts by category
   const categoryPosts = blogPosts.filter(post => 
-    post.category.toLowerCase().replace(/\s+/g, '-') === categorySlug ||
+    createSlug(post.category) === categorySlug ||
     post.category === categoryName
   )
 
@@ -503,9 +514,9 @@ export default function CategoryPage({ params }: CategoryPageProps) {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {otherCategories.map((category) => {
-                const categorySlug = category.toLowerCase().replace(/\s+/g, '-')
+                const categorySlug = createSlug(category)
                 const categoryPostCount = blogPosts.filter(post => 
-                  post.category.toLowerCase().replace(/\s+/g, '-') === categorySlug ||
+                  createSlug(post.category) === categorySlug ||
                   post.category === category
                 ).length
 
