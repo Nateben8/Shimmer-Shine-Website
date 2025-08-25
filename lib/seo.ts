@@ -115,84 +115,69 @@ export function getPageSEO(page: string, city?: string) {
   const cityName = city ? city.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) : ''
   
   switch (page) {
-    case 'home':
-      return generateSEO({
-        title: `Solar Panel Cleaning & Pressure Washing Orange County | 30% Efficiency Boost`,
-        description: `Professional solar panel cleaning near me Orange County improves efficiency by 30%. Same day solar panel cleaning Orange County and pressure washing. Residential & commercial solar panel cleaning Orange County with free quotes!`,
-        keywords: [
-          // Tier 1 - Highest ROI Focus (Purchase Stage) - Solar Panel Cleaning
-          "solar panel cleaning near me Orange County",
-          "solar panel cleaning quotes Orange County", 
-          "residential solar panel cleaning Orange County",
-          "commercial solar panel cleaning Orange County",
-          "recurring solar panel cleaning Orange County",
+            case 'home':
+          return generateSEO({
+            title: `Commercial Cleaning & Business Services Orange County | B2B Contracts`,
+            description: `Professional commercial cleaning near me Orange County with B2B contract solutions. Office cleaning services Orange County, medical office cleaning Orange County & business cleaning services Orange County with free estimates!`,
+            keywords: [
+          // Tier 1 - Highest ROI Focus (Purchase Stage) - Commercial Cleaning
+          "commercial cleaning near me Orange County",
+          "commercial cleaning estimate Orange County",
+          "commercial cleaning quote Orange County",
+          "office cleaning services Orange County",
+          "recurring commercial cleaning Orange County",
           
-          // Tier 1 - Pressure Washing
-          "same day pressure washing Orange County",
-          "local pressure washing near me Orange County", 
-          "pressure washing quotes Orange County",
-          "residential pressure washing Orange County",
-          "commercial pressure washing Orange County",
-          "driveway pressure washing Orange County",
+          // Tier 1 - B2B Services
+          "commercial cleaning contracts Orange County",
+          "business cleaning services Orange County", 
+          "licensed commercial cleaning Orange County",
+          "professional commercial cleaning Orange County",
+          "commercial janitorial services Orange County",
           
-          // Tier 1 - Window Cleaning
-          "same day window cleaning Orange County",
-          "local window cleaners near me Orange County", 
-          "free quote window cleaning Orange County",
-          "residential window cleaning Orange County",
-          "commercial window cleaning Orange County",
+          // Tier 2 - Strong Converting Keywords - Commercial Cleaning
+          "Irvine commercial cleaning services",
+          "Newport Beach commercial cleaning",
+          "medical office cleaning Orange County",
+          "restaurant cleaning services Orange County",
+          "after hours commercial cleaning Orange County",
           
-          // Tier 2 - Strong Converting Keywords - Solar Panel Cleaning
-          "Irvine solar panel cleaning",
-          "Newport Beach solar panel cleaning",
-          "affordable solar panel cleaning Orange County",
-          "same day solar panel cleaning Orange County",
-          "monthly solar panel cleaning Orange County",
+          // Tier 2 - Industry-Specific Services
+          "dental office cleaning Orange County",
+          "hotel cleaning services Orange County",
+          "retail store cleaning Orange County",
+          "warehouse cleaning services Orange County",
+          "school cleaning services Orange County",
           
-          // Tier 2 - Pressure Washing
-          "oil stain removal Orange County",
-          "graffiti removal Orange County",
-          "Newport Beach pressure washing",
-          "affordable pressure washing Orange County",
-          "best pressure washing Orange County",
+          // Tier 2 - Specialized Services
+          "industrial cleaning Orange County",
+          "gym cleaning services Orange County",
+          "day porter services Orange County",
+          "disinfecting services Orange County",
+          "emergency commercial cleaning Orange County",
           
-          // Tier 2 - Window Cleaning
-          "Newport Beach window cleaning",
-          "Irvine window cleaning services",
-          "licensed window cleaning Orange County",
-          "affordable window cleaning Orange County",
-          "recurring window cleaning Orange County",
+          // Tier 3 - Brand Building & Awareness
+          "best commercial cleaning Orange County",
+          "top rated commercial cleaners Orange County",
+          "reliable commercial cleaners Orange County",
+          "eco-friendly commercial cleaning Orange County",
           
-          // Tier 3 - Brand Building & Awareness - Solar Panel Cleaning
-          "best solar panel cleaners in Orange County",
-          "professional solar panel cleaning Orange County",
-          "eco-friendly solar panel cleaning Orange County",
+          // High-Value Specialized Services
+          "commercial carpet cleaning Orange County",
+          "commercial floor cleaning Orange County",
+          "restroom sanitization Orange County",
+          "deep cleaning commercial Orange County",
+          "same day commercial cleaning Orange County",
           
-          // Tier 3 - Other Services
-          "best window cleaners in Orange County",
-          "professional window cleaning Orange County",
-          "top rated window cleaners Orange County",
+          // Supporting Keywords
+          "Orange County commercial cleaning services",
+          "affordable commercial cleaning Orange County",
+          "green commercial cleaning Orange County",
           
-          // High-Value Specialized Services - Solar Panel Cleaning
-          "improve solar panel efficiency Orange County",
-          "increase solar panel output Orange County",
-          "solar panel maintenance Orange County",
-          "solar panel inspection Orange County",
-          "solar farm cleaning Orange County",
-          "industrial solar panel cleaning Orange County",
-          
-          // Supporting Keywords - Solar Panel Cleaning
-          "solar panel dirt removal Orange County",
-          "solar panel dust removal Orange County",
-          "waterless solar panel cleaning Orange County",
-          "safe solar panel cleaning Orange County",
-          "licensed solar panel cleaning Orange County",
-          
-          // Geographic Expansion - Solar Panel Cleaning
-          "Laguna Beach solar panel cleaning",
-          "Costa Mesa solar panel cleaning",
-          "Anaheim solar panel cleaning",
-          "Santa Ana solar panel cleaning"
+          // Geographic Expansion
+          "Laguna Beach commercial cleaning",
+          "Costa Mesa commercial cleaning",
+          "Anaheim commercial cleaning",
+          "Santa Ana commercial cleaning"
         ]
       })
 

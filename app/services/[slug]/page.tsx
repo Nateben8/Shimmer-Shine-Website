@@ -296,13 +296,13 @@ export default function ServicePage({ params }: ServicePageProps) {
               {service.id === 'window-cleaning' && (
                 <>
                   {/* Window Cleaning Expertise Section */}
-                  <Card className="retro-card mb-8">
-                    <CardHeader>
-                      <CardTitle className="heading-primary text-2xl text-navy">
+                <Card className="retro-card mb-8">
+                  <CardHeader>
+                    <CardTitle className="heading-primary text-2xl text-navy">
                         Professional Window Cleaning Orange County Expertise
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
                       <div className="prose prose-lg max-w-none">
                         <p className="body-text text-gray-700 leading-relaxed mb-4">
                           As the <strong>best window cleaners in Orange County</strong>, we provide comprehensive <strong>residential window cleaning Orange County</strong> and <strong>commercial window cleaning Orange County</strong> services. Our <strong>same day window cleaning Orange County</strong> is available for urgent needs, and we offer <strong>free quote window cleaning Orange County</strong> with transparent pricing.
@@ -318,9 +318,9 @@ export default function ServicePage({ params }: ServicePageProps) {
                           <li><strong>Emergency window cleaning Orange County</strong> - 24/7 urgent service available</li>
                           <li><strong>Luxury estate window cleaning Orange County</strong> - Premium residential service</li>
                         </ul>
-                      </div>
-                    </CardContent>
-                  </Card>
+                    </div>
+                  </CardContent>
+                </Card>
 
                   {/* Local Service Areas */}
                   <Card className="retro-card mb-8">
@@ -709,6 +709,284 @@ export default function ServicePage({ params }: ServicePageProps) {
                         <p className="body-text text-gray-700 leading-relaxed mt-4">
                           Our <strong>licensed post construction cleaning Orange County</strong> and <strong>insured post construction cleaners Orange County</strong> team uses specialized equipment and follows strict safety protocols for construction environments.
                         </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </>
+              )}
+
+              {service.id === 'gutter-cleaning' && (
+                <>
+                  {/* Gutter Cleaning Expertise Section */}
+                  <Card className="retro-card mb-8">
+                    <CardHeader>
+                      <CardTitle className="heading-primary text-2xl text-navy">
+                        Professional Gutter Cleaning Orange County Expertise
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="prose prose-lg max-w-none">
+                        <p className="body-text text-gray-700 leading-relaxed mb-4">
+                          As the <strong>best gutter cleaners in Orange County</strong>, we provide comprehensive <strong>residential gutter cleaning Orange County</strong> and <strong>commercial gutter cleaning Orange County</strong> services. Our <strong>gutter cleaning near me Orange County</strong> team specializes in <strong>clogged gutter cleaning Orange County</strong>, <strong>downspout cleaning Orange County</strong>, and <strong>leaf removal gutter cleaning Orange County</strong>.
+                        </p>
+                        <p className="body-text text-gray-700 leading-relaxed mb-4">
+                          Our <strong>professional gutter cleaning Orange County</strong> services include <strong>seasonal gutter cleaning Orange County</strong>, <strong>gutter inspection and cleaning Orange County</strong>, and <strong>roof and gutter cleaning Orange County</strong>. We offer <strong>free quote gutter cleaning Orange County</strong> with transparent pricing and <strong>same day gutter cleaning Orange County</strong> for urgent needs.
+                        </p>
+                        <h3 className="heading-primary text-xl text-navy mb-3">Specialized Gutter Services</h3>
+                        <ul className="list-disc list-inside space-y-2 text-gray-700">
+                          <li><strong>Rain gutter cleaning Orange County</strong> - Complete water flow restoration</li>
+                          <li><strong>Gutter maintenance Orange County</strong> - Preventive care programs</li>
+                          <li><strong>Emergency gutter cleaning Orange County</strong> - 24/7 urgent service</li>
+                          <li><strong>Annual gutter cleaning Orange County</strong> - Yearly maintenance contracts</li>
+                          <li><strong>Routine gutter cleaning Orange County</strong> - Regular service schedules</li>
+                          <li><strong>Gutter flushing service Orange County</strong> - Advanced cleaning techniques</li>
+                        </ul>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Seasonal Gutter Cleaning Services */}
+                  <Card className="retro-card mb-8">
+                    <CardHeader>
+                      <CardTitle className="heading-primary text-2xl text-navy">
+                        Seasonal Gutter Cleaning Orange County
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="prose prose-lg max-w-none">
+                        <p className="body-text text-gray-700 leading-relaxed mb-4">
+                          Our <strong>seasonal gutter cleaning Orange County</strong> services are designed to protect your property year-round with specialized approaches for fall and spring maintenance.
+                        </p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                          <div className="space-y-3">
+                            <h4 className="font-bold text-navy">Fall Season (Sept-Nov)</h4>
+                            <ul className="text-sm text-gray-700 space-y-1">
+                              <li>• Leaf removal gutter cleaning Orange County</li>
+                              <li>• Pre-winter preparation and inspection</li>
+                              <li>• Downspout clearing and testing</li>
+                              <li>• Debris removal and flow optimization</li>
+                            </ul>
+                          </div>
+                          <div className="space-y-3">
+                            <h4 className="font-bold text-navy">Spring Season (Feb-Apr)</h4>
+                            <ul className="text-sm text-gray-700 space-y-1">
+                              <li>• Post-winter damage inspection</li>
+                              <li>• Gutter inspection and cleaning Orange County</li>
+                              <li>• Repair assessment and maintenance</li>
+                              <li>• Summer preparation services</li>
+                            </ul>
+                          </div>
+                          <div className="space-y-3">
+                            <h4 className="font-bold text-navy">Commercial Properties</h4>
+                            <ul className="text-sm text-gray-700 space-y-1">
+                              <li>• Business gutter cleaning Orange County</li>
+                              <li>• Office building gutter cleaning Orange County</li>
+                              <li>• Property management gutter cleaning Orange County</li>
+                              <li>• HOA gutter cleaning Orange County</li>
+                            </ul>
+                          </div>
+                          <div className="space-y-3">
+                            <h4 className="font-bold text-navy">Property Types</h4>
+                            <ul className="text-sm text-gray-700 space-y-1">
+                              <li>• Apartment gutter cleaning Orange County</li>
+                              <li>• Condo gutter cleaning Orange County</li>
+                              <li>• Multi-story residential properties</li>
+                              <li>• Single-family home maintenance</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Gutter Cleaning Benefits & Pricing */}
+                  <Card className="retro-card mb-8">
+                    <CardHeader>
+                      <CardTitle className="heading-primary text-2xl text-navy">
+                        Affordable Gutter Cleaning Orange County
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="prose prose-lg max-w-none">
+                        <p className="body-text text-gray-700 leading-relaxed mb-4">
+                          Our <strong>affordable gutter cleaning Orange County</strong> services provide exceptional value with transparent pricing and no hidden fees. We offer <strong>gutter cleaning deals Orange County</strong> and seasonal discounts.
+                        </p>
+                        <div className="bg-yellow/10 border border-yellow/20 rounded-lg p-6 mb-4">
+                          <h4 className="font-bold text-navy mb-3">Service Benefits & Pricing</h4>
+                          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                            <div>
+                              <div className="text-2xl font-bold text-navy">$150-$400</div>
+                              <div className="text-sm text-gray-600">Residential Range</div>
+                            </div>
+                            <div>
+                              <div className="text-2xl font-bold text-navy">Same Day</div>
+                              <div className="text-sm text-gray-600">Emergency Service</div>
+                            </div>
+                            <div>
+                              <div className="text-2xl font-bold text-navy">Licensed</div>
+                              <div className="text-sm text-gray-600">& Insured</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          <div className="space-y-2">
+                            <h4 className="font-bold text-navy">Safety & Insurance</h4>
+                            <ul className="text-sm text-gray-700 space-y-1">
+                              <li>• Licensed gutter cleaning Orange County</li>
+                              <li>• Insured gutter cleaning Orange County</li>
+                              <li>• Professional safety equipment</li>
+                              <li>• Comprehensive liability coverage</li>
+                            </ul>
+                          </div>
+                          <div className="space-y-2">
+                            <h4 className="font-bold text-navy">Service Guarantees</h4>
+                            <ul className="text-sm text-gray-700 space-y-1">
+                              <li>• Free gutter cleaning estimate Orange County</li>
+                              <li>• 100% satisfaction guarantee</li>
+                              <li>• Reliable gutter cleaning Orange County</li>
+                              <li>• Top rated gutter cleaning Orange County</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </>
+              )}
+
+              {service.id === 'commercial-cleaning' && (
+                <>
+                  {/* Commercial Cleaning Expertise Section */}
+                  <Card className="retro-card mb-8">
+                    <CardHeader>
+                      <CardTitle className="heading-primary text-2xl text-navy">
+                        Professional Commercial Cleaning Orange County Expertise
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="prose prose-lg max-w-none">
+                        <p className="body-text text-gray-700 leading-relaxed mb-4">
+                          As the <strong>best commercial cleaning Orange County</strong> provider, we deliver comprehensive <strong>office cleaning services Orange County</strong> and <strong>business cleaning services Orange County</strong>. Our <strong>commercial cleaning near me Orange County</strong> team specializes in <strong>recurring commercial cleaning Orange County</strong>, <strong>commercial janitorial services Orange County</strong>, and <strong>after hours commercial cleaning Orange County</strong>.
+                        </p>
+                        <p className="body-text text-gray-700 leading-relaxed mb-4">
+                          Our <strong>professional commercial cleaning Orange County</strong> services include <strong>commercial cleaning contracts Orange County</strong>, <strong>day porter services Orange County</strong>, and <strong>disinfecting services Orange County</strong>. We provide <strong>commercial cleaning estimate Orange County</strong> with transparent pricing and <strong>same day commercial cleaning Orange County</strong> for urgent needs.
+                        </p>
+                        <h3 className="heading-primary text-xl text-navy mb-3">Specialized Commercial Services</h3>
+                        <ul className="list-disc list-inside space-y-2 text-gray-700">
+                          <li><strong>Medical office cleaning Orange County</strong> - Healthcare compliance and sanitization</li>
+                          <li><strong>Dental office cleaning Orange County</strong> - Specialized medical facility care</li>
+                          <li><strong>Restaurant cleaning services Orange County</strong> - Food safety compliance</li>
+                          <li><strong>School cleaning services Orange County</strong> - Educational facility maintenance</li>
+                          <li><strong>Industrial cleaning Orange County</strong> - Heavy-duty facility services</li>
+                          <li><strong>Warehouse cleaning services Orange County</strong> - Large-scale facility management</li>
+                        </ul>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Industry-Specific Commercial Cleaning */}
+                  <Card className="retro-card mb-8">
+                    <CardHeader>
+                      <CardTitle className="heading-primary text-2xl text-navy">
+                        Industry-Specific Commercial Cleaning Orange County
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="prose prose-lg max-w-none">
+                        <p className="body-text text-gray-700 leading-relaxed mb-4">
+                          Our <strong>Orange County commercial cleaning services</strong> are tailored to meet industry-specific compliance requirements and operational needs across various business sectors.
+                        </p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                          <div className="space-y-3">
+                            <h4 className="font-bold text-navy">Healthcare & Medical</h4>
+                            <ul className="text-sm text-gray-700 space-y-1">
+                              <li>• Medical office cleaning Orange County</li>
+                              <li>• Dental office cleaning Orange County</li>
+                              <li>• Healthcare facility sanitization</li>
+                              <li>• OSHA compliance protocols</li>
+                            </ul>
+                          </div>
+                          <div className="space-y-3">
+                            <h4 className="font-bold text-navy">Food Service & Hospitality</h4>
+                            <ul className="text-sm text-gray-700 space-y-1">
+                              <li>• Restaurant cleaning services Orange County</li>
+                              <li>• Hotel cleaning services Orange County</li>
+                              <li>• Kitchen deep cleaning and sanitization</li>
+                              <li>• Health department compliance</li>
+                            </ul>
+                          </div>
+                          <div className="space-y-3">
+                            <h4 className="font-bold text-navy">Retail & Commercial</h4>
+                            <ul className="text-sm text-gray-700 space-y-1">
+                              <li>• Retail store cleaning Orange County</li>
+                              <li>• Shopping center maintenance</li>
+                              <li>• Customer-facing area sanitization</li>
+                              <li>• After-hours cleaning services</li>
+                            </ul>
+                          </div>
+                          <div className="space-y-3">
+                            <h4 className="font-bold text-navy">Industrial & Specialized</h4>
+                            <ul className="text-sm text-gray-700 space-y-1">
+                              <li>• Warehouse cleaning services Orange County</li>
+                              <li>• Industrial cleaning Orange County</li>
+                              <li>• Gym cleaning services Orange County</li>
+                              <li>• Manufacturing facility maintenance</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Commercial Cleaning Services & Contracts */}
+                  <Card className="retro-card mb-8">
+                    <CardHeader>
+                      <CardTitle className="heading-primary text-2xl text-navy">
+                        Commercial Cleaning Contracts Orange County
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="prose prose-lg max-w-none">
+                        <p className="body-text text-gray-700 leading-relaxed mb-4">
+                          Our <strong>commercial cleaning contracts Orange County</strong> provide reliable, cost-effective solutions with <strong>recurring commercial cleaning Orange County</strong> services tailored to your business needs.
+                        </p>
+                        <div className="bg-yellow/10 border border-yellow/20 rounded-lg p-6 mb-4">
+                          <h4 className="font-bold text-navy mb-3">Contract Benefits & Services</h4>
+                          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                            <div>
+                              <div className="text-2xl font-bold text-navy">37%</div>
+                              <div className="text-sm text-gray-600">Revenue from Repeat Business</div>
+                            </div>
+                            <div>
+                              <div className="text-2xl font-bold text-navy">24/7</div>
+                              <div className="text-sm text-gray-600">Emergency Response</div>
+                            </div>
+                            <div>
+                              <div className="text-2xl font-bold text-navy">Licensed</div>
+                              <div className="text-sm text-gray-600">& Insured</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          <div className="space-y-2">
+                            <h4 className="font-bold text-navy">Specialized Services</h4>
+                            <ul className="text-sm text-gray-700 space-y-1">
+                              <li>• Commercial carpet cleaning Orange County</li>
+                              <li>• Commercial floor cleaning Orange County</li>
+                              <li>• Restroom sanitization Orange County</li>
+                              <li>• Deep cleaning commercial Orange County</li>
+                            </ul>
+                          </div>
+                          <div className="space-y-2">
+                            <h4 className="font-bold text-navy">Service Guarantees</h4>
+                            <ul className="text-sm text-gray-700 space-y-1">
+                              <li>• Licensed commercial cleaning Orange County</li>
+                              <li>• Reliable commercial cleaners Orange County</li>
+                              <li>• Eco-friendly commercial cleaning Orange County</li>
+                              <li>• Top rated commercial cleaners Orange County</li>
+                            </ul>
+                          </div>
+                        </div>
                       </div>
                     </CardContent>
                   </Card>
@@ -1157,6 +1435,170 @@ export default function ServicePage({ params }: ServicePageProps) {
                     <CardContent>
                       <p className="body-text text-gray-700 text-sm">
                         Yes! We provide <strong>Irvine post construction cleanup</strong>, <strong>Newport Beach post construction cleaning</strong>, and <strong>Huntington Beach post construction cleanup</strong> throughout Orange County. Our <strong>local post construction cleaning near me Orange County</strong> service covers all major cities with rapid response for <strong>new construction cleanup Orange County</strong> and renovation projects.
+                      </p>
+                    </CardContent>
+                  </Card>
+                </>
+              )}
+
+              {service.id === 'gutter-cleaning' && (
+                <>
+                  <Card className="retro-card">
+                    <CardHeader>
+                      <CardTitle className="heading-primary text-lg text-navy">
+                        How much does gutter cleaning cost in Orange County?
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="body-text text-gray-700 text-sm">
+                        <strong>Gutter cleaning Orange County</strong> costs typically range from $150-$400 for residential properties and $200-$800 for commercial buildings. Our <strong>affordable gutter cleaning Orange County</strong> includes <strong>downspout cleaning Orange County</strong> and debris removal. We provide <strong>free quote gutter cleaning Orange County</strong> with transparent pricing and <strong>gutter cleaning deals Orange County</strong> for seasonal services.
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="retro-card">
+                    <CardHeader>
+                      <CardTitle className="heading-primary text-lg text-navy">
+                        Do you provide same day gutter cleaning service?
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="body-text text-gray-700 text-sm">
+                        Yes! Our <strong>same day gutter cleaning Orange County</strong> is available for urgent needs and <strong>emergency gutter cleaning Orange County</strong> situations. As <strong>gutter cleaning near me Orange County</strong> specialists, we understand the importance of immediate service for <strong>clogged gutter cleaning Orange County</strong> and storm damage situations.
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="retro-card">
+                    <CardHeader>
+                      <CardTitle className="heading-primary text-lg text-navy">
+                        What's included in professional gutter cleaning?
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="body-text text-gray-700 text-sm">
+                        Our <strong>professional gutter cleaning Orange County</strong> includes <strong>leaf removal gutter cleaning Orange County</strong>, <strong>downspout cleaning Orange County</strong>, <strong>gutter inspection and cleaning Orange County</strong>, and <strong>gutter flushing service Orange County</strong>. We also provide <strong>roof and gutter cleaning Orange County</strong> for comprehensive property maintenance.
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="retro-card">
+                    <CardHeader>
+                      <CardTitle className="heading-primary text-lg text-navy">
+                        Do you offer seasonal gutter cleaning programs?
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="body-text text-gray-700 text-sm">
+                        Absolutely! Our <strong>seasonal gutter cleaning Orange County</strong> programs include <strong>annual gutter cleaning Orange County</strong> and <strong>routine gutter cleaning Orange County</strong> services. We offer <strong>gutter maintenance Orange County</strong> contracts for fall leaf removal and spring inspection services, perfect for <strong>rain gutter cleaning Orange County</strong> preparation.
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="retro-card">
+                    <CardHeader>
+                      <CardTitle className="heading-primary text-lg text-navy">
+                        Are you licensed and insured for gutter cleaning?
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="body-text text-gray-700 text-sm">
+                        Yes! We are fully <strong>licensed gutter cleaning Orange County</strong> professionals with comprehensive <strong>insured gutter cleaning Orange County</strong> coverage. Our team uses professional safety equipment and follows strict safety protocols. We're the <strong>top rated gutter cleaning Orange County</strong> choice with <strong>reliable gutter cleaning Orange County</strong> service and proven results.
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="retro-card">
+                    <CardHeader>
+                      <CardTitle className="heading-primary text-lg text-navy">
+                        Do you serve Irvine and Newport Beach for gutter cleaning?
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="body-text text-gray-700 text-sm">
+                        Yes! We provide <strong>Irvine gutter cleaning</strong>, <strong>Newport Beach gutter cleaning</strong>, and <strong>Huntington Beach gutter cleaning</strong> throughout Orange County. Our services include <strong>apartment gutter cleaning Orange County</strong>, <strong>condo gutter cleaning Orange County</strong>, <strong>HOA gutter cleaning Orange County</strong>, and <strong>business gutter cleaning Orange County</strong> for all property types.
+                      </p>
+                    </CardContent>
+                  </Card>
+                </>
+              )}
+
+              {service.id === 'commercial-cleaning' && (
+                <>
+                  <Card className="retro-card">
+                    <CardHeader>
+                      <CardTitle className="heading-primary text-lg text-navy">
+                        How much does commercial cleaning cost in Orange County?
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="body-text text-gray-700 text-sm">
+                        <strong>Commercial cleaning Orange County</strong> costs vary by facility size and service frequency. <strong>Office cleaning services Orange County</strong> typically range from $0.05-$0.15 per square foot. Our <strong>commercial cleaning estimate Orange County</strong> includes detailed pricing for <strong>recurring commercial cleaning Orange County</strong> and <strong>commercial cleaning contracts Orange County</strong> with volume discounts.
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="retro-card">
+                    <CardHeader>
+                      <CardTitle className="heading-primary text-lg text-navy">
+                        Do you provide medical office cleaning services?
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="body-text text-gray-700 text-sm">
+                        Yes! Our <strong>medical office cleaning Orange County</strong> and <strong>dental office cleaning Orange County</strong> services meet healthcare compliance standards. We provide <strong>disinfecting services Orange County</strong> with OSHA-compliant protocols and specialized sanitization for healthcare facilities. Our team is trained in medical facility cleaning requirements.
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="retro-card">
+                    <CardHeader>
+                      <CardTitle className="heading-primary text-lg text-navy">
+                        What industries do you serve for commercial cleaning?
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="body-text text-gray-700 text-sm">
+                        Our <strong>Orange County commercial cleaning services</strong> cover all industries: <strong>restaurant cleaning services Orange County</strong>, <strong>hotel cleaning services Orange County</strong>, <strong>retail store cleaning Orange County</strong>, <strong>warehouse cleaning services Orange County</strong>, <strong>school cleaning services Orange County</strong>, and <strong>gym cleaning services Orange County</strong> with industry-specific compliance protocols.
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="retro-card">
+                    <CardHeader>
+                      <CardTitle className="heading-primary text-lg text-navy">
+                        Do you offer after-hours commercial cleaning?
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="body-text text-gray-700 text-sm">
+                        Absolutely! Our <strong>after hours commercial cleaning Orange County</strong> services ensure minimal business disruption. We provide <strong>day porter services Orange County</strong> for ongoing maintenance and <strong>emergency commercial cleaning Orange County</strong> for urgent situations. Our flexible scheduling accommodates your business operations.
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="retro-card">
+                    <CardHeader>
+                      <CardTitle className="heading-primary text-lg text-navy">
+                        Are you licensed and insured for commercial cleaning?
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="body-text text-gray-700 text-sm">
+                        Yes! We are fully <strong>licensed commercial cleaning Orange County</strong> professionals with comprehensive commercial insurance. Our <strong>reliable commercial cleaners Orange County</strong> are bonded and insured. We're the <strong>top rated commercial cleaners Orange County</strong> choice with proven B2B results and <strong>professional commercial cleaning Orange County</strong> expertise.
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="retro-card">
+                    <CardHeader>
+                      <CardTitle className="heading-primary text-lg text-navy">
+                        Do you serve Irvine and Newport Beach for commercial cleaning?
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="body-text text-gray-700 text-sm">
+                        Yes! We provide <strong>Irvine commercial cleaning services</strong> and <strong>Newport Beach commercial cleaning</strong> throughout Orange County. Our <strong>business cleaning services Orange County</strong> include <strong>industrial cleaning Orange County</strong> and <strong>commercial janitorial services Orange County</strong> for all business types and facility sizes.
                       </p>
                     </CardContent>
                   </Card>

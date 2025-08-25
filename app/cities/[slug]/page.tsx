@@ -153,16 +153,16 @@ export default function CityPage({ params }: CityPageProps) {
                 Serving {county}
               </div>
               
-                            <h1 className="heading-decorative text-5xl md:text-6xl text-yellow mb-4">
-                {cityName} Post Construction Cleanup & Property Services
+              <h1 className="heading-decorative text-5xl md:text-6xl text-yellow mb-4">
+                {cityName} Commercial Cleaning & Business Services
               </h1>
-
+              
               <h2 className="heading-primary text-2xl md:text-3xl text-white mb-6">
-                Post Construction Cleanup {cityName} | 24-48 Hour Response
+                Commercial Cleaning {cityName} | B2B Contracts Available
               </h2>
-
+              
               <p className="body-text text-xl text-gray-100 mb-8 leading-relaxed">
-                Professional post construction cleanup {cityName} with rapid response for project deadlines. Our local post construction cleaning near me {cityName} provides same day post construction cleanup {cityName} for residential and commercial projects. Licensed post construction cleaning {cityName} serving {county} since 2021.
+                Professional commercial cleaning {cityName} with B2B contract solutions. Our commercial cleaning near me {cityName} provides office cleaning services {cityName} for businesses and facilities. Licensed commercial cleaning {cityName} serving {county} since 2021.
               </p>
 
               {/* Local Benefits */}
@@ -405,43 +405,43 @@ export default function CityPage({ params }: CityPageProps) {
         <div className="container mx-auto px-4">
                       <div className="text-center mb-12">
               <h2 className="heading-primary text-3xl md:text-4xl mb-4">
-                {cityName} Post Construction Cleanup & Property Services
+                {cityName} Commercial Cleaning & Business Services
               </h2>
               <p className="body-text text-xl text-gray-600 max-w-4xl mx-auto">
-                Looking for local post construction cleaning near me {cityName} or property services? We provide same day post construction cleanup {cityName} with 24-48 hour response times. Our services include residential post construction cleaning {cityName}, commercial post construction cleanup {cityName}, new construction cleanup {cityName}, and move in ready post construction cleaning {cityName} for immediate occupancy.
+                Looking for commercial cleaning near me {cityName} or business services? We provide office cleaning services {cityName} with B2B contract solutions. Our services include recurring commercial cleaning {cityName}, medical office cleaning {cityName}, restaurant cleaning services {cityName}, and commercial janitorial services {cityName} for all business types.
               </p>
             </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             <div className="text-center p-6 bg-gray-50 rounded-lg">
-              <h3 className="heading-primary text-lg mb-2">24-48 Hour Response</h3>
-              <p className="body-text text-sm">Same day post construction cleanup {cityName} for urgent deadlines</p>
+              <h3 className="heading-primary text-lg mb-2">B2B Contracts</h3>
+              <p className="body-text text-sm">Commercial cleaning contracts {cityName} with recurring service</p>
             </div>
             <div className="text-center p-6 bg-gray-50 rounded-lg">
-              <h3 className="heading-primary text-lg mb-2">Move-In Ready</h3>
-              <p className="body-text text-sm">Move in ready post construction cleaning {cityName} guaranteed</p>
+              <h3 className="heading-primary text-lg mb-2">After Hours Service</h3>
+              <p className="body-text text-sm">After hours commercial cleaning {cityName} for minimal disruption</p>
             </div>
             <div className="text-center p-6 bg-gray-50 rounded-lg">
-              <h3 className="heading-primary text-lg mb-2">Free Quotes</h3>
-              <p className="body-text text-sm">Free quote post construction cleaning {cityName} in 60 seconds</p>
+              <h3 className="heading-primary text-lg mb-2">Free Estimates</h3>
+              <p className="body-text text-sm">Commercial cleaning estimate {cityName} in 24 hours</p>
             </div>
             <div className="text-center p-6 bg-gray-50 rounded-lg">
               <h3 className="heading-primary text-lg mb-2">Licensed & Insured</h3>
-              <p className="body-text text-sm">Licensed post construction cleaning {cityName} with full coverage</p>
+              <p className="body-text text-sm">Licensed commercial cleaning {cityName} with full B2B coverage</p>
             </div>
           </div>
 
           <div className="text-center">
             <h3 className="heading-primary text-2xl mb-4">
-              Best Post Construction Cleaners in {cityName}
+              Best Commercial Cleaners in {cityName}
             </h3>
             <p className="body-text text-lg text-gray-600 max-w-3xl mx-auto mb-8">
-              Professional post construction cleanup {cityName} with rapid response for project deadlines. Our residential post construction cleaning {cityName} and commercial post construction cleanup {cityName} includes new construction cleanup {cityName}, post renovation cleaning {cityName}, detailed post construction cleaning {cityName}, and emergency post construction cleaning {cityName} services.
+              Professional commercial cleaning {cityName} with B2B contract solutions. Our office cleaning services {cityName} and business cleaning services {cityName} includes medical office cleaning {cityName}, restaurant cleaning services {cityName}, industrial cleaning {cityName}, and day porter services {cityName} for all business types.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/get-a-quote">
                 <Button variant="retro" size="lg" className="text-lg px-8 py-4">
-                  Get Free {cityName} Construction Quote
+                  Get Free {cityName} Commercial Quote
                 </Button>
               </Link>
               <Link href={`tel:${BUSINESS_INFO.phone}`}>
@@ -631,12 +631,64 @@ export default function CityPage({ params }: CityPageProps) {
               <Card className="retro-card">
                 <CardHeader>
                   <CardTitle className="heading-primary text-xl text-navy">
-                    What's included in detailed post construction cleaning in {cityName}?
+                    What's included in professional gutter cleaning in {cityName}?
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="body-text text-gray-700">
-                    Our <strong>detailed post construction cleaning {cityName}</strong> includes <strong>dust removal after construction {cityName}</strong>, <strong>debris removal post construction {cityName}</strong>, window cleaning, floor restoration, and complete surface sanitization. We provide <strong>move in ready post construction cleaning {cityName}</strong> that meets all occupancy standards and building requirements for immediate use.
+                    Our <strong>professional gutter cleaning {cityName}</strong> includes <strong>leaf removal gutter cleaning {cityName}</strong>, <strong>downspout cleaning {cityName}</strong>, <strong>clogged gutter cleaning {cityName}</strong>, and gutter inspection. We provide <strong>seasonal gutter cleaning {cityName}</strong> with fall and spring maintenance programs for optimal water flow protection.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="retro-card">
+                <CardHeader>
+                  <CardTitle className="heading-primary text-xl text-navy">
+                    Do you offer seasonal gutter cleaning programs in {cityName}?
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="body-text text-gray-700">
+                    Yes! Our <strong>seasonal gutter cleaning {cityName}</strong> programs include fall leaf removal and spring inspection services. We offer <strong>annual gutter cleaning {cityName}</strong> contracts and <strong>routine gutter cleaning {cityName}</strong> maintenance. Our <strong>gutter maintenance {cityName}</strong> programs are perfect for <strong>rain gutter cleaning {cityName}</strong> preparation.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="retro-card">
+                <CardHeader>
+                  <CardTitle className="heading-primary text-xl text-navy">
+                    How much does commercial cleaning cost in {cityName}?
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="body-text text-gray-700">
+                    <strong>Commercial cleaning {cityName}</strong> costs typically range from $0.05-$0.15 per square foot for <strong>office cleaning services {cityName}</strong>. Our <strong>commercial cleaning contracts {cityName}</strong> provide volume discounts for <strong>recurring commercial cleaning {cityName}</strong>. We offer <strong>commercial cleaning estimate {cityName}</strong> with transparent B2B pricing.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="retro-card">
+                <CardHeader>
+                  <CardTitle className="heading-primary text-xl text-navy">
+                    Do you provide medical office cleaning in {cityName}?
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="body-text text-gray-700">
+                    Yes! Our <strong>medical office cleaning {cityName}</strong> services meet healthcare compliance standards with OSHA protocols. We provide <strong>dental office cleaning {cityName}</strong> and specialized sanitization for healthcare facilities. Our team is trained in medical facility cleaning requirements and <strong>disinfecting services {cityName}</strong>.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="retro-card">
+                <CardHeader>
+                  <CardTitle className="heading-primary text-xl text-navy">
+                    What industries do you serve for commercial cleaning in {cityName}?
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="body-text text-gray-700">
+                    Our <strong>business cleaning services {cityName}</strong> cover all industries: <strong>restaurant cleaning services {cityName}</strong>, <strong>hotel cleaning services {cityName}</strong>, <strong>retail store cleaning {cityName}</strong>, <strong>warehouse cleaning services {cityName}</strong>, <strong>school cleaning services {cityName}</strong>, and <strong>gym cleaning services {cityName}</strong> with industry-specific compliance.
                   </p>
                 </CardContent>
               </Card>
