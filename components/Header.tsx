@@ -43,7 +43,7 @@ export default function Header() {
       {/* Main Header */}
       <header className="bg-white shadow-lg sticky top-0 z-50">
         <div className="container mx-auto px-6 py-0">
-          <div className="grid grid-cols-3 items-center -my-2">
+          <div className="grid grid-cols-3 items-center -my-4 lg:-my-2">
             
             {/* Left Navigation */}
             <div className="hidden lg:flex items-center space-x-8">
@@ -70,7 +70,7 @@ export default function Header() {
             {/* Centered Logo */}
             <div className="flex justify-center col-span-3 lg:col-span-1">
               <Link href="/" className="block">
-                <div className="relative w-44 h-44 md:w-40 md:h-40 lg:w-44 lg:h-44 hover:scale-105 transition-transform">
+                <div className="relative w-32 h-32 md:w-40 md:h-40 lg:w-44 lg:h-44 hover:scale-105 transition-transform">
                   <Image
                     src="/logo.png"
                     alt="Shimmer Shine Property Detailing - Professional Window Cleaning, Pressure Washing & Solar Panel Cleaning Orange County"
@@ -78,7 +78,7 @@ export default function Header() {
                     fill
                     className="object-contain"
                     priority
-                    sizes="(max-width: 768px) 176px, (max-width: 1024px) 160px, 176px"
+                    sizes="(max-width: 768px) 128px, (max-width: 1024px) 160px, 176px"
                   />
                 </div>
               </Link>
@@ -106,7 +106,7 @@ export default function Header() {
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="lg:hidden absolute right-6 top-1/2 transform -translate-y-1/2">
+            <div className="lg:hidden absolute right-4 top-1/2 transform -translate-y-1/2">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="p-3 rounded-lg hover:bg-gray-100 transition-colors"
