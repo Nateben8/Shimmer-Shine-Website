@@ -89,46 +89,46 @@ export default function HomePage() {
                       Get Custom Quote
                     </div>
                     <Link href={`/services/${service.id}`}>
-                      <Button variant="outline" className="w-full group-hover:bg-yellow group-hover:text-navy transition-colors text-xs sm:text-sm py-3 px-2 min-h-[48px] leading-tight">
-                        <span className="text-center break-words">
+                      <Button variant="outline" className="w-full group-hover:bg-yellow group-hover:text-navy transition-colors text-xs py-2 px-2 min-h-[44px] leading-tight">
+                        <span className="text-center break-words hyphens-auto overflow-hidden">
                           {service.id === 'window-cleaning' && (
                             <>
-                              <span className="hidden sm:inline">Professional Window Cleaning Orange County</span>
-                              <span className="sm:hidden">Window Cleaning OC</span>
+                              <span className="hidden lg:inline">Professional Window Cleaning</span>
+                              <span className="lg:hidden">Window Cleaning</span>
                             </>
                           )}
                           {service.id === 'pressure-washing' && (
                             <>
-                              <span className="hidden sm:inline">Best Pressure Washing Orange County</span>
-                              <span className="sm:hidden">Pressure Washing OC</span>
+                              <span className="hidden lg:inline">Best Pressure Washing</span>
+                              <span className="lg:hidden">Pressure Washing</span>
                             </>
                           )}
                           {service.id === 'solar-panel-cleaning' && (
                             <>
-                              <span className="hidden sm:inline">Solar Panel Cleaning Near Me Orange County</span>
-                              <span className="sm:hidden">Solar Panel Cleaning</span>
+                              <span className="hidden lg:inline">Solar Panel Cleaning</span>
+                              <span className="lg:hidden">Solar Cleaning</span>
                             </>
                           )}
                           {service.id === 'gutter-cleaning' && (
                             <>
-                              <span className="hidden sm:inline">Gutter Cleaning Services Orange County</span>
-                              <span className="sm:hidden">Gutter Cleaning OC</span>
+                              <span className="hidden lg:inline">Gutter Cleaning Services</span>
+                              <span className="lg:hidden">Gutter Cleaning</span>
                             </>
                           )}
                           {service.id === 'post-construction-cleanup' && (
                             <>
-                              <span className="hidden sm:inline">Post Construction Cleanup Orange County</span>
-                              <span className="sm:hidden">Post Construction</span>
+                              <span className="hidden lg:inline">Post Construction Cleanup</span>
+                              <span className="lg:hidden">Post Construction</span>
                             </>
                           )}
                           {service.id === 'commercial-cleaning' && (
                             <>
-                              <span className="hidden sm:inline">Commercial Cleaning Services Orange County</span>
-                              <span className="sm:hidden">Commercial Cleaning</span>
+                              <span className="hidden lg:inline">Commercial Cleaning</span>
+                              <span className="lg:hidden">Commercial Clean</span>
                             </>
                           )}
                         </span>
-                        <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 ml-1 sm:ml-2 flex-shrink-0" />
+                        <ArrowRight className="h-3 w-3 ml-1 flex-shrink-0" />
                       </Button>
                     </Link>
                   </div>

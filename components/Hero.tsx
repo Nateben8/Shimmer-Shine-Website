@@ -72,18 +72,18 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col gap-4">
-              <Link href="/get-a-quote" className="w-full">
-                <Button variant="retro" size="lg" className="w-full text-lg px-8 py-5 min-h-[60px] font-bold shadow-lg hover:shadow-xl transition-all duration-200">
+              <Button asChild variant="retro" size="lg" className="w-full text-lg px-8 py-5 min-h-[60px] font-bold shadow-lg hover:shadow-xl transition-all duration-200 cursor-pointer">
+                <Link href="/get-a-quote" className="flex items-center justify-center w-full">
                   <span className="mr-2">🌟</span>
                   Get Free Quote in 60 Seconds
-                </Button>
-              </Link>
-              <Link href={`tel:${BUSINESS_INFO.phone}`} className="w-full">
-                <Button variant="retro-navy" size="lg" className="w-full text-lg px-8 py-5 bg-white text-navy hover:bg-gray-100 min-h-[60px] font-bold transition-all duration-200">
+                </Link>
+              </Button>
+              <Button asChild variant="retro-navy" size="lg" className="w-full text-lg px-8 py-5 bg-white text-navy hover:bg-gray-100 min-h-[60px] font-bold transition-all duration-200 cursor-pointer">
+                <Link href={`tel:${BUSINESS_INFO.phone}`} className="flex items-center justify-center w-full">
                   <Phone className="h-6 w-6 mr-3" />
                   Call {BUSINESS_INFO.phone}
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </div>
 
             {/* Urgency Message */}
