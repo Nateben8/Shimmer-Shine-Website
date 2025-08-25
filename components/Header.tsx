@@ -203,29 +203,7 @@ export default function Header() {
                   </div>
                 </div>
                 
-                {/* CTA Buttons */}
-                <div className="space-y-4 pt-3">
-                  <Link href="/get-a-quote" onClick={() => setIsMenuOpen(false)}>
-                    <Button 
-                      variant="default" 
-                      size="lg" 
-                      className="w-full bg-yellow hover:bg-yellow/90 font-bold text-navy shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] border-2 border-navy text-lg py-5 rounded-xl min-h-[60px]"
-                    >
-                      <span className="mr-3 text-xl">🌟</span>
-                      GET FREE QUOTE
-                    </Button>
-                  </Link>
-                  <Link href={`tel:${BUSINESS_INFO.phone}`} onClick={() => setIsMenuOpen(false)}>
-                    <Button 
-                      variant="outline" 
-                      size="lg" 
-                      className="w-full border-2 border-navy text-navy font-bold hover:bg-navy hover:text-white transition-all duration-200 hover:scale-[1.02] text-lg py-5 rounded-xl min-h-[60px]"
-                    >
-                      <Phone className="h-6 w-6 mr-3" />
-                      CALL NOW
-                    </Button>
-                  </Link>
-                </div>
+
 
                 {/* Service Highlights */}
                 <div className="bg-navy/5 rounded-xl p-5 border border-navy/10">
