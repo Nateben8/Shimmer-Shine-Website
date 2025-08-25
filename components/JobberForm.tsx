@@ -33,7 +33,7 @@ function JobberFormContent() {
   const [isVisible, setIsVisible] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
 
-  // Intersection Observer for lazy loading
+  // Enhanced Intersection Observer for faster loading
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -42,7 +42,10 @@ function JobberFormContent() {
           observer.disconnect()
         }
       },
-      { threshold: 0.1 }
+      { 
+        threshold: 0.05, // Reduced threshold for earlier loading
+        rootMargin: '100px' // Start loading 100px before form is visible
+      }
     )
 
     if (containerRef.current) {
@@ -52,64 +55,94 @@ function JobberFormContent() {
     return () => observer.disconnect()
   }, [])
 
-  // Load Jobber form when visible
+  // Load Jobber form when visible with enhanced performance
   useEffect(() => {
     if (!isVisible) return
 
-    console.log('Loading Jobber form...')
+    console.log('Loading Jobber form with enhanced performance...')
     
-    // Preload CSS with higher priority
-    const cssLink = document.createElement('link')
-    cssLink.rel = 'preload'
-    cssLink.as = 'style'
-    cssLink.href = JOBBER_CSS_URL
-    cssLink.onload = () => {
+    // Check if resources are already preloaded from layout.tsx
+    const existingCSS = document.querySelector('link[href*="work_request_embed.css"]')
+    const existingScript = document.querySelector('script[src*="work_request_embed_snippet.js"]')
+    
+    // If CSS isn't loaded yet, load it immediately
+    if (!existingCSS) {
+      const cssLink = document.createElement('link')
       cssLink.rel = 'stylesheet'
-    }
-    
-    if (!document.querySelector('link[href*="work_request_embed.css"]')) {
+      cssLink.href = JOBBER_CSS_URL
+      cssLink.media = 'all'
       document.head.appendChild(cssLink)
+    } else if (existingCSS.getAttribute('rel') === 'preload') {
+      // Convert preload to stylesheet
+      existingCSS.setAttribute('rel', 'stylesheet')
+      existingCSS.setAttribute('media', 'all')
     }
 
-    // Load script with optimizations
-    if (!document.querySelector('script[src*="work_request_embed_snippet.js"]')) {
+    // Enhanced script loading with immediate execution
+    if (!existingScript) {
       const script = document.createElement('script')
       script.src = JOBBER_JS_URL
       script.setAttribute('clienthub_id', CLIENT_HUB_ID)
       script.setAttribute('form_url', FORM_URL)
-      script.async = true // Use async for better performance
-      script.defer = true // Defer execution
       
+      // Remove defer for faster execution
+      script.async = true
+      
+      // Enhanced loading detection
       script.onload = () => {
-        console.log('Jobber script loaded')
-        // Small delay to ensure form is rendered
-        setTimeout(() => setIsLoaded(true), 100)
+        console.log('Jobber script loaded - checking form readiness')
+        
+        // Immediate check for form readiness
+        const checkFormReady = (attempts = 0) => {
+          const formElement = document.getElementById(CLIENT_HUB_ID)
+          
+          if (formElement && (formElement.children.length > 0 || formElement.innerHTML.trim())) {
+            console.log('Form ready after', attempts, 'attempts')
+            setIsLoaded(true)
+          } else if (attempts < 20) { // Reduced attempts for faster timeout
+            setTimeout(() => checkFormReady(attempts + 1), 50) // Faster polling
+          } else {
+            console.log('Form ready timeout - showing anyway')
+            setIsLoaded(true)
+          }
+        }
+        
+        // Start checking immediately
+        checkFormReady()
       }
       
       script.onerror = () => {
-        console.error('Jobber script failed')
-        setError('Form failed to load')
+        console.error('Jobber script failed to load')
+        setError('Form temporarily unavailable. Please call us directly.')
       }
       
       document.head.appendChild(script)
     } else {
-      // Script already exists, check if form is ready
-      const checkFormReady = () => {
+      // Script already exists - enhanced readiness check
+      console.log('Script exists - checking form readiness')
+      
+      const checkFormReady = (attempts = 0) => {
         const formElement = document.getElementById(CLIENT_HUB_ID)
-        if (formElement && formElement.children.length > 0) {
+        
+        if (formElement && (formElement.children.length > 0 || formElement.innerHTML.trim())) {
+          console.log('Existing form ready after', attempts, 'attempts')
           setIsLoaded(true)
+        } else if (attempts < 15) {
+          setTimeout(() => checkFormReady(attempts + 1), 50)
         } else {
-          setTimeout(checkFormReady, 100)
+          console.log('Existing form timeout - showing anyway')
+          setIsLoaded(true)
         }
       }
+      
       checkFormReady()
     }
 
-    // Reduced fallback timer - show form after 1 second
+    // Reduced fallback timer for faster perceived loading
     const fallbackTimer = setTimeout(() => {
-      console.log('Fallback timer - showing form')
+      console.log('Fallback timer - showing form (enhanced)')
       setIsLoaded(true)
-    }, 1000)
+    }, 750) // Reduced from 1000ms to 750ms
 
     return () => clearTimeout(fallbackTimer)
   }, [isVisible])

@@ -31,16 +31,17 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/NewFavicon.png" />
         <link rel="shortcut icon" href="/favicon.ico" />
         
-        {/* Preload Jobber form resources */}
-        {/* DNS prefetch for faster connection */}
+        {/* Enhanced Jobber form performance optimization */}
+        {/* DNS prefetch for instant connection */}
         <link rel="dns-prefetch" href="https://d3ey4dbjkt2f6s.cloudfront.net" />
         <link rel="dns-prefetch" href="https://clienthub.getjobber.com" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         
-        {/* Preconnect for critical resources */}
+        {/* Preconnect for critical resources with crossorigin */}
         <link rel="preconnect" href="https://d3ey4dbjkt2f6s.cloudfront.net" crossOrigin="" />
         <link rel="preconnect" href="https://clienthub.getjobber.com" crossOrigin="" />
         
-        {/* Preload Jobber resources with high priority */}
+        {/* Aggressive preload of Jobber resources */}
         <link 
           rel="preload" 
           href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css" 
@@ -54,11 +55,17 @@ export default function RootLayout({
           fetchPriority="high"
         />
         
-        {/* Prefetch the form endpoint */}
+        {/* Preload the form endpoint for faster form loading */}
         <link 
-          rel="prefetch" 
+          rel="preload" 
           href="https://clienthub.getjobber.com/client_hubs/c6041d28-0ae8-4628-a9c4-14a29c7ff3e8/public/work_request/embedded_work_request_form"
+          as="fetch"
+          crossOrigin=""
         />
+        
+        {/* Additional performance hints */}
+        <link rel="dns-prefetch" href="https://api.getjobber.com" />
+        <link rel="dns-prefetch" href="https://assets.getjobber.com" />
         
         {/* Structured Data */}
         <script
