@@ -231,6 +231,38 @@ export const FAQ_DATA = [
   {
     question: "What payment methods do you accept?",
     answer: "We accept cash, checks, all major credit cards, Venmo, and Zelle for your convenience. Payment is due upon completion of services, and we provide detailed invoices for all work performed."
+  },
+  {
+    question: "Do you offer bundle discounts for multiple services in Orange County?",
+    answer: "Yes! We offer a Fall Special with 20% off when you bundle 2 or more services. Popular combinations include window cleaning + pressure washing, or window cleaning + gutter cleaning + solar panel cleaning. This is perfect for comprehensive fall property maintenance in Orange County."
+  },
+  {
+    question: "What areas of Orange County do you serve for window cleaning?",
+    answer: "We provide window cleaning services throughout Orange County including Newport Beach, Irvine, Costa Mesa, Huntington Beach, Anaheim, Santa Ana, Yorba Linda, Fullerton, Garden Grove, Orange, Tustin, Mission Viejo, Laguna Beach, Dana Point, San Clemente, Aliso Viejo, Lake Forest, Rancho Santa Margarita, and all surrounding communities."
+  },
+  {
+    question: "How often should I schedule pressure washing in Orange County's climate?",
+    answer: "In Orange County's Mediterranean climate, we recommend pressure washing your driveway and exterior surfaces every 6-12 months. Coastal properties may need more frequent cleaning due to salt air, while inland properties can often go longer between services. Our team can assess your specific needs during our free consultation."
+  },
+  {
+    question: "Do you provide emergency cleaning services in Orange County?",
+    answer: "Yes! We offer emergency and same-day cleaning services throughout Orange County for urgent situations like real estate showings, special events, post-construction cleanup, or storm damage cleanup. Call (714) 497-0035 for immediate assistance."
+  },
+  {
+    question: "What's the best time of year for exterior cleaning in Orange County?",
+    answer: "Fall and spring are ideal times for comprehensive exterior cleaning in Orange County. Fall cleaning prepares your property for winter rains, while spring cleaning removes winter buildup. Our Fall Special offers 20% off bundled services, making it the perfect time for complete property maintenance."
+  },
+  {
+    question: "Do you clean high-rise buildings and commercial properties in Orange County?",
+    answer: "Yes! We provide commercial window cleaning and pressure washing for high-rise buildings, office complexes, retail centers, and industrial facilities throughout Orange County. We have specialized equipment and insurance for commercial properties and offer flexible scheduling including after-hours service."
+  },
+  {
+    question: "How do you handle Orange County's hard water stains on windows?",
+    answer: "Orange County's hard water can leave mineral deposits on windows. We use specialized cleaning solutions and techniques specifically designed for hard water stains. Our process includes water treatment and protective coatings that help prevent future buildup, keeping your windows cleaner longer."
+  },
+  {
+    question: "What safety measures do you take for residential cleaning in Orange County?",
+    answer: "Safety is our top priority. We're fully licensed and insured, use professional-grade equipment, follow OSHA safety protocols, and our technicians are trained in safe cleaning practices. We also carry comprehensive liability insurance and workers' compensation for complete protection of Orange County homeowners."
   }
 ]
 

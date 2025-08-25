@@ -240,3 +240,105 @@ export const getWebsiteSchema = () => ({
     "query-input": "required name=search_term_string"
   }
 })
+
+// Event Schema for Fall Special Promotion
+export const getFallSpecialEventSchema = () => {
+  const currentYear = new Date().getFullYear()
+  const fallEnd = new Date(currentYear, 11, 21) // December 21st
+  
+  return {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Fall Special - 20% Off Bundle Services",
+    "description": "Save 20% when you bundle 2 or more services including window cleaning, pressure washing, gutter cleaning, and solar panel cleaning in Orange County.",
+    "startDate": `${currentYear}-09-22T00:00:00-07:00`,
+    "endDate": `${currentYear}-12-21T23:59:59-07:00`,
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "Orange County, California",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Shimmer Shine Property Detailing",
+      "url": "https://www.shimmershinepropertydetailing.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "name": "Fall Bundle Discount",
+      "description": "20% off when bundling 2 or more services",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "validFrom": `${currentYear}-09-22T00:00:00-07:00`,
+      "validThrough": `${currentYear}-12-21T23:59:59-07:00`,
+      "url": "https://www.shimmershinepropertydetailing.com/get-a-quote"
+    },
+    "image": "https://www.shimmershinepropertydetailing.com/logo.png",
+    "url": "https://www.shimmershinepropertydetailing.com"
+  }
+}
+
+// Product Schema for Service Bundles
+export const getServiceBundleSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Fall Property Maintenance Bundle",
+  "description": "Complete fall property maintenance package including window cleaning, pressure washing, and gutter cleaning services in Orange County.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Shimmer Shine Property Detailing"
+  },
+  "category": "Property Maintenance Services",
+  "offers": {
+    "@type": "Offer",
+    "price": "400",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "priceValidUntil": `${new Date().getFullYear()}-12-21`,
+    "seller": {
+      "@type": "Organization",
+      "name": "Shimmer Shine Property Detailing"
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "California"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "500",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "image": "https://www.shimmershinepropertydetailing.com/logo.png",
+  "url": "https://www.shimmershinepropertydetailing.com/get-a-quote"
+})
+
+// Video Schema for Service Demonstrations
+export const getVideoSchema = (videoTitle: string, videoDescription: string, videoUrl: string) => ({
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": videoTitle,
+  "description": videoDescription,
+  "thumbnailUrl": "https://www.shimmershinepropertydetailing.com/logo.png",
+  "uploadDate": new Date().toISOString(),
+  "duration": "PT2M30S",
+  "contentUrl": videoUrl,
+  "embedUrl": videoUrl,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Shimmer Shine Property Detailing",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.shimmershinepropertydetailing.com/logo.png"
+    }
+  }
+})

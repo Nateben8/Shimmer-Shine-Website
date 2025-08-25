@@ -92,6 +92,30 @@ export function generateSEO({
       google: process.env.GOOGLE_VERIFICATION_ID,
       yandex: process.env.YANDEX_VERIFICATION_ID,
       yahoo: process.env.YAHOO_VERIFICATION_ID
+    },
+    other: {
+      // Enhanced geo-targeting meta tags
+      'geo.region': 'US-CA',
+      'geo.placename': 'Orange County, California',
+      'geo.position': '33.7175;-117.8311',
+      'ICBM': '33.7175, -117.8311',
+      // Business-specific meta tags
+      'business.hours': 'Mo-Fr 07:00-18:00, Sa 08:00-16:00',
+      'business.phone': '(714) 497-0035',
+      'business.email': 'support@shimmershinepropertydetailing.com',
+      // Enhanced SEO meta tags
+      'revisit-after': '7 days',
+      'rating': 'general',
+      'distribution': 'global',
+      'language': 'en-US',
+      'copyright': `© ${new Date().getFullYear()} ${SITE_CONFIG.name}`,
+      // Local business verification
+      'verify-v1': 'shimmer-shine-property-detailing-orange-county',
+      // Mobile optimization
+      'format-detection': 'telephone=yes',
+      'apple-mobile-web-app-capable': 'yes',
+      'apple-mobile-web-app-status-bar-style': 'default',
+      'apple-mobile-web-app-title': SITE_CONFIG.name,
     }
   }
 

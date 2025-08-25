@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+# Allow important pages
+Allow: /services/
+Allow: /cities/
+Allow: /blog/
+Allow: /gallery/
+Allow: /about/
+Allow: /get-a-quote/
+
+# Sitemap location
+Sitemap: https://www.shimmershinepropertydetailing.com/sitemap.xml
+
+# Crawl delay for politeness
+Crawl-delay: 1

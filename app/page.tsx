@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero"
+import FallSpecial from "@/components/FallSpecial"
 import { SERVICES, BUSINESS_INFO, FAQ_DATA } from "@/lib/constants"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -8,11 +9,13 @@ import { Star, ArrowRight, CheckCircle, Award, Shield, Clock, MapPin } from "luc
 import BeforeAfterSlider from "@/components/BeforeAfterSlider"
 import GoogleReviews from "@/components/GoogleReviews"
 // import RelatedContent from "@/components/RelatedContent"
-import { getFAQSchema } from "@/lib/schema"
+import { getFAQSchema, getFallSpecialEventSchema, getServiceBundleSchema } from "@/lib/schema"
 
 export default function HomePage() {
   const featuredServices = SERVICES.slice(0, 4)
   const faqSchema = getFAQSchema(FAQ_DATA)
+  const fallSpecialSchema = getFallSpecialEventSchema()
+  const serviceBundleSchema = getServiceBundleSchema()
 
   return (
     <>
@@ -23,6 +26,23 @@ export default function HomePage() {
           __html: JSON.stringify(faqSchema),
         }}
       />
+      
+      {/* Fall Special Event Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(fallSpecialSchema),
+        }}
+      />
+      
+      {/* Service Bundle Product Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceBundleSchema),
+        }}
+      />
+      <FallSpecial />
       <Hero />
       
       {/* Services Section */}
@@ -70,7 +90,12 @@ export default function HomePage() {
                     </div>
                     <Link href={`/services/${service.id}`}>
                       <Button variant="outline" className="w-full group-hover:bg-yellow group-hover:text-navy transition-colors">
-                        Learn More
+                        {service.id === 'window-cleaning' && 'Professional Window Cleaning Orange County'}
+                        {service.id === 'pressure-washing' && 'Best Pressure Washing Orange County'}
+                        {service.id === 'solar-panel-cleaning' && 'Solar Panel Cleaning Near Me Orange County'}
+                        {service.id === 'gutter-cleaning' && 'Gutter Cleaning Services Orange County'}
+                        {service.id === 'post-construction-cleanup' && 'Post Construction Cleanup Orange County'}
+                        {service.id === 'commercial-cleaning' && 'Commercial Cleaning Services Orange County'}
                         <ArrowRight className="h-4 w-4 ml-2" />
                       </Button>
                     </Link>
@@ -83,7 +108,7 @@ export default function HomePage() {
           <div className="text-center mt-12">
             <Link href="/services">
               <Button variant="retro" size="lg">
-                View All Services
+                View All Orange County Cleaning Services
               </Button>
             </Link>
           </div>
