@@ -49,54 +49,86 @@ export default function HomePage() {
       <section className="py-12 sm:py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="heading-primary text-3xl sm:text-4xl md:text-5xl mb-4">
+            <h2 className="heading-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 px-2">
               Best Window Cleaners in Orange County
             </h2>
-            <p className="body-text text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="body-text text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed">
               Top rated window cleaning Orange County with same day service. Licensed and insured residential and commercial window cleaning, pressure washing, and solar panel cleaning across Orange County, Los Angeles, and San Diego.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {featuredServices.map((service) => (
-              <Card key={service.id} className="retro-card hover:shadow-retro-yellow transition-all duration-300 group">
-                <CardHeader className="text-center">
-                  <div className="mb-4 flex items-center justify-center">
+              <Card key={service.id} className="retro-card hover:shadow-retro-yellow transition-all duration-300 group h-full flex flex-col">
+                <CardHeader className="text-center p-4 sm:p-6 flex-grow">
+                  <div className="mb-3 sm:mb-4 flex items-center justify-center">
                     {service.iconType === "image" ? (
                       <Image
                         src={service.icon}
                         alt={`Professional ${service.name} service icon - ${service.description.slice(0, 50)}...`}
                         width={64}
                         height={64}
-                        className="w-16 h-16"
+                        className="w-12 h-12 sm:w-16 sm:h-16"
                         loading="lazy"
-                        sizes="64px"
+                        sizes="(max-width: 640px) 48px, 64px"
                       />
                     ) : (
-                      <div className="text-5xl">{service.icon}</div>
+                      <div className="text-4xl sm:text-5xl">{service.icon}</div>
                     )}
                   </div>
-                  <CardTitle className="heading-primary text-lg sm:text-xl">
+                  <CardTitle className="heading-primary text-base sm:text-lg md:text-xl mb-2 px-2">
                     {service.name}
                   </CardTitle>
-                  <CardDescription className="body-text text-sm sm:text-base">
+                  <CardDescription className="body-text text-sm sm:text-base text-gray-600 leading-relaxed px-2">
                     {service.shortDescription}
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="text-center">
+                <CardContent className="text-center p-4 sm:p-6 pt-0 mt-auto">
                   <div className="space-y-3">
-                    <div className="retro-badge">
+                    <div className="retro-badge text-xs sm:text-sm">
                       Get Custom Quote
                     </div>
                     <Link href={`/services/${service.id}`}>
-                      <Button variant="outline" className="w-full group-hover:bg-yellow group-hover:text-navy transition-colors">
-                        {service.id === 'window-cleaning' && 'Professional Window Cleaning Orange County'}
-                        {service.id === 'pressure-washing' && 'Best Pressure Washing Orange County'}
-                        {service.id === 'solar-panel-cleaning' && 'Solar Panel Cleaning Near Me Orange County'}
-                        {service.id === 'gutter-cleaning' && 'Gutter Cleaning Services Orange County'}
-                        {service.id === 'post-construction-cleanup' && 'Post Construction Cleanup Orange County'}
-                        {service.id === 'commercial-cleaning' && 'Commercial Cleaning Services Orange County'}
-                        <ArrowRight className="h-4 w-4 ml-2" />
+                      <Button variant="outline" className="w-full group-hover:bg-yellow group-hover:text-navy transition-colors text-xs sm:text-sm py-3 px-2 min-h-[48px] leading-tight">
+                        <span className="text-center break-words">
+                          {service.id === 'window-cleaning' && (
+                            <>
+                              <span className="hidden sm:inline">Professional Window Cleaning Orange County</span>
+                              <span className="sm:hidden">Window Cleaning OC</span>
+                            </>
+                          )}
+                          {service.id === 'pressure-washing' && (
+                            <>
+                              <span className="hidden sm:inline">Best Pressure Washing Orange County</span>
+                              <span className="sm:hidden">Pressure Washing OC</span>
+                            </>
+                          )}
+                          {service.id === 'solar-panel-cleaning' && (
+                            <>
+                              <span className="hidden sm:inline">Solar Panel Cleaning Near Me Orange County</span>
+                              <span className="sm:hidden">Solar Panel Cleaning</span>
+                            </>
+                          )}
+                          {service.id === 'gutter-cleaning' && (
+                            <>
+                              <span className="hidden sm:inline">Gutter Cleaning Services Orange County</span>
+                              <span className="sm:hidden">Gutter Cleaning OC</span>
+                            </>
+                          )}
+                          {service.id === 'post-construction-cleanup' && (
+                            <>
+                              <span className="hidden sm:inline">Post Construction Cleanup Orange County</span>
+                              <span className="sm:hidden">Post Construction</span>
+                            </>
+                          )}
+                          {service.id === 'commercial-cleaning' && (
+                            <>
+                              <span className="hidden sm:inline">Commercial Cleaning Services Orange County</span>
+                              <span className="sm:hidden">Commercial Cleaning</span>
+                            </>
+                          )}
+                        </span>
+                        <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 ml-1 sm:ml-2 flex-shrink-0" />
                       </Button>
                     </Link>
                   </div>
