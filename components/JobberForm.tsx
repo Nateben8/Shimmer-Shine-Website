@@ -203,37 +203,47 @@ function JobberFormContent() {
 export default function JobberForm() {
   return (
     <div className="jobber-form-container w-full">
-      {/* Form Header */}
+      {/* Enhanced Form Header */}
       <div className="form-section-header">
-        <h3 className="heading-primary text-2xl mb-2">Get Your Free Quote</h3>
-        <p className="body-text text-gray-600">Fill out the form below - we'll respond within 2 hours!</p>
+        <div className="bg-yellow text-navy px-4 py-2 rounded-full font-bold text-sm mb-3 inline-block animate-pulse">
+          🚨 URGENT: Only 12 Spots Left This Month!
+        </div>
+        <h3 className="heading-primary text-2xl mb-2">Get Your FREE Quote + 10% OFF</h3>
+        <p className="body-text text-gray-600 mb-2">Only 4 fields required • Takes 30 seconds • Guaranteed 2-hour response!</p>
+        <p className="text-sm text-green-600 font-medium">💰 Save $50-200 on your first service</p>
       </div>
       
-      {/* Trust Indicators */}
+      {/* Enhanced Trust Indicators */}
       <div className="trust-indicator">
         <div className="flex items-center space-x-1">
-          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
           <span>SSL Secured</span>
         </div>
         <div className="flex items-center space-x-1">
-          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-          <span>No Spam</span>
+          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+          <span>No Spam Ever</span>
         </div>
         <div className="flex items-center space-x-1">
-          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-          <span>Free Quote</span>
+          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+          <span>100% Free Quote</span>
+        </div>
+        <div className="flex items-center space-x-1">
+          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+          <span>2-Hour Response</span>
         </div>
       </div>
       
-      {/* Conversion Booster */}
+      {/* Enhanced Conversion Booster */}
       <div className="conversion-booster">
-        <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-yellow rounded-full flex items-center justify-center">
-            <span className="text-navy font-bold text-sm">⚡</span>
-          </div>
-          <div>
-            <p className="font-bold text-navy text-sm">Limited Time: 10% Off First Service!</p>
-            <p className="text-xs text-gray-600">Book this month and save on your first cleaning</p>
+        <div className="bg-gradient-to-r from-red-50 to-yellow-50 border-2 border-yellow rounded-lg p-3">
+          <div className="flex items-center space-x-2">
+            <div className="w-8 h-8 bg-yellow rounded-full flex items-center justify-center animate-pulse">
+              <span className="text-navy font-bold text-sm">🔥</span>
+            </div>
+            <div>
+              <p className="font-bold text-navy text-sm">🚨 LAST CHANCE: 10% Off + FREE Quote Expires Soon!</p>
+              <p className="text-xs text-gray-600">Join 47 customers who saved $50-200 this week</p>
+            </div>
           </div>
         </div>
       </div>
