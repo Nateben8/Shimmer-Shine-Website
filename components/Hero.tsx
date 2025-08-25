@@ -109,15 +109,37 @@ export default function Hero() {
                 <div className="bg-gradient-to-br from-blue-100 to-yellow-100 flex items-center justify-center h-full border-4 border-navy shadow-lg">
                   <div className="relative w-full h-full flex items-center justify-center">
                     <video
-                      src="/Homepage video1.MOV"
                       autoPlay
                       loop
                       muted
                       playsInline
+                      preload="auto"
                       className="w-full h-full object-cover rounded-lg"
                       style={{ objectFit: 'cover' }}
+                      poster="/window-cleaning-before-after.png"
+                      onError={(e) => {
+                        console.log('Video failed to load:', e);
+                        // Fallback to image if video fails
+                        const video = e.target as HTMLVideoElement;
+                        const img = document.createElement('img');
+                        img.src = '/window-cleaning-before-after.png';
+                        img.alt = 'Professional Window Cleaning Service - Shimmer Shine Property Detailing';
+                        img.className = 'w-full h-full object-cover rounded-lg';
+                        img.style.objectFit = 'cover';
+                        video.parentNode?.replaceChild(img, video);
+                      }}
                     >
-                      Your browser does not support the video tag.
+                      {/* Try MP4 first for better mobile compatibility */}
+                      <source src="/window-cleaning-hero.mp4" type="video/mp4" />
+                      <source src="/pressure-washing-hero.mp4" type="video/mp4" />
+                      <source src="/Homepage video1.MOV" type="video/quicktime" />
+                      {/* Fallback image for browsers that don't support video */}
+                      <img 
+                        src="/window-cleaning-before-after.png" 
+                        alt="Professional Window Cleaning Service - Shimmer Shine Property Detailing"
+                        className="w-full h-full object-cover rounded-lg"
+                        style={{ objectFit: 'cover' }}
+                      />
                     </video>
                   </div>
                 </div>

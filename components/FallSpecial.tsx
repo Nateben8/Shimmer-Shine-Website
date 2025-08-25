@@ -98,12 +98,12 @@ export default function FallSpecial() {
             <div className="flex items-center space-x-2">
               <Link href="/get-a-quote">
                 <button className="bg-yellow-400 hover:bg-yellow-300 text-orange-900 font-bold py-1.5 px-3 sm:py-2 sm:px-4 rounded-full transition-all duration-200 hover:scale-105 shadow-lg text-xs sm:text-sm border border-yellow-300">
-                  🍂 <span className="hidden xs:inline">CLAIM</span>
+                  🍂 CLAIM
                 </button>
               </Link>
               <Link href="tel:(714) 497-0035">
                 <button className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-bold py-1.5 px-3 sm:py-2 sm:px-4 rounded-full transition-all duration-200 hover:scale-105 border border-white/30 text-xs sm:text-sm">
-                  📞 <span className="hidden xs:inline">Call</span>
+                  📞 Call
                 </button>
               </Link>
             </div>
