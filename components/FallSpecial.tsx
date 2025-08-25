@@ -55,11 +55,11 @@ export default function FallSpecial() {
 
       <div className="container mx-auto relative z-10 px-2 sm:px-4">
         {/* Desktop-optimized layout with proper spacing */}
-        <div className="flex flex-col space-y-3 sm:space-y-0 sm:flex-row sm:items-center sm:gap-6 pr-8 sm:pr-10">
+        <div className="flex flex-col space-y-3 sm:space-y-0 sm:flex-row sm:items-center sm:justify-center sm:gap-6 pr-8 sm:pr-10">
           
-          {/* Mobile: Main content row */}
-          <div className="flex flex-col space-y-2 sm:space-y-0 sm:flex-row sm:items-center sm:space-x-3 text-center sm:text-left">
-            <div className="flex items-center justify-center sm:justify-start space-x-2">
+          {/* Centered main content */}
+          <div className="flex flex-col space-y-2 sm:space-y-0 sm:flex-row sm:items-center sm:space-x-3 text-center">
+            <div className="flex items-center justify-center space-x-2">
               <span className="text-base sm:text-lg animate-bounce">🍂</span>
               <h3 className="text-sm sm:text-base md:text-lg font-bold text-yellow-200">
                 FALL SPECIAL:
