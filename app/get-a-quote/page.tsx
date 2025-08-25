@@ -233,18 +233,6 @@ export default function GetQuotePage() {
                 Join 500+ satisfied customers who trust us with their property cleaning needs. Professional results guaranteed!
               </p>
               
-              {/* Live Activity Feed */}
-              <div className="bg-green-50 border border-green-200 rounded-lg p-4 max-w-md mx-auto mb-6">
-                <div className="flex items-center space-x-2 mb-3">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="font-bold text-green-700 text-sm">🔥 Live Activity</span>
-                </div>
-                <div className="space-y-2 text-sm text-gray-700">
-                  <p>✅ Jennifer from Irvine just booked window cleaning (3 min ago)</p>
-                  <p>💰 Mike from Costa Mesa saved $75 with bundle discount (8 min ago)</p>
-                  <p>⭐ Sarah from Newport Beach left 5-star review (12 min ago)</p>
-                </div>
-              </div>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">

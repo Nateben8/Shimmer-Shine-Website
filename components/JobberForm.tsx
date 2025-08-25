@@ -9,19 +9,78 @@ const JOBBER_JS_URL = 'https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/
 const CLIENT_HUB_ID = 'c6041d28-0ae8-4628-a9c4-14a29c7ff3e8'
 const FORM_URL = 'https://clienthub.getjobber.com/client_hubs/c6041d28-0ae8-4628-a9c4-14a29c7ff3e8/public/work_request/embedded_work_request_form'
 
-// Skeleton loader component
+// Enhanced loading form indicator
 function JobberFormSkeleton() {
   return (
-    <div className="jobber-skeleton p-6 space-y-4">
-      <div className="jobber-skeleton-field"></div>
-      <div className="jobber-skeleton-field"></div>
-      <div className="jobber-skeleton-field"></div>
-      <div className="grid grid-cols-2 gap-4">
-        <div className="jobber-skeleton-field"></div>
-        <div className="jobber-skeleton-field"></div>
+    <div className="bg-white rounded-xl border-2 border-gray-200 p-6 shadow-lg">
+      {/* Loading Header */}
+      <div className="text-center mb-6">
+        <div className="flex items-center justify-center space-x-2 mb-3">
+          <div className="w-4 h-4 bg-yellow rounded-full animate-pulse"></div>
+          <div className="text-navy font-bold text-lg">Loading Your Quote Form...</div>
+          <div className="w-4 h-4 bg-yellow rounded-full animate-pulse"></div>
+        </div>
+        <div className="text-sm text-gray-600">Please wait while we prepare your personalized form</div>
       </div>
-      <div className="jobber-skeleton-field h-24"></div>
-      <div className="jobber-skeleton-button"></div>
+
+      {/* Form Field Skeletons */}
+      <div className="space-y-4">
+        {/* Name Field */}
+        <div>
+          <div className="h-4 bg-gray-200 rounded w-20 mb-2 animate-pulse"></div>
+          <div className="h-12 bg-gray-100 rounded-lg border-2 border-gray-200 animate-pulse"></div>
+        </div>
+        
+        {/* Email Field */}
+        <div>
+          <div className="h-4 bg-gray-200 rounded w-24 mb-2 animate-pulse"></div>
+          <div className="h-12 bg-gray-100 rounded-lg border-2 border-gray-200 animate-pulse"></div>
+        </div>
+        
+        {/* Phone Field */}
+        <div>
+          <div className="h-4 bg-gray-200 rounded w-28 mb-2 animate-pulse"></div>
+          <div className="h-12 bg-gray-100 rounded-lg border-2 border-gray-200 animate-pulse"></div>
+        </div>
+        
+        {/* Service Selection */}
+        <div>
+          <div className="h-4 bg-gray-200 rounded w-32 mb-2 animate-pulse"></div>
+          <div className="h-12 bg-gray-100 rounded-lg border-2 border-gray-200 animate-pulse"></div>
+        </div>
+        
+        {/* Message Field */}
+        <div>
+          <div className="h-4 bg-gray-200 rounded w-36 mb-2 animate-pulse"></div>
+          <div className="h-24 bg-gray-100 rounded-lg border-2 border-gray-200 animate-pulse"></div>
+        </div>
+        
+        {/* Submit Button */}
+        <div className="pt-4">
+          <div className="h-14 bg-yellow rounded-lg animate-pulse flex items-center justify-center">
+            <div className="flex items-center space-x-2">
+              <div className="w-5 h-5 border-2 border-navy border-t-transparent rounded-full animate-spin"></div>
+              <span className="text-navy font-bold">Preparing Form...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Trust Indicators */}
+      <div className="flex items-center justify-center space-x-6 mt-6 text-xs text-gray-500">
+        <div className="flex items-center space-x-1">
+          <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+          <span>SSL Secured</span>
+        </div>
+        <div className="flex items-center space-x-1">
+          <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+          <span>100% Free Quote</span>
+        </div>
+        <div className="flex items-center space-x-1">
+          <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+          <span>2-Hour Response</span>
+        </div>
+      </div>
     </div>
   )
 }
