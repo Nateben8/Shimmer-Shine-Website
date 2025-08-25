@@ -54,8 +54,8 @@ export default function FallSpecial() {
       </div>
 
       <div className="container mx-auto relative z-10 px-2 sm:px-4">
-        {/* Mobile-optimized layout */}
-        <div className="flex flex-col space-y-3 sm:space-y-0 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+        {/* Desktop-optimized layout with proper spacing */}
+        <div className="flex flex-col space-y-3 sm:space-y-0 sm:flex-row sm:items-center sm:gap-6 pr-8 sm:pr-10">
           
           {/* Mobile: Main content row */}
           <div className="flex flex-col space-y-2 sm:space-y-0 sm:flex-row sm:items-center sm:space-x-3 text-center sm:text-left">
@@ -72,7 +72,7 @@ export default function FallSpecial() {
           </div>
 
           {/* Mobile: Timer and buttons row */}
-          <div className="flex items-center justify-between sm:justify-end space-x-2 sm:space-x-4">
+          <div className="flex items-center justify-between sm:justify-center space-x-2 sm:space-x-6">
             {/* Compact countdown timer */}
             <div className="flex items-center space-x-1 sm:space-x-2">
               <span className="text-xs text-yellow-200 font-medium hidden sm:inline">Ends:</span>
@@ -94,8 +94,8 @@ export default function FallSpecial() {
               </div>
             </div>
 
-            {/* Compact CTA buttons */}
-            <div className="flex items-center space-x-2">
+            {/* Compact CTA buttons with better spacing */}
+            <div className="flex items-center space-x-3">
               <Link href="/get-a-quote">
                 <button className="bg-yellow-400 hover:bg-yellow-300 text-orange-900 font-bold py-1.5 px-3 sm:py-2 sm:px-4 rounded-full transition-all duration-200 hover:scale-105 shadow-lg text-xs sm:text-sm border border-yellow-300">
                   🍂 CLAIM
@@ -109,10 +109,10 @@ export default function FallSpecial() {
             </div>
           </div>
 
-          {/* Close button */}
+          {/* Close button - positioned with more space */}
           <button
             onClick={() => setIsVisible(false)}
-            className="absolute top-1 right-1 sm:top-2 sm:right-2 text-white/70 hover:text-white text-base sm:text-lg font-bold w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center rounded-full hover:bg-white/20 transition-all duration-200"
+            className="absolute top-1 right-1 sm:top-2 sm:right-2 text-white/70 hover:text-white text-base sm:text-lg font-bold w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center rounded-full hover:bg-white/20 transition-all duration-200 z-10"
             aria-label="Close fall special offer"
           >
             ×
