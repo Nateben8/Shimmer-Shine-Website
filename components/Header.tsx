@@ -151,8 +151,14 @@ export default function Header() {
             {/* Close Button Header */}
             <div className="flex justify-between items-center p-4 border-b border-gray-200 bg-gray-50">
               <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-yellow rounded-full flex items-center justify-center">
-                  <span className="text-navy font-bold text-sm">SS</span>
+                <div className="relative w-8 h-8">
+                  <Image
+                    src="/logo.png"
+                    alt="Shimmer Shine Property Detailing Logo"
+                    fill
+                    className="object-contain"
+                    sizes="32px"
+                  />
                 </div>
                 <span className="font-bold text-navy text-lg">Menu</span>
               </div>
