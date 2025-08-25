@@ -365,48 +365,48 @@ export default function GalleryPage() {
       />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-navy to-navy-700 text-white py-20">
+      <section className="bg-gradient-to-br from-navy to-navy-700 text-white py-12 sm:py-16 lg:py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="retro-badge mb-6">
+            <div className="retro-badge mb-4 sm:mb-6">
               Before & After Results
             </div>
             
-            <h1 className="heading-decorative text-5xl md:text-7xl text-yellow mb-6">
+            <h1 className="heading-decorative text-4xl sm:text-5xl md:text-7xl text-yellow mb-4 sm:mb-6">
               Our Gallery
             </h1>
             
-            <h2 className="heading-primary text-2xl md:text-3xl text-white mb-6">
+            <h2 className="heading-primary text-xl sm:text-2xl md:text-3xl text-white mb-4 sm:mb-6">
               See the Dramatic Difference Professional Cleaning Makes
             </h2>
             
-            <p className="body-text text-xl text-gray-100 leading-relaxed mb-8">
+            <p className="body-text text-lg sm:text-xl text-gray-100 leading-relaxed mb-6 sm:mb-8">
               Real before and after results from our professional cleaning services across Orange County, Los Angeles, and San Diego. These transformations showcase the quality and attention to detail that has made us Southern California's trusted choice since 2021.
             </p>
 
-            <div className="grid grid-cols-3 gap-6 mb-8">
+            <div className="grid grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
               <div className="text-center">
-                <div className="text-3xl font-bold text-yellow">500+</div>
-                <div className="text-sm text-gray-300">Projects Completed</div>
+                <div className="text-2xl sm:text-3xl font-bold text-yellow">500+</div>
+                <div className="text-xs sm:text-sm text-gray-300">Projects Completed</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-yellow">100%</div>
-                <div className="text-sm text-gray-300">Satisfaction Rate</div>
+                <div className="text-2xl sm:text-3xl font-bold text-yellow">100%</div>
+                <div className="text-xs sm:text-sm text-gray-300">Satisfaction Rate</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-yellow">4+</div>
-                <div className="text-sm text-gray-300">Years Experience</div>
+                <div className="text-2xl sm:text-3xl font-bold text-yellow">4+</div>
+                <div className="text-xs sm:text-sm text-gray-300">Years Experience</div>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/get-a-quote">
-                <Button variant="retro" size="lg" className="text-lg px-8 py-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+              <Link href="/get-a-quote" className="w-full sm:w-auto">
+                <Button variant="retro" size="lg" className="w-full text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 min-h-[48px]">
                   Get Your Free Quote
                 </Button>
               </Link>
-              <Link href={`tel:${BUSINESS_INFO.phone}`}>
-                <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-yellow text-yellow hover:bg-yellow hover:text-navy">
+              <Link href={`tel:${BUSINESS_INFO.phone}`} className="w-full sm:w-auto">
+                <Button variant="outline" size="lg" className="w-full text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 border-2 border-yellow text-yellow hover:bg-yellow hover:text-navy min-h-[48px]">
                   Call {BUSINESS_INFO.phone}
                 </Button>
               </Link>
@@ -417,9 +417,9 @@ export default function GalleryPage() {
 
       {/* Gallery Categories */}
       {galleryCategories.map((category, categoryIndex) => (
-        <section key={category.id} className={`py-20 ${categoryIndex % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
+        <section key={category.id} className={`py-12 sm:py-16 lg:py-20 ${categoryIndex % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
           <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
+            <div className="text-center mb-12 sm:mb-16">
               <div className="flex justify-center mb-4">
                 {category.iconType === "image" ? (
                   <Image
@@ -433,18 +433,18 @@ export default function GalleryPage() {
                   <div className="text-6xl">{category.icon}</div>
                 )}
               </div>
-              <h3 className="heading-primary text-3xl md:text-4xl mb-4">
+              <h3 className="heading-primary text-2xl sm:text-3xl md:text-4xl mb-4">
                 {category.name}
               </h3>
-              <p className="body-text text-xl text-gray-600">
+              <p className="body-text text-lg sm:text-xl text-gray-600">
                 {category.description}
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {category.items.map((item) => (
                 <Card key={item.id} className="retro-card hover:shadow-retro-yellow transition-all duration-300 group overflow-hidden">
-                  <div className="relative h-64 overflow-hidden">
+                  <div className="relative h-48 sm:h-64 overflow-hidden">
                     {/* Combined Before/After Image */}
                     <div className="relative h-full">
                       <Image

@@ -15,8 +15,8 @@ export default function Hero() {
         }} />
       </div>
 
-      <div className="container mx-auto px-4 py-16 lg:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-4 py-12 sm:py-16 lg:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content */}
           <div className="space-y-8">
             {/* Trust Badge */}
@@ -28,75 +28,75 @@ export default function Hero() {
             </div>
 
             {/* Main Headline */}
-            <div className="space-y-4">
-              <h1 className="heading-decorative text-4xl md:text-6xl lg:text-7xl text-yellow leading-tight">
+            <div className="space-y-2 sm:space-y-4">
+              <h1 className="heading-decorative text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-yellow leading-tight">
                 Classic Shine,
               </h1>
-              <h2 className="heading-primary text-3xl md:text-5xl lg:text-6xl text-white">
+              <h2 className="heading-primary text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white">
                 Modern Quality!
               </h2>
             </div>
 
             {/* Subheading */}
-            <p className="body-text text-xl md:text-2xl text-gray-100 leading-relaxed">
+            <p className="body-text text-lg sm:text-xl md:text-2xl text-gray-100 leading-relaxed">
               Professional window cleaning, pressure washing, and property detailing services across Orange County, Los Angeles, and San Diego.
             </p>
 
             {/* Social Proof */}
-            <div className="flex items-center space-x-6">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-6">
               <div className="flex items-center space-x-1">
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow fill-current" />
+                    <Star key={i} className="h-4 w-4 sm:h-5 sm:w-5 text-yellow fill-current" />
                   ))}
                 </div>
-                <span className="text-gray-200 ml-2">4.9/5 (500+ Reviews)</span>
+                <span className="text-gray-200 ml-2 text-sm sm:text-base">4.9/5 (500+ Reviews)</span>
               </div>
             </div>
 
             {/* Value Props */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
               <div className="flex items-center space-x-2">
-                <Shield className="h-5 w-5 text-yellow" />
-                <span className="text-sm">Licensed & Insured</span>
+                <Shield className="h-4 w-4 sm:h-5 sm:w-5 text-yellow flex-shrink-0" />
+                <span className="text-xs sm:text-sm">Licensed & Insured</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Award className="h-5 w-5 text-yellow" />
-                <span className="text-sm">Satisfaction Guaranteed</span>
+                <Award className="h-4 w-4 sm:h-5 sm:w-5 text-yellow flex-shrink-0" />
+                <span className="text-xs sm:text-sm">Satisfaction Guaranteed</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <Users className="h-5 w-5 text-yellow" />
-                <span className="text-sm">Same Day Service</span>
+              <div className="flex items-center space-x-2 sm:col-span-2 md:col-span-1">
+                <Users className="h-4 w-4 sm:h-5 sm:w-5 text-yellow flex-shrink-0" />
+                <span className="text-xs sm:text-sm">Same Day Service</span>
               </div>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/get-a-quote">
-                <Button variant="retro" size="lg" className="w-full sm:w-auto text-lg px-8 py-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <Link href="/get-a-quote" className="w-full sm:w-auto">
+                <Button variant="retro" size="lg" className="w-full text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 min-h-[48px]">
                   Get Free Quote in 60 Seconds
                 </Button>
               </Link>
-              <Link href={`tel:${BUSINESS_INFO.phone}`}>
-                <Button variant="retro-navy" size="lg" className="w-full sm:w-auto text-lg px-8 py-4 bg-white text-navy hover:bg-gray-100">
-                  <Phone className="h-5 w-5 mr-2" />
+              <Link href={`tel:${BUSINESS_INFO.phone}`} className="w-full sm:w-auto">
+                <Button variant="retro-navy" size="lg" className="w-full text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 bg-white text-navy hover:bg-gray-100 min-h-[48px]">
+                  <Phone className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
                   Call {BUSINESS_INFO.phone}
                 </Button>
               </Link>
             </div>
 
             {/* Urgency Message */}
-            <div className="bg-yellow text-navy px-4 py-3 rounded-lg shadow-retro-yellow">
-              <p className="font-bold text-center">
+            <div className="bg-yellow text-navy px-3 sm:px-4 py-2 sm:py-3 rounded-lg shadow-retro-yellow">
+              <p className="font-bold text-center text-sm sm:text-base">
                 🚨 Limited Slots Available - Book Now for 10% Off Your First Service!
               </p>
             </div>
           </div>
 
           {/* Hero Image with Mascot */}
-          <div className="relative">
+          <div className="relative order-first lg:order-last">
             <div className="polaroid-frame">
-              <div className="relative h-96 md:h-[500px] rounded-lg overflow-hidden">
+              <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] rounded-lg overflow-hidden">
                 <div className="bg-gradient-to-br from-blue-100 to-yellow-100 flex items-center justify-center h-full border-4 border-navy shadow-lg">
                   <div className="relative w-full h-full flex items-center justify-center">
                     <video

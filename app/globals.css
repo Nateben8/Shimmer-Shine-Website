@@ -65,10 +65,25 @@
     @apply bg-white border-2 border-navy shadow-retro rounded-lg overflow-hidden;
   }
   
+  /* Mobile-optimized card padding */
+  @media (max-width: 640px) {
+    .retro-card .card-header,
+    .retro-card .card-content {
+      @apply p-4;
+    }
+  }
+  
   .retro-button {
     @apply bg-yellow text-navy font-bold py-3 px-6 rounded-lg shadow-retro-yellow 
            border-2 border-navy hover:translate-x-1 hover:translate-y-1 
            hover:shadow-none transition-all duration-200 uppercase tracking-wide;
+  }
+  
+  /* Mobile-optimized button sizing */
+  @media (max-width: 640px) {
+    .retro-button {
+      @apply py-3 px-4 text-sm min-h-[44px];
+    }
   }
   
   .retro-button-navy {
@@ -77,14 +92,35 @@
            hover:shadow-none transition-all duration-200 uppercase tracking-wide;
   }
   
+  /* Mobile-optimized navy button sizing */
+  @media (max-width: 640px) {
+    .retro-button-navy {
+      @apply py-3 px-4 text-sm min-h-[44px];
+    }
+  }
+  
   .retro-badge {
     @apply bg-yellow text-navy px-4 py-2 rounded-full font-bold text-sm 
            border-2 border-navy shadow-retro-yellow uppercase tracking-wide;
   }
   
+  /* Mobile-optimized badge sizing */
+  @media (max-width: 640px) {
+    .retro-badge {
+      @apply px-3 py-1 text-xs;
+    }
+  }
+  
   .polaroid-frame {
     @apply bg-white p-4 shadow-retro border-2 border-gray-300 rotate-2 
            hover:rotate-0 transition-transform duration-300;
+  }
+  
+  /* Mobile-optimized polaroid frame */
+  @media (max-width: 640px) {
+    .polaroid-frame {
+      @apply p-2 rotate-1;
+    }
   }
   
   .vintage-border {
@@ -104,9 +140,31 @@
     @apply font-roboto-condensed text-gray-800;
   }
   
+  /* Mobile typography improvements */
+  @media (max-width: 640px) {
+    .heading-decorative {
+      @apply leading-tight;
+    }
+    
+    .heading-primary {
+      @apply leading-tight;
+    }
+    
+    .body-text {
+      @apply leading-relaxed;
+    }
+  }
+  
   /* Enhanced Jobber form styling */
   .jobber-form-container {
     @apply bg-white border-2 border-navy rounded-xl shadow-retro p-8 relative overflow-hidden w-full;
+  }
+  
+  /* Mobile-optimized form container */
+  @media (max-width: 640px) {
+    .jobber-form-container {
+      @apply p-4 rounded-lg;
+    }
   }
   
   /* Override Jobber form internal width constraints */
@@ -228,4 +286,33 @@ html {
 /* Focus styles for accessibility */
 .focus-visible:focus-visible {
   @apply outline-2 outline-offset-2 outline-navy;
+}
+
+/* Mobile touch target improvements */
+@media (max-width: 640px) {
+  /* Ensure all interactive elements meet minimum touch target size */
+  button, 
+  a[role="button"], 
+  input[type="button"], 
+  input[type="submit"], 
+  .btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Improve spacing for mobile interactions */
+  .mobile-touch-spacing > * + * {
+    margin-top: 0.75rem;
+  }
+  
+  /* Mobile-friendly hover states (remove on touch devices) */
+  @media (hover: none) {
+    .hover\\:scale-105:hover {
+      transform: none;
+    }
+    
+    .hover\\:shadow-xl:hover {
+      box-shadow: inherit;
+    }
+  }
 }

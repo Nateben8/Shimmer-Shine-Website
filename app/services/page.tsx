@@ -35,40 +35,40 @@ export default function ServicesPage() {
               Professional Services Since {BUSINESS_INFO.foundedYear}
             </div>
             
-            <h1 className="heading-decorative text-5xl md:text-7xl text-yellow mb-4">
+            <h1 className="heading-decorative text-4xl sm:text-5xl md:text-7xl text-yellow mb-4">
               Our Services
             </h1>
             
-            <h2 className="heading-primary text-2xl md:text-3xl text-white mb-6">
+            <h2 className="heading-primary text-xl sm:text-2xl md:text-3xl text-white mb-4 sm:mb-6">
               Complete Property Detailing in Orange County, LA & San Diego
             </h2>
             
-            <p className="body-text text-xl text-gray-100 mb-8 leading-relaxed">
+            <p className="body-text text-lg sm:text-xl text-gray-100 mb-6 sm:mb-8 leading-relaxed">
               From sparkling windows to pristine driveways, we bring three decades of expertise to every job. Old-school craftsmanship meets modern reliability.
             </p>
 
             {/* Service Areas */}
-            <div className="flex items-center justify-center space-x-2 text-lg">
-              <MapPin className="h-5 w-5 text-yellow" />
-              <span>Serving {BUSINESS_INFO.serviceAreas.join(" • ")}</span>
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-2 text-sm sm:text-lg">
+              <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-yellow" />
+              <span className="text-center">Serving {BUSINESS_INFO.serviceAreas.join(" • ")}</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-16">
+      <section className="py-12 sm:py-16">
         <div className="container mx-auto px-4">
           {Object.entries(servicesByCategory).map(([category, services]) => (
-            <div key={category} className="mb-16">
-              <h3 className="heading-primary text-3xl md:text-4xl text-center mb-4 capitalize">
+            <div key={category} className="mb-12 sm:mb-16">
+              <h3 className="heading-primary text-2xl sm:text-3xl md:text-4xl text-center mb-4 capitalize">
                 {category === 'cleaning' ? 'Core Cleaning Services' : 
                  category === 'specialty' ? 'Specialty Services' : 
                  category === 'maintenance' ? 'Maintenance Services' : 
                  category === 'commercial' ? 'Commercial Services' : category}
               </h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 {services.map((service) => (
                   <Card key={service.id} className="retro-card hover:shadow-retro-yellow transition-all duration-300 group h-full">
                     <CardHeader className="text-center">
@@ -85,10 +85,10 @@ export default function ServicesPage() {
                           <div className="text-6xl">{service.icon}</div>
                         )}
                       </div>
-                      <CardTitle className="heading-primary text-2xl mb-2">
+                      <CardTitle className="heading-primary text-xl sm:text-2xl mb-2">
                         {service.name}
                       </CardTitle>
-                      <CardDescription className="body-text text-lg">
+                      <CardDescription className="body-text text-base sm:text-lg">
                         {service.shortDescription}
                       </CardDescription>
                     </CardHeader>
