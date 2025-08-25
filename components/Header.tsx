@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -9,6 +9,20 @@ import { Menu, X, Phone, MapPin } from "lucide-react"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isMenuOpen])
 
   const navigation = [
     { name: "Home", href: "/" },
@@ -121,26 +135,47 @@ export default function Header() {
             </div>
           </div>
 
-                  {/* Mobile Navigation */}
-        <div className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
-        }`}>
-          <div className="border-t border-gray-200 bg-white shadow-lg">
-            <nav className="px-3 py-4 space-y-4">
+      {/* Mobile Navigation Backdrop */}
+      {isMenuOpen && (
+        <div 
+          className="lg:hidden fixed inset-0 bg-black/50 z-40 transition-opacity duration-300"
+          onClick={() => setIsMenuOpen(false)}
+        />
+      )}
+
+      {/* Mobile Navigation */}
+      <div className={`lg:hidden fixed inset-x-0 top-0 z-50 transition-all duration-300 ease-in-out ${
+        isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
+      }`}>
+        <div className="bg-white shadow-2xl min-h-screen overflow-y-auto">
+            {/* Close Button Header */}
+            <div className="flex justify-between items-center p-4 border-b border-gray-200 bg-gray-50">
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 bg-yellow rounded-full flex items-center justify-center">
+                  <span className="text-navy font-bold text-sm">SS</span>
+                </div>
+                <span className="font-bold text-navy text-lg">Menu</span>
+              </div>
+              <button
+                onClick={() => setIsMenuOpen(false)}
+                className="p-2 rounded-full hover:bg-gray-200 transition-colors"
+                aria-label="Close menu"
+              >
+                <X className="h-6 w-6 text-gray-600" />
+              </button>
+            </div>
+            
+            <nav className="px-4 py-6 space-y-4">
                 {/* Navigation Links */}
                 <div className="space-y-2">
                   {navigation.map((item, index) => (
                     <Link
                       key={item.name}
                       href={item.href}
-                      className={`block w-full text-left text-gray-800 hover:text-navy hover:bg-gray-50 font-semibold py-5 px-5 rounded-xl border border-gray-100 hover:border-navy/20 transition-all duration-200 text-lg tracking-wide transform hover:scale-[1.02] min-h-[56px] flex items-center ${
+                      className={`block w-full text-left text-gray-800 hover:text-navy hover:bg-gray-50 font-semibold py-4 px-4 rounded-lg border border-gray-100 hover:border-navy/20 transition-all duration-200 text-lg tracking-wide min-h-[56px] flex items-center touch-manipulation ${
                         item.name === 'Get Quote' ? 'hidden' : ''
                       }`}
                       onClick={() => setIsMenuOpen(false)}
-                      style={{
-                        animationDelay: `${index * 50}ms`,
-                        animation: isMenuOpen ? 'slideInFromRight 0.3s ease-out forwards' : 'none'
-                      }}
                     >
                       <div className="flex items-center justify-between">
                         <span>{item.name}</span>
