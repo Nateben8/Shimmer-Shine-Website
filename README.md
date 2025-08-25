@@ -114,3 +114,4 @@ Shimmer Shine Property Detailing has been serving Southern California since 1995
 ---
 
 *Built with ❤️ using Next.js 14, TypeScript, and Tailwind CSS*
+# Trigger deployment - Mon Aug 25 14:22:55 PDT 2025
