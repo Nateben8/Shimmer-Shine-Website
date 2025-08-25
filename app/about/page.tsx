@@ -80,10 +80,12 @@ export default function AboutPage() {
                 <div className="relative h-96 rounded-lg overflow-hidden">
                   <Image
                     src="/About us image.png"
-                    alt="Shimmer Shine Property Detailing - Professional Window Cleaning and Pressure Washing Team in Orange County, Los Angeles, and San Diego"
+                    alt="Shimmer Shine Property Detailing - Professional Window Cleaning, Pressure Washing & Solar Panel Cleaning Team Orange County - Licensed & Insured Since 2021"
+                    title="About Shimmer Shine Property Detailing - Best Cleaning Services Orange County"
                     fill
                     className="object-cover"
                     priority
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-4">
                     <p className="font-bold text-center">Professional Property Detailing Services</p>

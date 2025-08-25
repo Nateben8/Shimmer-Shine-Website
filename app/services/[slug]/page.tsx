@@ -169,26 +169,32 @@ export default function ServicePage({ params }: ServicePageProps) {
                   ) : service.id === 'gutter-cleaning' ? (
                     <Image
                       src="/gutter-cleaning-hero.jpg"
-                      alt="Professional gutter cleaning service showing debris removal and maintenance"
+                      alt="Professional gutter cleaning Orange County - Licensed gutter cleaning service with debris removal, downspout cleaning, and gutter maintenance"
+                      title="Best Gutter Cleaning Orange County - Same Day Service Available"
                       fill
                       className="object-cover"
                       priority
+                      sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   ) : service.id === 'commercial-cleaning' ? (
                     <Image
                       src="/commercial-cleaning-hero.jpg"
-                      alt="Professional commercial cleaning service for offices and business facilities"
+                      alt="Commercial cleaning Orange County - Professional office cleaning, facility maintenance, and business cleaning services"
+                      title="Commercial Cleaning Services Orange County - Licensed & Insured"
                       fill
                       className="object-cover"
                       priority
+                      sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   ) : service.id === 'post-construction-cleanup' ? (
                     <Image
                       src="/Post-Construction%20Cleanup-hero.jpeg"
-                      alt="Professional post-construction cleanup service showing debris removal and site cleaning"
+                      alt="Post construction cleanup Orange County - Professional construction site cleaning, debris removal, and move-in ready preparation"
+                      title="Post Construction Cleanup Orange County - 24-48 Hour Response Time"
                       fill
                       className="object-cover"
                       priority
+                      sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   ) : (
                     <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
@@ -567,6 +573,148 @@ export default function ServicePage({ params }: ServicePageProps) {
                 </>
               )}
 
+              {service.id === 'post-construction-cleanup' && (
+                <>
+                  {/* Post Construction Cleanup Expertise Section */}
+                  <Card className="retro-card mb-8">
+                    <CardHeader>
+                      <CardTitle className="heading-primary text-2xl text-navy">
+                        Professional Post Construction Cleanup Orange County Expertise
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="prose prose-lg max-w-none">
+                        <p className="body-text text-gray-700 leading-relaxed mb-4">
+                          As the <strong>best post construction cleaners Orange County</strong>, we provide comprehensive <strong>residential post construction cleaning Orange County</strong> and <strong>commercial post construction cleanup Orange County</strong> services. Our <strong>local post construction cleaning near me Orange County</strong> team specializes in <strong>move in ready post construction cleaning Orange County</strong> with rapid response capabilities.
+                        </p>
+                        <p className="body-text text-gray-700 leading-relaxed mb-4">
+                          Our <strong>professional post construction cleaning Orange County</strong> services include <strong>dust removal after construction Orange County</strong>, <strong>debris removal post construction Orange County</strong>, and <strong>deep cleaning after renovation Orange County</strong>. We offer <strong>free quote post construction cleaning Orange County</strong> with transparent pricing and <strong>same day post construction cleanup Orange County</strong> for urgent deadlines.
+                        </p>
+                        <h3 className="heading-primary text-xl text-navy mb-3">Specialized Post Construction Services</h3>
+                        <ul className="list-disc list-inside space-y-2 text-gray-700">
+                          <li><strong>New construction cleanup Orange County</strong> - Fresh build final cleaning</li>
+                          <li><strong>Post renovation cleaning Orange County</strong> - Renovation aftermath restoration</li>
+                          <li><strong>Final construction cleaning Orange County</strong> - Move-in ready preparation</li>
+                          <li><strong>Emergency post construction cleaning Orange County</strong> - Urgent deadline service</li>
+                          <li><strong>Detailed post construction cleaning Orange County</strong> - Comprehensive deep cleaning</li>
+                          <li><strong>Construction site cleanup Orange County</strong> - Complete site restoration</li>
+                        </ul>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Commercial Post Construction Services */}
+                  <Card className="retro-card mb-8">
+                    <CardHeader>
+                      <CardTitle className="heading-primary text-2xl text-navy">
+                        Commercial Post Construction Cleanup Orange County
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="prose prose-lg max-w-none">
+                        <p className="body-text text-gray-700 leading-relaxed mb-4">
+                          Our <strong>commercial post construction cleanup Orange County</strong> services are designed for businesses needing immediate occupancy readiness. We understand the critical timing requirements for commercial projects.
+                        </p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                          <div className="space-y-3">
+                            <h4 className="font-bold text-navy">Office & Corporate</h4>
+                            <ul className="text-sm text-gray-700 space-y-1">
+                              <li>• Office construction cleanup Orange County</li>
+                              <li>• Office building construction cleanup Orange County</li>
+                              <li>• Corporate facility post construction cleaning</li>
+                              <li>• Cubicle and workspace preparation</li>
+                            </ul>
+                          </div>
+                          <div className="space-y-3">
+                            <h4 className="font-bold text-navy">Retail & Hospitality</h4>
+                            <ul className="text-sm text-gray-700 space-y-1">
+                              <li>• Retail store construction cleanup Orange County</li>
+                              <li>• Restaurant post construction cleaning Orange County</li>
+                              <li>• Hotel post construction cleaning Orange County</li>
+                              <li>• Shopping center post construction cleanup</li>
+                            </ul>
+                          </div>
+                          <div className="space-y-3">
+                            <h4 className="font-bold text-navy">Industrial & Warehouse</h4>
+                            <ul className="text-sm text-gray-700 space-y-1">
+                              <li>• Warehouse construction cleanup Orange County</li>
+                              <li>• Manufacturing facility cleanup</li>
+                              <li>• Distribution center post construction cleaning</li>
+                              <li>• Industrial complex restoration</li>
+                            </ul>
+                          </div>
+                          <div className="space-y-3">
+                            <h4 className="font-bold text-navy">Multi-Unit Residential</h4>
+                            <ul className="text-sm text-gray-700 space-y-1">
+                              <li>• Apartment post construction cleaning Orange County</li>
+                              <li>• Condominium complex cleanup</li>
+                              <li>• Multi-family housing preparation</li>
+                              <li>• Property management post construction services</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Specialized Cleaning Services */}
+                  <Card className="retro-card mb-8">
+                    <CardHeader>
+                      <CardTitle className="heading-primary text-2xl text-navy">
+                        Specialized Post Construction Cleaning Services Orange County
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="prose prose-lg max-w-none">
+                        <p className="body-text text-gray-700 leading-relaxed mb-4">
+                          Our <strong>detailed post construction cleaning Orange County</strong> includes specialized services for complete project completion and occupancy readiness.
+                        </p>
+                        <div className="bg-yellow/10 border border-yellow/20 rounded-lg p-6 mb-4">
+                          <h4 className="font-bold text-navy mb-3">Service Timeline & Pricing</h4>
+                          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                            <div>
+                              <div className="text-2xl font-bold text-navy">24-48hrs</div>
+                              <div className="text-sm text-gray-600">Rapid Response</div>
+                            </div>
+                            <div>
+                              <div className="text-2xl font-bold text-navy">$500-$5000</div>
+                              <div className="text-sm text-gray-600">Project Range</div>
+                            </div>
+                            <div>
+                              <div className="text-2xl font-bold text-navy">100%</div>
+                              <div className="text-sm text-gray-600">Move-In Ready</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          <div className="space-y-2">
+                            <h4 className="font-bold text-navy">Surface Restoration</h4>
+                            <ul className="text-sm text-gray-700 space-y-1">
+                              <li>• Window cleaning post construction Orange County</li>
+                              <li>• Floor cleaning after construction Orange County</li>
+                              <li>• Carpet cleaning post construction Orange County</li>
+                              <li>• Wall and ceiling dust removal</li>
+                            </ul>
+                          </div>
+                          <div className="space-y-2">
+                            <h4 className="font-bold text-navy">Deep Cleaning Services</h4>
+                            <ul className="text-sm text-gray-700 space-y-1">
+                              <li>• Rough cleaning construction Orange County</li>
+                              <li>• Fine dust removal and filtration</li>
+                              <li>• HVAC system cleaning post construction</li>
+                              <li>• Fixture and appliance cleaning</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <p className="body-text text-gray-700 leading-relaxed mt-4">
+                          Our <strong>licensed post construction cleaning Orange County</strong> and <strong>insured post construction cleaners Orange County</strong> team uses specialized equipment and follows strict safety protocols for construction environments.
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </>
+              )}
+
             </div>
 
             {/* Sidebar */}
@@ -688,10 +836,13 @@ export default function ServicePage({ params }: ServicePageProps) {
                       {relatedService.iconType === "image" ? (
                         <Image
                           src={relatedService.icon}
-                          alt={`${relatedService.name} icon`}
+                          alt={`Professional ${relatedService.name} Orange County - ${relatedService.shortDescription} service icon`}
+                          title={`${relatedService.name} Services Orange County - Licensed & Insured`}
                           width={64}
                           height={64}
                           className="object-contain"
+                          sizes="64px"
+                          loading="lazy"
                         />
                       ) : (
                         <div className="text-4xl">{relatedService.icon}</div>
@@ -924,6 +1075,88 @@ export default function ServicePage({ params }: ServicePageProps) {
                     <CardContent>
                       <p className="body-text text-gray-700 text-sm">
                         Yes! We provide <strong>Irvine solar panel cleaning</strong>, <strong>Newport Beach solar panel cleaning</strong>, and <strong>Laguna Beach solar panel cleaning</strong> throughout Orange County. Our <strong>solar panel cleaning near me Orange County</strong> service covers all major cities with <strong>same day solar panel cleaning Orange County</strong> available for urgent needs.
+                      </p>
+                    </CardContent>
+                  </Card>
+                </>
+              )}
+
+              {service.id === 'post-construction-cleanup' && (
+                <>
+                  <Card className="retro-card">
+                    <CardHeader>
+                      <CardTitle className="heading-primary text-lg text-navy">
+                        How much does post construction cleanup cost in Orange County?
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="body-text text-gray-700 text-sm">
+                        <strong>Post construction cleanup Orange County</strong> costs typically range from $500-$5000 depending on project size and scope. <strong>Residential post construction cleaning Orange County</strong> averages $800-$2500, while <strong>commercial post construction cleanup Orange County</strong> ranges $1500-$5000+. Our <strong>free quote post construction cleaning Orange County</strong> provides detailed estimates based on your specific project needs.
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="retro-card">
+                    <CardHeader>
+                      <CardTitle className="heading-primary text-lg text-navy">
+                        Do you provide same day post construction cleanup service?
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="body-text text-gray-700 text-sm">
+                        Yes! Our <strong>same day post construction cleanup Orange County</strong> is available for urgent project deadlines. As <strong>local post construction cleaning near me Orange County</strong> specialists, we understand construction timelines and can provide <strong>emergency post construction cleaning Orange County</strong> within 24-48 hours to ensure your project stays on schedule.
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="retro-card">
+                    <CardHeader>
+                      <CardTitle className="heading-primary text-lg text-navy">
+                        What's included in detailed post construction cleaning?
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="body-text text-gray-700 text-sm">
+                        Our <strong>detailed post construction cleaning Orange County</strong> includes <strong>dust removal after construction Orange County</strong>, <strong>debris removal post construction Orange County</strong>, <strong>window cleaning post construction Orange County</strong>, <strong>floor cleaning after construction Orange County</strong>, and <strong>deep cleaning after renovation Orange County</strong>. We provide <strong>move in ready post construction cleaning Orange County</strong> that meets occupancy standards.
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="retro-card">
+                    <CardHeader>
+                      <CardTitle className="heading-primary text-lg text-navy">
+                        Do you handle commercial post construction projects?
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="body-text text-gray-700 text-sm">
+                        Absolutely! Our <strong>commercial post construction cleanup Orange County</strong> includes <strong>office construction cleanup Orange County</strong>, <strong>retail store construction cleanup Orange County</strong>, <strong>restaurant post construction cleaning Orange County</strong>, <strong>hotel post construction cleaning Orange County</strong>, and <strong>warehouse construction cleanup Orange County</strong>. We specialize in deadline-driven commercial projects.
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="retro-card">
+                    <CardHeader>
+                      <CardTitle className="heading-primary text-lg text-navy">
+                        Are you licensed and insured for construction cleanup?
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="body-text text-gray-700 text-sm">
+                        Yes! We are fully <strong>licensed post construction cleaning Orange County</strong> professionals with comprehensive insurance coverage. Our <strong>insured post construction cleaners Orange County</strong> team follows strict safety protocols and carries specialized equipment insurance for construction environments. We're the <strong>professional post construction cleaning Orange County</strong> choice for contractors and property owners.
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="retro-card">
+                    <CardHeader>
+                      <CardTitle className="heading-primary text-lg text-navy">
+                        Do you serve Irvine and Newport Beach for post construction cleanup?
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="body-text text-gray-700 text-sm">
+                        Yes! We provide <strong>Irvine post construction cleanup</strong>, <strong>Newport Beach post construction cleaning</strong>, and <strong>Huntington Beach post construction cleanup</strong> throughout Orange County. Our <strong>local post construction cleaning near me Orange County</strong> service covers all major cities with rapid response for <strong>new construction cleanup Orange County</strong> and renovation projects.
                       </p>
                     </CardContent>
                   </Card>

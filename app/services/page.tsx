@@ -76,10 +76,13 @@ export default function ServicesPage() {
                         {service.iconType === "image" ? (
                           <Image
                             src={service.icon}
-                            alt={`${service.name} icon`}
+                            alt={`Professional ${service.name} Orange County - ${service.shortDescription} service icon`}
+                            title={`${service.name} Services Orange County - Licensed & Insured`}
                             width={80}
                             height={80}
                             className="w-20 h-20"
+                            sizes="80px"
+                            loading="lazy"
                           />
                         ) : (
                           <div className="text-6xl">{service.icon}</div>

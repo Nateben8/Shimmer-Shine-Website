@@ -101,10 +101,12 @@ export default function GetQuotePage() {
                     <div className="relative w-full h-full">
                       <Image
                         src="/window-cleaning-quote.png"
-                        alt="Professional window cleaning service in action"
+                        alt="Professional window cleaning Orange County - Get free quote for residential and commercial window cleaning services"
+                        title="Free Window Cleaning Quote Orange County - Same Day Service Available"
                         fill
                         className="object-cover"
                         priority
+                        sizes="(max-width: 768px) 100vw, 50vw"
                       />
                     </div>
                   </div>

@@ -154,15 +154,15 @@ export default function CityPage({ params }: CityPageProps) {
               </div>
               
                             <h1 className="heading-decorative text-5xl md:text-6xl text-yellow mb-4">
-                {cityName} Solar Panel & Pressure Washing Services
+                {cityName} Post Construction Cleanup & Property Services
               </h1>
 
               <h2 className="heading-primary text-2xl md:text-3xl text-white mb-6">
-                Solar Panel Cleaning {cityName} | Same Day Service Available
+                Post Construction Cleanup {cityName} | 24-48 Hour Response
               </h2>
 
               <p className="body-text text-xl text-gray-100 mb-8 leading-relaxed">
-                Professional solar panel cleaning {cityName} and pressure washing services. Our solar panel cleaning near me {cityName} improves efficiency by 30%. Licensed residential solar panel cleaning {cityName} and commercial solar panel cleaning {cityName} with same day service. Serving {county} since 2021.
+                Professional post construction cleanup {cityName} with rapid response for project deadlines. Our local post construction cleaning near me {cityName} provides same day post construction cleanup {cityName} for residential and commercial projects. Licensed post construction cleaning {cityName} serving {county} since 2021.
               </p>
 
               {/* Local Benefits */}
@@ -272,32 +272,44 @@ export default function CityPage({ params }: CityPageProps) {
                     ) : service.id === 'gutter-cleaning' ? (
                       <Image
                         src="/gutter-cleaning-hero.jpg"
-                        alt={`Professional ${service.name} service in ${cityName}`}
+                        alt={`Professional gutter cleaning ${cityName} - Licensed gutter cleaning service ${county} with debris removal and maintenance`}
+                        title={`Best Gutter Cleaning ${cityName} - Same Day Service Available`}
                         fill
                         className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        loading="lazy"
                       />
                     ) : service.id === 'commercial-cleaning' ? (
                       <Image
                         src="/commercial-cleaning-hero.jpg"
-                        alt={`Professional ${service.name} service in ${cityName}`}
+                        alt={`Commercial cleaning ${cityName} - Professional office cleaning and facility maintenance services ${county}`}
+                        title={`Commercial Cleaning Services ${cityName} - Licensed & Insured`}
                         fill
                         className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        loading="lazy"
                       />
                     ) : service.id === 'post-construction-cleanup' ? (
                       <Image
                         src="/Post-Construction%20Cleanup-hero.jpeg"
-                        alt={`Professional ${service.name} service in ${cityName}`}
+                        alt={`Post construction cleanup ${cityName} - Professional construction site cleaning and debris removal ${county}`}
+                        title={`Post Construction Cleanup ${cityName} - 24-48 Hour Response Time`}
                         fill
                         className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        loading="lazy"
                       />
                     ) : service.iconType === "image" ? (
                       <div className="absolute inset-0 bg-gray-100 flex items-center justify-center">
                         <Image
                           src={service.icon}
-                          alt={`${service.name} icon`}
+                          alt={`Professional ${service.name} ${cityName} - ${service.shortDescription} service icon`}
+                          title={`${service.name} Services ${cityName} - Licensed & Insured`}
                           width={80}
                           height={80}
                           className="object-contain"
+                          sizes="80px"
+                          loading="lazy"
                         />
                       </div>
                     ) : (
@@ -393,43 +405,43 @@ export default function CityPage({ params }: CityPageProps) {
         <div className="container mx-auto px-4">
                       <div className="text-center mb-12">
               <h2 className="heading-primary text-3xl md:text-4xl mb-4">
-                {cityName} Solar Panel Cleaning & Pressure Washing Services
+                {cityName} Post Construction Cleanup & Property Services
               </h2>
               <p className="body-text text-xl text-gray-600 max-w-4xl mx-auto">
-                Looking for solar panel cleaning near me {cityName} or pressure washing {cityName}? We provide same day solar panel cleaning {cityName} and pressure washing with free quotes. Our services include residential solar panel cleaning {cityName}, commercial solar panel cleaning {cityName}, recurring solar panel cleaning {cityName}, and improve solar panel efficiency {cityName} by up to 30%.
+                Looking for local post construction cleaning near me {cityName} or property services? We provide same day post construction cleanup {cityName} with 24-48 hour response times. Our services include residential post construction cleaning {cityName}, commercial post construction cleanup {cityName}, new construction cleanup {cityName}, and move in ready post construction cleaning {cityName} for immediate occupancy.
               </p>
             </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             <div className="text-center p-6 bg-gray-50 rounded-lg">
-              <h3 className="heading-primary text-lg mb-2">Solar Panel Cleaning</h3>
-              <p className="body-text text-sm">Solar panel cleaning near me {cityName} improves efficiency by 30%</p>
+              <h3 className="heading-primary text-lg mb-2">24-48 Hour Response</h3>
+              <p className="body-text text-sm">Same day post construction cleanup {cityName} for urgent deadlines</p>
             </div>
             <div className="text-center p-6 bg-gray-50 rounded-lg">
-              <h3 className="heading-primary text-lg mb-2">Same Day Service</h3>
-              <p className="body-text text-sm">Same day solar panel cleaning {cityName} and pressure washing</p>
+              <h3 className="heading-primary text-lg mb-2">Move-In Ready</h3>
+              <p className="body-text text-sm">Move in ready post construction cleaning {cityName} guaranteed</p>
             </div>
             <div className="text-center p-6 bg-gray-50 rounded-lg">
               <h3 className="heading-primary text-lg mb-2">Free Quotes</h3>
-              <p className="body-text text-sm">Solar panel cleaning quotes {cityName} in 60 seconds</p>
+              <p className="body-text text-sm">Free quote post construction cleaning {cityName} in 60 seconds</p>
             </div>
             <div className="text-center p-6 bg-gray-50 rounded-lg">
               <h3 className="heading-primary text-lg mb-2">Licensed & Insured</h3>
-              <p className="body-text text-sm">Licensed solar panel cleaning {cityName} with full coverage</p>
+              <p className="body-text text-sm">Licensed post construction cleaning {cityName} with full coverage</p>
             </div>
           </div>
 
           <div className="text-center">
             <h3 className="heading-primary text-2xl mb-4">
-              Best Solar Panel Cleaning in {cityName}
+              Best Post Construction Cleaners in {cityName}
             </h3>
             <p className="body-text text-lg text-gray-600 max-w-3xl mx-auto mb-8">
-              Professional solar panel cleaning {cityName} with improve solar panel efficiency {cityName} results. Our residential solar panel cleaning {cityName} and commercial solar panel cleaning {cityName} includes recurring solar panel cleaning {cityName}, monthly solar panel cleaning {cityName}, and increase solar panel output {cityName} services.
+              Professional post construction cleanup {cityName} with rapid response for project deadlines. Our residential post construction cleaning {cityName} and commercial post construction cleanup {cityName} includes new construction cleanup {cityName}, post renovation cleaning {cityName}, detailed post construction cleaning {cityName}, and emergency post construction cleaning {cityName} services.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/get-a-quote">
                 <Button variant="retro" size="lg" className="text-lg px-8 py-4">
-                  Get Free {cityName} Solar Quote
+                  Get Free {cityName} Construction Quote
                 </Button>
               </Link>
               <Link href={`tel:${BUSINESS_INFO.phone}`}>
@@ -593,12 +605,38 @@ export default function CityPage({ params }: CityPageProps) {
               <Card className="retro-card">
                 <CardHeader>
                   <CardTitle className="heading-primary text-xl text-navy">
-                    How much does solar panel cleaning cost in {cityName}?
+                    How much does post construction cleanup cost in {cityName}?
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="body-text text-gray-700">
-                    <strong>Solar panel cleaning {cityName}</strong> costs typically range from $150-$400 for residential systems and $300-$1200 for commercial installations. Our <strong>solar panel cleaning quotes {cityName}</strong> service provides detailed estimates. <strong>Monthly solar panel cleaning {cityName}</strong> programs offer significant savings and help <strong>increase solar panel output {cityName}</strong> consistently.
+                    <strong>Post construction cleanup {cityName}</strong> costs typically range from $500-$5000 depending on project size and scope. <strong>Residential post construction cleaning {cityName}</strong> averages $800-$2500, while <strong>commercial post construction cleanup {cityName}</strong> ranges $1500-$5000+. Our <strong>free quote post construction cleaning {cityName}</strong> provides detailed estimates based on your specific project needs and timeline requirements.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="retro-card">
+                <CardHeader>
+                  <CardTitle className="heading-primary text-xl text-navy">
+                    Do you provide same day post construction cleanup in {cityName}?
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="body-text text-gray-700">
+                    Yes! Our <strong>same day post construction cleanup {cityName}</strong> is available for urgent project deadlines. As <strong>local post construction cleaning near me {cityName}</strong> specialists, we understand construction timelines and can provide <strong>emergency post construction cleaning {cityName}</strong> within 24-48 hours to ensure your project stays on schedule and meets occupancy requirements.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="retro-card">
+                <CardHeader>
+                  <CardTitle className="heading-primary text-xl text-navy">
+                    What's included in detailed post construction cleaning in {cityName}?
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="body-text text-gray-700">
+                    Our <strong>detailed post construction cleaning {cityName}</strong> includes <strong>dust removal after construction {cityName}</strong>, <strong>debris removal post construction {cityName}</strong>, window cleaning, floor restoration, and complete surface sanitization. We provide <strong>move in ready post construction cleaning {cityName}</strong> that meets all occupancy standards and building requirements for immediate use.
                   </p>
                 </CardContent>
               </Card>

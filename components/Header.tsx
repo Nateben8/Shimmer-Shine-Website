@@ -70,13 +70,15 @@ export default function Header() {
             {/* Centered Logo */}
             <div className="flex justify-center col-span-3 lg:col-span-1">
               <Link href="/" className="block">
-                <div className="relative w-32 h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 hover:scale-105 transition-transform">
+                <div className="relative w-36 h-36 md:w-40 md:h-40 lg:w-44 lg:h-44 hover:scale-105 transition-transform">
                   <Image
                     src="/logo.png"
-                    alt="Shimmer Shine Logo"
+                    alt="Shimmer Shine Property Detailing - Professional Window Cleaning, Pressure Washing & Solar Panel Cleaning Orange County"
+                    title="Shimmer Shine Property Detailing - Licensed & Insured Cleaning Services Orange County"
                     fill
                     className="object-contain"
                     priority
+                    sizes="(max-width: 768px) 144px, (max-width: 1024px) 160px, 176px"
                   />
                 </div>
               </Link>
@@ -120,40 +122,97 @@ export default function Header() {
           </div>
 
           {/* Mobile Navigation */}
-          {isMenuOpen && (
-            <div className="lg:hidden border-t border-gray-200 py-6 bg-white">
-              <nav className="space-y-6">
+          <div className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+          }`}>
+            <div className="border-t border-gray-200 bg-white shadow-lg">
+              <nav className="px-4 py-6 space-y-6">
                 {/* Navigation Links */}
-                <div className="grid grid-cols-2 gap-4">
-                  {navigation.slice(0, 4).map((item) => (
+                <div className="space-y-2">
+                  {navigation.map((item, index) => (
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="block text-center text-gray-800 hover:text-navy font-bold py-4 px-6 rounded-lg border-2 border-gray-200 hover:border-navy transition-all text-sm uppercase tracking-wide"
+                      className={`block w-full text-left text-gray-800 hover:text-navy hover:bg-gray-50 font-semibold py-4 px-6 rounded-xl border border-gray-100 hover:border-navy/20 transition-all duration-200 text-base tracking-wide transform hover:scale-[1.02] ${
+                        item.name === 'Get Quote' ? 'hidden' : ''
+                      }`}
                       onClick={() => setIsMenuOpen(false)}
+                      style={{
+                        animationDelay: `${index * 50}ms`,
+                        animation: isMenuOpen ? 'slideInFromRight 0.3s ease-out forwards' : 'none'
+                      }}
                     >
-                      {item.name}
+                      <div className="flex items-center justify-between">
+                        <span>{item.name}</span>
+                        <div className="w-2 h-2 bg-yellow rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                      </div>
                     </Link>
                   ))}
                 </div>
                 
+                {/* Contact Info */}
+                <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
+                  <div className="flex items-center justify-center space-x-2 text-navy mb-2">
+                    <Phone className="h-4 w-4 text-yellow" />
+                    <span className="font-bold text-lg">{BUSINESS_INFO.phone}</span>
+                  </div>
+                  <div className="flex items-center justify-center space-x-2 text-gray-600 text-sm">
+                    <MapPin className="h-3 w-3 text-yellow" />
+                    <span>Orange County, LA & San Diego</span>
+                  </div>
+                </div>
+                
                 {/* CTA Buttons */}
-                <div className="space-y-3">
-                  <Link href="/get-a-quote">
-                    <Button variant="default" size="lg" className="w-full bg-yellow hover:bg-yellow/90 font-bold text-navy shadow-lg hover:shadow-xl transition-all hover:scale-105 animate-pulse border-2 border-navy">
+                <div className="space-y-3 pt-2">
+                  <Link href="/get-a-quote" onClick={() => setIsMenuOpen(false)}>
+                    <Button 
+                      variant="default" 
+                      size="lg" 
+                      className="w-full bg-yellow hover:bg-yellow/90 font-bold text-navy shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] border-2 border-navy text-base py-4 rounded-xl"
+                    >
+                      <span className="mr-2">🌟</span>
                       GET FREE QUOTE
                     </Button>
                   </Link>
-                  <Link href={`tel:${BUSINESS_INFO.phone}`}>
-                    <Button variant="outline" size="lg" className="w-full border-2 border-navy text-navy font-bold">
+                  <Link href={`tel:${BUSINESS_INFO.phone}`} onClick={() => setIsMenuOpen(false)}>
+                    <Button 
+                      variant="outline" 
+                      size="lg" 
+                      className="w-full border-2 border-navy text-navy font-bold hover:bg-navy hover:text-white transition-all duration-200 hover:scale-[1.02] text-base py-4 rounded-xl"
+                    >
                       <Phone className="h-5 w-5 mr-2" />
-                      CALL {BUSINESS_INFO.phone}
+                      CALL NOW
                     </Button>
                   </Link>
                 </div>
+
+                {/* Service Highlights */}
+                <div className="bg-navy/5 rounded-xl p-4 border border-navy/10">
+                  <div className="text-center">
+                    <div className="text-navy font-bold text-sm mb-2">🏆 Why Choose Us?</div>
+                    <div className="grid grid-cols-2 gap-2 text-xs text-gray-600">
+                      <div className="flex items-center space-x-1">
+                        <span className="text-yellow">✓</span>
+                        <span>Licensed & Insured</span>
+                      </div>
+                      <div className="flex items-center space-x-1">
+                        <span className="text-yellow">✓</span>
+                        <span>Same Day Service</span>
+                      </div>
+                      <div className="flex items-center space-x-1">
+                        <span className="text-yellow">✓</span>
+                        <span>500+ 5-Star Reviews</span>
+                      </div>
+                      <div className="flex items-center space-x-1">
+                        <span className="text-yellow">✓</span>
+                        <span>Free Estimates</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </nav>
             </div>
-          )}
+          </div>
         </div>
       </header>
     </>

@@ -17,9 +17,12 @@ export default function Footer() {
               <div className="relative w-12 h-12">
                 <Image
                   src="/logo.png"
-                  alt="Shimmer Shine Property Detailing Logo"
+                  alt="Shimmer Shine Property Detailing - Best Window Cleaning & Pressure Washing Orange County Since 2021"
+                  title="Professional Property Cleaning Services Orange County - Licensed & Insured"
                   fill
                   className="object-contain brightness-0 invert"
+                  sizes="48px"
+                  loading="lazy"
                 />
               </div>
               <div>
