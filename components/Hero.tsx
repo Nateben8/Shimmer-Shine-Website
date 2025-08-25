@@ -78,7 +78,6 @@ export default function Hero() {
                 style={{ textDecoration: 'none' }}
               >
                 <div className="retro-button w-full text-lg px-8 py-5 min-h-[60px] font-bold shadow-lg hover:shadow-xl transition-all duration-200 cursor-pointer text-center flex items-center justify-center relative z-10 select-none">
-                  <span className="mr-2">🌟</span>
                   Get Free Quote in 60 Seconds
                 </div>
               </Link>
