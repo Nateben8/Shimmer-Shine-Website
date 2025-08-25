@@ -153,7 +153,7 @@ export default function GetQuotePage() {
                    <div className="w-full">
                      <div className="relative">
                        <Image
-                         src="/window-cleaning-hero.jpg"
+                         src="/window-cleaning-quote.png"
                          alt="Professional window cleaning service in Orange County - Shimmer Shine Property Detailing team providing residential and commercial window cleaning with guaranteed results"
                          width={600}
                          height={400}
