@@ -53,63 +53,66 @@ export default function FallSpecial() {
         <div className="absolute bottom-2 left-1/3 animate-bounce delay-300 text-sm">🍂</div>
       </div>
 
-      <div className="container mx-auto relative z-10">
-        {/* Balanced single line layout */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+      <div className="container mx-auto relative z-10 px-2 sm:px-4">
+        {/* Mobile-optimized layout */}
+        <div className="flex flex-col space-y-3 sm:space-y-0 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
           
-          {/* Main content */}
-          <div className="flex items-center space-x-3 text-center sm:text-left">
-            <span className="text-lg animate-bounce">🍂</span>
-            <div className="flex items-center space-x-2">
-              <h3 className="text-base sm:text-lg font-bold text-yellow-200">
-                FALL SPECIAL OFFER:
+          {/* Mobile: Main content row */}
+          <div className="flex flex-col space-y-2 sm:space-y-0 sm:flex-row sm:items-center sm:space-x-3 text-center sm:text-left">
+            <div className="flex items-center justify-center sm:justify-start space-x-2">
+              <span className="text-base sm:text-lg animate-bounce">🍂</span>
+              <h3 className="text-sm sm:text-base md:text-lg font-bold text-yellow-200">
+                FALL SPECIAL:
               </h3>
-              <div className="bg-yellow-400 text-orange-900 px-3 py-1.5 rounded-full font-black text-base sm:text-lg">
+              <div className="bg-yellow-400 text-orange-900 px-2 py-1 sm:px-3 sm:py-1.5 rounded-full font-black text-sm sm:text-base">
                 20% OFF
               </div>
             </div>
-            <span className="text-sm sm:text-base font-semibold">Bundle 2+ Services!</span>
+            <span className="text-xs sm:text-sm md:text-base font-semibold">Bundle 2+ Services!</span>
           </div>
 
-          {/* Countdown timer */}
-          <div className="flex items-center space-x-2">
-            <span className="text-xs text-yellow-200 font-medium hidden sm:inline">Ends in:</span>
-            <div className="flex items-center space-x-2">
-              <div className="bg-white/25 backdrop-blur-sm rounded-lg px-2 py-1.5 text-center min-w-[36px] border border-white/20">
-                <div className="text-base font-bold">{timeLeft.days}</div>
-                <div className="text-xs text-yellow-200">Days</div>
-              </div>
-              <div className="text-white/60">:</div>
-              <div className="bg-white/25 backdrop-blur-sm rounded-lg px-2 py-1.5 text-center min-w-[36px] border border-white/20">
-                <div className="text-base font-bold">{timeLeft.hours}</div>
-                <div className="text-xs text-yellow-200">Hrs</div>
-              </div>
-              <div className="text-white/60">:</div>
-              <div className="bg-white/25 backdrop-blur-sm rounded-lg px-2 py-1.5 text-center min-w-[36px] border border-white/20">
-                <div className="text-base font-bold">{timeLeft.minutes}</div>
-                <div className="text-xs text-yellow-200">Min</div>
+          {/* Mobile: Timer and buttons row */}
+          <div className="flex items-center justify-between sm:justify-end space-x-2 sm:space-x-4">
+            {/* Compact countdown timer */}
+            <div className="flex items-center space-x-1 sm:space-x-2">
+              <span className="text-xs text-yellow-200 font-medium hidden sm:inline">Ends:</span>
+              <div className="flex items-center space-x-1">
+                <div className="bg-white/25 backdrop-blur-sm rounded px-1.5 py-1 sm:px-2 sm:py-1.5 text-center min-w-[28px] sm:min-w-[36px] border border-white/20">
+                  <div className="text-sm sm:text-base font-bold">{timeLeft.days}</div>
+                  <div className="text-xs text-yellow-200 leading-none">d</div>
+                </div>
+                <div className="text-white/60 text-xs">:</div>
+                <div className="bg-white/25 backdrop-blur-sm rounded px-1.5 py-1 sm:px-2 sm:py-1.5 text-center min-w-[28px] sm:min-w-[36px] border border-white/20">
+                  <div className="text-sm sm:text-base font-bold">{timeLeft.hours}</div>
+                  <div className="text-xs text-yellow-200 leading-none">h</div>
+                </div>
+                <div className="text-white/60 text-xs">:</div>
+                <div className="bg-white/25 backdrop-blur-sm rounded px-1.5 py-1 sm:px-2 sm:py-1.5 text-center min-w-[28px] sm:min-w-[36px] border border-white/20">
+                  <div className="text-sm sm:text-base font-bold">{timeLeft.minutes}</div>
+                  <div className="text-xs text-yellow-200 leading-none">m</div>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* CTA buttons */}
-          <div className="flex items-center space-x-3">
-            <Link href="/get-a-quote">
-              <button className="bg-yellow-400 hover:bg-yellow-300 text-orange-900 font-bold py-2 px-4 rounded-full transition-all duration-200 hover:scale-105 shadow-lg text-sm border border-yellow-300">
-                🍂 CLAIM OFFER
-              </button>
-            </Link>
-            <Link href="tel:(714) 497-0035">
-              <button className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-bold py-2 px-4 rounded-full transition-all duration-200 hover:scale-105 border border-white/30 text-sm">
-                📞 Call Now
-              </button>
-            </Link>
+            {/* Compact CTA buttons */}
+            <div className="flex items-center space-x-2">
+              <Link href="/get-a-quote">
+                <button className="bg-yellow-400 hover:bg-yellow-300 text-orange-900 font-bold py-1.5 px-3 sm:py-2 sm:px-4 rounded-full transition-all duration-200 hover:scale-105 shadow-lg text-xs sm:text-sm border border-yellow-300">
+                  🍂 <span className="hidden xs:inline">CLAIM</span>
+                </button>
+              </Link>
+              <Link href="tel:(714) 497-0035">
+                <button className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-bold py-1.5 px-3 sm:py-2 sm:px-4 rounded-full transition-all duration-200 hover:scale-105 border border-white/30 text-xs sm:text-sm">
+                  📞 <span className="hidden xs:inline">Call</span>
+                </button>
+              </Link>
+            </div>
           </div>
 
           {/* Close button */}
           <button
             onClick={() => setIsVisible(false)}
-            className="absolute top-2 right-2 sm:relative sm:top-0 sm:right-0 text-white/70 hover:text-white text-lg font-bold w-6 h-6 flex items-center justify-center rounded-full hover:bg-white/20 transition-all duration-200"
+            className="absolute top-1 right-1 sm:top-2 sm:right-2 text-white/70 hover:text-white text-base sm:text-lg font-bold w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center rounded-full hover:bg-white/20 transition-all duration-200"
             aria-label="Close fall special offer"
           >
             ×
