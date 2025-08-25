@@ -149,71 +149,21 @@ export default function GetQuotePage() {
               </div>
             </div>
 
-            {/* Right Side - Quick Quote Form Preview */}
-            <div className="w-full">
-              <div className="bg-white rounded-xl border-4 border-yellow p-6 shadow-2xl">
-                <div className="text-center mb-4">
-                  <h3 className="heading-primary text-2xl text-navy mb-2">Quick Quote Form</h3>
-                  <p className="text-sm text-gray-600">Only 4 fields • Takes 30 seconds</p>
-                  
-                  {/* Urgency Counter */}
-                  <div className="bg-red-50 border border-red-200 rounded-lg p-3 mt-4 mb-4">
-                    <div className="flex items-center justify-center space-x-6">
-                      <div className="text-center">
-                        <div className="text-xl font-bold text-red-600">12</div>
-                        <div className="text-xs text-red-500">Spots Left</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-xl font-bold text-red-600">6</div>
-                        <div className="text-xs text-red-500">Days Left</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-xl font-bold text-red-600">23</div>
-                        <div className="text-xs text-red-500">Hours Left</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Form Preview */}
-                <div className="space-y-3">
-                  <input 
-                    type="text" 
-                    placeholder="Your Name" 
-                    className="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-yellow focus:outline-none"
-                    disabled
-                  />
-                  <input 
-                    type="tel" 
-                    placeholder="Phone Number" 
-                    className="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-yellow focus:outline-none"
-                    disabled
-                  />
-                  <select className="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-yellow focus:outline-none" disabled>
-                    <option>Select Service</option>
-                  </select>
-                  <ScrollToFormButton className="w-full bg-yellow hover:bg-yellow-400 text-navy font-bold py-4 px-6 rounded-lg text-lg transition-all duration-200 hover:scale-105 shadow-lg">
-                    🚀 Get My FREE Quote + 10% OFF
-                  </ScrollToFormButton>
-                </div>
-                
-                {/* Trust Indicators */}
-                <div className="flex items-center justify-center space-x-4 mt-4 text-xs text-gray-600">
-                  <div className="flex items-center space-x-1">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span>SSL Secured</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span>No Spam</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span>100% Free</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+                               {/* Right Side - Hero Image */}
+                   <div className="w-full">
+                     <div className="relative">
+                       <Image
+                         src="/window-cleaning-hero.jpg"
+                         alt="Professional window cleaning service in Orange County - Shimmer Shine Property Detailing team providing residential and commercial window cleaning with guaranteed results"
+                         width={600}
+                         height={400}
+                         className="w-full h-auto rounded-xl shadow-2xl"
+                         priority
+                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                       />
+                       <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent rounded-xl"></div>
+                     </div>
+                   </div>
           </div>
         </div>
       </section>
