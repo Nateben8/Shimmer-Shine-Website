@@ -46,8 +46,8 @@ const galleryCategories = [
         title: "House Siding & Window Cleaning",
         location: "Orange County, CA",
         service: "Combined Siding & Window Cleaning",
-        beforeImage: "/before%20and%20after%20images/House%20siding%20&%20window%20wash.jpg",
-        afterImage: "/before%20and%20after%20images/House%20siding%20&%20window%20wash.jpg",
+        beforeImage: "/Before%20and%20After%20images/House%20siding%20&%20window%20wash.jpg",
+        afterImage: "/Before%20and%20After%20images/House%20siding%20&%20window%20wash.jpg",
         description: "Professional siding and window cleaning combination service"
       },
       {
@@ -91,8 +91,8 @@ const galleryCategories = [
         title: "Concrete Driveway Restoration",
         location: "Orange County, CA",
         service: "Driveway Pressure Washing",
-        beforeImage: "/before%20and%20after%20images/big%20concrete%20pressure%20wash%20for%20driveway.jpg",
-        afterImage: "/before%20and%20after%20images/big%20concrete%20pressure%20wash%20for%20driveway.jpg",
+        beforeImage: "/Before%20and%20After%20images/big%20concrete%20pressure%20wash%20for%20driveway.jpg",
+        afterImage: "/Before%20and%20After%20images/big%20concrete%20pressure%20wash%20for%20driveway.jpg",
         description: "Heavily stained concrete driveway restored to like-new condition"
       },
       {
@@ -100,8 +100,8 @@ const galleryCategories = [
         title: "Backyard Concrete Patio",
         location: "Los Angeles County, CA",
         service: "Patio Pressure Washing", 
-        beforeImage: "/before%20and%20after%20images/backyard%20concrete%20patio%20pressure%20washing%20.jpg",
-        afterImage: "/before%20and%20after%20images/backyard%20concrete%20patio%20pressure%20washing%20.jpg",
+        beforeImage: "/Before%20and%20After%20images/backyard%20concrete%20patio%20pressure%20washing%20.jpg",
+        afterImage: "/Before%20and%20After%20images/backyard%20concrete%20patio%20pressure%20washing%20.jpg",
         description: "Algae and dirt-covered patio completely revitalized"
       },
       {
@@ -109,8 +109,8 @@ const galleryCategories = [
         title: "Brick Wall Restoration",
         location: "San Diego County, CA",
         service: "Brick Pressure Washing",
-        beforeImage: "/before%20and%20after%20images/brick%20wall%20pressure%20wash%205.jpg",
-        afterImage: "/before%20and%20after%20images/brick%20wall%20pressure%20wash%205.jpg",
+        beforeImage: "/Before%20and%20After%20images/brick%20wall%20pressure%20wash%205.jpg",
+        afterImage: "/Before%20and%20After%20images/brick%20wall%20pressure%20wash%205.jpg",
         description: "Weather-stained brick wall professionally restored"
       },
       {
@@ -118,8 +118,8 @@ const galleryCategories = [
         title: "Stone Walkway Cleaning",
         location: "Orange County, CA",
         service: "Stone Pressure Washing",
-        beforeImage: "/before%20and%20after%20images/Stone%20walkway%20pressure%20wash%204.jpg",
-        afterImage: "/before%20and%20after%20images/Stone%20walkway%20pressure%20wash%204.jpg",
+        beforeImage: "/Before%20and%20After%20images/Stone%20walkway%20pressure%20wash%204.jpg",
+        afterImage: "/Before%20and%20After%20images/Stone%20walkway%20pressure%20wash%204.jpg",
         description: "Moss and algae removed from stone walkway"
       },
       {
@@ -127,8 +127,8 @@ const galleryCategories = [
         title: "Tennis Court Restoration",
         location: "Los Angeles County, CA",
         service: "Sports Surface Cleaning",
-        beforeImage: "/before%20and%20after%20images/tenniss%20court%20pressure%20washing.jpg",
-        afterImage: "/before%20and%20after%20images/tenniss%20court%20pressure%20washing.jpg",
+        beforeImage: "/Before%20and%20After%20images/tenniss%20court%20pressure%20washing.jpg",
+        afterImage: "/Before%20and%20After%20images/tenniss%20court%20pressure%20washing.jpg",
         description: "Professional tennis court surface cleaning and restoration"
       },
       {
@@ -136,8 +136,8 @@ const galleryCategories = [
         title: "Storefront Concrete Cleaning",
         location: "San Diego County, CA",
         service: "Commercial Pressure Washing",
-        beforeImage: "/before%20and%20after%20images/storefront%20concrete%20pressure%20washing.jpg",
-        afterImage: "/before%20and%20after%20images/storefront%20concrete%20pressure%20washing.jpg",
+        beforeImage: "/Before%20and%20After%20images/storefront%20concrete%20pressure%20washing.jpg",
+        afterImage: "/Before%20and%20After%20images/storefront%20concrete%20pressure%20washing.jpg",
         description: "Commercial storefront concrete professionally cleaned"
       }
     ]
@@ -154,8 +154,8 @@ const galleryCategories = [
         title: "Full House Soft Wash",
         location: "Orange County, CA",
         service: "House Soft Washing",
-        beforeImage: "/before%20and%20after%20images/Full%20house%20soft%20wash.jpg",
-        afterImage: "/before%20and%20after%20images/Full%20house%20soft%20wash.jpg",
+        beforeImage: "/Before%20and%20After%20images/Full%20house%20soft%20wash.jpg",
+        afterImage: "/Before%20and%20After%20images/Full%20house%20soft%20wash.jpg",
         description: "Complete exterior house cleaning with gentle soft wash technique"
       },
       {
@@ -163,8 +163,8 @@ const galleryCategories = [
         title: "House Siding & Window Cleaning",
         location: "Los Angeles County, CA",
         service: "Siding & Window Wash",
-        beforeImage: "/before%20and%20after%20images/House%20siding%20&%20window%20wash.jpg",
-        afterImage: "/before%20and%20after%20images/House%20siding%20&%20window%20wash.jpg",
+        beforeImage: "/Before%20and%20After%20images/House%20siding%20&%20window%20wash.jpg",
+        afterImage: "/Before%20and%20After%20images/House%20siding%20&%20window%20wash.jpg",
         description: "Professional siding and window cleaning combination service"
       },
       {
@@ -172,8 +172,8 @@ const galleryCategories = [
         title: "Stone House Soft Wash",
         location: "San Diego County, CA",
         service: "Stone Siding Cleaning",
-        beforeImage: "/before%20and%20after%20images/Stone%20house%20soft%20wash.jpg",
-        afterImage: "/before%20and%20after%20images/Stone%20house%20soft%20wash.jpg",
+        beforeImage: "/Before%20and%20After%20images/Stone%20house%20soft%20wash.jpg",
+        afterImage: "/Before%20and%20After%20images/Stone%20house%20soft%20wash.jpg",
         description: "Delicate stone siding cleaned with specialized soft wash methods"
       },
       {
@@ -181,8 +181,8 @@ const galleryCategories = [
         title: "House Roof Cleaning",
         location: "Orange County, CA",
         service: "Roof Soft Washing",
-        beforeImage: "/before%20and%20after%20images/house%20roof%20wash.jpg",
-        afterImage: "/before%20and%20after%20images/house%20roof%20wash.jpg",
+        beforeImage: "/Before%20and%20After%20images/house%20roof%20wash.jpg",
+        afterImage: "/Before%20and%20After%20images/house%20roof%20wash.jpg",
         description: "Professional roof cleaning to remove algae and stains"
       },
       {
@@ -190,8 +190,8 @@ const galleryCategories = [
         title: "Metal Roof Restoration",
         location: "Los Angeles County, CA",
         service: "Metal Roof Cleaning",
-        beforeImage: "/before%20and%20after%20images/Metal%20roof%20pressure%20wash.jpg",
-        afterImage: "/before%20and%20after%20images/Metal%20roof%20pressure%20wash.jpg",
+        beforeImage: "/Before%20and%20After%20images/Metal%20roof%20pressure%20wash.jpg",
+        afterImage: "/Before%20and%20After%20images/Metal%20roof%20pressure%20wash.jpg",
         description: "Metal roof professionally cleaned and restored"
       }
     ]
@@ -208,8 +208,8 @@ const galleryCategories = [
         title: "Wood Deck Restoration",
         location: "Orange County, CA",
         service: "Deck Cleaning & Staining",
-        beforeImage: "/before%20and%20after%20images/Wood%20deck%20wash%20and%20stain.jpg",
-        afterImage: "/before%20and%20after%20images/Wood%20deck%20wash%20and%20stain.jpg",
+        beforeImage: "/Before%20and%20After%20images/Wood%20deck%20wash%20and%20stain.jpg",
+        afterImage: "/Before%20and%20After%20images/Wood%20deck%20wash%20and%20stain.jpg",
         description: "Complete wood deck restoration with cleaning and staining"
       },
       {
@@ -217,8 +217,8 @@ const galleryCategories = [
         title: "Backyard Deck Pressure Wash",
         location: "Los Angeles County, CA",
         service: "Deck Pressure Washing",
-        beforeImage: "/before%20and%20after%20images/backyard%20wood%20deck%20pressure%20wash%204.jpg",
-        afterImage: "/before%20and%20after%20images/backyard%20wood%20deck%20pressure%20wash%204.jpg",
+        beforeImage: "/Before%20and%20After%20images/backyard%20wood%20deck%20pressure%20wash%204.jpg",
+        afterImage: "/Before%20and%20After%20images/backyard%20wood%20deck%20pressure%20wash%204.jpg",
         description: "Weather-damaged deck restored with professional pressure washing"
       },
       {
@@ -226,8 +226,8 @@ const galleryCategories = [
         title: "Wood Deck Soft Wash",
         location: "San Diego County, CA",
         service: "Gentle Deck Cleaning",
-        beforeImage: "/before%20and%20after%20images/Wood%20deck%20soft%20wash%203.jpg",
-        afterImage: "/before%20and%20after%20images/Wood%20deck%20soft%20wash%203.jpg",
+        beforeImage: "/Before%20and%20After%20images/Wood%20deck%20soft%20wash%203.jpg",
+        afterImage: "/Before%20and%20After%20images/Wood%20deck%20soft%20wash%203.jpg",
         description: "Delicate wood deck cleaned with soft wash technique"
       },
       {
@@ -235,8 +235,8 @@ const galleryCategories = [
         title: "Wood Fence Restoration",
         location: "Orange County, CA",
         service: "Fence Cleaning & Restoration",
-        beforeImage: "/before%20and%20after%20images/wood%20fence%20restoration.jpg",
-        afterImage: "/before%20and%20after%20images/wood%20fence%20restoration.jpg",
+        beforeImage: "/Before%20and%20After%20images/wood%20fence%20restoration.jpg",
+        afterImage: "/Before%20and%20After%20images/wood%20fence%20restoration.jpg",
         description: "Wood fence professionally cleaned and restored"
       }
     ]
@@ -289,8 +289,8 @@ const galleryCategories = [
         title: "Residential Gutter Cleaning",
         location: "Orange County, CA",
         service: "Gutter Cleaning & Maintenance",
-        beforeImage: "/before%20and%20after%20images/Gutter%20clean.jpg",
-        afterImage: "/before%20and%20after%20images/Gutter%20clean.jpg",
+        beforeImage: "/Before%20and%20After%20images/Gutter%20clean.jpg",
+        afterImage: "/Before%20and%20After%20images/Gutter%20clean.jpg",
         description: "Professional gutter cleaning and debris removal"
       },
       {

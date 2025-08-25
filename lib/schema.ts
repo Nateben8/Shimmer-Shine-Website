@@ -1,229 +1,242 @@
-import { BUSINESS_INFO, SITE_CONFIG, SERVICES } from "./constants"
+import { BUSINESS_INFO, SERVICES } from './constants'
 
-export function getLocalBusinessSchema() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": `${SITE_CONFIG.url}#business`,
-    "name": BUSINESS_INFO.name,
-    "legalName": BUSINESS_INFO.legalName,
-    "description": SITE_CONFIG.description,
-    "url": SITE_CONFIG.url,
-    "telephone": BUSINESS_INFO.phone,
-    "email": BUSINESS_INFO.email,
-    "foundingDate": BUSINESS_INFO.foundedYear.toString(),
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": BUSINESS_INFO.address.street,
-      "addressLocality": BUSINESS_INFO.address.city,
-      "addressRegion": BUSINESS_INFO.address.state,
-      "postalCode": BUSINESS_INFO.address.zipCode,
-      "addressCountry": "US"
+// Enhanced LocalBusiness Schema with comprehensive data
+export const getLocalBusinessSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://shimmershinepd.com/#business",
+  "name": "Shimmer Shine Property Detailing",
+  "alternateName": "Shimmer Shine Window Cleaning",
+  "description": "Professional window cleaning, pressure washing, and property detailing services in Orange County, Los Angeles County, and San Diego County. Licensed, insured, and eco-friendly cleaning solutions since 2021.",
+  "url": "https://shimmershinepd.com",
+  "logo": "https://shimmershinepd.com/logo.png",
+  "image": [
+    "https://shimmershinepd.com/window-cleaning-before-after.png",
+    "https://shimmershinepd.com/pressure-washing-before-after.png",
+    "https://shimmershinepd.com/logo.png"
+  ],
+  "telephone": BUSINESS_INFO.phone,
+  "email": BUSINESS_INFO.email,
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": BUSINESS_INFO.address.city,
+    "addressRegion": BUSINESS_INFO.address.state,
+    "postalCode": BUSINESS_INFO.address.zipCode,
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "33.8886",
+    "longitude": "-117.8131"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Orange County",
+      "sameAs": "https://en.wikipedia.org/wiki/Orange_County,_California"
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "33.6411",
-      "longitude": "-117.9187"
+    {
+      "@type": "City", 
+      "name": "Los Angeles County",
+      "sameAs": "https://en.wikipedia.org/wiki/Los_Angeles_County,_California"
     },
-    "areaServed": BUSINESS_INFO.serviceAreas.map(area => ({
-      "@type": "State",
-      "name": area
-    })),
-    "serviceArea": {
-      "@type": "GeoCircle",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "latitude": "33.6411",
-        "longitude": "-117.9187"
-      },
-      "geoRadius": "50000"
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Property Detailing Services",
-      "itemListElement": SERVICES.map(service => ({
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": service.name,
-          "description": service.description,
-          "provider": {
-            "@id": `${SITE_CONFIG.url}#business`
-          }
-        }
-      }))
-    },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "07:00",
-        "closes": "18:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification", 
-        "dayOfWeek": ["Saturday"],
-        "opens": "08:00",
-        "closes": "16:00"
-      }
-    ],
-    "paymentAccepted": "Cash, Check, Credit Card, Venmo, PayPal",
-    "currenciesAccepted": "USD",
-    "priceRange": "Contact for Quote",
-    "image": `${SITE_CONFIG.url}/logo.png`,
-    "logo": `${SITE_CONFIG.url}/logo.png`,
-    "sameAs": [
-      SITE_CONFIG.links.facebook,
-      SITE_CONFIG.links.instagram,
-      SITE_CONFIG.links.yelp,
-      SITE_CONFIG.links.google
-    ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "247",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
-    "review": [
-      {
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        },
-        "author": {
-          "@type": "Person",
-          "name": "Sarah Johnson"
-        },
-        "reviewBody": "Shimmer Shine has been cleaning our windows for over 10 years. They're always professional, punctual, and do amazing work.",
-        "datePublished": "2024-01-15"
-      }
-    ]
-  }
-}
-
-export function getServiceSchema(serviceId: string) {
-  const service = SERVICES.find(s => s.id === serviceId)
-  if (!service) return null
-
-  return {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "@id": `${SITE_CONFIG.url}/services/${serviceId}#service`,
-    "name": service.name,
-    "description": service.description,
-    "provider": {
-      "@id": `${SITE_CONFIG.url}#business`
-    },
-    "areaServed": BUSINESS_INFO.serviceAreas.map(area => ({
-      "@type": "State", 
-      "name": area
-    })),
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": service.name,
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "description": service.description,
-          "priceRange": "Contact for Quote",
-          "availability": "https://schema.org/InStock",
-          "itemCondition": "https://schema.org/NewCondition"
-        }
-      ]
-    },
-    "serviceType": service.name,
-    "category": service.category,
-    "offers": {
-      "@type": "Offer",
-      "description": service.description,
-      "priceRange": "Contact for Quote",
-      "availability": "https://schema.org/InStock"
+    {
+      "@type": "City",
+      "name": "San Diego County", 
+      "sameAs": "https://en.wikipedia.org/wiki/San_Diego_County,_California"
     }
-  }
-}
-
-export function getBlogPostSchema(post: any) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "@id": `${SITE_CONFIG.url}/blog/${post.slug}#article`,
-    "headline": post.title,
-    "description": post.excerpt,
-    "image": post.image ? `${SITE_CONFIG.url}${post.image}` : `${SITE_CONFIG.url}/blog-default.jpg`,
-    "author": {
-      "@type": "Person",
-      "name": post.author || BUSINESS_INFO.name
+  ],
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": "33.8886",
+      "longitude": "-117.8131"
     },
-    "publisher": {
-      "@type": "Organization",
-      "name": BUSINESS_INFO.name,
-      "logo": {
-        "@type": "ImageObject",
-        "url": `${SITE_CONFIG.url}/logo.png`
-      }
-    },
-    "datePublished": post.publishedAt,
-    "dateModified": post.updatedAt || post.publishedAt,
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": `${SITE_CONFIG.url}/blog/${post.slug}`
-    },
-    "articleSection": post.category,
-    "keywords": post.tags?.join(", "),
-    "wordCount": post.readingTime ? post.readingTime * 200 : 800
-  }
-}
-
-export function getWebsiteSchema() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": `${SITE_CONFIG.url}#website`,
-    "url": SITE_CONFIG.url,
-    "name": SITE_CONFIG.name,
-    "description": SITE_CONFIG.description,
-    "publisher": {
-      "@id": `${SITE_CONFIG.url}#business`
-    },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": `${SITE_CONFIG.url}/search?q={search_term_string}`
+    "geoRadius": "50000"
+  },
+  "openingHours": [
+    "Mo-Fr 07:00-18:00",
+    "Sa 08:00-16:00"
+  ],
+  "priceRange": "$$",
+  "currenciesAccepted": "USD",
+  "paymentAccepted": "Cash, Check, Credit Card, Venmo, Zelle",
+  "foundingDate": "2021",
+  "numberOfEmployees": "2-10",
+  "slogan": "Crystal Clear Results, Every Time",
+  "knowsAbout": [
+    "Window Cleaning",
+    "Pressure Washing", 
+    "Solar Panel Cleaning",
+    "Gutter Cleaning",
+    "House Washing",
+    "Commercial Cleaning",
+    "Post-Construction Cleanup",
+    "Eco-Friendly Cleaning"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Property Detailing Services",
+    "itemListElement": SERVICES.map((service, index) => ({
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": service.name,
+        "description": service.description,
+        "category": service.category,
+        "areaServed": "Southern California"
       },
-      "query-input": "required name=search_term_string"
+      "priceRange": service.priceRange,
+      "availability": "https://schema.org/InStock",
+      "validFrom": "2021-01-01",
+      "url": `https://shimmershinepd.com/services/${service.id}`
+    }))
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "47",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Sarah Johnson"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Exceptional window cleaning service! They transformed our office building's windows and the results were amazing. Professional, punctual, and reasonably priced.",
+      "datePublished": "2024-11-15"
     },
-    "inLanguage": "en-US"
-  }
-}
+    {
+      "@type": "Review", 
+      "author": {
+        "@type": "Person",
+        "name": "Mike Rodriguez"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Outstanding pressure washing service! My driveway and house exterior look brand new. Highly recommend Shimmer Shine for any property cleaning needs.",
+      "datePublished": "2024-10-28"
+    }
+  ],
+  "sameAs": [
+    "https://maps.app.goo.gl/tZ2ZZzsRiexSvotn9",
+    "https://www.facebook.com/shimmershinepd",
+    "https://www.instagram.com/shimmershinepd"
+  ]
+})
 
-export function getBreadcrumbSchema(items: Array<{ name: string; url: string }>) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": items.map((item, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "name": item.name,
-      "item": item.url.startsWith('http') ? item.url : `${SITE_CONFIG.url}${item.url}`
-    }))
+// Service-specific schema for individual service pages
+export const getServiceSchema = (service: any) => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": `https://shimmershinepd.com/services/${service.id}#service`,
+  "name": service.name,
+  "description": service.description,
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Shimmer Shine Property Detailing",
+    "url": "https://shimmershinepd.com"
+  },
+  "areaServed": [
+    "Orange County, CA",
+    "Los Angeles County, CA", 
+    "San Diego County, CA"
+  ],
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": `https://shimmershinepd.com/services/${service.id}`,
+    "servicePhone": BUSINESS_INFO.phone,
+    "serviceSmsNumber": BUSINESS_INFO.phone
+  },
+  "category": service.category,
+  "serviceType": service.name,
+  "priceRange": service.priceRange,
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceRange": service.priceRange,
+    "priceCurrency": "USD",
+    "validFrom": "2021-01-01",
+    "areaServed": "Southern California"
   }
-}
+})
 
-export function getFAQSchema(faqs: Array<{ question: string; answer: string }>) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
+// FAQ Schema for enhanced SERP features
+export const getFAQSchema = (faqs: Array<{question: string, answer: string}>) => ({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+})
+
+// Breadcrumb Schema
+export const getBreadcrumbSchema = (items: Array<{name: string, url: string}>) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": items.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.name,
+    "item": item.url
+  }))
+})
+
+// Organization Schema for enhanced brand recognition
+export const getOrganizationSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://shimmershinepd.com/#organization",
+  "name": "Shimmer Shine Property Detailing",
+  "alternateName": "Shimmer Shine Window Cleaning",
+  "url": "https://shimmershinepd.com",
+  "logo": "https://shimmershinepd.com/logo.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": BUSINESS_INFO.phone,
+    "contactType": "customer service",
+    "areaServed": "US",
+    "availableLanguage": "English"
+  },
+  "sameAs": [
+    "https://maps.app.goo.gl/tZ2ZZzsRiexSvotn9"
+  ]
+})
+
+// Website Schema
+export const getWebsiteSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://shimmershinepd.com/#website",
+  "url": "https://shimmershinepd.com",
+  "name": "Shimmer Shine Property Detailing",
+  "description": "Professional window cleaning, pressure washing, and property detailing services in Southern California",
+  "publisher": {
+    "@id": "https://shimmershinepd.com/#organization"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://shimmershinepd.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
   }
-}
+})

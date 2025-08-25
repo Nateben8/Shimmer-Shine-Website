@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero"
-import { SERVICES, BUSINESS_INFO } from "@/lib/constants"
+import { SERVICES, BUSINESS_INFO, FAQ_DATA } from "@/lib/constants"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
@@ -7,12 +7,22 @@ import Image from "next/image"
 import { Star, ArrowRight, CheckCircle, Award, Shield, Clock, MapPin } from "lucide-react"
 import BeforeAfterSlider from "@/components/BeforeAfterSlider"
 import GoogleReviews from "@/components/GoogleReviews"
+// import RelatedContent from "@/components/RelatedContent"
+import { getFAQSchema } from "@/lib/schema"
 
 export default function HomePage() {
   const featuredServices = SERVICES.slice(0, 4)
+  const faqSchema = getFAQSchema(FAQ_DATA)
 
   return (
     <>
+      {/* FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
+        }}
+      />
       <Hero />
       
       {/* Services Section */}
@@ -35,10 +45,12 @@ export default function HomePage() {
                     {service.iconType === "image" ? (
                       <Image
                         src={service.icon}
-                        alt={`${service.name} icon`}
+                        alt={`Professional ${service.name} service icon - ${service.description.slice(0, 50)}...`}
                         width={64}
                         height={64}
                         className="w-16 h-16"
+                        loading="lazy"
+                        sizes="64px"
                       />
                     ) : (
                       <div className="text-5xl">{service.icon}</div>
@@ -99,8 +111,8 @@ export default function HomePage() {
                   title="Newport Beach Window Cleaning Results | Shimmer Shine Property Detailing"
                   fill
                   className="object-cover"
-                  priority
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  priority
                   quality={90}
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-3">
@@ -260,6 +272,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+                {/* Related Content */}
+          {/* <RelatedContent currentPage="home" /> */}
 
       {/* CTA Section */}
       <section className="py-16 bg-yellow">

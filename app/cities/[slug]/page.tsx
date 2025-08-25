@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation"
 import { getCitySEO } from "@/lib/seo"
-import { getLocalBusinessSchema, getBreadcrumbSchema } from "@/lib/schema"
+import { getLocalBusinessSchema } from "@/lib/schema"
 import { BUSINESS_INFO, SERVICES } from "@/lib/constants"
 import GoogleReviews from "@/components/GoogleReviews"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -17,6 +17,8 @@ import {
   Shield,
   Clock
 } from "lucide-react"
+// import Breadcrumbs, { generateBreadcrumbs } from "@/components/Breadcrumbs"
+// import RelatedContent from "@/components/RelatedContent"
 
 interface CityPageProps {
   params: {
@@ -118,13 +120,12 @@ export default function CityPage({ params }: CityPageProps) {
 
   const county = getCounty(cityName)
   const localBusinessSchema = getLocalBusinessSchema()
-  const breadcrumbSchema = getBreadcrumbSchema([
-    { name: "Home", url: "/" },
-    { name: "Service Areas", url: "/service-areas" },
-    { name: cityName, url: `/cities/${params.slug}` }
-  ])
 
   const featuredServices = SERVICES.slice(0, 4)
+  // const breadcrumbs = generateBreadcrumbs('city', { 
+  //   cityName: cityName, 
+  //   slug: params.slug 
+  // })
 
   return (
     <>
@@ -135,26 +136,17 @@ export default function CityPage({ params }: CityPageProps) {
           __html: JSON.stringify(localBusinessSchema),
         }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
-        }}
-      />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-navy to-navy-700 text-white py-16">
         <div className="container mx-auto px-4">
+          {/* Breadcrumbs */}
+          {/* <div className="mb-8">
+            <Breadcrumbs items={breadcrumbs} className="text-gray-300" />
+          </div> */}
+          
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              {/* Breadcrumb */}
-              <nav className="text-sm mb-6">
-                <Link href="/" className="text-gray-300 hover:text-yellow">Home</Link>
-                <span className="text-gray-400 mx-2">/</span>
-                <Link href="/service-areas" className="text-gray-300 hover:text-yellow">Service Areas</Link>
-                <span className="text-gray-400 mx-2">/</span>
-                <span className="text-yellow">{cityName}</span>
-              </nav>
 
               <div className="retro-badge mb-6">
                 <MapPin className="h-4 w-4 mr-1" />
@@ -451,6 +443,76 @@ export default function CityPage({ params }: CityPageProps) {
         headerTitle={`What ${cityName} Customers Say`}
       />
 
+      {/* Local FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h3 className="heading-decorative text-4xl md:text-5xl text-navy mb-4">
+                {cityName} Property Cleaning FAQs
+              </h3>
+              <p className="body-text text-xl text-gray-600">
+                Common questions from {cityName} residents and business owners
+              </p>
+            </div>
+
+            <div className="grid gap-6">
+              <Card className="retro-card">
+                <CardHeader>
+                  <CardTitle className="heading-primary text-xl text-navy">
+                    How much does window cleaning cost in {cityName}?
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="body-text text-gray-700">
+                    Window cleaning costs in {cityName} typically range from $150-$400 for residential homes and $200-$800 for commercial properties, depending on size, number of windows, and accessibility. We provide free, detailed quotes for all {cityName} properties with transparent pricing and no hidden fees.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="retro-card">
+                <CardHeader>
+                  <CardTitle className="heading-primary text-xl text-navy">
+                    Do you offer same-day service in {cityName}?
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="body-text text-gray-700">
+                    Yes! We offer same-day and emergency cleaning services for {cityName} residents when our schedule permits. For urgent cleaning needs like event preparation or emergency situations, call us at {BUSINESS_INFO.phone} and we'll prioritize your {cityName} service request.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="retro-card">
+                <CardHeader>
+                  <CardTitle className="heading-primary text-xl text-navy">
+                    What areas of {cityName} do you serve?
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="body-text text-gray-700">
+                    We serve all areas of {cityName} and surrounding {county} communities. Our local team knows {cityName}'s neighborhoods well and can efficiently service residential homes, commercial buildings, and multi-unit properties throughout the area.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="retro-card">
+                <CardHeader>
+                  <CardTitle className="heading-primary text-xl text-navy">
+                    Why choose Shimmer Shine for {cityName} property cleaning?
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="body-text text-gray-700">
+                    {cityName} residents choose Shimmer Shine because we're locally owned, fully licensed and insured, use eco-friendly cleaning solutions, and have served {county} since 2021. Our 5-star rated service, free estimates, and satisfaction guarantee make us {cityName}'s trusted choice for property detailing.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 bg-yellow">
         <div className="container mx-auto px-4 text-center">
@@ -482,6 +544,13 @@ export default function CityPage({ params }: CityPageProps) {
           </div>
         </div>
       </section>
+
+      {/* Related Content */}
+      {/* <RelatedContent 
+        currentPage="city" 
+        currentSlug={params.slug}
+        cityName={cityName}
+      /> */}
     </>
   )
 }

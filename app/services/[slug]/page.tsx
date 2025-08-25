@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation"
 import { getServiceSEO } from "@/lib/seo"
-import { getServiceSchema, getBreadcrumbSchema } from "@/lib/schema"
+import { getServiceSchema } from "@/lib/schema"
 import { SERVICES, BUSINESS_INFO } from "@/lib/constants"
 import GoogleReviews from "@/components/GoogleReviews"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -18,6 +18,8 @@ import {
   ArrowRight,
   MapPin
 } from "lucide-react"
+// import Breadcrumbs, { generateBreadcrumbs } from "@/components/Breadcrumbs"
+// import RelatedContent from "@/components/RelatedContent"
 
 interface ServicePageProps {
   params: {
@@ -46,11 +48,10 @@ export default function ServicePage({ params }: ServicePageProps) {
   }
 
   const serviceSchema = getServiceSchema(service.id)
-  const breadcrumbSchema = getBreadcrumbSchema([
-    { name: "Home", url: "/" },
-    { name: "Services", url: "/services" },
-    { name: service.name, url: `/services/${service.id}` }
-  ])
+  // const breadcrumbs = generateBreadcrumbs('service', { 
+  //   serviceName: service.name, 
+  //   slug: service.id 
+  // })
 
   // Get related services - prioritize same category, then others, show up to 6 services
   const sameCategory = SERVICES.filter(s => s.id !== service.id && s.category === service.category)
@@ -66,26 +67,18 @@ export default function ServicePage({ params }: ServicePageProps) {
           __html: JSON.stringify(serviceSchema),
         }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
-        }}
-      />
+
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-navy to-navy-700 text-white py-16">
         <div className="container mx-auto px-4">
+          {/* Breadcrumbs */}
+          {/* <div className="mb-8">
+            <Breadcrumbs items={breadcrumbs} className="text-gray-300" />
+          </div> */}
+          
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              {/* Breadcrumb */}
-              <nav className="text-sm mb-6">
-                <Link href="/" className="text-gray-300 hover:text-yellow">Home</Link>
-                <span className="text-gray-400 mx-2">/</span>
-                <Link href="/services" className="text-gray-300 hover:text-yellow">Services</Link>
-                <span className="text-gray-400 mx-2">/</span>
-                <span className="text-yellow">{service.name}</span>
-              </nav>
 
               <div className="retro-badge mb-6">
                 {service.category === 'cleaning' ? 'Core Service' : 
@@ -474,6 +467,13 @@ export default function ServicePage({ params }: ServicePageProps) {
           </div>
         </div>
       </section>
+
+                {/* Related Content */}
+          {/* <RelatedContent 
+            currentPage="service" 
+            currentSlug={service.id}
+            serviceName={service.name}
+          /> */}
     </>
   )
 }

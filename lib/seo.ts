@@ -117,17 +117,31 @@ export function getPageSEO(page: string, city?: string) {
   switch (page) {
     case 'home':
       return generateSEO({
-        title: `Professional Property Detailing Services in ${BUSINESS_INFO.serviceAreas.join(', ')}`,
-        description: `${SITE_CONFIG.description} Serving ${BUSINESS_INFO.serviceAreas.join(', ')} since ${BUSINESS_INFO.foundedYear}.`,
+        title: `#1 Window Cleaning & Pressure Washing Orange County | 5-Star Rated`,
+        description: `⭐ Top-Rated Window Cleaning & Pressure Washing in Orange County! ✅ Licensed & Insured ✅ Eco-Friendly ✅ Free Quotes ✅ Same-Day Service Available. Call (714) 497-0035 for crystal-clear results!`,
         keywords: [
-          "professional window cleaning",
-          "residential pressure washing", 
-          "commercial property detailing",
+          "window cleaning Orange County",
+          "pressure washing Orange County", 
+          "window cleaning Los Angeles",
+          "pressure washing Los Angeles",
+          "residential window cleaning",
+          "commercial pressure washing",
           "solar panel cleaning service",
-          "gutter cleaning maintenance",
-          "Orange County window cleaning",
-          "Los Angeles pressure washing",
-          "San Diego property detailing"
+          "gutter cleaning Orange County",
+          "house washing service",
+          "property detailing Southern California",
+          "eco-friendly cleaning",
+          "licensed insured cleaning",
+          "5 star rated cleaning service",
+          "same day cleaning service",
+          "free cleaning estimates",
+          "Yorba Linda window cleaning",
+          "Costa Mesa pressure washing",
+          "Newport Beach window cleaning",
+          "Irvine pressure washing",
+          "Huntington Beach cleaning",
+          "Santa Ana window cleaning",
+          "Anaheim pressure washing"
         ]
       })
 

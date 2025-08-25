@@ -70,7 +70,7 @@ export default function Header() {
             {/* Centered Logo */}
             <div className="flex justify-center col-span-3 lg:col-span-1">
               <Link href="/" className="block">
-                <div className="relative w-28 h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 hover:scale-105 transition-transform">
+                <div className="relative w-32 h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 hover:scale-105 transition-transform">
                   <Image
                     src="/logo.png"
                     alt="Shimmer Shine Logo"

@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { generateSEO, getPageSEO } from "@/lib/seo"
-import { getLocalBusinessSchema, getWebsiteSchema } from "@/lib/schema"
+import { getLocalBusinessSchema, getWebsiteSchema, getOrganizationSchema } from "@/lib/schema"
 import { SITE_CONFIG, BUSINESS_INFO } from "@/lib/constants"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
@@ -19,6 +19,7 @@ export default function RootLayout({
 }) {
   const localBusinessSchema = getLocalBusinessSchema()
   const websiteSchema = getWebsiteSchema()
+  const organizationSchema = getOrganizationSchema()
 
   return (
     <html lang="en" className="scroll-smooth">
@@ -70,6 +71,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(websiteSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
           }}
         />
         
