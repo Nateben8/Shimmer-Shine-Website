@@ -3,6 +3,110 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Critical Mobile Overflow Prevention */
+html, body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Prevent horizontal scroll on all elements */
+* {
+  box-sizing: border-box;
+}
+
+/* Mobile-specific overflow fixes */
+@media (max-width: 640px) {
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Prevent any element from causing horizontal scroll */
+  * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Container fixes */
+  .container {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Grid and flex fixes */
+  .grid, [class*="grid-cols"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  
+  .flex {
+    flex-wrap: wrap;
+    max-width: 100% !important;
+  }
+  
+  /* Text and content fixes */
+  h1, h2, h3, h4, h5, h6, p, .body-text {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto;
+    max-width: 100% !important;
+  }
+  
+  /* Button and link fixes */
+  button, a {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    max-width: 100% !important;
+  }
+  
+  /* Card and component fixes */
+  .retro-card, .polaroid-frame {
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+  
+  /* Form element fixes */
+  input, textarea, select {
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Image and media fixes */
+  img {
+    max-width: 100% !important;
+    width: auto !important;
+    height: auto !important;
+  }
+  
+  video, .gallery-grid, .hero-media {
+    max-width: 100% !important;
+  }
+  
+  /* Table fixes */
+  table {
+    table-layout: fixed !important;
+    width: 100% !important;
+  }
+  
+  /* Code block fixes */
+  pre, code {
+    overflow-x: auto !important;
+    max-width: 100% !important;
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
