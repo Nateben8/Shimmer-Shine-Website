@@ -71,19 +71,27 @@ export default function Hero() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col gap-4">
-              <Button asChild variant="retro" size="lg" className="w-full text-lg px-8 py-5 min-h-[60px] font-bold shadow-lg hover:shadow-xl transition-all duration-200 cursor-pointer">
-                <Link href="/get-a-quote" className="flex items-center justify-center w-full">
+            <div className="flex flex-col gap-4 relative z-10">
+              <Link 
+                href="/get-a-quote" 
+                className="w-full block relative z-10 no-underline"
+                style={{ textDecoration: 'none' }}
+              >
+                <div className="retro-button w-full text-lg px-8 py-5 min-h-[60px] font-bold shadow-lg hover:shadow-xl transition-all duration-200 cursor-pointer text-center flex items-center justify-center relative z-10 select-none">
                   <span className="mr-2">🌟</span>
                   Get Free Quote in 60 Seconds
-                </Link>
-              </Button>
-              <Button asChild variant="retro-navy" size="lg" className="w-full text-lg px-8 py-5 bg-white text-navy hover:bg-gray-100 min-h-[60px] font-bold transition-all duration-200 cursor-pointer">
-                <Link href={`tel:${BUSINESS_INFO.phone}`} className="flex items-center justify-center w-full">
+                </div>
+              </Link>
+              <Link 
+                href={`tel:${BUSINESS_INFO.phone}`} 
+                className="w-full block relative z-10 no-underline"
+                style={{ textDecoration: 'none' }}
+              >
+                <div className="retro-button-navy w-full text-lg px-8 py-5 bg-white text-navy hover:bg-gray-100 min-h-[60px] font-bold transition-all duration-200 cursor-pointer text-center flex items-center justify-center relative z-10 select-none">
                   <Phone className="h-6 w-6 mr-3" />
                   Call {BUSINESS_INFO.phone}
-                </Link>
-              </Button>
+                </div>
+              </Link>
             </div>
 
             {/* Urgency Message */}
