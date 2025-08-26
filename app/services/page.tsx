@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, MapPin, Phone, Star, Clock, CheckCircle } from "lucide-react"
-import ServicePageCard from "@/components/ServicePageCard"
+import ServiceRow from "@/components/ServiceRow"
 // import Breadcrumbs, { generateBreadcrumbs } from "@/components/Breadcrumbs"
 
 export const metadata = getPageSEO('services')
@@ -59,10 +59,10 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services Grid - Pink's Windows Style */}
+      {/* Services Rows - Full Width Layout */}
       <section className="py-12 sm:py-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+        <div className="text-center mb-12">
+          <div className="container mx-auto px-4">
             <h2 className="heading-primary text-3xl sm:text-4xl md:text-5xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
               We look forward to serving you
             </h2>
@@ -70,13 +70,13 @@ export default function ServicesPage() {
               Professional cleaning services for your home and business. Click on any service to see details and get a quote.
             </p>
           </div>
-          
-          {/* Services Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
-            {SERVICES.map((service) => (
-              <ServicePageCard key={service.id} service={service} />
-            ))}
-          </div>
+        </div>
+        
+        {/* Service Rows */}
+        <div className="w-full">
+          {SERVICES.map((service, index) => (
+            <ServiceRow key={service.id} service={service} index={index} />
+          ))}
         </div>
       </section>
 
