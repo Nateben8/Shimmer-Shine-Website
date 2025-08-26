@@ -259,7 +259,7 @@ export default function JobberForm() {
           Professional Service Since 1995
         </div>
         <h3 className="heading-primary text-2xl mb-2">Get Your FREE Quote + 10% OFF</h3>
-        <p className="body-text text-gray-600 mb-2">Only 4 fields required • Takes 30 seconds • Guaranteed 2-hour response!</p>
+
         <p className="text-sm text-green-600 font-medium">Save $50-200 on your first service</p>
       </div>
       
