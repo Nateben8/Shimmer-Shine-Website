@@ -155,9 +155,7 @@ export default function ExpandableServiceCard({ service }: ExpandableServiceCard
               <ArrowRight className="h-4 w-4 ml-2 flex-shrink-0" />
             </Button>
           </Link>
-          <p className="text-xs text-gray-500 leading-relaxed">
-            Click above to expand and see what's included in this service
-          </p>
+
         </div>
       </CardContent>
     </Card>
