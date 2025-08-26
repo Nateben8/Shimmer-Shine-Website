@@ -112,27 +112,27 @@ export default function GetQuotePage() {
               </p>
 
               {/* Trust Badges */}
-              <div className="grid grid-cols-2 gap-4 mb-8">
-                <div className="flex items-center space-x-2">
-                  <div className="w-8 h-8 bg-yellow rounded-full flex items-center justify-center">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-8">
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-yellow rounded-full flex items-center justify-center flex-shrink-0">
                     <Star className="h-4 w-4 text-navy" />
                   </div>
                   <span className="text-sm font-medium">5-Star Rated Service</span>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-8 h-8 bg-yellow rounded-full flex items-center justify-center">
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-yellow rounded-full flex items-center justify-center flex-shrink-0">
                     <Shield className="h-4 w-4 text-navy" />
                   </div>
                   <span className="text-sm font-medium">Licensed & Insured</span>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-8 h-8 bg-yellow rounded-full flex items-center justify-center">
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-yellow rounded-full flex items-center justify-center flex-shrink-0">
                     <Award className="h-4 w-4 text-navy" />
                   </div>
                   <span className="text-sm font-medium">Since {BUSINESS_INFO.foundedYear}</span>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-8 h-8 bg-yellow rounded-full flex items-center justify-center">
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-yellow rounded-full flex items-center justify-center flex-shrink-0">
                     <Zap className="h-4 w-4 text-navy" />
                   </div>
                   <span className="text-sm font-medium">Same Day Service</span>

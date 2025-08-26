@@ -154,22 +154,16 @@ export default function Header() {
           <div className="flex-1 overflow-y-auto">
             <nav className="px-6 py-8 space-y-6">
               <div className="space-y-3">
-                {navigation.map((item) => (
+                {navigation.filter(item => item.name !== 'Get Quote').map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`block w-full text-left font-bold py-5 px-6 rounded-xl border-2 transition-all duration-200 text-xl tracking-wide min-h-[64px] flex items-center touch-manipulation shadow-lg hover:shadow-xl ${
-                      item.name === 'Get Quote' 
-                        ? 'bg-yellow text-navy hover:bg-yellow/90 hover:text-navy border-yellow shadow-lg' 
-                        : 'bg-white text-navy hover:text-navy hover:bg-white/90 border-yellow hover:border-yellow'
-                    }`}
+                    className="block w-full text-left font-bold py-5 px-6 rounded-xl border-2 transition-all duration-200 text-xl tracking-wide min-h-[64px] flex items-center touch-manipulation shadow-lg hover:shadow-xl bg-white text-navy hover:text-navy hover:bg-white/90 border-yellow hover:border-yellow"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     <div className="flex items-center justify-between w-full">
-                      <span className={`heading-primary ${item.name !== 'Get Quote' ? 'text-navy' : ''}`}>{item.name.toUpperCase()}</span>
-                      <div className={`w-3 h-3 rounded-full opacity-60 ${
-                        item.name === 'Get Quote' ? 'bg-navy' : 'bg-navy'
-                      }`}></div>
+                      <span className="heading-primary text-navy">{item.name.toUpperCase()}</span>
+                      <div className="w-3 h-3 rounded-full opacity-60 bg-navy"></div>
                     </div>
                   </Link>
                 ))}
