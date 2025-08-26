@@ -73,8 +73,31 @@ export default function HomePage() {
       </div>
       
       {/* Services Section */}
-      <section className="py-12 sm:py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
+      <section className="py-12 sm:py-16 bg-gray-50 relative overflow-hidden">
+        {/* Subtle Background Sparkles */}
+        <div className="absolute inset-0 opacity-5 pointer-events-none">
+          <div className="absolute top-20 left-10 w-3 h-3 text-yellow animate-pulse">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+          <div className="absolute top-32 right-16 w-2 h-2 text-yellow animate-pulse delay-1000">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+          <div className="absolute bottom-20 left-1/4 w-4 h-4 text-yellow animate-pulse delay-500">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+          <div className="absolute top-40 right-1/3 w-2 h-2 text-yellow animate-pulse delay-700">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           {/* Mobile-Only Mascot Display */}
           <div className="block sm:hidden text-center mb-8 relative">
             <div className="relative inline-block">
@@ -154,8 +177,26 @@ export default function HomePage() {
       </section>
 
       {/* Before/After Section */}
-      <section className="py-12 sm:py-16">
-        <div className="container mx-auto px-4">
+      <section className="py-12 sm:py-16 relative overflow-hidden">
+        {/* Floating Sparkles */}
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div className="absolute top-16 left-8 w-3 h-3 text-yellow animate-bounce">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+          <div className="absolute top-24 right-12 w-2 h-2 text-yellow animate-bounce delay-300">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+          <div className="absolute bottom-16 left-1/3 w-4 h-4 text-yellow animate-bounce delay-700">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="heading-primary text-3xl sm:text-4xl md:text-5xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
               See The Difference
@@ -306,8 +347,21 @@ export default function HomePage() {
       </section>
 
       {/* High-Intent Keywords Section */}
-      <section className="hidden sm:block py-8 sm:py-12 lg:py-16 bg-white">
-        <div className="container mx-auto px-3 sm:px-4">
+      <section className="hidden sm:block py-8 sm:py-12 lg:py-16 bg-white relative overflow-hidden">
+        {/* Subtle Corner Sparkles */}
+        <div className="absolute inset-0 opacity-8 pointer-events-none">
+          <div className="absolute top-8 right-8 w-2 h-2 text-yellow animate-pulse">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+          <div className="absolute bottom-12 left-12 w-3 h-3 text-yellow animate-pulse delay-1000">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+        </div>
+        <div className="container mx-auto px-3 sm:px-4 relative z-10">
           <div className="text-center mb-6 sm:mb-8 lg:mb-12">
             <h2 className="heading-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-3 sm:mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
               <span className="block sm:inline">Commercial Cleaning</span>{' '}
@@ -319,19 +373,39 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
-            <div className="text-center p-6 bg-gray-50 rounded-lg">
+            <div className="text-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:shadow-md group relative overflow-hidden">
+              <div className="absolute top-2 right-2 w-2 h-2 text-yellow opacity-0 group-hover:opacity-60 transition-opacity duration-300">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+                  <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+                </svg>
+              </div>
               <h3 className="heading-primary text-lg mb-2">B2B Contracts</h3>
               <p className="body-text text-sm">Commercial cleaning contracts Orange County with recurring service</p>
             </div>
-            <div className="text-center p-6 bg-gray-50 rounded-lg">
+            <div className="text-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:shadow-md group relative overflow-hidden">
+              <div className="absolute top-2 right-2 w-2 h-2 text-yellow opacity-0 group-hover:opacity-60 transition-opacity duration-300">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+                  <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+                </svg>
+              </div>
               <h3 className="heading-primary text-lg mb-2">After Hours Service</h3>
               <p className="body-text text-sm">After hours commercial cleaning Orange County available</p>
             </div>
-            <div className="text-center p-6 bg-gray-50 rounded-lg">
+            <div className="text-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:shadow-md group relative overflow-hidden">
+              <div className="absolute top-2 right-2 w-2 h-2 text-yellow opacity-0 group-hover:opacity-60 transition-opacity duration-300">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+                  <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+                </svg>
+              </div>
               <h3 className="heading-primary text-lg mb-2">Free Estimates</h3>
               <p className="body-text text-sm">Commercial cleaning estimate Orange County in 24 hours</p>
             </div>
-            <div className="text-center p-6 bg-gray-50 rounded-lg">
+            <div className="text-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:shadow-md group relative overflow-hidden">
+              <div className="absolute top-2 right-2 w-2 h-2 text-yellow opacity-0 group-hover:opacity-60 transition-opacity duration-300">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+                  <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+                </svg>
+              </div>
               <h3 className="heading-primary text-lg mb-2">Licensed & Insured</h3>
               <p className="body-text text-sm">Licensed commercial cleaning Orange County with full B2B coverage</p>
             </div>
@@ -504,8 +578,41 @@ export default function HomePage() {
           {/* <RelatedContent currentPage="home" /> */}
 
       {/* CTA Section */}
-      <section className="py-16 bg-yellow">
-        <div className="container mx-auto px-4 text-center">
+      <section className="py-16 bg-yellow relative overflow-hidden">
+        {/* Decorative Sparkles */}
+        <div className="absolute inset-0 opacity-15 pointer-events-none">
+          <div className="absolute top-8 left-8 w-4 h-4 text-navy animate-pulse">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+          <div className="absolute top-12 right-12 w-3 h-3 text-navy animate-pulse delay-500">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+          <div className="absolute bottom-16 left-16 w-5 h-5 text-navy animate-pulse delay-1000">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+          <div className="absolute bottom-8 right-8 w-3 h-3 text-navy animate-pulse delay-300">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+          <div className="absolute top-1/2 left-1/4 w-2 h-2 text-navy animate-pulse delay-700">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+          <div className="absolute top-1/3 right-1/3 w-2 h-2 text-navy animate-pulse delay-200">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+        </div>
+        <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="heading-decorative text-4xl md:text-5xl text-navy mb-4" style={{textShadow: '2px 2px 0px #FFFFFF, 3px 3px 0px #F5F5F5, 4px 4px 0px #E0E0E0'}}>
             <span className="block sm:inline">Ready for That</span>{' '}
             <span className="block sm:inline">Classic Shine?</span>
