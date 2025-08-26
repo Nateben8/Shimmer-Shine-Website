@@ -28,45 +28,45 @@ export default function Hero() {
             </div>
 
             {/* Main Headline */}
-            <div className="space-y-2 sm:space-y-4">
-              <h1 className="heading-decorative text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-yellow leading-tight">
+            <div className="space-y-3 sm:space-y-4">
+              <h1 className="heading-decorative text-4xl sm:text-4xl md:text-6xl lg:text-7xl text-yellow leading-tight text-center sm:text-left">
                 Classic Shine,
               </h1>
-              <h2 className="heading-primary text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white">
+              <h2 className="heading-primary text-3xl sm:text-3xl md:text-5xl lg:text-6xl text-white text-center sm:text-left">
                 Modern Quality!
               </h2>
             </div>
 
             {/* Subheading */}
-            <p className="body-text text-base sm:text-lg md:text-xl text-gray-100 leading-relaxed">
+            <p className="body-text text-lg sm:text-lg md:text-xl text-gray-100 leading-relaxed text-center sm:text-left px-2 sm:px-0">
               Same day window cleaning Orange County with free quotes. Licensed and insured residential and commercial window cleaning services across Orange County, Los Angeles, and San Diego.
             </p>
 
             {/* Social Proof */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-6">
+            <div className="flex flex-col sm:flex-row items-center sm:items-center space-y-2 sm:space-y-0 sm:space-x-6">
               <div className="flex items-center space-x-1">
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 sm:h-5 sm:w-5 text-yellow fill-current" />
+                    <Star key={i} className="h-5 w-5 sm:h-5 sm:w-5 text-yellow fill-current" />
                   ))}
                 </div>
-                <span className="text-gray-200 ml-2 text-sm sm:text-base">4.9/5 (500+ Reviews)</span>
+                <span className="text-gray-200 ml-2 text-base sm:text-base font-semibold">4.9/5 (500+ Reviews)</span>
               </div>
             </div>
 
             {/* Value Props */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
-              <div className="flex items-center space-x-2">
-                <Shield className="h-4 w-4 sm:h-5 sm:w-5 text-yellow flex-shrink-0" />
-                <span className="text-xs sm:text-sm">Licensed & Insured</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-4">
+              <div className="flex items-center justify-center sm:justify-start space-x-3 bg-white/10 rounded-lg p-3 sm:bg-transparent sm:p-0">
+                <Shield className="h-5 w-5 sm:h-5 sm:w-5 text-yellow flex-shrink-0" />
+                <span className="text-sm sm:text-sm font-semibold">Licensed & Insured</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <Award className="h-4 w-4 sm:h-5 sm:w-5 text-yellow flex-shrink-0" />
-                <span className="text-xs sm:text-sm">Satisfaction Guaranteed</span>
+              <div className="flex items-center justify-center sm:justify-start space-x-3 bg-white/10 rounded-lg p-3 sm:bg-transparent sm:p-0">
+                <Award className="h-5 w-5 sm:h-5 sm:w-5 text-yellow flex-shrink-0" />
+                <span className="text-sm sm:text-sm font-semibold">Satisfaction Guaranteed</span>
               </div>
-              <div className="flex items-center space-x-2 sm:col-span-2 md:col-span-1">
-                <Users className="h-4 w-4 sm:h-5 sm:w-5 text-yellow flex-shrink-0" />
-                <span className="text-xs sm:text-sm">Same Day Service</span>
+              <div className="flex items-center justify-center sm:justify-start space-x-3 bg-white/10 rounded-lg p-3 sm:bg-transparent sm:p-0 sm:col-span-2 md:col-span-1">
+                <Users className="h-5 w-5 sm:h-5 sm:w-5 text-yellow flex-shrink-0" />
+                <span className="text-sm sm:text-sm font-semibold">Same Day Service</span>
               </div>
             </div>
 

@@ -303,7 +303,7 @@ export default function HomePage() {
 
 
       {/* Local SEO Keywords Section */}
-      <section className="py-12 bg-navy text-white">
+      <section className="hidden lg:block py-12 bg-navy text-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
             <h2 className="heading-decorative text-3xl md:text-4xl text-yellow mb-4">

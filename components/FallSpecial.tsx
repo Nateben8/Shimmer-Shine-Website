@@ -45,7 +45,7 @@ export default function FallSpecial() {
   if (!isVisible) return null
 
   return (
-    <div className="bg-gradient-to-r from-orange-600 via-red-600 to-yellow-600 text-white py-3 px-4 relative overflow-hidden shadow-md">
+    <div className="hidden lg:block bg-gradient-to-r from-orange-600 via-red-600 to-yellow-600 text-white py-3 px-4 relative overflow-hidden shadow-md">
       {/* Background elements */}
       <div className="absolute inset-0 opacity-20">
 
