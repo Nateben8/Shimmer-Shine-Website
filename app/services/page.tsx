@@ -59,35 +59,52 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services Horizontal Scroll */}
+      {/* Services by Category - Horizontal Layout */}
       <section className="py-12 sm:py-16">
         <div className="w-full">
-          <div className="container mx-auto px-4 mb-8">
+          <div className="container mx-auto px-4 mb-12">
             <h2 className="heading-primary text-3xl sm:text-4xl md:text-5xl text-center mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
               Our Professional Services
             </h2>
             <p className="body-text text-lg text-gray-600 text-center max-w-3xl mx-auto">
-              Scroll through our complete range of services. Click on any service to see details or get a quote.
+              Browse our services by category. Scroll horizontally within each section to see all options.
             </p>
           </div>
           
-          {/* Horizontal Scrolling Container */}
-          <div className="w-full overflow-x-auto pb-4">
-            <div className="flex gap-4 sm:gap-6 px-4 sm:px-6 lg:px-8" style={{width: 'max-content'}}>
-              {SERVICES.map((service) => (
-                <div key={service.id} className="flex-shrink-0 w-72 sm:w-80 md:w-96">
-                  <ServicePageCard service={service} />
+          {/* Category Sections */}
+          {Object.entries(servicesByCategory).map(([category, services]) => (
+            <div key={category} className="mb-16">
+              <div className="container mx-auto px-4 mb-8">
+                <h3 className="heading-primary text-2xl sm:text-3xl md:text-4xl text-center mb-4 capitalize" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
+                  {category === 'cleaning' ? 'Core Cleaning Services' : 
+                   category === 'specialty' ? 'Specialty Services' : 
+                   category === 'maintenance' ? 'Maintenance Services' : 
+                   category === 'commercial' ? 'Commercial Services' : category}
+                </h3>
+              </div>
+              
+              {/* Horizontal Scrolling Container for Category */}
+              <div className="w-full overflow-x-auto pb-4">
+                <div className="flex gap-4 sm:gap-6 px-4 sm:px-6 lg:px-8" style={{width: 'max-content'}}>
+                  {services.map((service) => (
+                    <div key={service.id} className="flex-shrink-0 w-72 sm:w-80 md:w-96">
+                      <ServicePageCard service={service} />
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+              
+              {/* Scroll Hint for Category */}
+              <div className="text-center mt-4 px-4">
+                <p className="text-xs text-gray-400">
+                  ← Scroll to see all {category === 'cleaning' ? 'cleaning' : 
+                   category === 'specialty' ? 'specialty' : 
+                   category === 'maintenance' ? 'maintenance' : 
+                   category === 'commercial' ? 'commercial' : category} services →
+                </p>
+              </div>
             </div>
-          </div>
-          
-          {/* Scroll Hint */}
-          <div className="text-center mt-6 px-4">
-            <p className="text-sm text-gray-500">
-              ← Scroll horizontally to see all services →
-            </p>
-          </div>
+          ))}
         </div>
       </section>
 
