@@ -282,47 +282,47 @@ export default function GetQuotePage() {
               <div className="lg:col-span-1 space-y-6">
                 {/* Main Benefits Card */}
                 <Card className="retro-card bg-gradient-to-br from-white to-yellow-50">
-                  <CardHeader>
-                    <CardTitle className="heading-primary text-xl flex items-center">
-                      <Award className="h-6 w-6 mr-2 text-yellow" />
-                      Why 500+ Customers Choose Us
+                  <CardHeader className="pb-3 lg:pb-6">
+                    <CardTitle className="heading-primary text-lg lg:text-xl flex items-center">
+                      <Award className="h-5 w-5 lg:h-6 lg:w-6 mr-2 text-yellow flex-shrink-0" />
+                      <span className="leading-tight">Why 500+ Customers Choose Us</span>
                     </CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                        <CheckCircle className="h-5 w-5 text-green-600" />
+                  <CardContent className="space-y-3 lg:space-y-4">
+                    <div className="flex items-start space-x-2 lg:space-x-3">
+                      <div className="w-6 h-6 lg:w-8 lg:h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <CheckCircle className="h-4 w-4 lg:h-5 lg:w-5 text-green-600" />
                       </div>
-                      <div>
-                        <p className="font-bold text-navy">Lightning Fast Response</p>
-                        <p className="text-sm text-gray-600">Quote delivered within 2 hours, guaranteed</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                        <Shield className="h-5 w-5 text-blue-600" />
-                      </div>
-                      <div>
-                        <p className="font-bold text-navy">Fully Licensed & Insured</p>
-                        <p className="text-sm text-gray-600">$2M liability coverage for your peace of mind</p>
+                      <div className="min-w-0 flex-1">
+                        <p className="font-bold text-navy text-sm lg:text-base leading-tight">Lightning Fast Response</p>
+                        <p className="text-xs lg:text-sm text-gray-600 leading-tight mt-0.5">Quote delivered within 2 hours, guaranteed</p>
                       </div>
                     </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center">
-                        <Zap className="h-5 w-5 text-yellow-600" />
+                    <div className="flex items-start space-x-2 lg:space-x-3">
+                      <div className="w-6 h-6 lg:w-8 lg:h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Shield className="h-4 w-4 lg:h-5 lg:w-5 text-blue-600" />
                       </div>
-                      <div>
-                        <p className="font-bold text-navy">Same-Day Service Available</p>
-                        <p className="text-sm text-gray-600">Emergency cleaning when you need it most</p>
+                      <div className="min-w-0 flex-1">
+                        <p className="font-bold text-navy text-sm lg:text-base leading-tight">Fully Licensed & Insured</p>
+                        <p className="text-xs lg:text-sm text-gray-600 leading-tight mt-0.5">$2M liability coverage for your peace of mind</p>
                       </div>
                     </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                        <ThumbsUp className="h-5 w-5 text-green-600" />
+                    <div className="flex items-start space-x-2 lg:space-x-3">
+                      <div className="w-6 h-6 lg:w-8 lg:h-8 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Zap className="h-4 w-4 lg:h-5 lg:w-5 text-yellow-600" />
                       </div>
-                      <div>
-                        <p className="font-bold text-navy">100% Satisfaction Guarantee</p>
-                        <p className="text-sm text-gray-600">Not happy? We'll make it right or refund you</p>
+                      <div className="min-w-0 flex-1">
+                        <p className="font-bold text-navy text-sm lg:text-base leading-tight">Same-Day Service Available</p>
+                        <p className="text-xs lg:text-sm text-gray-600 leading-tight mt-0.5">Emergency cleaning when you need it most</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-2 lg:space-x-3">
+                      <div className="w-6 h-6 lg:w-8 lg:h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <ThumbsUp className="h-4 w-4 lg:h-5 lg:w-5 text-green-600" />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <p className="font-bold text-navy text-sm lg:text-base leading-tight">100% Satisfaction Guarantee</p>
+                        <p className="text-xs lg:text-sm text-gray-600 leading-tight mt-0.5">Not happy? We'll make it right or refund you</p>
                       </div>
                     </div>
                   </CardContent>
