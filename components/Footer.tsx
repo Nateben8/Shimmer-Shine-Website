@@ -22,35 +22,6 @@ export default function Footer() {
 
       {/* Main Footer Content */}
       <div className="relative z-10">
-        {/* Top Section with CTA */}
-        <div className="border-b border-white/10 bg-gradient-to-r from-yellow/10 to-transparent">
-          <div className="container mx-auto px-4 py-8">
-            <div className="text-center">
-              <h2 className="heading-primary text-2xl sm:text-3xl lg:text-4xl mb-4 text-white" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
-                Ready for That Classic Shine?
-              </h2>
-              <p className="text-gray-300 text-lg mb-6 max-w-2xl mx-auto">
-                Join thousands of satisfied customers across Orange County. Get your free quote today!
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Link 
-                  href="/get-a-quote"
-                  className="bg-yellow text-navy px-8 py-4 rounded-xl font-bold text-lg hover:bg-yellow/90 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
-                >
-                  Get Free Quote
-                </Link>
-                <Link 
-                  href={`tel:${BUSINESS_INFO.phone}`}
-                  className="flex items-center space-x-2 text-yellow hover:text-white transition-colors text-lg font-semibold"
-                >
-                  <Phone className="h-5 w-5" />
-                  <span>{BUSINESS_INFO.phone}</span>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Main Footer Grid */}
         <div className="container mx-auto px-4 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
