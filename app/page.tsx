@@ -188,6 +188,42 @@ export default function HomePage() {
 
       {/* Why Choose Us Section */}
       <section className="py-12 sm:py-16 bg-navy text-white relative overflow-hidden">
+        {/* Sparkle Overlay - Left Side */}
+        <div className="absolute top-8 left-4 sm:top-12 sm:left-8 lg:top-16 lg:left-12 opacity-15 pointer-events-none">
+          <div className="relative">
+            {/* Large Sparkle */}
+            <div className="absolute w-6 h-6 text-yellow opacity-80">
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+                <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+              </svg>
+            </div>
+            {/* Medium Sparkle */}
+            <div className="absolute w-4 h-4 text-yellow opacity-60 top-8 left-12">
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+                <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+              </svg>
+            </div>
+            {/* Small Sparkle */}
+            <div className="absolute w-3 h-3 text-yellow opacity-70 top-2 left-8">
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+                <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+              </svg>
+            </div>
+            {/* Tiny Sparkle */}
+            <div className="absolute w-2 h-2 text-yellow opacity-50 top-12 left-4">
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+                <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+              </svg>
+            </div>
+            {/* Additional Small Sparkle */}
+            <div className="absolute w-3 h-3 text-yellow opacity-40 top-16 left-10">
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+                <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        
         {/* Mascot Overlay */}
         <div className="absolute top-4 right-4 sm:top-8 sm:right-8 lg:top-12 lg:right-12 opacity-20 pointer-events-none">
           <Image
