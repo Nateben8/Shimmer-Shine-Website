@@ -71,7 +71,7 @@ export default function AboutPage() {
               <div className="flex flex-wrap gap-2">
                 <div className="retro-badge text-xs">Licensed & Insured</div>
                 <div className="retro-badge text-xs">Eco-Friendly</div>
-                <div className="retro-badge text-xs">500+ 5-Star Reviews</div>
+                <div className="retro-badge text-xs">5-Star Rated Service</div>
               </div>
             </div>
 
@@ -156,7 +156,7 @@ export default function AboutPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="body-text text-sm">
-                    Now established as a trusted name with 500+ five-star reviews, serving hundreds of satisfied residential and commercial clients across Southern California.
+                    Now established as a trusted name with 5-star rated service, serving hundreds of satisfied residential and commercial clients across Southern California.
                   </p>
                 </CardContent>
               </Card>
@@ -331,7 +331,7 @@ export default function AboutPage() {
                   Whether he's out securing new commercial contracts, personally handling residential window cleaning projects, or ensuring every job runs smoothly from start to finish, Nathan is fully hands-on and dedicated to delivering results that consistently exceed customer expectations.
                 </p>
                 <p className="body-text text-gray-700 leading-relaxed">
-                  His commitment to quality and customer satisfaction has been instrumental in building Shimmer Shine's reputation as Southern California's trusted property detailing service with over 500 five-star reviews.
+                  His commitment to quality and customer satisfaction has been instrumental in building Shimmer Shine's reputation as Southern California's trusted property detailing service with 5-star rated excellence.
                 </p>
               </CardContent>
             </Card>

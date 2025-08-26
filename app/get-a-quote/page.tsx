@@ -91,12 +91,13 @@ export default function GetQuotePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Content */}
             <div className="text-center lg:text-left">
-              <div className="retro-badge mb-6 inline-block animate-pulse">
-                LIMITED TIME: Only 12 Spots Left This Month!
+              <div className="retro-badge mb-6 inline-block">
+                Professional Service Since 1995
               </div>
               
               <h1 className="heading-decorative text-4xl md:text-6xl text-yellow mb-2 leading-tight" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
-                Get Your FREE Quote + 10% OFF
+                <span className="block sm:inline">Get Your FREE Quote</span>{' '}
+                <span className="block sm:inline">+ 10% OFF</span>
               </h1>
               <h2 className="heading-primary text-2xl md:text-3xl text-white mb-4" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
                 in 60 Seconds
@@ -107,7 +108,7 @@ export default function GetQuotePage() {
               </div>
               
               <p className="body-text text-xl text-gray-100 mb-6 leading-relaxed">
-                Professional window cleaning, pressure washing, and property detailing. Family-owned since {BUSINESS_INFO.foundedYear} with 500+ five-star reviews.
+                Professional window cleaning, pressure washing, and property detailing. Family-owned since {BUSINESS_INFO.foundedYear} with 5-star rated service.
               </p>
 
               {/* Trust Badges */}
@@ -116,7 +117,7 @@ export default function GetQuotePage() {
                   <div className="w-8 h-8 bg-yellow rounded-full flex items-center justify-center">
                     <Star className="h-4 w-4 text-navy" />
                   </div>
-                  <span className="text-sm font-medium">500+ Five-Star Reviews</span>
+                  <span className="text-sm font-medium">5-Star Rated Service</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <div className="w-8 h-8 bg-yellow rounded-full flex items-center justify-center">
@@ -177,7 +178,8 @@ export default function GetQuotePage() {
                 INSTANT QUOTE - RESPONDS IN 2 HOURS GUARANTEED
               </div>
               <h2 className="heading-primary text-3xl md:text-4xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
-                Complete Your Free Quote Below
+                <span className="block sm:inline">Complete Your</span>{' '}
+                <span className="block sm:inline">Free Quote Below</span>
               </h2>
               <p className="body-text text-gray-600 text-lg max-w-2xl mx-auto mb-6">
                 Join 500+ satisfied customers who trust us with their property cleaning needs. Professional results guaranteed!
@@ -250,7 +252,7 @@ export default function GetQuotePage() {
                       ))}
                     </div>
                     <p className="text-lg font-bold mb-2">4.9/5 Rating</p>
-                    <p className="text-yellow text-sm font-bold mb-3">500+ Five-Star Reviews</p>
+                    <p className="text-yellow text-sm font-bold mb-3">5-Star Rated Service</p>
                     <div className="bg-white/10 rounded-lg p-3 mb-4">
                       <p className="text-sm italic">"Best cleaning service in Orange County! Professional, reliable, and affordable."</p>
                       <p className="text-xs mt-2 text-yellow">- Sarah M., Newport Beach</p>
@@ -317,7 +319,7 @@ export default function GetQuotePage() {
                 <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
               </div>
               <h3 className="heading-primary text-2xl md:text-3xl text-navy mb-3" style={{textShadow: '2px 2px 0px #FFFFFF, 3px 3px 0px #F5F5F5, 4px 4px 0px #E0E0E0'}}>
-                URGENT: Only 12 Spots Left This Month!
+                Get Your Free Quote Today!
               </h3>
               <p className="body-text text-gray-700 mb-4">
                 <strong>Don't miss out!</strong> This exclusive 10% discount + FREE quote expires in 6 days. Join 47 customers who've already saved $50-200 this week!
@@ -380,7 +382,8 @@ export default function GetQuotePage() {
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
             <h3 className="heading-decorative text-4xl md:text-5xl text-navy mb-4" style={{textShadow: '2px 2px 0px #FFFFFF, 3px 3px 0px #F5F5F5, 4px 4px 0px #E0E0E0'}}>
-              Don't Miss Out - Only 12 Spots Left!
+              <span className="block sm:inline">Don't Miss Out -</span>{' '}
+              <span className="block sm:inline">Started Today?</span>
             </h3>
             <p className="body-text text-xl text-navy-700 mb-6">
               Join 500+ satisfied customers who've already saved with our exclusive discount. Get your FREE quote + 10% OFF before this offer expires!

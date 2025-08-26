@@ -146,7 +146,7 @@ export default function Footer() {
                 Licensed & Insured
               </div>
               <div className="retro-badge text-xs">
-                500+ 5-Star Reviews
+5-Star Rated Service
               </div>
             </div>
           </div>

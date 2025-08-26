@@ -129,7 +129,7 @@ export default function Header() {
         isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
       }`}>
         <div className="bg-gradient-to-br from-navy to-navy-700 shadow-2xl h-full flex flex-col">
-          <div className="flex justify-between items-center p-6 border-b border-yellow/20 bg-navy/90 flex-shrink-0">
+          <div className="flex justify-between items-center p-6 border-b border-yellow/20 bg-white flex-shrink-0">
             <div className="flex items-center space-x-3">
               <div className="relative w-10 h-10">
                 <Image
@@ -144,10 +144,10 @@ export default function Header() {
             </div>
             <button
               onClick={() => setIsMenuOpen(false)}
-              className="p-2 rounded-full hover:bg-yellow/20 transition-colors border border-yellow/30"
+              className="p-3 rounded-full hover:bg-yellow/20 transition-colors border-2 border-yellow bg-yellow/10"
               aria-label="Close menu"
             >
-              <X className="h-6 w-6 text-yellow" />
+              <X className="h-7 w-7 text-yellow font-bold stroke-[3]" />
             </button>
           </div>
           
@@ -161,14 +161,14 @@ export default function Header() {
                     className={`block w-full text-left font-bold py-5 px-6 rounded-xl border-2 transition-all duration-200 text-xl tracking-wide min-h-[64px] flex items-center touch-manipulation shadow-lg hover:shadow-xl ${
                       item.name === 'Get Quote' 
                         ? 'bg-yellow text-navy hover:bg-yellow/90 hover:text-navy border-yellow shadow-lg' 
-                        : 'bg-white/10 text-yellow hover:text-navy hover:bg-yellow border-yellow/30 hover:border-yellow'
-                    }`}
+                        : 'bg-white/10 text-white hover:text-navy hover:bg-yellow border-yellow/30 hover:border-yellow'
+                    }`} style={item.name !== 'Get Quote' ? {textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'} : {}}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     <div className="flex items-center justify-between w-full">
                       <span className="heading-primary">{item.name.toUpperCase()}</span>
                       <div className={`w-3 h-3 rounded-full opacity-60 ${
-                        item.name === 'Get Quote' ? 'bg-navy' : 'bg-yellow'
+                        item.name === 'Get Quote' ? 'bg-navy' : 'bg-white'
                       }`}></div>
                     </div>
                   </Link>
@@ -200,7 +200,7 @@ export default function Header() {
                     </div>
                     <div className="flex items-center justify-center space-x-3 bg-white/10 rounded-lg p-3">
                       <span className="text-yellow text-xl">⭐</span>
-                      <span className="body-text font-semibold">500+ 5-Star Reviews</span>
+                      <span className="body-text font-semibold">5-Star Rated Service</span>
                     </div>
                     <div className="flex items-center justify-center space-x-3 bg-white/10 rounded-lg p-3">
                       <span className="text-yellow text-xl">💰</span>

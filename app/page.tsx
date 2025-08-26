@@ -50,7 +50,8 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="heading-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 px-2" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
-              Best Window Cleaners in Orange County
+              <span className="block sm:inline">Best Window Cleaners</span>{' '}
+              <span className="block sm:inline">in Orange County</span>
             </h2>
             <p className="body-text text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed">
               Top rated window cleaning Orange County with same day service. Licensed and insured residential and commercial window cleaning, pressure washing, and solar panel cleaning across Orange County, Los Angeles, and San Diego.
@@ -229,7 +230,8 @@ export default function HomePage() {
         <div className="container mx-auto px-3 sm:px-4">
           <div className="text-center mb-6 sm:mb-8 lg:mb-12">
             <h2 className="heading-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-3 sm:mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
-              Commercial Cleaning Near Me Orange County
+              <span className="block sm:inline">Commercial Cleaning</span>{' '}
+              <span className="block sm:inline">Near Me Orange County</span>
             </h2>
             <p className="body-text text-base sm:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto px-2">
               Looking for commercial cleaning near me Orange County or business services? We provide office cleaning services Orange County with B2B contract solutions. Our services include recurring commercial cleaning Orange County, medical office cleaning Orange County, restaurant cleaning services Orange County, and commercial janitorial services Orange County with professional results.
@@ -313,7 +315,8 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
             <h2 className="heading-decorative text-3xl md:text-4xl text-yellow mb-4" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
-              Professional Services Throughout Southern California
+              <span className="block sm:inline">Professional Services</span>{' '}
+              <span className="block sm:inline">Throughout Southern California</span>
             </h2>
             <p className="text-lg text-gray-200 max-w-3xl mx-auto">
               From window cleaning in Costa Mesa to pressure washing in Beverly Hills, we serve over 139 cities with same-day availability and guaranteed results.
@@ -376,7 +379,8 @@ export default function HomePage() {
       <section className="py-16 bg-yellow">
         <div className="container mx-auto px-4 text-center">
           <h2 className="heading-decorative text-4xl md:text-5xl text-navy mb-4" style={{textShadow: '2px 2px 0px #FFFFFF, 3px 3px 0px #F5F5F5, 4px 4px 0px #E0E0E0'}}>
-            Ready for That Classic Shine?
+            <span className="block sm:inline">Ready for That</span>{' '}
+            <span className="block sm:inline">Classic Shine?</span>
           </h2>
           <p className="body-text text-xl text-navy-700 mb-8 max-w-2xl mx-auto">
             Join thousands of satisfied customers across Orange County, Los Angeles, and San Diego. Get your free quote today!

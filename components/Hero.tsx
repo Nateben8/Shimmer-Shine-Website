@@ -50,7 +50,7 @@ export default function Hero() {
                     <Star key={i} className="h-5 w-5 sm:h-5 sm:w-5 text-yellow fill-current" />
                   ))}
                 </div>
-                <span className="text-gray-200 ml-2 text-base sm:text-base font-semibold">4.9/5 (500+ Reviews)</span>
+                <span className="text-gray-200 ml-2 text-base sm:text-base font-semibold">5-Star Rated Service</span>
               </div>
             </div>
 

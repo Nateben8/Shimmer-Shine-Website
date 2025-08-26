@@ -109,8 +109,9 @@ export default function GoogleReviews({
       <div className="container mx-auto px-4">
         {showHeader && (
           <div className="text-center mb-12">
-            <h2 className="heading-primary text-4xl md:text-5xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
-              {headerTitle}
+            <h2 className="heading-primary text-3xl sm:text-4xl md:text-5xl mb-4 px-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
+              <span className="block sm:inline">What Our</span>{' '}
+              <span className="block sm:inline">Customers Say</span>
             </h2>
             {placeDetails && (
               <div className="flex items-center justify-center space-x-2 mb-4">

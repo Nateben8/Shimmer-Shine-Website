@@ -373,7 +373,7 @@ export default function CityPage({ params }: CityPageProps) {
               </div>
               <h4 className="heading-primary text-xl text-navy">Proven Results</h4>
               <p className="body-text text-gray-600 text-sm">
-                Hundreds of satisfied {cityName} customers and 500+ 5-star reviews.
+                Hundreds of satisfied {cityName} customers with 5-star rated service.
               </p>
             </div>
 

@@ -255,8 +255,8 @@ export default function JobberForm() {
     <div className="jobber-form-container w-full">
       {/* Enhanced Form Header */}
       <div className="form-section-header">
-        <div className="bg-yellow text-navy px-4 py-2 rounded-full font-bold text-sm mb-3 inline-block animate-pulse">
-          URGENT: Only 12 Spots Left This Month!
+        <div className="bg-yellow text-navy px-4 py-2 rounded-full font-bold text-sm mb-3 inline-block">
+          Professional Service Since 1995
         </div>
         <h3 className="heading-primary text-2xl mb-2">Get Your FREE Quote + 10% OFF</h3>
         <p className="body-text text-gray-600 mb-2">Only 4 fields required • Takes 30 seconds • Guaranteed 2-hour response!</p>

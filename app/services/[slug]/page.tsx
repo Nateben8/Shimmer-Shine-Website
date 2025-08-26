@@ -1170,7 +1170,7 @@ export default function ServicePage({ params }: ServicePageProps) {
                   </div>
                   <div className="flex items-center space-x-3">
                     <Star className="h-5 w-5 text-yellow" />
-                    <span className="text-sm">500+ 5-star reviews</span>
+                    <span className="text-sm">5-star rated service</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Shield className="h-5 w-5 text-yellow" />

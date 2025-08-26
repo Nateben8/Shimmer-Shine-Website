@@ -68,7 +68,7 @@ export default function MobileCTA() {
                         Licensed & Insured
                       </div>
                       <div className="retro-badge text-xs">
-                        500+ Reviews
+5-Star Rated
                       </div>
                     </div>
                   </div>

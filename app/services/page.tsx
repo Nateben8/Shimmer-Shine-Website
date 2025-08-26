@@ -36,11 +36,13 @@ export default function ServicesPage() {
             </div>
             
             <h1 className="heading-decorative text-4xl sm:text-5xl md:text-7xl text-yellow mb-4" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
-              Professional Services Orange County
+              <span className="block sm:inline">Professional Services</span>{' '}
+              <span className="block sm:inline">Orange County</span>
             </h1>
             
             <h2 className="heading-primary text-xl sm:text-2xl md:text-3xl text-white mb-4 sm:mb-6" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
-              Same Day Pressure Washing & Window Cleaning Orange County
+              <span className="block sm:inline">Same Day Pressure Washing &</span>{' '}
+              <span className="block sm:inline">Window Cleaning Orange County</span>
             </h2>
             
             <p className="body-text text-lg sm:text-xl text-gray-100 mb-6 sm:mb-8 leading-relaxed">
@@ -226,7 +228,7 @@ export default function ServicesPage() {
               <div className="w-16 h-16 bg-yellow rounded-full flex items-center justify-center mx-auto mb-4">
                 <Star className="h-8 w-8 text-navy" />
               </div>
-              <h4 className="heading-primary text-lg text-white mb-2">500+ 5-Star Reviews</h4>
+              <h4 className="heading-primary text-lg text-white mb-2">5-Star Rated Service</h4>
               <p className="body-text text-gray-200 text-sm">Consistently rated #1 on Google, Yelp, and Facebook</p>
             </div>
 
