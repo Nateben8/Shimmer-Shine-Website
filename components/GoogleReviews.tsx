@@ -114,7 +114,7 @@ export default function GoogleReviews({
   }
 
   return (
-    <section className={`py-16 ${sectionClassName} ${className} relative overflow-hidden bg-gradient-to-br from-gray-50 to-white`}>
+    <section className={`py-8 sm:py-12 ${sectionClassName} ${className} relative overflow-hidden bg-gradient-to-br from-gray-50 to-white`}>
       {/* Brand-themed Background Overlays */}
       <div className="absolute inset-0 opacity-5 pointer-events-none">
         {/* Cleaning Bucket SVG */}
@@ -173,101 +173,101 @@ export default function GoogleReviews({
 
       <div className="container mx-auto px-4 relative z-10">
         {showHeader && (
-          <div className="text-center mb-16">
-            <h2 className="heading-primary text-3xl sm:text-4xl md:text-5xl mb-6 px-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="heading-primary text-2xl sm:text-3xl md:text-4xl mb-4 px-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
               <span className="block sm:inline">What Our</span>{' '}
               <span className="block sm:inline">Customers Say</span>
             </h2>
             {placeDetails && (
-              <div className="flex items-center justify-center space-x-3 mb-6">
+              <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-3 mb-4">
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
                     <Star 
                       key={i} 
-                      className={`h-7 w-7 ${i < Math.floor(placeDetails.rating) ? 'text-yellow fill-current' : 'text-gray-300'}`} 
+                      className={`h-5 w-5 sm:h-6 sm:w-6 ${i < Math.floor(placeDetails.rating) ? 'text-yellow fill-current' : 'text-gray-300'}`} 
                     />
                   ))}
                 </div>
-                <span className="text-xl font-bold text-navy">
+                <span className="text-lg sm:text-xl font-bold text-navy">
                   5 Star Rated Service
                 </span>
                 <a 
                   href="https://maps.app.goo.gl/tZ2ZZzsRiexSvotn9" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-navy hover:text-yellow transition-colors ml-2"
+                  className="text-navy hover:text-yellow transition-colors"
                   title="View on Google"
                 >
-                  <ExternalLink className="h-5 w-5" />
+                  <ExternalLink className="h-4 w-4 sm:h-5 sm:w-5" />
                 </a>
               </div>
             )}
           </div>
         )}
 
-        {/* Full-Width Review Display */}
-        <div className="relative max-w-6xl mx-auto">
+        {/* Optimized Review Display */}
+        <div className="relative max-w-4xl mx-auto">
           {/* Navigation Arrows */}
           <button
             onClick={prevReview}
             disabled={reviews.length <= 1}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-14 h-14 bg-white hover:bg-gray-50 disabled:bg-gray-200 disabled:cursor-not-allowed rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-xl border-2 border-yellow"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 bg-white hover:bg-gray-50 disabled:bg-gray-200 disabled:cursor-not-allowed rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg border-2 border-yellow"
             aria-label="Previous review"
           >
-            <ChevronLeft className="h-8 w-8 text-navy" />
+            <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6 text-navy" />
           </button>
 
           <button
             onClick={nextReview}
             disabled={reviews.length <= 1}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-14 h-14 bg-white hover:bg-gray-50 disabled:bg-gray-200 disabled:cursor-not-allowed rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-xl border-2 border-yellow"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 bg-white hover:bg-gray-50 disabled:bg-gray-200 disabled:cursor-not-allowed rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg border-2 border-yellow"
             aria-label="Next review"
           >
-            <ChevronRight className="h-8 w-8 text-navy" />
+            <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 text-navy" />
           </button>
 
-          {/* Current Review - Full Width */}
-          <div className="mx-16 sm:mx-20">
+          {/* Current Review - Compact */}
+          <div className="mx-12 sm:mx-16">
             {reviews.length > 0 && (
-              <div className="bg-white rounded-2xl shadow-2xl border-4 border-yellow/20 p-8 sm:p-12 relative overflow-hidden">
+              <div className="bg-white rounded-xl shadow-xl border-2 border-yellow/20 p-4 sm:p-6 md:p-8 relative overflow-hidden">
                 {/* Decorative Corner Elements */}
-                <div className="absolute top-0 left-0 w-16 h-16 bg-yellow/10 rounded-br-full"></div>
-                <div className="absolute bottom-0 right-0 w-16 h-16 bg-navy/10 rounded-tl-full"></div>
+                <div className="absolute top-0 left-0 w-8 h-8 sm:w-12 sm:h-12 bg-yellow/10 rounded-br-full"></div>
+                <div className="absolute bottom-0 right-0 w-8 h-8 sm:w-12 sm:h-12 bg-navy/10 rounded-tl-full"></div>
                 
                 {/* Quote Icon */}
-                <div className="absolute top-6 left-6 w-12 h-12 text-yellow/30">
+                <div className="absolute top-3 left-3 sm:top-4 sm:left-4 w-6 h-6 sm:w-8 sm:h-8 text-yellow/30">
                   <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
                     <path d="M14,17H17L19,13V7H13V13H16M6,17H9L11,13V7H5V13H8L6,17Z" />
                   </svg>
                 </div>
 
-                <div className="text-center space-y-6">
+                <div className="text-center space-y-3 sm:space-y-4">
                   {/* Star Rating */}
                   <div className="flex items-center justify-center space-x-1">
                     {[...Array(5)].map((_, i) => (
                       <Star 
                         key={i} 
-                        className={`h-8 w-8 ${i < reviews[currentReviewIndex].rating ? 'text-yellow fill-current' : 'text-gray-300'}`} 
+                        className={`h-5 w-5 sm:h-6 sm:w-6 ${i < reviews[currentReviewIndex].rating ? 'text-yellow fill-current' : 'text-gray-300'}`} 
                       />
                     ))}
                   </div>
 
                   {/* Review Text */}
-                  <blockquote className="text-xl sm:text-2xl lg:text-3xl text-navy leading-relaxed font-medium italic max-w-4xl mx-auto">
+                  <blockquote className="text-base sm:text-lg md:text-xl text-navy leading-relaxed font-medium italic max-w-3xl mx-auto">
                     "{reviews[currentReviewIndex].text}"
                   </blockquote>
 
                   {/* Author Info */}
-                  <div className="pt-6 border-t border-gray-200">
-                    <div className="flex items-center justify-center space-x-4">
-                      <div className="w-12 h-12 bg-navy rounded-full flex items-center justify-center">
-                        <User className="h-6 w-6 text-yellow" />
+                  <div className="pt-3 sm:pt-4 border-t border-gray-200">
+                    <div className="flex items-center justify-center space-x-3">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-navy rounded-full flex items-center justify-center">
+                        <User className="h-4 w-4 sm:h-5 sm:w-5 text-yellow" />
                       </div>
                       <div className="text-left">
-                        <h4 className="heading-primary text-xl font-bold text-navy">
+                        <h4 className="heading-primary text-sm sm:text-base md:text-lg font-bold text-navy">
                           {reviews[currentReviewIndex].author_name}
                         </h4>
-                        <p className="text-gray-600">
+                        <p className="text-xs sm:text-sm text-gray-600">
                           Google Review • {reviews[currentReviewIndex].relative_time_description}
                         </p>
                       </div>
@@ -280,12 +280,12 @@ export default function GoogleReviews({
 
           {/* Review Indicators */}
           {reviews.length > 1 && (
-            <div className="flex items-center justify-center space-x-3 mt-8">
+            <div className="flex items-center justify-center space-x-2 mt-4 sm:mt-6">
               {reviews.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentReviewIndex(index)}
-                  className={`w-4 h-4 rounded-full transition-all duration-300 ${
+                  className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-300 ${
                     index === currentReviewIndex 
                       ? 'bg-yellow scale-125 shadow-lg' 
                       : 'bg-gray-300 hover:bg-gray-400 hover:scale-110'
@@ -298,7 +298,7 @@ export default function GoogleReviews({
         </div>
 
         {showViewAllButton && (
-          <div className="text-center mt-12">
+          <div className="text-center mt-6 sm:mt-8">
             <a
               href="https://maps.app.goo.gl/tZ2ZZzsRiexSvotn9"
               target="_blank"
@@ -306,11 +306,11 @@ export default function GoogleReviews({
             >
               <Button 
                 variant="outline" 
-                size="lg"
-                className="border-2 border-navy text-navy hover:bg-navy hover:text-white transition-all duration-300 px-8 py-3 text-lg font-bold"
+                size="default"
+                className="border-2 border-navy text-navy hover:bg-navy hover:text-white transition-all duration-300 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-bold"
               >
                 Read All Google Reviews
-                <ExternalLink className="ml-2 h-5 w-5" />
+                <ExternalLink className="ml-2 h-4 w-4" />
               </Button>
             </a>
           </div>
