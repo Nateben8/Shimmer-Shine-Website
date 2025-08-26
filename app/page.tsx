@@ -231,7 +231,7 @@ export default function HomePage() {
       </section>
 
       {/* High-Intent Keywords Section */}
-      <section className="py-8 sm:py-12 lg:py-16 bg-white">
+      <section className="hidden sm:block py-8 sm:py-12 lg:py-16 bg-white">
         <div className="container mx-auto px-3 sm:px-4">
           <div className="text-center mb-6 sm:mb-8 lg:mb-12">
             <h2 className="heading-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-3 sm:mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
