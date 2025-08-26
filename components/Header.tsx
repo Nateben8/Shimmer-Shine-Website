@@ -131,13 +131,13 @@ export default function Header() {
         <div className="bg-gradient-to-br from-navy to-navy-700 shadow-2xl h-full flex flex-col">
           <div className="flex justify-between items-center p-6 border-b border-yellow/20 bg-white flex-shrink-0">
             <div className="flex items-center space-x-3">
-              <div className="relative w-10 h-10">
+              <div className="relative w-28 h-28">
                 <Image
                   src="/logo.png"
                   alt="Shimmer Shine Property Detailing Logo"
                   fill
                   className="object-contain"
-                  sizes="40px"
+                  sizes="112px"
                 />
               </div>
               <span className="heading-primary font-bold text-yellow text-xl tracking-wide">MENU</span>
