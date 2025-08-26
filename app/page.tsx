@@ -1,3 +1,6 @@
+"use client"
+
+import { useState, useRef } from "react"
 import Hero from "@/components/Hero"
 import FallSpecial from "@/components/FallSpecial"
 import { SERVICES, BUSINESS_INFO, FAQ_DATA } from "@/lib/constants"
@@ -5,7 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
-import { Star, ArrowRight, CheckCircle, Award, Shield, Clock, MapPin } from "lucide-react"
+import { Star, ArrowRight, CheckCircle, Award, Shield, Clock, MapPin, ChevronLeft, ChevronRight } from "lucide-react"
 import BeforeAfterSlider from "@/components/BeforeAfterSlider"
 import GoogleReviews from "@/components/GoogleReviews"
 import ExpandableServiceCard from "@/components/ExpandableServiceCard"
@@ -17,6 +20,55 @@ export default function HomePage() {
   const faqSchema = getFAQSchema(FAQ_DATA)
   const fallSpecialSchema = getFallSpecialEventSchema()
   const serviceBundleSchema = getServiceBundleSchema()
+  
+  // Carousel state
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const carouselRef = useRef<HTMLDivElement>(null)
+  
+  const images = [
+    {
+      src: "/window-cleaning-before-after.png",
+      alt: "Window Cleaning Before and After in Newport Beach, CA - Professional residential window cleaning service showing dramatic improvement from dirty to crystal clear windows by Shimmer Shine Property Detailing",
+      title: "Newport Beach Window Cleaning Results | Shimmer Shine Property Detailing",
+      caption: "Window Cleaning - Newport Beach, CA",
+      description: "Professional before & after results"
+    },
+    {
+      src: "/pressure-washing-before-after.png", 
+      alt: "Concrete Pressure Washing Before and After in Anaheim Hills, CA - Professional driveway and concrete cleaning service showing transformation from stained to spotless concrete by Shimmer Shine Property Detailing",
+      title: "Anaheim Hills Pressure Washing Results | Shimmer Shine Property Detailing",
+      caption: "Pressure Washing - Anaheim Hills, CA",
+      description: "Concrete restoration results"
+    },
+    {
+      src: "/Post construction cleanup.jpg",
+      alt: "Post-Construction Cleanup Before and After in Orange County, CA - Professional construction site cleaning service showing transformation from construction debris to spotless property by Shimmer Shine Property Detailing", 
+      title: "Orange County Post-Construction Cleanup Results | Shimmer Shine Property Detailing",
+      caption: "Post-Construction Cleanup - Orange County, CA",
+      description: "Professional construction site cleaning"
+    }
+  ]
+  
+  const scrollToImage = (index: number) => {
+    if (carouselRef.current) {
+      const imageWidth = carouselRef.current.scrollWidth / images.length
+      carouselRef.current.scrollTo({
+        left: imageWidth * index,
+        behavior: 'smooth'
+      })
+      setCurrentImageIndex(index)
+    }
+  }
+  
+  const nextImage = () => {
+    const nextIndex = (currentImageIndex + 1) % images.length
+    scrollToImage(nextIndex)
+  }
+  
+  const prevImage = () => {
+    const prevIndex = currentImageIndex === 0 ? images.length - 1 : currentImageIndex - 1
+    scrollToImage(prevIndex)
+  }
 
   return (
     <>
@@ -206,77 +258,78 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Mobile: Swipeable carousel */}
-          <div className="block sm:hidden">
-            <div className="overflow-x-auto scrollbar-hide">
+          {/* Mobile: Interactive carousel with arrows */}
+          <div className="block sm:hidden relative">
+            {/* Navigation Arrows */}
+            <button 
+              onClick={prevImage}
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110"
+              aria-label="Previous image"
+            >
+              <ChevronLeft className="h-6 w-6 text-navy" />
+            </button>
+            
+            <button 
+              onClick={nextImage}
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110"
+              aria-label="Next image"
+            >
+              <ChevronRight className="h-6 w-6 text-navy" />
+            </button>
+
+            {/* Carousel Container */}
+            <div 
+              ref={carouselRef}
+              className="overflow-x-auto scrollbar-hide scroll-smooth"
+              style={{ scrollSnapType: 'x mandatory' }}
+            >
               <div className="flex space-x-4 pb-4" style={{ width: 'calc(100vw * 3)' }}>
-                <div className="polaroid-frame flex-shrink-0" style={{ width: 'calc(100vw - 2rem)' }}>
-                  <div className="relative h-64 rounded-lg overflow-hidden">
-                    <Image
-                      src="/window-cleaning-before-after.png"
-                      alt="Window Cleaning Before and After in Newport Beach, CA - Professional residential window cleaning service showing dramatic improvement from dirty to crystal clear windows by Shimmer Shine Property Detailing"
-                      title="Newport Beach Window Cleaning Results | Shimmer Shine Property Detailing"
-                      fill
-                      className="object-cover"
-                      sizes="100vw"
-                      priority={true}
-                      quality={90}
-                      placeholder="blur"
-                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-                    />
-                    <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-3">
-                      <p className="font-bold text-center text-sm">Window Cleaning - Newport Beach, CA</p>
-                      <p className="text-xs text-center opacity-90">Professional before & after results</p>
+                {images.map((image, index) => (
+                  <div 
+                    key={index}
+                    className="polaroid-frame flex-shrink-0" 
+                    style={{ 
+                      width: 'calc(100vw - 2rem)',
+                      scrollSnapAlign: 'start'
+                    }}
+                  >
+                    <div className="relative h-64 rounded-lg overflow-hidden">
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        title={image.title}
+                        fill
+                        className="object-cover"
+                        sizes="100vw"
+                        priority={index === 0}
+                        quality={90}
+                        placeholder="blur"
+                        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-3">
+                        <p className="font-bold text-center text-sm">{image.caption}</p>
+                        <p className="text-xs text-center opacity-90">{image.description}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="polaroid-frame flex-shrink-0" style={{ width: 'calc(100vw - 2rem)' }}>
-                  <div className="relative h-64 rounded-lg overflow-hidden">
-                    <Image
-                      src="/pressure-washing-before-after.png"
-                      alt="Concrete Pressure Washing Before and After in Anaheim Hills, CA - Professional driveway and concrete cleaning service showing transformation from stained to spotless concrete by Shimmer Shine Property Detailing"
-                      title="Anaheim Hills Pressure Washing Results | Shimmer Shine Property Detailing"
-                      fill
-                      className="object-cover"
-                      sizes="100vw"
-                      quality={90}
-                      priority={true}
-                      placeholder="blur"
-                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-                    />
-                    <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-3">
-                      <p className="font-bold text-center text-sm">Pressure Washing - Anaheim Hills, CA</p>
-                      <p className="text-xs text-center opacity-90">Concrete restoration results</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="polaroid-frame flex-shrink-0" style={{ width: 'calc(100vw - 2rem)' }}>
-                  <div className="relative h-64 rounded-lg overflow-hidden">
-                    <Image
-                      src="/Post construction cleanup.jpg"
-                      alt="Post-Construction Cleanup Before and After in Orange County, CA - Professional construction site cleaning service showing transformation from construction debris to spotless property by Shimmer Shine Property Detailing"
-                      title="Orange County Post-Construction Cleanup Results | Shimmer Shine Property Detailing"
-                      fill
-                      className="object-cover"
-                      sizes="100vw"
-                      quality={90}
-                      priority={true}
-                      placeholder="blur"
-                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-                    />
-                    <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-3">
-                      <p className="font-bold text-center text-sm">Post-Construction Cleanup - Orange County, CA</p>
-                      <p className="text-xs text-center opacity-90">Professional construction site cleaning</p>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
-            {/* Swipe indicator dots */}
+            
+            {/* Interactive indicator dots */}
             <div className="flex justify-center space-x-2 mt-4">
-              <div className="w-2 h-2 bg-yellow rounded-full"></div>
-              <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-              <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+              {images.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => scrollToImage(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                    currentImageIndex === index 
+                      ? 'bg-yellow scale-110' 
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                  aria-label={`Go to image ${index + 1}`}
+                />
+              ))}
             </div>
           </div>
 
