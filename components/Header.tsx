@@ -161,14 +161,14 @@ export default function Header() {
                     className={`block w-full text-left font-bold py-5 px-6 rounded-xl border-2 transition-all duration-200 text-xl tracking-wide min-h-[64px] flex items-center touch-manipulation shadow-lg hover:shadow-xl ${
                       item.name === 'Get Quote' 
                         ? 'bg-yellow text-navy hover:bg-yellow/90 hover:text-navy border-yellow shadow-lg' 
-                        : 'bg-white/20 text-white hover:text-navy hover:bg-yellow border-white/50 hover:border-yellow'
-                    }`} style={item.name !== 'Get Quote' ? {textShadow: '3px 3px 0px #FFC107, 2px 2px 0px #FFB300, 1px 1px 0px #FF8F00'} : {}}
+                        : 'bg-white text-navy hover:text-navy hover:bg-white/90 border-yellow hover:border-yellow'
+                    }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     <div className="flex items-center justify-between w-full">
-                      <span className={`heading-primary ${item.name !== 'Get Quote' ? 'text-white' : ''}`} style={item.name !== 'Get Quote' ? {color: '#ffffff', textShadow: '3px 3px 0px #FFC107, 2px 2px 0px #FFB300, 1px 1px 0px #FF8F00'} : {}}>{item.name.toUpperCase()}</span>
+                      <span className={`heading-primary ${item.name !== 'Get Quote' ? 'text-navy' : ''}`}>{item.name.toUpperCase()}</span>
                       <div className={`w-3 h-3 rounded-full opacity-60 ${
-                        item.name === 'Get Quote' ? 'bg-navy' : 'bg-white'
+                        item.name === 'Get Quote' ? 'bg-navy' : 'bg-navy'
                       }`}></div>
                     </div>
                   </Link>
