@@ -26,27 +26,27 @@ export default function ServicePageCard({ service }: ServicePageCardProps) {
 
   return (
     <Card className="retro-card hover:shadow-retro-yellow transition-all duration-300 group h-full flex flex-col">
-      <CardHeader className="text-center p-4 sm:p-6">
-        <div className="mb-3 sm:mb-4 flex items-center justify-center">
+      <CardHeader className="text-center p-4">
+        <div className="mb-3 flex items-center justify-center">
           {service.iconType === "image" ? (
             <Image
               src={service.icon}
               alt={`Professional ${service.name} Orange County - ${service.shortDescription} service icon`}
               title={`${service.name} Services Orange County - Licensed & Insured`}
-              width={64}
-              height={64}
-              className="w-12 h-12 sm:w-16 sm:h-16"
-              sizes="(max-width: 640px) 48px, 64px"
+              width={56}
+              height={56}
+              className="w-14 h-14"
+              sizes="56px"
               loading="lazy"
             />
           ) : (
-            <div className="text-4xl sm:text-5xl">{service.icon}</div>
+            <div className="text-4xl">{service.icon}</div>
           )}
         </div>
-        <CardTitle className="heading-primary text-base sm:text-lg md:text-xl mb-2">
+        <CardTitle className="heading-primary text-lg mb-2 leading-tight">
           {service.name}
         </CardTitle>
-        <CardDescription className="body-text text-sm sm:text-base text-gray-600 leading-relaxed">
+        <CardDescription className="body-text text-sm text-gray-600 leading-relaxed">
           {service.shortDescription}
         </CardDescription>
         
@@ -128,23 +128,23 @@ export default function ServicePageCard({ service }: ServicePageCardProps) {
         </div>
       </CardHeader>
       
-      <CardContent className="text-center p-4 sm:p-6 pt-0 mt-auto">
+      <CardContent className="text-center p-4 pt-0 mt-auto">
         <div className="space-y-3">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          <div className="grid grid-cols-2 gap-2">
             <Link href="/get-a-quote">
-              <Button className="w-full bg-yellow hover:bg-yellow/90 text-navy font-bold py-2 px-3 rounded-lg transition-all duration-300 hover:shadow-lg text-sm">
-                Get Free Quote
+              <Button className="w-full bg-yellow hover:bg-yellow/90 text-navy font-bold py-2 px-2 rounded-lg transition-all duration-300 hover:shadow-lg text-xs">
+                Get Quote
               </Button>
             </Link>
             <Link href={`/services/${service.id}`}>
-              <Button variant="outline" className="w-full border-navy text-navy hover:bg-navy hover:text-white font-bold py-2 px-3 rounded-lg transition-all duration-300 text-sm">
+              <Button variant="outline" className="w-full border-navy text-navy hover:bg-navy hover:text-white font-bold py-2 px-2 rounded-lg transition-all duration-300 text-xs">
                 <span>Learn More</span>
                 <ExternalLink className="h-3 w-3 ml-1 flex-shrink-0" />
               </Button>
             </Link>
           </div>
-          <p className="text-xs text-gray-500">
-            Expand above for quick details or click Learn More for full information
+          <p className="text-xs text-gray-500 leading-tight">
+            Expand above for details or Learn More for full info
           </p>
         </div>
       </CardContent>
