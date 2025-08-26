@@ -50,8 +50,8 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="heading-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 px-2" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
-              <span className="block sm:inline">Best Window Cleaners</span>{' '}
-              <span className="block sm:inline">in Orange County</span>
+              <span className="block sm:inline">Bringing the Shine</span>{' '}
+              <span className="block sm:inline">Back to Life</span>
             </h2>
             <p className="body-text text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed">
               Top rated window cleaning Orange County with same day service. Licensed and insured residential and commercial window cleaning, pressure washing, and solar panel cleaning across Orange County, Los Angeles, and San Diego.
