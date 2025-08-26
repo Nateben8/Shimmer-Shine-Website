@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Star, ExternalLink, User } from "lucide-react"
+import { Star, ExternalLink, User, ChevronLeft, ChevronRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { GoogleReview, GooglePlaceDetails } from "@/lib/googleReviews"
@@ -31,6 +31,7 @@ export default function GoogleReviews({
   const [placeDetails, setPlaceDetails] = useState<GooglePlaceDetails | null>(null)
   const [loading, setLoading] = useState(true)
   const [source, setSource] = useState<'google' | 'fallback'>('fallback')
+  const [currentReviewIndex, setCurrentReviewIndex] = useState(0)
 
   useEffect(() => {
     async function loadReviews() {
@@ -58,6 +59,14 @@ export default function GoogleReviews({
 
     loadReviews()
   }, [maxReviews])
+
+  const nextReview = () => {
+    setCurrentReviewIndex((prev) => (prev + 1) % reviews.length)
+  }
+
+  const prevReview = () => {
+    setCurrentReviewIndex((prev) => (prev - 1 + reviews.length) % reviews.length)
+  }
 
   if (loading) {
     return (
@@ -140,32 +149,73 @@ export default function GoogleReviews({
           </div>
         )}
 
-        <div className={`grid gap-8 ${compact ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1 md:grid-cols-3'}`}>
-          {reviews.map((review, index) => (
-            <Card key={index} className="retro-card">
-              <CardHeader>
-                <div className="flex items-center space-x-1 mb-2">
-                  {[...Array(5)].map((_, i) => (
-                    <Star 
-                      key={i} 
-                      className={`h-4 w-4 ${i < review.rating ? 'text-yellow fill-current' : 'text-gray-300'}`} 
-                    />
-                  ))}
-                </div>
-                <CardTitle className="heading-primary text-lg">
-                  {review.author_name}
-                </CardTitle>
-                <CardDescription className="text-sm text-gray-600">
-                  Google Review • {review.relative_time_description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="body-text text-gray-700 italic">
-                  "{review.text}"
-                </p>
-              </CardContent>
-            </Card>
-          ))}
+        {/* Single Review Carousel */}
+        <div className="relative max-w-4xl mx-auto">
+          <div className="flex items-center justify-center space-x-4">
+            {/* Previous Button */}
+            <button
+              onClick={prevReview}
+              disabled={reviews.length <= 1}
+              className="flex-shrink-0 w-12 h-12 bg-yellow hover:bg-yellow/90 disabled:bg-gray-300 disabled:cursor-not-allowed rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg"
+            >
+              <ChevronLeft className="h-6 w-6 text-navy" />
+            </button>
+
+            {/* Current Review */}
+            <div className="flex-1 max-w-2xl">
+              {reviews.length > 0 && (
+                <Card className="retro-card">
+                  <CardHeader className="text-center">
+                    <div className="flex items-center justify-center space-x-1 mb-3">
+                      {[...Array(5)].map((_, i) => (
+                        <Star 
+                          key={i} 
+                          className={`h-5 w-5 ${i < reviews[currentReviewIndex].rating ? 'text-yellow fill-current' : 'text-gray-300'}`} 
+                        />
+                      ))}
+                    </div>
+                    <CardTitle className="heading-primary text-xl mb-2">
+                      {reviews[currentReviewIndex].author_name}
+                    </CardTitle>
+                    <CardDescription className="text-sm text-gray-600">
+                      Google Review • {reviews[currentReviewIndex].relative_time_description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="text-center">
+                    <p className="body-text text-gray-700 italic text-lg leading-relaxed">
+                      "{reviews[currentReviewIndex].text}"
+                    </p>
+                  </CardContent>
+                </Card>
+              )}
+            </div>
+
+            {/* Next Button */}
+            <button
+              onClick={nextReview}
+              disabled={reviews.length <= 1}
+              className="flex-shrink-0 w-12 h-12 bg-yellow hover:bg-yellow/90 disabled:bg-gray-300 disabled:cursor-not-allowed rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg"
+            >
+              <ChevronRight className="h-6 w-6 text-navy" />
+            </button>
+          </div>
+
+          {/* Review Indicators */}
+          {reviews.length > 1 && (
+            <div className="flex items-center justify-center space-x-2 mt-6">
+              {reviews.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentReviewIndex(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentReviewIndex 
+                      ? 'bg-yellow scale-125' 
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                />
+              ))}
+            </div>
+          )}
         </div>
 
         {showViewAllButton && (
