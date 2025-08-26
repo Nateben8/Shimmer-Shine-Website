@@ -46,6 +46,32 @@ export default function HomePage() {
       <FallSpecial />
       <Hero />
       
+      {/* Section Divider */}
+      <div className="relative py-8 bg-gradient-to-r from-gray-50 via-white to-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-center">
+            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+            <div className="mx-6 flex items-center space-x-2">
+              {/* Sparkle Icon */}
+              <div className="w-4 h-4 text-yellow opacity-80">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+                  <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+                </svg>
+              </div>
+              {/* Center Diamond */}
+              <div className="w-3 h-3 bg-yellow transform rotate-45 opacity-90"></div>
+              {/* Sparkle Icon */}
+              <div className="w-4 h-4 text-yellow opacity-80">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+                  <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+                </svg>
+              </div>
+            </div>
+            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+          </div>
+        </div>
+      </div>
+      
       {/* Services Section */}
       <section className="py-12 sm:py-16 bg-gray-50">
         <div className="container mx-auto px-4">
