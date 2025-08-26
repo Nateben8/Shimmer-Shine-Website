@@ -165,7 +165,82 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {/* Mobile: Swipeable carousel */}
+          <div className="block sm:hidden">
+            <div className="overflow-x-auto scrollbar-hide">
+              <div className="flex space-x-4 pb-4" style={{ width: 'calc(100vw * 3)' }}>
+                <div className="polaroid-frame flex-shrink-0" style={{ width: 'calc(100vw - 2rem)' }}>
+                  <div className="relative h-64 rounded-lg overflow-hidden">
+                    <Image
+                      src="/window-cleaning-before-after.png"
+                      alt="Window Cleaning Before and After in Newport Beach, CA - Professional residential window cleaning service showing dramatic improvement from dirty to crystal clear windows by Shimmer Shine Property Detailing"
+                      title="Newport Beach Window Cleaning Results | Shimmer Shine Property Detailing"
+                      fill
+                      className="object-cover"
+                      sizes="100vw"
+                      priority={true}
+                      quality={90}
+                      placeholder="blur"
+                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-3">
+                      <p className="font-bold text-center text-sm">Window Cleaning - Newport Beach, CA</p>
+                      <p className="text-xs text-center opacity-90">Professional before & after results</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="polaroid-frame flex-shrink-0" style={{ width: 'calc(100vw - 2rem)' }}>
+                  <div className="relative h-64 rounded-lg overflow-hidden">
+                    <Image
+                      src="/pressure-washing-before-after.png"
+                      alt="Concrete Pressure Washing Before and After in Anaheim Hills, CA - Professional driveway and concrete cleaning service showing transformation from stained to spotless concrete by Shimmer Shine Property Detailing"
+                      title="Anaheim Hills Pressure Washing Results | Shimmer Shine Property Detailing"
+                      fill
+                      className="object-cover"
+                      sizes="100vw"
+                      quality={90}
+                      priority={true}
+                      placeholder="blur"
+                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-3">
+                      <p className="font-bold text-center text-sm">Pressure Washing - Anaheim Hills, CA</p>
+                      <p className="text-xs text-center opacity-90">Concrete restoration results</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="polaroid-frame flex-shrink-0" style={{ width: 'calc(100vw - 2rem)' }}>
+                  <div className="relative h-64 rounded-lg overflow-hidden">
+                    <Image
+                      src="/Post construction cleanup.jpg"
+                      alt="Post-Construction Cleanup Before and After in Orange County, CA - Professional construction site cleaning service showing transformation from construction debris to spotless property by Shimmer Shine Property Detailing"
+                      title="Orange County Post-Construction Cleanup Results | Shimmer Shine Property Detailing"
+                      fill
+                      className="object-cover"
+                      sizes="100vw"
+                      quality={90}
+                      priority={true}
+                      placeholder="blur"
+                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-3">
+                      <p className="font-bold text-center text-sm">Post-Construction Cleanup - Orange County, CA</p>
+                      <p className="text-xs text-center opacity-90">Professional construction site cleaning</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Swipe indicator dots */}
+            <div className="flex justify-center space-x-2 mt-4">
+              <div className="w-2 h-2 bg-yellow rounded-full"></div>
+              <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+              <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+            </div>
+          </div>
+
+          {/* Desktop: Grid layout */}
+          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <div className="polaroid-frame">
               <div className="relative h-64 sm:h-64 md:h-80 rounded-lg overflow-hidden">
                 <Image
