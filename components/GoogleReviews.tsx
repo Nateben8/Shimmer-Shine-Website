@@ -150,39 +150,39 @@ export default function GoogleReviews({
         )}
 
         {/* Single Review Carousel */}
-        <div className="relative max-w-4xl mx-auto">
-          <div className="flex items-center justify-center space-x-4">
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-0">
+          <div className="flex items-center justify-center space-x-2 sm:space-x-4">
             {/* Previous Button */}
             <button
               onClick={prevReview}
               disabled={reviews.length <= 1}
-              className="flex-shrink-0 w-12 h-12 bg-yellow hover:bg-yellow/90 disabled:bg-gray-300 disabled:cursor-not-allowed rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg"
+              className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-yellow hover:bg-yellow/90 disabled:bg-gray-300 disabled:cursor-not-allowed rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg"
             >
-              <ChevronLeft className="h-6 w-6 text-navy" />
+              <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6 text-navy" />
             </button>
 
             {/* Current Review */}
             <div className="flex-1 max-w-2xl">
               {reviews.length > 0 && (
                 <Card className="retro-card">
-                  <CardHeader className="text-center">
+                  <CardHeader className="text-center p-4 sm:p-6">
                     <div className="flex items-center justify-center space-x-1 mb-3">
                       {[...Array(5)].map((_, i) => (
                         <Star 
                           key={i} 
-                          className={`h-5 w-5 ${i < reviews[currentReviewIndex].rating ? 'text-yellow fill-current' : 'text-gray-300'}`} 
+                          className={`h-4 w-4 sm:h-5 sm:w-5 ${i < reviews[currentReviewIndex].rating ? 'text-yellow fill-current' : 'text-gray-300'}`} 
                         />
                       ))}
                     </div>
-                    <CardTitle className="heading-primary text-xl mb-2">
+                    <CardTitle className="heading-primary text-lg sm:text-xl mb-2">
                       {reviews[currentReviewIndex].author_name}
                     </CardTitle>
-                    <CardDescription className="text-sm text-gray-600">
+                    <CardDescription className="text-xs sm:text-sm text-gray-600">
                       Google Review • {reviews[currentReviewIndex].relative_time_description}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="text-center">
-                    <p className="body-text text-gray-700 italic text-lg leading-relaxed">
+                  <CardContent className="text-center p-4 sm:p-6 pt-0">
+                    <p className="body-text text-gray-700 italic text-sm sm:text-lg leading-relaxed">
                       "{reviews[currentReviewIndex].text}"
                     </p>
                   </CardContent>
@@ -194,20 +194,20 @@ export default function GoogleReviews({
             <button
               onClick={nextReview}
               disabled={reviews.length <= 1}
-              className="flex-shrink-0 w-12 h-12 bg-yellow hover:bg-yellow/90 disabled:bg-gray-300 disabled:cursor-not-allowed rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg"
+              className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-yellow hover:bg-yellow/90 disabled:bg-gray-300 disabled:cursor-not-allowed rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg"
             >
-              <ChevronRight className="h-6 w-6 text-navy" />
+              <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 text-navy" />
             </button>
           </div>
 
           {/* Review Indicators */}
           {reviews.length > 1 && (
-            <div className="flex items-center justify-center space-x-2 mt-6">
+            <div className="flex items-center justify-center space-x-2 mt-4 sm:mt-6">
               {reviews.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentReviewIndex(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
                     index === currentReviewIndex 
                       ? 'bg-yellow scale-125' 
                       : 'bg-gray-300 hover:bg-gray-400'
