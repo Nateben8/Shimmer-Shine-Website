@@ -278,9 +278,9 @@ export default function GoogleReviews({
             )}
           </div>
 
-          {/* Review Indicators */}
+          {/* Review Indicators - Hidden on Mobile */}
           {reviews.length > 1 && (
-            <div className="flex items-center justify-center space-x-2 mt-4 sm:mt-6">
+            <div className="hidden sm:flex items-center justify-center space-x-2 mt-4 sm:mt-6">
               {reviews.map((_, index) => (
                 <button
                   key={index}
