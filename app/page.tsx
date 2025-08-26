@@ -578,7 +578,7 @@ export default function HomePage() {
           {/* <RelatedContent currentPage="home" /> */}
 
       {/* CTA Section */}
-      <section className="py-16 bg-yellow relative overflow-hidden">
+      <section className="hidden sm:block py-16 bg-yellow relative overflow-hidden">
         {/* Decorative Sparkles */}
         <div className="absolute inset-0 opacity-15 pointer-events-none">
           <div className="absolute top-8 left-8 w-4 h-4 text-navy animate-pulse">
