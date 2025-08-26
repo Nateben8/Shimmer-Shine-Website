@@ -35,24 +35,7 @@ export default function Header() {
 
   return (
     <>
-      {/* Top Bar */}
-      <div className="bg-navy text-white py-1 px-4 text-sm">
-        <div className="container mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-1">
-              <Phone className="h-3 w-3 text-yellow" />
-              <span>{BUSINESS_INFO.phone}</span>
-            </div>
-            <div className="hidden md:block">
-              <span>Licensed & Insured • 500+ 5-Star Reviews</span>
-            </div>
-          </div>
-          <div className="hidden md:flex items-center space-x-1">
-            <MapPin className="h-3 w-3 text-yellow" />
-            <span>Serving Orange County, LA & San Diego</span>
-          </div>
-        </div>
-      </div>
+
 
       {/* Main Header */}
       <header className="bg-white shadow-lg sticky top-0 z-50">
