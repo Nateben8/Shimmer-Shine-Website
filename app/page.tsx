@@ -49,26 +49,12 @@ export default function HomePage() {
     }
   ]
   
-  const scrollToImage = (index: number) => {
-    if (carouselRef.current) {
-      const containerWidth = carouselRef.current.clientWidth
-      const scrollLeft = containerWidth * index
-      carouselRef.current.scrollTo({
-        left: scrollLeft,
-        behavior: 'smooth'
-      })
-      setCurrentImageIndex(index)
-    }
-  }
-  
   const nextImage = () => {
-    const nextIndex = (currentImageIndex + 1) % images.length
-    scrollToImage(nextIndex)
+    setCurrentImageIndex((prev) => (prev + 1) % images.length)
   }
   
   const prevImage = () => {
-    const prevIndex = currentImageIndex === 0 ? images.length - 1 : currentImageIndex - 1
-    scrollToImage(prevIndex)
+    setCurrentImageIndex((prev) => prev === 0 ? images.length - 1 : prev - 1)
   }
 
   return (
@@ -259,79 +245,74 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Mobile: Interactive carousel with arrows */}
-          <div className="block sm:hidden relative">
+          {/* Mobile: Simple horizontal carousel */}
+          <div className="block sm:hidden relative px-4">
             {/* Navigation Arrows */}
             <button 
               onClick={prevImage}
-              className="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110"
+              className="absolute left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/95 hover:bg-white rounded-full shadow-xl flex items-center justify-center transition-all duration-200 hover:scale-110 border-2 border-gray-200"
               aria-label="Previous image"
             >
-              <ChevronLeft className="h-6 w-6 text-navy" />
+              <ChevronLeft className="h-7 w-7 text-navy" />
             </button>
             
             <button 
               onClick={nextImage}
-              className="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110"
+              className="absolute right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/95 hover:bg-white rounded-full shadow-xl flex items-center justify-center transition-all duration-200 hover:scale-110 border-2 border-gray-200"
               aria-label="Next image"
             >
-              <ChevronRight className="h-6 w-6 text-navy" />
+              <ChevronRight className="h-7 w-7 text-navy" />
             </button>
 
             {/* Carousel Container */}
-            <div className="relative w-full">
+            <div className="relative overflow-hidden rounded-lg">
               <div 
                 ref={carouselRef}
-                className="overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory"
-                onScroll={(e) => {
-                  const scrollLeft = e.currentTarget.scrollLeft;
-                  const containerWidth = e.currentTarget.clientWidth;
-                  const newIndex = Math.round(scrollLeft / containerWidth);
-                  if (newIndex !== currentImageIndex && newIndex >= 0 && newIndex < images.length) {
-                    setCurrentImageIndex(newIndex);
-                  }
+                className="flex transition-transform duration-300 ease-in-out"
+                style={{ 
+                  transform: `translateX(-${currentImageIndex * 100}%)`,
+                  width: `${images.length * 100}%`
                 }}
               >
-                <div className="flex gap-4 w-max">
-                  {images.map((image, index) => (
-                    <div 
-                      key={index}
-                      className="polaroid-frame flex-shrink-0 snap-start w-[calc(100vw-2rem)]"
-                    >
-                      <div className="relative h-64 rounded-lg overflow-hidden">
-                        <Image
-                          src={image.src}
-                          alt={image.alt}
-                          title={image.title}
-                          fill
-                          className="object-cover"
-                          sizes="100vw"
-                          priority={index === 0}
-                          quality={90}
-                          placeholder="blur"
-                          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-                        />
-                        <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-3">
-                          <p className="font-bold text-center text-sm">{image.caption}</p>
-                          <p className="text-xs text-center opacity-90">{image.description}</p>
-                        </div>
+                {images.map((image, index) => (
+                  <div 
+                    key={index}
+                    className="polaroid-frame w-full flex-shrink-0"
+                    style={{ width: `${100 / images.length}%` }}
+                  >
+                    <div className="relative h-64 rounded-lg overflow-hidden mx-2">
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        title={image.title}
+                        fill
+                        className="object-cover"
+                        sizes="100vw"
+                        priority={index === 0}
+                        quality={90}
+                        placeholder="blur"
+                        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-3">
+                        <p className="font-bold text-center text-sm">{image.caption}</p>
+                        <p className="text-xs text-center opacity-90">{image.description}</p>
                       </div>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
             </div>
             
             {/* Interactive indicator dots */}
-            <div className="flex justify-center space-x-2 mt-4">
+            <div className="flex justify-center space-x-3 mt-6">
               {images.map((_, index) => (
                 <button
                   key={index}
-                  onClick={() => scrollToImage(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                  onClick={() => setCurrentImageIndex(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     currentImageIndex === index 
-                      ? 'bg-yellow scale-110' 
-                      : 'bg-gray-300 hover:bg-gray-400'
+                      ? 'bg-yellow scale-125 shadow-lg' 
+                      : 'bg-gray-300 hover:bg-gray-400 hover:scale-110'
                   }`}
                   aria-label={`Go to image ${index + 1}`}
                 />
