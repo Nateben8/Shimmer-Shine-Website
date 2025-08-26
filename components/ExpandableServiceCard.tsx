@@ -90,29 +90,21 @@ export default function ExpandableServiceCard({ service }: ExpandableServiceCard
           {service.shortDescription}
         </CardDescription>
         
-        {/* Expandable Content */}
+        {/* Expandable Content - Arrow Indicator */}
         <div className="mt-4">
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="group w-full bg-white hover:bg-gray-50 border-2 border-gray-200 hover:border-navy/30 rounded-xl p-4 transition-all duration-300 hover:shadow-md"
+            className="group w-full flex items-center justify-center py-3 transition-all duration-300 hover:bg-yellow/10 rounded-lg"
           >
-            <div className="flex items-center justify-between">
-              <div className="text-left">
-                <div className="text-sm font-bold text-navy group-hover:text-navy">
-                  {isExpanded ? 'Hide Details' : 'See What\'s Included'}
-                </div>
-                <div className="text-xs text-gray-500 group-hover:text-gray-600">
-                  {isExpanded ? 'Collapse service details' : 'Click to view full service details'}
-                </div>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="text-xs text-white bg-navy px-3 py-1 rounded-full font-semibold group-hover:bg-yellow group-hover:text-navy transition-colors">
-                  {isExpanded ? 'Less' : 'More'}
-                </div>
+            <div className="flex items-center space-x-3">
+              <span className="text-sm font-semibold text-navy group-hover:text-yellow transition-colors">
+                {isExpanded ? 'Show Less' : 'Show More Details'}
+              </span>
+              <div className="flex items-center justify-center w-8 h-8 bg-yellow rounded-full group-hover:bg-navy transition-all duration-300 group-hover:scale-110">
                 {isExpanded ? (
-                  <ChevronUp className="h-5 w-5 text-gray-400 group-hover:text-navy transition-colors" />
+                  <ChevronUp className="h-5 w-5 text-navy group-hover:text-yellow transition-colors" />
                 ) : (
-                  <ChevronDown className="h-5 w-5 text-gray-400 group-hover:text-navy transition-colors" />
+                  <ChevronDown className="h-5 w-5 text-navy group-hover:text-yellow transition-colors animate-bounce" />
                 )}
               </div>
             </div>
