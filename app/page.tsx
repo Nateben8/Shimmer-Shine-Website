@@ -51,9 +51,10 @@ export default function HomePage() {
   
   const scrollToImage = (index: number) => {
     if (carouselRef.current) {
-      const imageWidth = carouselRef.current.scrollWidth / images.length
+      const containerWidth = carouselRef.current.clientWidth
+      const scrollLeft = containerWidth * index
       carouselRef.current.scrollTo({
-        left: imageWidth * index,
+        left: scrollLeft,
         behavior: 'smooth'
       })
       setCurrentImageIndex(index)
@@ -278,41 +279,46 @@ export default function HomePage() {
             </button>
 
             {/* Carousel Container */}
-            <div 
-              ref={carouselRef}
-              className="overflow-x-auto scrollbar-hide scroll-smooth"
-              style={{ scrollSnapType: 'x mandatory' }}
-            >
-              <div className="flex space-x-4 pb-4" style={{ width: 'calc(100vw * 3)' }}>
-                {images.map((image, index) => (
-                  <div 
-                    key={index}
-                    className="polaroid-frame flex-shrink-0" 
-                    style={{ 
-                      width: 'calc(100vw - 2rem)',
-                      scrollSnapAlign: 'start'
-                    }}
-                  >
-                    <div className="relative h-64 rounded-lg overflow-hidden">
-                      <Image
-                        src={image.src}
-                        alt={image.alt}
-                        title={image.title}
-                        fill
-                        className="object-cover"
-                        sizes="100vw"
-                        priority={index === 0}
-                        quality={90}
-                        placeholder="blur"
-                        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-                      />
-                      <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-3">
-                        <p className="font-bold text-center text-sm">{image.caption}</p>
-                        <p className="text-xs text-center opacity-90">{image.description}</p>
+            <div className="relative w-full">
+              <div 
+                ref={carouselRef}
+                className="overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory"
+                onScroll={(e) => {
+                  const scrollLeft = e.currentTarget.scrollLeft;
+                  const containerWidth = e.currentTarget.clientWidth;
+                  const newIndex = Math.round(scrollLeft / containerWidth);
+                  if (newIndex !== currentImageIndex && newIndex >= 0 && newIndex < images.length) {
+                    setCurrentImageIndex(newIndex);
+                  }
+                }}
+              >
+                <div className="flex gap-4 w-max">
+                  {images.map((image, index) => (
+                    <div 
+                      key={index}
+                      className="polaroid-frame flex-shrink-0 snap-start w-[calc(100vw-2rem)]"
+                    >
+                      <div className="relative h-64 rounded-lg overflow-hidden">
+                        <Image
+                          src={image.src}
+                          alt={image.alt}
+                          title={image.title}
+                          fill
+                          className="object-cover"
+                          sizes="100vw"
+                          priority={index === 0}
+                          quality={90}
+                          placeholder="blur"
+                          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+                        />
+                        <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-3">
+                          <p className="font-bold text-center text-sm">{image.caption}</p>
+                          <p className="text-xs text-center opacity-90">{image.description}</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
             
