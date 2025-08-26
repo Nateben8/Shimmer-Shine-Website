@@ -8,6 +8,7 @@ import Image from "next/image"
 import { Star, ArrowRight, CheckCircle, Award, Shield, Clock, MapPin } from "lucide-react"
 import BeforeAfterSlider from "@/components/BeforeAfterSlider"
 import GoogleReviews from "@/components/GoogleReviews"
+import ExpandableServiceCard from "@/components/ExpandableServiceCard"
 // import RelatedContent from "@/components/RelatedContent"
 import { getFAQSchema, getFallSpecialEventSchema, getServiceBundleSchema } from "@/lib/schema"
 
@@ -60,81 +61,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {featuredServices.map((service) => (
-              <Card key={service.id} className="retro-card hover:shadow-retro-yellow transition-all duration-300 group h-full flex flex-col">
-                <CardHeader className="text-center p-4 sm:p-6 flex-grow">
-                  <div className="mb-3 sm:mb-4 flex items-center justify-center">
-                    {service.iconType === "image" ? (
-                      <Image
-                        src={service.icon}
-                        alt={`Professional ${service.name} service icon - ${service.description.slice(0, 50)}...`}
-                        width={64}
-                        height={64}
-                        className="w-12 h-12 sm:w-16 sm:h-16"
-                        loading="lazy"
-                        sizes="(max-width: 640px) 48px, 64px"
-                      />
-                    ) : (
-                      <div className="text-4xl sm:text-5xl">{service.icon}</div>
-                    )}
-                  </div>
-                  <CardTitle className="heading-primary text-base sm:text-lg md:text-xl mb-2 px-2">
-                    {service.name}
-                  </CardTitle>
-                  <CardDescription className="body-text text-sm sm:text-base text-gray-600 leading-relaxed px-2">
-                    {service.shortDescription}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="text-center p-4 sm:p-6 pt-0 mt-auto">
-                  <div className="space-y-3">
-                    <div className="retro-badge text-xs sm:text-sm">
-                      Get Custom Quote
-                    </div>
-                    <Link href={`/services/${service.id}`}>
-                      <Button variant="outline" className="w-full group-hover:bg-yellow group-hover:text-navy transition-colors text-xs py-2 px-2 min-h-[44px] leading-tight">
-                        <span className="text-center break-words hyphens-auto overflow-hidden">
-                          {service.id === 'window-cleaning' && (
-                            <>
-                              <span className="hidden lg:inline">Professional Window Cleaning</span>
-                              <span className="lg:hidden">Window Cleaning</span>
-                            </>
-                          )}
-                          {service.id === 'pressure-washing' && (
-                            <>
-                              <span className="hidden lg:inline">Best Pressure Washing</span>
-                              <span className="lg:hidden">Pressure Washing</span>
-                            </>
-                          )}
-                          {service.id === 'solar-panel-cleaning' && (
-                            <>
-                              <span className="hidden lg:inline">Solar Panel Cleaning</span>
-                              <span className="lg:hidden">Solar Cleaning</span>
-                            </>
-                          )}
-                          {service.id === 'gutter-cleaning' && (
-                            <>
-                              <span className="hidden lg:inline">Gutter Cleaning Services</span>
-                              <span className="lg:hidden">Gutter Cleaning</span>
-                            </>
-                          )}
-                          {service.id === 'post-construction-cleanup' && (
-                            <>
-                              <span className="hidden lg:inline">Post Construction Cleanup</span>
-                              <span className="lg:hidden">Post Construction</span>
-                            </>
-                          )}
-                          {service.id === 'commercial-cleaning' && (
-                            <>
-                              <span className="hidden lg:inline">Commercial Cleaning</span>
-                              <span className="lg:hidden">Commercial Clean</span>
-                            </>
-                          )}
-                        </span>
-                        <ArrowRight className="h-3 w-3 ml-1 flex-shrink-0" />
-                      </Button>
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
+              <ExpandableServiceCard key={service.id} service={service} />
             ))}
           </div>
 
