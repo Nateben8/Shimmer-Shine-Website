@@ -187,8 +187,20 @@ export default function HomePage() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-12 sm:py-16 bg-navy text-white">
-        <div className="container mx-auto px-4">
+      <section className="py-12 sm:py-16 bg-navy text-white relative overflow-hidden">
+        {/* Mascot Overlay */}
+        <div className="absolute top-4 right-4 sm:top-8 sm:right-8 lg:top-12 lg:right-12 opacity-20 pointer-events-none">
+          <Image
+            src="/mascot.png2.png"
+            alt="Shimmer Shine Mascot"
+            width={150}
+            height={150}
+            className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 xl:w-40 xl:h-40"
+            loading="lazy"
+          />
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="heading-decorative text-3xl sm:text-4xl md:text-5xl text-yellow mb-4" style={{textShadow: '6px 6px 12px rgba(0,0,0,1), 3px 3px 6px rgba(0,0,0,0.8), 1px 1px 3px rgba(0,0,0,0.9)'}}>
               Why Choose Shimmer Shine?
