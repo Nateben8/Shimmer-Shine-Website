@@ -162,31 +162,62 @@ export default function GetQuotePage() {
                 Professional window cleaning, pressure washing, and property detailing. Family-owned since {BUSINESS_INFO.foundedYear} with 5-star rated service.
               </p>
 
-              {/* Trust Badges */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-8">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-yellow rounded-full flex items-center justify-center flex-shrink-0">
-                    <Star className="h-4 w-4 text-navy" />
+              {/* Trust Badges - Mobile Optimized */}
+              <div className="mb-8">
+                {/* Mobile: Single column with cards */}
+                <div className="grid grid-cols-1 gap-3 sm:hidden">
+                  <div className="flex items-center space-x-4 bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                    <div className="w-10 h-10 bg-yellow rounded-full flex items-center justify-center flex-shrink-0">
+                      <Star className="h-5 w-5 text-navy" />
+                    </div>
+                    <span className="text-base font-bold text-white">5-Star Rated Service</span>
                   </div>
-                  <span className="text-sm font-medium">5-Star Rated Service</span>
+                  <div className="flex items-center space-x-4 bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                    <div className="w-10 h-10 bg-yellow rounded-full flex items-center justify-center flex-shrink-0">
+                      <Shield className="h-5 w-5 text-navy" />
+                    </div>
+                    <span className="text-base font-bold text-white">Licensed & Insured</span>
+                  </div>
+                  <div className="flex items-center space-x-4 bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                    <div className="w-10 h-10 bg-yellow rounded-full flex items-center justify-center flex-shrink-0">
+                      <Award className="h-5 w-5 text-navy" />
+                    </div>
+                    <span className="text-base font-bold text-white">Since {BUSINESS_INFO.foundedYear}</span>
+                  </div>
+                  <div className="flex items-center space-x-4 bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                    <div className="w-10 h-10 bg-yellow rounded-full flex items-center justify-center flex-shrink-0">
+                      <Zap className="h-5 w-5 text-navy" />
+                    </div>
+                    <span className="text-base font-bold text-white">Same Day Service</span>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-yellow rounded-full flex items-center justify-center flex-shrink-0">
-                    <Shield className="h-4 w-4 text-navy" />
+
+                {/* Desktop: Original 2-column grid */}
+                <div className="hidden sm:grid sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-yellow rounded-full flex items-center justify-center flex-shrink-0">
+                      <Star className="h-4 w-4 text-navy" />
+                    </div>
+                    <span className="text-sm font-medium">5-Star Rated Service</span>
                   </div>
-                  <span className="text-sm font-medium">Licensed & Insured</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-yellow rounded-full flex items-center justify-center flex-shrink-0">
-                    <Award className="h-4 w-4 text-navy" />
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-yellow rounded-full flex items-center justify-center flex-shrink-0">
+                      <Shield className="h-4 w-4 text-navy" />
+                    </div>
+                    <span className="text-sm font-medium">Licensed & Insured</span>
                   </div>
-                  <span className="text-sm font-medium">Since {BUSINESS_INFO.foundedYear}</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-yellow rounded-full flex items-center justify-center flex-shrink-0">
-                    <Zap className="h-4 w-4 text-navy" />
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-yellow rounded-full flex items-center justify-center flex-shrink-0">
+                      <Award className="h-4 w-4 text-navy" />
+                    </div>
+                    <span className="text-sm font-medium">Since {BUSINESS_INFO.foundedYear}</span>
                   </div>
-                  <span className="text-sm font-medium">Same Day Service</span>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-yellow rounded-full flex items-center justify-center flex-shrink-0">
+                      <Zap className="h-4 w-4 text-navy" />
+                    </div>
+                    <span className="text-sm font-medium">Same Day Service</span>
+                  </div>
                 </div>
               </div>
 
