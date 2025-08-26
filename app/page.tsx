@@ -161,7 +161,7 @@ export default function HomePage() {
               <span className="block sm:inline">Near Me Orange County</span>
             </h2>
             <p className="body-text text-base sm:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto px-2">
-              Looking for commercial cleaning near me Orange County or business services? We provide office cleaning services Orange County with B2B contract solutions. Our services include recurring commercial cleaning Orange County, medical office cleaning Orange County, restaurant cleaning services Orange County, and commercial janitorial services Orange County with professional results.
+              Keep your business looking professional with our comprehensive commercial cleaning services throughout Orange County. We specialize in creating customized cleaning solutions for offices, medical facilities, restaurants, and retail spaces. Our flexible B2B contracts include recurring maintenance, deep cleaning, and specialized janitorial services designed to meet your business needs and budget. From daily office cleaning to specialized medical facility sanitization, we help Orange County businesses maintain clean, healthy work environments.
             </p>
           </div>
 
