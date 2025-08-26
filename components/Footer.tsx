@@ -221,21 +221,21 @@ export default function Footer() {
               </h4>
               <div className="space-y-2">
                 <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                  <Clock className="h-4 w-4 text-yellow" />
+                  <Clock className="h-5 w-5 text-yellow" />
                   <div>
                     <p className="text-navy font-medium text-sm">Mon-Fri</p>
                     <p className="text-gray-600 text-xs">7:00 AM - 6:00 PM</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                  <Clock className="h-4 w-4 text-yellow" />
+                  <Clock className="h-5 w-5 text-yellow" />
                   <div>
                     <p className="text-navy font-medium text-sm">Saturday</p>
                     <p className="text-gray-600 text-xs">8:00 AM - 4:00 PM</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                  <Clock className="h-4 w-4 text-yellow" />
+                  <Clock className="h-5 w-5 text-yellow" />
                   <div>
                     <p className="text-navy font-medium text-sm">Sunday</p>
                     <p className="text-gray-600 text-xs">Closed</p>
