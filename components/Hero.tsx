@@ -29,10 +29,10 @@ export default function Hero() {
 
             {/* Main Headline */}
             <div className="space-y-3 sm:space-y-4">
-              <h1 className="heading-decorative text-4xl sm:text-4xl md:text-6xl lg:text-7xl text-yellow leading-tight text-center sm:text-left">
+              <h1 className="heading-decorative text-4xl sm:text-4xl md:text-6xl lg:text-7xl text-yellow leading-tight text-center sm:text-left" style={{textShadow: '1px 1px 0px #FFFFFF, 2px 2px 0px #F5F5F5'}}>
                 Classic Shine,
               </h1>
-              <h2 className="heading-primary text-3xl sm:text-3xl md:text-5xl lg:text-6xl text-white text-center sm:text-left">
+              <h2 className="heading-primary text-3xl sm:text-3xl md:text-5xl lg:text-6xl text-white text-center sm:text-left" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
                 Modern Quality!
               </h2>
             </div>

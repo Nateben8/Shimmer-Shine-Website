@@ -41,11 +41,11 @@ export default function AboutPage() {
                 Professional Since {BUSINESS_INFO.foundedYear}
               </div>
               
-              <h1 className="heading-decorative text-5xl md:text-7xl text-yellow mb-4">
+              <h1 className="heading-decorative text-5xl md:text-7xl text-yellow mb-4" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
                 About Us
               </h1>
               
-              <h2 className="heading-primary text-2xl md:text-3xl text-white mb-6">
+              <h2 className="heading-primary text-2xl md:text-3xl text-white mb-6" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
                 From Pressure Washing to Full Property Detailing
               </h2>
               
@@ -107,7 +107,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h3 className="heading-primary text-3xl md:text-4xl mb-6">
+              <h3 className="heading-primary text-3xl md:text-4xl mb-6" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
                 Our Growth Story
               </h3>
               <p className="body-text text-xl text-gray-600 max-w-3xl mx-auto">
@@ -218,7 +218,7 @@ export default function AboutPage() {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h3 className="heading-primary text-3xl md:text-4xl mb-4">
+            <h3 className="heading-primary text-3xl md:text-4xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
               What Sets Us Apart
             </h3>
             <p className="body-text text-xl text-gray-600 max-w-3xl mx-auto">
@@ -302,7 +302,7 @@ export default function AboutPage() {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h3 className="heading-primary text-3xl md:text-4xl mb-4">
+            <h3 className="heading-primary text-3xl md:text-4xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
               Meet Our Founders
             </h3>
             <p className="body-text text-xl text-gray-600 max-w-3xl mx-auto">
@@ -393,7 +393,7 @@ export default function AboutPage() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h3 className="heading-primary text-3xl md:text-4xl mb-4">
+            <h3 className="heading-primary text-3xl md:text-4xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
               Our Professional Team
             </h3>
             <p className="body-text text-xl text-gray-600 max-w-3xl mx-auto">
@@ -483,7 +483,7 @@ export default function AboutPage() {
       <section className="py-20 bg-navy text-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h3 className="heading-decorative text-4xl md:text-5xl text-yellow mb-4">
+            <h3 className="heading-decorative text-4xl md:text-5xl text-yellow mb-4" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
               Proven Excellence
             </h3>
             <p className="body-text text-xl text-gray-100 max-w-3xl mx-auto">
@@ -555,7 +555,7 @@ export default function AboutPage() {
       {/* CTA Section */}
       <section className="py-20 bg-yellow">
         <div className="container mx-auto px-4 text-center">
-          <h3 className="heading-decorative text-4xl md:text-5xl text-navy mb-6">
+          <h3 className="heading-decorative text-4xl md:text-5xl text-navy mb-6" style={{textShadow: '2px 2px 0px #FFFFFF, 3px 3px 0px #F5F5F5, 4px 4px 0px #E0E0E0'}}>
             Ready to Experience the Difference?
           </h3>
           <p className="body-text text-xl text-navy-700 mb-8 max-w-4xl mx-auto">

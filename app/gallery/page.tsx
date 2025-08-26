@@ -372,11 +372,11 @@ export default function GalleryPage() {
               Before & After Results
             </div>
             
-            <h1 className="heading-decorative text-4xl sm:text-5xl md:text-7xl text-yellow mb-4 sm:mb-6">
+            <h1 className="heading-decorative text-4xl sm:text-5xl md:text-7xl text-yellow mb-4 sm:mb-6" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
               Our Gallery
             </h1>
             
-            <h2 className="heading-primary text-xl sm:text-2xl md:text-3xl text-white mb-4 sm:mb-6">
+            <h2 className="heading-primary text-xl sm:text-2xl md:text-3xl text-white mb-4 sm:mb-6" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
               See the Dramatic Difference Professional Cleaning Makes
             </h2>
             
@@ -433,7 +433,7 @@ export default function GalleryPage() {
                   <div className="text-6xl">{category.icon}</div>
                 )}
               </div>
-              <h3 className="heading-primary text-2xl sm:text-3xl md:text-4xl mb-4">
+              <h3 className="heading-primary text-2xl sm:text-3xl md:text-4xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
                 {category.name}
               </h3>
               <p className="body-text text-lg sm:text-xl text-gray-600">
@@ -502,7 +502,7 @@ export default function GalleryPage() {
       <section className="py-20 bg-navy text-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h3 className="heading-decorative text-4xl md:text-5xl text-yellow mb-4">
+            <h3 className="heading-decorative text-4xl md:text-5xl text-yellow mb-4" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
               Featured Transformations
             </h3>
             <p className="body-text text-xl text-gray-100 max-w-3xl mx-auto">
@@ -587,7 +587,7 @@ export default function GalleryPage() {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h3 className="heading-primary text-3xl md:text-4xl mb-4">
+            <h3 className="heading-primary text-3xl md:text-4xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
               Results Across Southern California
             </h3>
             <p className="body-text text-xl text-gray-600">
@@ -708,7 +708,7 @@ export default function GalleryPage() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h3 className="heading-primary text-3xl md:text-4xl mb-4">
+            <h3 className="heading-primary text-3xl md:text-4xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
               What Our Customers Say About These Results
             </h3>
             <p className="body-text text-xl text-gray-600">
@@ -786,7 +786,7 @@ export default function GalleryPage() {
       {/* CTA Section */}
       <section className="py-20 bg-yellow">
         <div className="container mx-auto px-4 text-center">
-          <h3 className="heading-decorative text-4xl md:text-5xl text-navy mb-6">
+          <h3 className="heading-decorative text-4xl md:text-5xl text-navy mb-6" style={{textShadow: '2px 2px 0px #FFFFFF, 3px 3px 0px #F5F5F5, 4px 4px 0px #E0E0E0'}}>
             Ready for Your Own Amazing Results?
           </h3>
           <p className="body-text text-xl text-navy-700 mb-8 max-w-4xl mx-auto">

@@ -49,7 +49,7 @@ export default function HomePage() {
       <section className="py-12 sm:py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="heading-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 px-2">
+            <h2 className="heading-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 px-2" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
               Best Window Cleaners in Orange County
             </h2>
             <p className="body-text text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed">
@@ -151,7 +151,7 @@ export default function HomePage() {
       <section className="py-12 sm:py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="heading-primary text-3xl sm:text-4xl md:text-5xl mb-4">
+            <h2 className="heading-primary text-3xl sm:text-4xl md:text-5xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
               See The Difference
             </h2>
             <p className="body-text text-lg sm:text-xl text-gray-600">
@@ -161,7 +161,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <div className="polaroid-frame">
-              <div className="relative h-48 sm:h-64 md:h-80 rounded-lg overflow-hidden">
+              <div className="relative h-64 sm:h-64 md:h-80 rounded-lg overflow-hidden">
                 <Image
                   src="/window-cleaning-before-after.png"
                   alt="Window Cleaning Before and After in Newport Beach, CA - Professional residential window cleaning service showing dramatic improvement from dirty to crystal clear windows by Shimmer Shine Property Detailing"
@@ -169,17 +169,19 @@ export default function HomePage() {
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  priority
+                  priority={true}
                   quality={90}
+                  placeholder="blur"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-3">
-                  <p className="font-bold text-center">Window Cleaning - Newport Beach, CA</p>
+                  <p className="font-bold text-center text-sm sm:text-base">Window Cleaning - Newport Beach, CA</p>
                   <p className="text-xs text-center opacity-90">Professional before & after results</p>
                 </div>
               </div>
             </div>
             <div className="polaroid-frame">
-              <div className="relative h-48 sm:h-64 md:h-80 rounded-lg overflow-hidden">
+              <div className="relative h-64 sm:h-64 md:h-80 rounded-lg overflow-hidden">
                 <Image
                   src="/pressure-washing-before-after.png"
                   alt="Concrete Pressure Washing Before and After in Anaheim Hills, CA - Professional driveway and concrete cleaning service showing transformation from stained to spotless concrete by Shimmer Shine Property Detailing"
@@ -188,16 +190,18 @@ export default function HomePage() {
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   quality={90}
-                  loading="lazy"
+                  priority={true}
+                  placeholder="blur"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-3">
-                  <p className="font-bold text-center">Pressure Washing - Anaheim Hills, CA</p>
+                  <p className="font-bold text-center text-sm sm:text-base">Pressure Washing - Anaheim Hills, CA</p>
                   <p className="text-xs text-center opacity-90">Concrete restoration results</p>
                 </div>
               </div>
             </div>
             <div className="polaroid-frame">
-              <div className="relative h-48 sm:h-64 md:h-80 rounded-lg overflow-hidden">
+              <div className="relative h-64 sm:h-64 md:h-80 rounded-lg overflow-hidden">
                 <Image
                   src="/Post construction cleanup.jpg"
                   alt="Post-Construction Cleanup Before and After in Orange County, CA - Professional construction site cleaning service showing transformation from construction debris to spotless property by Shimmer Shine Property Detailing"
@@ -206,10 +210,12 @@ export default function HomePage() {
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   quality={90}
-                  loading="lazy"
+                  priority={true}
+                  placeholder="blur"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-3">
-                  <p className="font-bold text-center">Post-Construction Cleanup - Orange County, CA</p>
+                  <p className="font-bold text-center text-sm sm:text-base">Post-Construction Cleanup - Orange County, CA</p>
                   <p className="text-xs text-center opacity-90">Professional construction site cleaning</p>
                 </div>
               </div>
@@ -222,7 +228,7 @@ export default function HomePage() {
       <section className="py-8 sm:py-12 lg:py-16 bg-white">
         <div className="container mx-auto px-3 sm:px-4">
           <div className="text-center mb-6 sm:mb-8 lg:mb-12">
-            <h2 className="heading-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-3 sm:mb-4">
+            <h2 className="heading-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-3 sm:mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
               Commercial Cleaning Near Me Orange County
             </h2>
             <p className="body-text text-base sm:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto px-2">
@@ -255,7 +261,7 @@ export default function HomePage() {
       <section className="py-12 sm:py-16 bg-navy text-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="heading-decorative text-3xl sm:text-4xl md:text-5xl text-yellow mb-4">
+            <h2 className="heading-decorative text-3xl sm:text-4xl md:text-5xl text-yellow mb-4" style={{textShadow: '6px 6px 12px rgba(0,0,0,1), 3px 3px 6px rgba(0,0,0,0.8), 1px 1px 3px rgba(0,0,0,0.9)'}}>
               Why Choose Shimmer Shine?
             </h2>
             <p className="body-text text-lg sm:text-xl text-gray-100">
@@ -306,7 +312,7 @@ export default function HomePage() {
       <section className="hidden lg:block py-12 bg-navy text-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
-            <h2 className="heading-decorative text-3xl md:text-4xl text-yellow mb-4">
+            <h2 className="heading-decorative text-3xl md:text-4xl text-yellow mb-4" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
               Professional Services Throughout Southern California
             </h2>
             <p className="text-lg text-gray-200 max-w-3xl mx-auto">
@@ -369,7 +375,7 @@ export default function HomePage() {
       {/* CTA Section */}
       <section className="py-16 bg-yellow">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="heading-decorative text-4xl md:text-5xl text-navy mb-4">
+          <h2 className="heading-decorative text-4xl md:text-5xl text-navy mb-4" style={{textShadow: '2px 2px 0px #FFFFFF, 3px 3px 0px #F5F5F5, 4px 4px 0px #E0E0E0'}}>
             Ready for That Classic Shine?
           </h2>
           <p className="body-text text-xl text-navy-700 mb-8 max-w-2xl mx-auto">

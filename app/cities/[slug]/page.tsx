@@ -153,11 +153,11 @@ export default function CityPage({ params }: CityPageProps) {
                 Serving {county}
               </div>
               
-              <h1 className="heading-decorative text-5xl md:text-6xl text-yellow mb-4">
+              <h1 className="heading-decorative text-5xl md:text-6xl text-yellow mb-4" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
                 {cityName} Commercial Cleaning & Business Services
               </h1>
               
-              <h2 className="heading-primary text-2xl md:text-3xl text-white mb-6">
+              <h2 className="heading-primary text-2xl md:text-3xl text-white mb-6" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
                 Commercial Cleaning {cityName} | B2B Contracts Available
               </h2>
               
@@ -228,7 +228,7 @@ export default function CityPage({ params }: CityPageProps) {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h3 className="heading-primary text-3xl md:text-4xl mb-4">
+            <h3 className="heading-primary text-3xl md:text-4xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
               Our Services in {cityName}
             </h3>
             <p className="body-text text-xl text-gray-600">
@@ -348,7 +348,7 @@ export default function CityPage({ params }: CityPageProps) {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h3 className="heading-primary text-3xl md:text-4xl mb-4">
+            <h3 className="heading-primary text-3xl md:text-4xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
               Why {cityName} Chooses Shimmer Shine
             </h3>
             <p className="body-text text-xl text-gray-600">
@@ -404,7 +404,7 @@ export default function CityPage({ params }: CityPageProps) {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
                       <div className="text-center mb-12">
-              <h2 className="heading-primary text-3xl md:text-4xl mb-4">
+              <h2 className="heading-primary text-3xl md:text-4xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
                 {cityName} Commercial Cleaning & Business Services
               </h2>
               <p className="body-text text-xl text-gray-600 max-w-4xl mx-auto">
@@ -432,7 +432,7 @@ export default function CityPage({ params }: CityPageProps) {
           </div>
 
           <div className="text-center">
-            <h3 className="heading-primary text-2xl mb-4">
+            <h3 className="heading-primary text-2xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
               Best Commercial Cleaners in {cityName}
             </h3>
             <p className="body-text text-lg text-gray-600 max-w-3xl mx-auto mb-8">
@@ -515,7 +515,7 @@ export default function CityPage({ params }: CityPageProps) {
           <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h3 className="heading-decorative text-4xl md:text-5xl text-navy mb-4">
+              <h3 className="heading-decorative text-4xl md:text-5xl text-navy mb-4" style={{textShadow: '2px 2px 0px #FFFFFF, 3px 3px 0px #F5F5F5, 4px 4px 0px #E0E0E0'}}>
                 {cityName} Property Cleaning FAQs
               </h3>
               <p className="body-text text-xl text-gray-600">
@@ -726,7 +726,7 @@ export default function CityPage({ params }: CityPageProps) {
       {/* CTA Section */}
       <section className="py-16 bg-yellow">
         <div className="container mx-auto px-4 text-center">
-          <h3 className="heading-decorative text-4xl md:text-5xl text-navy mb-4">
+          <h3 className="heading-decorative text-4xl md:text-5xl text-navy mb-4" style={{textShadow: '2px 2px 0px #FFFFFF, 3px 3px 0px #F5F5F5, 4px 4px 0px #E0E0E0'}}>
             Ready for {cityName}'s Best?
           </h3>
           <p className="body-text text-xl text-navy-700 mb-8 max-w-3xl mx-auto">

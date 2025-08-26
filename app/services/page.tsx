@@ -35,11 +35,11 @@ export default function ServicesPage() {
               Professional Services Since {BUSINESS_INFO.foundedYear}
             </div>
             
-            <h1 className="heading-decorative text-4xl sm:text-5xl md:text-7xl text-yellow mb-4">
+            <h1 className="heading-decorative text-4xl sm:text-5xl md:text-7xl text-yellow mb-4" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
               Professional Services Orange County
             </h1>
             
-            <h2 className="heading-primary text-xl sm:text-2xl md:text-3xl text-white mb-4 sm:mb-6">
+            <h2 className="heading-primary text-xl sm:text-2xl md:text-3xl text-white mb-4 sm:mb-6" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
               Same Day Pressure Washing & Window Cleaning Orange County
             </h2>
             
@@ -61,7 +61,7 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4">
           {Object.entries(servicesByCategory).map(([category, services]) => (
             <div key={category} className="mb-12 sm:mb-16">
-              <h3 className="heading-primary text-2xl sm:text-3xl md:text-4xl text-center mb-4 capitalize">
+              <h3 className="heading-primary text-2xl sm:text-3xl md:text-4xl text-center mb-4 capitalize" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
                 {category === 'cleaning' ? 'Core Cleaning Services' : 
                  category === 'specialty' ? 'Specialty Services' : 
                  category === 'maintenance' ? 'Maintenance Services' : 
@@ -155,7 +155,7 @@ export default function ServicesPage() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h3 className="heading-primary text-3xl md:text-4xl mb-4">
+            <h3 className="heading-primary text-3xl md:text-4xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
               Where We Serve
             </h3>
             <p className="body-text text-xl text-gray-600">
@@ -213,7 +213,7 @@ export default function ServicesPage() {
       <section className="py-16 bg-navy text-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h3 className="heading-decorative text-4xl md:text-5xl text-yellow mb-4">
+            <h3 className="heading-decorative text-4xl md:text-5xl text-yellow mb-4" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
               Why Choose Shimmer Shine?
             </h3>
             <p className="body-text text-xl text-gray-100">
@@ -260,7 +260,7 @@ export default function ServicesPage() {
       {/* CTA Section */}
       <section className="py-16 bg-yellow">
         <div className="container mx-auto px-4 text-center">
-          <h3 className="heading-decorative text-4xl md:text-5xl text-navy mb-4">
+          <h3 className="heading-decorative text-4xl md:text-5xl text-navy mb-4" style={{textShadow: '2px 2px 0px #FFFFFF, 3px 3px 0px #F5F5F5, 4px 4px 0px #E0E0E0'}}>
             Ready to Get Started?
           </h3>
           <p className="body-text text-xl text-navy-700 mb-8 max-w-3xl mx-auto">

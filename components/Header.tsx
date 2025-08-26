@@ -34,18 +34,18 @@ export default function Header() {
   return (
     <>
       <header className="bg-white shadow-lg sticky top-0 z-50">
-        <div className="container mx-auto px-6 py-0">
-          <div className="grid grid-cols-3 items-center -my-4 lg:-my-2">
+        <div className="container mx-auto px-6 py-2 lg:py-0">
+          <div className="grid grid-cols-3 items-center -my-2 lg:-my-2">
             
             {/* Left Navigation - Desktop Only */}
             <div className="hidden lg:flex items-center space-x-8">
-              <Link href="/" className="text-gray-800 hover:text-navy font-bold transition-colors text-lg tracking-wide">
+              <Link href="/" className="heading-primary text-gray-800 hover:text-navy font-bold transition-colors text-lg tracking-wide">
                 HOME
               </Link>
-              <Link href="/services" className="text-gray-800 hover:text-navy font-bold transition-colors text-lg tracking-wide">
+              <Link href="/services" className="heading-primary text-gray-800 hover:text-navy font-bold transition-colors text-lg tracking-wide">
                 SERVICES
               </Link>
-              <Link href="/gallery" className="text-gray-800 hover:text-navy font-bold transition-colors text-lg tracking-wide">
+              <Link href="/gallery" className="heading-primary text-gray-800 hover:text-navy font-bold transition-colors text-lg tracking-wide">
                 GALLERY
               </Link>
             </div>
@@ -53,14 +53,14 @@ export default function Header() {
             {/* Mobile Logo - Left Side */}
             <div className="lg:hidden flex justify-start">
               <Link href="/" className="block">
-                <div className="relative w-20 h-20 hover:scale-105 transition-transform">
+                <div className="relative w-28 h-28 hover:scale-105 transition-transform">
                   <Image
                     src="/logo.png"
                     alt="Shimmer Shine Property Detailing Logo"
                     fill
                     className="object-contain"
                     priority
-                    sizes="80px"
+                    sizes="112px"
                   />
                 </div>
               </Link>
@@ -84,14 +84,14 @@ export default function Header() {
 
             {/* Right Navigation - Desktop Only */}
             <div className="hidden lg:flex items-center justify-end space-x-8">
-              <Link href="/about" className="text-gray-800 hover:text-navy font-bold transition-colors text-lg tracking-wide">
+              <Link href="/about" className="heading-primary text-gray-800 hover:text-navy font-bold transition-colors text-lg tracking-wide">
                 ABOUT
               </Link>
-              <Link href="/blog" className="text-gray-800 hover:text-navy font-bold transition-colors text-lg tracking-wide">
+              <Link href="/blog" className="heading-primary text-gray-800 hover:text-navy font-bold transition-colors text-lg tracking-wide">
                 BLOG
               </Link>
               <Link href="/get-a-quote">
-                <Button variant="default" size="lg" className="bg-yellow hover:bg-yellow/90 font-bold text-navy shadow-lg hover:shadow-xl transition-all hover:scale-105 animate-pulse border-2 border-navy">
+                <Button variant="default" size="lg" className="heading-primary bg-yellow hover:bg-yellow/90 font-bold text-navy shadow-lg hover:shadow-xl transition-all hover:scale-105 border-2 border-navy">
                   GET QUOTE
                 </Button>
               </Link>
@@ -101,14 +101,14 @@ export default function Header() {
             <div className="lg:hidden flex justify-end col-span-2">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="flex items-center space-x-2 p-3 rounded-lg hover:bg-gray-100 transition-colors"
+                className="flex items-center space-x-3 p-4 rounded-lg hover:bg-gray-100 transition-colors"
                 aria-label="Toggle menu"
               >
-                <span className="text-navy font-bold text-sm tracking-wide">Menu</span>
+                <span className="heading-primary text-navy font-bold text-base tracking-wide">Menu</span>
                 {isMenuOpen ? (
-                  <X className="h-6 w-6 text-navy" />
+                  <X className="h-7 w-7 text-navy" />
                 ) : (
-                  <Menu className="h-6 w-6 text-navy" />
+                  <Menu className="h-7 w-7 text-navy" />
                 )}
               </button>
             </div>
@@ -140,7 +140,7 @@ export default function Header() {
                   sizes="40px"
                 />
               </div>
-              <span className="heading-decorative font-bold text-yellow text-xl tracking-wide">MENU</span>
+              <span className="heading-primary font-bold text-yellow text-xl tracking-wide">MENU</span>
             </div>
             <button
               onClick={() => setIsMenuOpen(false)}
@@ -160,8 +160,8 @@ export default function Header() {
                     href={item.href}
                     className={`block w-full text-left font-bold py-5 px-6 rounded-xl border-2 transition-all duration-200 text-xl tracking-wide min-h-[64px] flex items-center touch-manipulation shadow-lg hover:shadow-xl ${
                       item.name === 'Get Quote' 
-                        ? 'bg-yellow text-navy hover:bg-yellow/90 hover:text-navy border-yellow' 
-                        : 'bg-white/10 text-white hover:text-navy hover:bg-yellow border-yellow/30 hover:border-yellow'
+                        ? 'bg-yellow text-navy hover:bg-yellow/90 hover:text-navy border-yellow shadow-lg' 
+                        : 'bg-white/10 text-yellow hover:text-navy hover:bg-yellow border-yellow/30 hover:border-yellow'
                     }`}
                     onClick={() => setIsMenuOpen(false)}
                   >

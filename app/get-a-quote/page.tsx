@@ -95,10 +95,10 @@ export default function GetQuotePage() {
                 LIMITED TIME: Only 12 Spots Left This Month!
               </div>
               
-              <h1 className="heading-decorative text-4xl md:text-6xl text-yellow mb-2 leading-tight">
+              <h1 className="heading-decorative text-4xl md:text-6xl text-yellow mb-2 leading-tight" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
                 Get Your FREE Quote + 10% OFF
               </h1>
-              <h2 className="heading-primary text-2xl md:text-3xl text-white mb-4">
+              <h2 className="heading-primary text-2xl md:text-3xl text-white mb-4" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
                 in 60 Seconds
               </h2>
               
@@ -176,7 +176,7 @@ export default function GetQuotePage() {
               <div className="inline-block bg-yellow text-navy px-4 py-2 rounded-full font-bold text-sm mb-4 border-2 border-navy shadow-retro-yellow animate-pulse">
                 INSTANT QUOTE - RESPONDS IN 2 HOURS GUARANTEED
               </div>
-              <h2 className="heading-primary text-3xl md:text-4xl mb-4">
+              <h2 className="heading-primary text-3xl md:text-4xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
                 Complete Your Free Quote Below
               </h2>
               <p className="body-text text-gray-600 text-lg max-w-2xl mx-auto mb-6">
@@ -316,7 +316,7 @@ export default function GetQuotePage() {
                 <span className="font-bold text-red-600 uppercase tracking-wide">Limited Time Offer</span>
                 <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
               </div>
-              <h3 className="heading-primary text-2xl md:text-3xl text-navy mb-3">
+              <h3 className="heading-primary text-2xl md:text-3xl text-navy mb-3" style={{textShadow: '2px 2px 0px #FFFFFF, 3px 3px 0px #F5F5F5, 4px 4px 0px #E0E0E0'}}>
                 URGENT: Only 12 Spots Left This Month!
               </h3>
               <p className="body-text text-gray-700 mb-4">
@@ -340,7 +340,7 @@ export default function GetQuotePage() {
           </div>
 
           <div className="text-center mb-12">
-            <h3 className="heading-primary text-3xl mb-4">Join 500+ Happy Customers</h3>
+            <h3 className="heading-primary text-3xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>Join 500+ Happy Customers</h3>
             <div className="flex items-center justify-center space-x-2 mb-6">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
@@ -379,7 +379,7 @@ export default function GetQuotePage() {
       <section className="py-16 bg-yellow">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
-            <h3 className="heading-decorative text-4xl md:text-5xl text-navy mb-4">
+            <h3 className="heading-decorative text-4xl md:text-5xl text-navy mb-4" style={{textShadow: '2px 2px 0px #FFFFFF, 3px 3px 0px #F5F5F5, 4px 4px 0px #E0E0E0'}}>
               Don't Miss Out - Only 12 Spots Left!
             </h3>
             <p className="body-text text-xl text-navy-700 mb-6">

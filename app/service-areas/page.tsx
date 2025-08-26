@@ -47,7 +47,7 @@ export default function ServiceAreasPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
             <div>
-              <h1 className="heading-decorative text-4xl md:text-6xl text-yellow mb-4">
+              <h1 className="heading-decorative text-4xl md:text-6xl text-yellow mb-4" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
                 Our Service Areas
               </h1>
               <p className="body-text text-xl text-gray-100 mb-6 leading-relaxed">
@@ -121,7 +121,7 @@ export default function ServiceAreasPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="heading-primary text-3xl md:text-4xl mb-4">
+            <h2 className="heading-primary text-3xl md:text-4xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
               Areas We Proudly Serve
             </h2>
             <p className="body-text text-gray-600 text-lg max-w-2xl mx-auto">
@@ -197,7 +197,7 @@ export default function ServiceAreasPage() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h3 className="heading-primary text-3xl mb-4">Why Choose Shimmer Shine?</h3>
+            <h3 className="heading-primary text-3xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>Why Choose Shimmer Shine?</h3>
             <p className="body-text text-gray-600">
               Nearly three decades of experience serving Southern California communities
             </p>
@@ -250,7 +250,7 @@ export default function ServiceAreasPage() {
       {/* CTA Section */}
       <section className="py-16 bg-navy text-white">
         <div className="container mx-auto px-4 text-center">
-          <h3 className="heading-decorative text-4xl md:text-5xl text-yellow mb-4">
+          <h3 className="heading-decorative text-4xl md:text-5xl text-yellow mb-4" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
             Ready to Experience the Difference?
           </h3>
           <p className="body-text text-xl text-gray-100 mb-8 max-w-2xl mx-auto">

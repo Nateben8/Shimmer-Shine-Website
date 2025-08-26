@@ -208,11 +208,11 @@ export default function ServicePage({ params }: ServicePageProps) {
                  service.category === 'commercial' ? 'Commercial Service' : 'Professional Service'}
               </div>
               
-              <h1 className="heading-decorative text-5xl md:text-6xl text-yellow mb-4">
+              <h1 className="heading-decorative text-5xl md:text-6xl text-yellow mb-4" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
                 {service.name}
               </h1>
               
-              <h2 className="heading-primary text-2xl md:text-3xl text-white mb-6">
+              <h2 className="heading-primary text-2xl md:text-3xl text-white mb-6" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
                 {service.shortDescription}
               </h2>
               
@@ -1219,7 +1219,7 @@ export default function ServicePage({ params }: ServicePageProps) {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h3 className="heading-primary text-3xl mb-4">
+              <h3 className="heading-primary text-3xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
                 Related Services
               </h3>
               <p className="body-text text-gray-600">
@@ -1277,7 +1277,7 @@ export default function ServicePage({ params }: ServicePageProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="heading-primary text-3xl md:text-4xl mb-4">
+              <h2 className="heading-primary text-3xl md:text-4xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
                 Frequently Asked Questions - {service.name} Orange County
               </h2>
               <p className="body-text text-xl text-gray-600">
@@ -1790,7 +1790,7 @@ export default function ServicePage({ params }: ServicePageProps) {
       {/* CTA Section */}
       <section className="py-16 bg-navy text-white">
         <div className="container mx-auto px-4 text-center">
-          <h3 className="heading-decorative text-4xl md:text-5xl text-yellow mb-4">
+          <h3 className="heading-decorative text-4xl md:text-5xl text-yellow mb-4" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
             Ready to Get Started?
           </h3>
           <p className="body-text text-xl text-gray-100 mb-8 max-w-2xl mx-auto">
