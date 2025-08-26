@@ -75,6 +75,58 @@ export default function HomePage() {
       {/* Services Section */}
       <section className="py-12 sm:py-16 bg-gray-50">
         <div className="container mx-auto px-4">
+          {/* Mobile-Only Mascot Display */}
+          <div className="block sm:hidden text-center mb-8 relative">
+            <div className="relative inline-block">
+              {/* Animated Background Circle */}
+              <div className="absolute inset-0 w-32 h-32 mx-auto bg-gradient-to-br from-yellow/20 to-yellow/10 rounded-full animate-pulse"></div>
+              
+              {/* Sparkle Effects */}
+              <div className="absolute -top-2 -left-2 w-4 h-4 text-yellow opacity-70 animate-bounce">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+                  <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+                </svg>
+              </div>
+              <div className="absolute -top-1 -right-3 w-3 h-3 text-yellow opacity-60 animate-bounce delay-300">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+                  <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+                </svg>
+              </div>
+              <div className="absolute -bottom-2 -left-3 w-3 h-3 text-yellow opacity-50 animate-bounce delay-500">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+                  <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+                </svg>
+              </div>
+              <div className="absolute -bottom-1 -right-2 w-2 h-2 text-yellow opacity-80 animate-bounce delay-700">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+                  <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+                </svg>
+              </div>
+              
+              {/* Main Mascot */}
+              <div className="relative z-10 p-4">
+                <Image
+                  src="/mascot.png"
+                  alt="Shimmer Shine Mascot"
+                  width={120}
+                  height={120}
+                  className="w-24 h-24 mx-auto drop-shadow-lg hover:scale-110 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              
+              {/* Decorative Border */}
+              <div className="absolute inset-0 w-32 h-32 mx-auto border-2 border-yellow/30 rounded-full animate-spin-slow"></div>
+            </div>
+            
+            {/* Mobile Tagline */}
+            <div className="mt-4">
+              <p className="text-sm text-gray-600 font-medium">
+                ✨ Your Trusted Cleaning Partner ✨
+              </p>
+            </div>
+          </div>
+          
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="heading-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 px-2" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
               <span className="block sm:inline">Bringing the Shine</span>{' '}
