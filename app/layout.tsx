@@ -6,7 +6,7 @@ import { getLocalBusinessSchema, getWebsiteSchema, getOrganizationSchema } from 
 import { SITE_CONFIG, BUSINESS_INFO } from "@/lib/constants"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
-import MobileCTA from "@/components/MobileCTA"
+
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -117,7 +117,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
-          <MobileCTA />
+
         </div>
       </body>
     </html>
