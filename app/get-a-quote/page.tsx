@@ -92,7 +92,7 @@ export default function GetQuotePage() {
             {/* Left Side - Content */}
             <div className="text-center lg:text-left">
               <div className="retro-badge mb-6 inline-block">
-                Professional Service Since 1995
+                Professional Service Since 2021
               </div>
               
               <h1 className="heading-decorative text-4xl md:text-6xl text-yellow mb-2 leading-tight" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
