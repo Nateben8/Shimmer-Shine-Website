@@ -166,7 +166,7 @@ export default function Header() {
                     onClick={() => setIsMenuOpen(false)}
                   >
                     <div className="flex items-center justify-between w-full">
-                      <span className="heading-primary">{item.name.toUpperCase()}</span>
+                      <span className={`heading-primary ${item.name !== 'Get Quote' ? 'text-white' : ''}`} style={item.name !== 'Get Quote' ? {color: '#ffffff', textShadow: '3px 3px 0px #FFC107, 2px 2px 0px #FFB300, 1px 1px 0px #FF8F00'} : {}}>{item.name.toUpperCase()}</span>
                       <div className={`w-3 h-3 rounded-full opacity-60 ${
                         item.name === 'Get Quote' ? 'bg-navy' : 'bg-white'
                       }`}></div>
