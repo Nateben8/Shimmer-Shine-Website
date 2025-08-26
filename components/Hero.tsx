@@ -93,12 +93,7 @@ export default function Hero() {
               </Link>
             </div>
 
-            {/* Urgency Message */}
-            <div className="bg-yellow text-navy px-3 sm:px-4 py-2 sm:py-3 rounded-lg shadow-retro-yellow">
-              <p className="font-bold text-center text-sm sm:text-base">
-                Same Day Window Cleaning Available - Free Quote in 60 Seconds!
-              </p>
-            </div>
+
           </div>
 
           {/* Hero Image with Mascot */}

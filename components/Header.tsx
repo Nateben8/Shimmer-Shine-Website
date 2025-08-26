@@ -42,7 +42,7 @@ export default function Header() {
         <div className="container mx-auto px-6 py-0">
           <div className="grid grid-cols-3 items-center -my-4 lg:-my-2">
             
-            {/* Left Navigation */}
+            {/* Left Navigation - Desktop Only */}
             <div className="hidden lg:flex items-center space-x-8">
               <Link
                 href="/"
@@ -64,10 +64,10 @@ export default function Header() {
               </Link>
             </div>
 
-            {/* Centered Logo */}
-            <div className="flex justify-center col-span-3 lg:col-span-1">
+            {/* Mobile Logo - Left Side */}
+            <div className="lg:hidden flex justify-start">
               <Link href="/" className="block">
-                <div className="relative w-32 h-32 md:w-40 md:h-40 lg:w-44 lg:h-44 hover:scale-105 transition-transform">
+                <div className="relative w-20 h-20 hover:scale-105 transition-transform">
                   <Image
                     src="/logo.png"
                     alt="Shimmer Shine Property Detailing - Professional Window Cleaning, Pressure Washing & Solar Panel Cleaning Orange County"
@@ -75,13 +75,30 @@ export default function Header() {
                     fill
                     className="object-contain"
                     priority
-                    sizes="(max-width: 768px) 128px, (max-width: 1024px) 160px, 176px"
+                    sizes="80px"
                   />
                 </div>
               </Link>
             </div>
 
-            {/* Right Navigation */}
+            {/* Desktop Logo - Centered */}
+            <div className="hidden lg:flex justify-center col-span-1">
+              <Link href="/" className="block">
+                <div className="relative w-44 h-44 hover:scale-105 transition-transform">
+                  <Image
+                    src="/logo.png"
+                    alt="Shimmer Shine Property Detailing - Professional Window Cleaning, Pressure Washing & Solar Panel Cleaning Orange County"
+                    title="Shimmer Shine Property Detailing - Licensed & Insured Cleaning Services Orange County"
+                    fill
+                    className="object-contain"
+                    priority
+                    sizes="176px"
+                  />
+                </div>
+              </Link>
+            </div>
+
+            {/* Right Navigation - Desktop Only */}
             <div className="hidden lg:flex items-center justify-end space-x-8">
               <Link
                 href="/about"
@@ -102,13 +119,14 @@ export default function Header() {
               </Link>
             </div>
 
-            {/* Mobile Menu Button */}
-            <div className="lg:hidden absolute right-4 top-1/2 transform -translate-y-1/2">
+            {/* Mobile Menu Button - Right Side */}
+            <div className="lg:hidden flex justify-end col-span-2">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-3 rounded-lg hover:bg-gray-100 transition-colors"
+                className="flex items-center space-x-2 p-3 rounded-lg hover:bg-gray-100 transition-colors"
                 aria-label="Toggle menu"
               >
+                <span className="text-navy font-bold text-sm tracking-wide">MENU NEXT</span>
                 {isMenuOpen ? (
                   <X className="h-6 w-6 text-navy" />
                 ) : (
@@ -130,84 +148,82 @@ export default function Header() {
       <div className={`lg:hidden fixed inset-x-0 top-0 z-50 transition-all duration-300 ease-in-out ${
         isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
       }`}>
-        <div className="bg-white shadow-2xl min-h-screen overflow-y-auto">
+        <div className="bg-gradient-to-br from-navy to-navy-700 shadow-2xl min-h-screen overflow-y-auto">
             {/* Close Button Header */}
-            <div className="flex justify-between items-center p-4 border-b border-gray-200 bg-gray-50">
+            <div className="flex justify-between items-center p-6 border-b border-yellow/20 bg-navy/90">
               <div className="flex items-center space-x-3">
-                <div className="relative w-8 h-8">
+                <div className="relative w-10 h-10">
                   <Image
                     src="/logo.png"
                     alt="Shimmer Shine Property Detailing Logo"
                     fill
                     className="object-contain"
-                    sizes="32px"
+                    sizes="40px"
                   />
                 </div>
-                <span className="font-bold text-navy text-lg">Menu</span>
+                <span className="heading-decorative font-bold text-yellow text-xl tracking-wide">MENU</span>
               </div>
               <button
                 onClick={() => setIsMenuOpen(false)}
-                className="p-2 rounded-full hover:bg-gray-200 transition-colors"
+                className="p-2 rounded-full hover:bg-yellow/20 transition-colors border border-yellow/30"
                 aria-label="Close menu"
               >
-                <X className="h-6 w-6 text-gray-600" />
+                <X className="h-6 w-6 text-yellow" />
               </button>
             </div>
             
-            <nav className="px-4 py-6 space-y-4">
+            <nav className="px-6 py-8 space-y-6">
                 {/* Navigation Links */}
-                <div className="space-y-2">
+                <div className="space-y-3">
                   {navigation.map((item, index) => (
                     <Link
                       key={item.name}
                       href={item.href}
-                      className={`block w-full text-left text-gray-800 hover:text-navy hover:bg-gray-50 font-semibold py-4 px-4 rounded-lg border border-gray-100 hover:border-navy/20 transition-all duration-200 text-lg tracking-wide min-h-[56px] flex items-center touch-manipulation ${
-                        item.name === 'Get Quote' ? 'hidden' : ''
+                      className={`block w-full text-left text-white hover:text-yellow hover:bg-yellow/10 font-bold py-5 px-6 rounded-xl border-2 border-yellow/20 hover:border-yellow transition-all duration-200 text-xl tracking-wide min-h-[64px] flex items-center touch-manipulation shadow-lg hover:shadow-xl ${
+                        item.name === 'Get Quote' ? 'bg-yellow text-navy hover:bg-yellow/90 hover:text-navy border-yellow' : ''
                       }`}
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      <div className="flex items-center justify-between">
-                        <span>{item.name}</span>
-                        <div className="w-2 h-2 bg-yellow rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                      <div className="flex items-center justify-between w-full">
+                        <span className="heading-primary">{item.name.toUpperCase()}</span>
+                        <div className="w-3 h-3 bg-yellow rounded-full opacity-60"></div>
                       </div>
                     </Link>
                   ))}
                 </div>
                 
                 {/* Contact Info */}
-                <div className="bg-gray-50 rounded-xl p-5 border border-gray-100">
-                  <div className="flex items-center justify-center space-x-3 text-navy mb-3">
-                    <Phone className="h-5 w-5 text-yellow" />
-                    <span className="font-bold text-xl">{BUSINESS_INFO.phone}</span>
+                <div className="bg-yellow/10 rounded-xl p-6 border-2 border-yellow/30 shadow-lg">
+                  <div className="flex items-center justify-center space-x-3 text-white mb-4">
+                    <Phone className="h-6 w-6 text-yellow" />
+                    <span className="heading-primary font-bold text-2xl">{BUSINESS_INFO.phone}</span>
                   </div>
-                  <div className="flex items-center justify-center space-x-2 text-gray-600 text-base">
-                    <MapPin className="h-4 w-4 text-yellow" />
-                    <span>Orange County, LA & San Diego</span>
+                  <div className="flex items-center justify-center space-x-2 text-gray-200 text-lg">
+                    <MapPin className="h-5 w-5 text-yellow" />
+                    <span className="body-text">Orange County, LA & San Diego</span>
                   </div>
                 </div>
                 
-
-
                 {/* Service Highlights */}
-                <div className="bg-navy/5 rounded-xl p-5 border border-navy/10">
+                <div className="bg-yellow/5 rounded-xl p-6 border-2 border-yellow/20 shadow-lg">
                   <div className="text-center">
-                    <div className="text-navy font-bold text-base mb-3">Why Choose Us?</div>
-                    <div className="grid grid-cols-2 gap-3 text-sm text-gray-600">
-                      <div className="flex items-center space-x-2">
-                        <span className="text-yellow text-lg">•</span>
-                        <span>Licensed & Insured</span>
+                    <div className="heading-decorative text-yellow font-bold text-xl mb-4">Why Choose Us?</div>
+                    <div className="grid grid-cols-1 gap-4 text-base text-gray-200">
+                      <div className="flex items-center justify-center space-x-3 bg-navy/50 rounded-lg p-3">
+                        <span className="text-yellow text-xl">★</span>
+                        <span className="body-text font-semibold">Licensed & Insured</span>
                       </div>
-                      <div className="flex items-center space-x-2">
-                        <span className="text-yellow text-lg">•</span>
-                        <span>Same Day Service</span>
+                      <div className="flex items-center justify-center space-x-3 bg-navy/50 rounded-lg p-3">
+                        <span className="text-yellow text-xl">⚡</span>
+                        <span className="body-text font-semibold">Same Day Service</span>
                       </div>
-                      <div className="flex items-center space-x-2">
-                        <span className="text-yellow text-lg">•</span>
-                        <span>500+ 5-Star Reviews</span>
+                      <div className="flex items-center justify-center space-x-3 bg-navy/50 rounded-lg p-3">
+                        <span className="text-yellow text-xl">⭐</span>
+                        <span className="body-text font-semibold">500+ 5-Star Reviews</span>
                       </div>
-                      <div className="flex items-center space-x-2">
-                        <span className="text-yellow text-lg">•</span>
-                        <span>Free Estimates</span>
+                      <div className="flex items-center justify-center space-x-3 bg-navy/50 rounded-lg p-3">
+                        <span className="text-yellow text-xl">💰</span>
+                        <span className="body-text font-semibold">Free Estimates</span>
                       </div>
                     </div>
                   </div>
