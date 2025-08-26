@@ -86,8 +86,59 @@ export default function GetQuotePage() {
       />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-navy to-navy-700 text-white py-12 lg:py-16">
-        <div className="container mx-auto px-4">
+      <section className="bg-gradient-to-br from-navy to-navy-700 text-white py-12 lg:py-16 relative overflow-hidden">
+        {/* Hero Sparkles & Brand Overlays */}
+        <div className="absolute inset-0 opacity-50 pointer-events-none">
+          {/* Cleaning Equipment Overlays */}
+          <div className="absolute bottom-10 right-10 w-24 h-24 text-yellow/20 rotate-12">
+            <svg viewBox="0 0 100 100" fill="currentColor" className="w-full h-full">
+              <rect x="10" y="40" width="80" height="8" rx="4" />
+              <rect x="45" y="48" width="10" height="40" rx="2" />
+              <rect x="8" y="38" width="84" height="3" opacity="0.6" />
+            </svg>
+          </div>
+          
+          <div className="absolute top-20 right-1/4 w-20 h-20 text-white/15 -rotate-12">
+            <svg viewBox="0 0 100 100" fill="currentColor" className="w-full h-full">
+              <rect x="30" y="40" width="25" height="45" rx="5" />
+              <rect x="35" y="20" width="15" height="25" rx="3" />
+              <circle cx="42.5" cy="15" r="3" />
+              <path d="M55 30 L70 25 L68 35 Z" />
+            </svg>
+          </div>
+          <div className="absolute top-16 left-8 w-6 h-6 text-yellow animate-pulse drop-shadow-lg">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+          <div className="absolute top-24 right-12 w-4 h-4 text-white animate-bounce delay-300 drop-shadow-md">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+          <div className="absolute bottom-20 left-1/4 w-7 h-7 text-yellow animate-pulse delay-500 drop-shadow-xl">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+          <div className="absolute top-8 right-1/4 w-3 h-3 text-white animate-bounce delay-700 drop-shadow-sm">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+          <div className="absolute bottom-8 right-16 w-5 h-5 text-yellow animate-pulse delay-200 drop-shadow-lg">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+          <div className="absolute top-32 left-1/3 w-4 h-4 text-white animate-bounce delay-1000 drop-shadow-md">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Content */}
             <div className="text-center lg:text-left">
@@ -170,8 +221,42 @@ export default function GetQuotePage() {
       </section>
 
       {/* Main Form Section */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="container mx-auto px-4">
+      <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
+        {/* Form Section Sparkles & Brand Elements */}
+        <div className="absolute inset-0 opacity-35 pointer-events-none">
+          {/* Window Cleaning Tool */}
+          <div className="absolute bottom-20 right-20 w-28 h-28 text-navy/10 rotate-45">
+            <svg viewBox="0 0 100 100" fill="currentColor" className="w-full h-full">
+              <rect x="20" y="10" width="60" height="40" rx="5" fill="none" stroke="currentColor" strokeWidth="3" />
+              <rect x="42" y="50" width="16" height="30" rx="8" />
+              <line x1="25" y1="15" x2="75" y2="15" stroke="currentColor" strokeWidth="1" />
+              <line x1="25" y1="25" x2="75" y2="25" stroke="currentColor" strokeWidth="1" />
+              <line x1="25" y1="35" x2="75" y2="35" stroke="currentColor" strokeWidth="1" />
+            </svg>
+          </div>
+          <div className="absolute top-12 left-12 w-5 h-5 text-yellow animate-pulse drop-shadow-lg">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+          <div className="absolute top-20 right-8 w-3 h-3 text-navy animate-bounce delay-300 drop-shadow-md">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+          <div className="absolute bottom-16 left-1/4 w-6 h-6 text-yellow animate-pulse delay-500 drop-shadow-xl">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+          <div className="absolute top-1/3 right-1/3 w-4 h-4 text-navy animate-bounce delay-700 drop-shadow-sm">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <div className="inline-block bg-yellow text-navy px-4 py-2 rounded-full font-bold text-sm mb-4 border-2 border-navy shadow-retro-yellow animate-pulse">
@@ -308,8 +393,37 @@ export default function GetQuotePage() {
 
 
       {/* Urgency & Social Proof Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-16 bg-white relative overflow-hidden">
+        {/* Social Proof Sparkles */}
+        <div className="absolute inset-0 opacity-30 pointer-events-none">
+          <div className="absolute top-8 left-8 w-4 h-4 text-yellow animate-pulse drop-shadow-lg">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+          <div className="absolute top-16 right-12 w-6 h-6 text-navy animate-bounce delay-300 drop-shadow-md">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+          <div className="absolute bottom-12 left-1/3 w-5 h-5 text-yellow animate-pulse delay-500 drop-shadow-xl">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+          <div className="absolute top-1/2 right-8 w-3 h-3 text-navy animate-bounce delay-700 drop-shadow-sm">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+          <div className="absolute bottom-20 right-1/4 w-4 h-4 text-yellow animate-pulse delay-200 drop-shadow-lg">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           {/* Urgency Banner */}
           <div className="max-w-4xl mx-auto mb-16">
             <div className="bg-gradient-to-r from-red-50 to-yellow-50 border-2 border-yellow rounded-xl p-6 text-center">
@@ -378,8 +492,42 @@ export default function GetQuotePage() {
 
 
       {/* Final CTA */}
-      <section className="py-16 bg-yellow">
-        <div className="container mx-auto px-4 text-center">
+      <section className="py-16 bg-yellow relative overflow-hidden">
+        {/* Final CTA Sparkles */}
+        <div className="absolute inset-0 opacity-45 pointer-events-none">
+          <div className="absolute top-8 left-8 w-6 h-6 text-navy animate-pulse drop-shadow-xl">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+          <div className="absolute top-12 right-12 w-4 h-4 text-navy animate-bounce delay-300 drop-shadow-lg">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+          <div className="absolute bottom-16 left-16 w-7 h-7 text-navy animate-pulse delay-500 drop-shadow-2xl">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+          <div className="absolute bottom-8 right-8 w-5 h-5 text-navy animate-bounce delay-700 drop-shadow-lg">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+          <div className="absolute top-1/2 left-1/4 w-3 h-3 text-navy animate-pulse delay-200 drop-shadow-md">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+          <div className="absolute top-1/3 right-1/3 w-4 h-4 text-navy animate-bounce delay-800 drop-shadow-lg">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+        </div>
+        
+        <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-3xl mx-auto">
             <h3 className="heading-decorative text-4xl md:text-5xl text-navy mb-4" style={{textShadow: '2px 2px 0px #FFFFFF, 3px 3px 0px #F5F5F5, 4px 4px 0px #E0E0E0'}}>
               <span className="block sm:inline">Don't Miss Out -</span>{' '}
