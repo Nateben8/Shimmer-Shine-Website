@@ -94,25 +94,25 @@ export default function ExpandableServiceCard({ service }: ExpandableServiceCard
         <div className="mt-4">
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="group w-full bg-gradient-to-r from-yellow/10 to-yellow/20 hover:from-yellow/20 hover:to-yellow/30 border-2 border-yellow/30 hover:border-yellow rounded-xl p-3 transition-all duration-300 hover:shadow-lg"
+            className="group w-full bg-white hover:bg-gray-50 border-2 border-gray-200 hover:border-navy/30 rounded-xl p-4 transition-all duration-300 hover:shadow-md"
           >
             <div className="flex items-center justify-between">
               <div className="text-left">
                 <div className="text-sm font-bold text-navy group-hover:text-navy">
                   {isExpanded ? 'Hide Details' : 'See What\'s Included'}
                 </div>
-                <div className="text-xs text-gray-600 group-hover:text-gray-700">
+                <div className="text-xs text-gray-500 group-hover:text-gray-600">
                   {isExpanded ? 'Collapse service details' : 'Click to view full service details'}
                 </div>
               </div>
               <div className="flex items-center space-x-2">
-                <div className="text-xs text-yellow bg-navy px-2 py-1 rounded-full font-semibold">
+                <div className="text-xs text-white bg-navy px-3 py-1 rounded-full font-semibold group-hover:bg-yellow group-hover:text-navy transition-colors">
                   {isExpanded ? 'Less' : 'More'}
                 </div>
                 {isExpanded ? (
-                  <ChevronUp className="h-5 w-5 text-navy group-hover:text-yellow transition-colors" />
+                  <ChevronUp className="h-5 w-5 text-gray-400 group-hover:text-navy transition-colors" />
                 ) : (
-                  <ChevronDown className="h-5 w-5 text-navy group-hover:text-yellow transition-colors" />
+                  <ChevronDown className="h-5 w-5 text-gray-400 group-hover:text-navy transition-colors" />
                 )}
               </div>
             </div>
