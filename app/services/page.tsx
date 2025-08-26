@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, MapPin, Phone, Star, Clock, CheckCircle } from "lucide-react"
+import ServicePageCard from "@/components/ServicePageCard"
 // import Breadcrumbs, { generateBreadcrumbs } from "@/components/Breadcrumbs"
 
 export const metadata = getPageSEO('services')
@@ -63,89 +64,16 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4">
           {Object.entries(servicesByCategory).map(([category, services]) => (
             <div key={category} className="mb-12 sm:mb-16">
-              <h3 className="heading-primary text-2xl sm:text-3xl md:text-4xl text-center mb-4 capitalize" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
+              <h3 className="heading-primary text-2xl sm:text-3xl md:text-4xl text-center mb-8 capitalize" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
                 {category === 'cleaning' ? 'Core Cleaning Services' : 
                  category === 'specialty' ? 'Specialty Services' : 
                  category === 'maintenance' ? 'Maintenance Services' : 
                  category === 'commercial' ? 'Commercial Services' : category}
               </h3>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
                 {services.map((service) => (
-                  <Card key={service.id} className="retro-card hover:shadow-retro-yellow transition-all duration-300 group h-full">
-                    <CardHeader className="text-center">
-                      <div className="mb-4 flex items-center justify-center">
-                        {service.iconType === "image" ? (
-                          <Image
-                            src={service.icon}
-                            alt={`Professional ${service.name} Orange County - ${service.shortDescription} service icon`}
-                            title={`${service.name} Services Orange County - Licensed & Insured`}
-                            width={80}
-                            height={80}
-                            className="w-20 h-20"
-                            sizes="80px"
-                            loading="lazy"
-                          />
-                        ) : (
-                          <div className="text-6xl">{service.icon}</div>
-                        )}
-                      </div>
-                      <CardTitle className="heading-primary text-xl sm:text-2xl mb-2">
-                        {service.name}
-                      </CardTitle>
-                      <CardDescription className="body-text text-base sm:text-lg">
-                        {service.shortDescription}
-                      </CardDescription>
-                    </CardHeader>
-                    
-                    <CardContent className="flex-1 flex flex-col">
-                      <div className="flex-1">
-                        <p className="body-text text-gray-700 mb-6 leading-relaxed">
-                          {service.description}
-                        </p>
-                        
-                        {/* Features */}
-                        <div className="space-y-2 mb-6">
-                          <h4 className="font-bold text-navy">What's Included:</h4>
-                          <ul className="space-y-1">
-                            {service.features.map((feature, index) => (
-                              <li key={index} className="flex items-center space-x-2 text-sm">
-                                <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
-                                <span>{feature}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                        
-                        {/* Quote & Duration */}
-                        <div className="grid grid-cols-2 gap-4 mb-6">
-                          <div className="retro-badge text-center">
-                            <div className="text-xs text-navy-600">Pricing</div>
-                            <div className="font-bold">Get Quote</div>
-                          </div>
-                          <div className="retro-badge text-center">
-                            <div className="text-xs text-navy-600">Duration</div>
-                            <div className="font-bold">{service.duration}</div>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      {/* CTA Buttons */}
-                      <div className="space-y-3">
-                        <Link href={`/services/${service.id}`}>
-                          <Button variant="retro" className="w-full group-hover:shadow-retro-yellow transition-all">
-                            Learn More & Get Quote
-                            <ArrowRight className="h-4 w-4 ml-2" />
-                          </Button>
-                        </Link>
-                        <Link href="/get-a-quote">
-                          <Button variant="outline" className="w-full">
-                            Quick Quote
-                          </Button>
-                        </Link>
-                      </div>
-                    </CardContent>
-                  </Card>
+                  <ServicePageCard key={service.id} service={service} />
                 ))}
               </div>
             </div>
