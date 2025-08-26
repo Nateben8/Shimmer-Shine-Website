@@ -178,33 +178,33 @@ export default function Header() {
               <div className="bg-white/10 rounded-xl p-6 border-2 border-white/30 shadow-lg">
                 <div className="flex items-center justify-center space-x-3 text-white mb-4">
                   <Phone className="h-6 w-6 text-yellow" />
-                  <span className="heading-primary font-bold text-2xl text-white" style={{textShadow: '3px 3px 0px #FFC107, 2px 2px 0px #FFB300, 1px 1px 0px #FF8F00'}}>{BUSINESS_INFO.phone}</span>
+                  <span className="heading-primary font-bold text-2xl text-white">{BUSINESS_INFO.phone}</span>
                 </div>
                 <div className="flex items-center justify-center space-x-2 text-white text-lg">
                   <MapPin className="h-5 w-5 text-yellow" />
-                  <span className="body-text text-white font-bold" style={{textShadow: '3px 3px 0px #FFC107, 2px 2px 0px #FFB300, 1px 1px 0px #FF8F00'}}>Orange County, LA & San Diego</span>
+                  <span className="body-text text-white font-bold">Orange County, LA & San Diego</span>
                 </div>
               </div>
               
               <div className="bg-white/5 rounded-xl p-6 border-2 border-white/20 shadow-lg mb-8">
                 <div className="text-center">
-                  <div className="heading-decorative text-yellow font-bold text-xl mb-4" style={{textShadow: '3px 3px 0px #000000, 2px 2px 0px #333333, 1px 1px 0px #666666'}}>Why Choose Us?</div>
+                  <div className="heading-decorative text-yellow font-bold text-xl mb-4">Why Choose Us?</div>
                   <div className="grid grid-cols-1 gap-4 text-base text-white">
                     <div className="flex items-center justify-center space-x-3 bg-white/10 rounded-lg p-3">
                       <span className="text-yellow text-xl">★</span>
-                      <span className="body-text font-bold text-white" style={{textShadow: '3px 3px 0px #FFC107, 2px 2px 0px #FFB300, 1px 1px 0px #FF8F00'}}>Licensed & Insured</span>
+                      <span className="body-text font-bold text-white">Licensed & Insured</span>
                     </div>
                     <div className="flex items-center justify-center space-x-3 bg-white/10 rounded-lg p-3">
                       <span className="text-yellow text-xl">⚡</span>
-                      <span className="body-text font-bold text-white" style={{textShadow: '3px 3px 0px #FFC107, 2px 2px 0px #FFB300, 1px 1px 0px #FF8F00'}}>Same Day Service</span>
+                      <span className="body-text font-bold text-white">Same Day Service</span>
                     </div>
                     <div className="flex items-center justify-center space-x-3 bg-white/10 rounded-lg p-3">
                       <span className="text-yellow text-xl">⭐</span>
-                      <span className="body-text font-bold text-white" style={{textShadow: '3px 3px 0px #FFC107, 2px 2px 0px #FFB300, 1px 1px 0px #FF8F00'}}>5-Star Rated Service</span>
+                      <span className="body-text font-bold text-white">5-Star Rated Service</span>
                     </div>
                     <div className="flex items-center justify-center space-x-3 bg-white/10 rounded-lg p-3">
                       <span className="text-yellow text-xl">💰</span>
-                      <span className="body-text font-bold text-white" style={{textShadow: '3px 3px 0px #FFC107, 2px 2px 0px #FFB300, 1px 1px 0px #FF8F00'}}>Free Estimates</span>
+                      <span className="body-text font-bold text-white">Free Estimates</span>
                     </div>
                   </div>
                 </div>
