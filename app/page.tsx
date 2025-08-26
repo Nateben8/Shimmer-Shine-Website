@@ -216,7 +216,7 @@ export default function HomePage() {
       </section>
 
       {/* Before/After Section */}
-      <section className="py-12 sm:py-16 relative overflow-hidden">
+      <section className="hidden sm:block py-12 sm:py-16 relative overflow-hidden">
         {/* Floating Sparkles */}
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-16 left-8 w-3 h-3 text-yellow animate-bounce">
