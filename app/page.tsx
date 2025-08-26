@@ -54,7 +54,7 @@ export default function HomePage() {
               <span className="block sm:inline">Back to Life</span>
             </h2>
             <p className="body-text text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed">
-              Top rated window cleaning Orange County with same day service. Licensed and insured residential and commercial window cleaning, pressure washing, and solar panel cleaning across Orange County, Los Angeles, and San Diego.
+              We believe every property has the potential to truly shine. At Shimmer Shine, we don't just clean – we restore that pride-of-ownership feeling. Whether it's crystal-clear windows, pressure-washed walkways, or spotless solar panels, we treat your property like our own. Licensed, insured, and dedicated to bringing out the best in every surface we touch.
             </p>
           </div>
 
