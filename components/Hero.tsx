@@ -21,12 +21,51 @@ export default function Hero() {
           <div className="space-y-6 sm:space-y-8">
 
 
-            {/* Main Headline */}
-            <div className="space-y-3 sm:space-y-4">
-              <h1 className="heading-decorative text-4xl sm:text-4xl md:text-6xl lg:text-7xl text-yellow leading-tight text-center sm:text-left" style={{textShadow: '1px 1px 0px #FFFFFF, 2px 2px 0px #F5F5F5'}}>
+            {/* Main Headline with Sparkles */}
+            <div className="space-y-3 sm:space-y-4 relative">
+              {/* Sparkles around Classic Shine */}
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute -top-4 -left-2 w-6 h-6 text-yellow opacity-80 animate-pulse">
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full drop-shadow-lg">
+                    <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+                  </svg>
+                </div>
+                <div className="absolute -top-2 right-8 w-4 h-4 text-yellow opacity-90 animate-bounce delay-300">
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full drop-shadow-md">
+                    <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+                  </svg>
+                </div>
+                <div className="absolute top-8 -left-4 w-5 h-5 text-yellow opacity-75 animate-pulse delay-500">
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full drop-shadow-lg">
+                    <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+                  </svg>
+                </div>
+                <div className="absolute top-12 right-4 w-3 h-3 text-white opacity-85 animate-bounce delay-700">
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full drop-shadow-sm">
+                    <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+                  </svg>
+                </div>
+                <div className="absolute bottom-4 left-1/3 w-4 h-4 text-white opacity-80 animate-pulse delay-200">
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full drop-shadow-md">
+                    <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+                  </svg>
+                </div>
+                <div className="absolute bottom-2 right-12 w-5 h-5 text-yellow opacity-70 animate-bounce delay-1000">
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full drop-shadow-lg">
+                    <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+                  </svg>
+                </div>
+                <div className="absolute top-6 right-1/4 w-3 h-3 text-white opacity-90 animate-pulse delay-800">
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full drop-shadow-sm">
+                    <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+                  </svg>
+                </div>
+              </div>
+              
+              <h1 className="heading-decorative text-4xl sm:text-4xl md:text-6xl lg:text-7xl text-yellow leading-tight text-center sm:text-left relative z-10" style={{textShadow: '1px 1px 0px #FFFFFF, 2px 2px 0px #F5F5F5'}}>
                 Classic Shine,
               </h1>
-              <h2 className="heading-primary text-3xl sm:text-3xl md:text-5xl lg:text-6xl text-white text-center sm:text-left" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
+              <h2 className="heading-primary text-3xl sm:text-3xl md:text-5xl lg:text-6xl text-white text-center sm:text-left relative z-10" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
                 Modern Quality!
               </h2>
             </div>

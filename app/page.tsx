@@ -114,7 +114,7 @@ export default function HomePage() {
       {/* Services Section */}
       <section className="py-12 sm:py-16 bg-gray-50 relative overflow-hidden">
         {/* Enhanced Background Sparkles */}
-        <div className="absolute inset-0 opacity-25 pointer-events-none">
+        <div className="absolute inset-0 opacity-40 pointer-events-none">
           <div className="absolute top-20 left-10 w-6 h-6 text-yellow animate-pulse">
             <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full drop-shadow-lg">
               <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
@@ -228,7 +228,7 @@ export default function HomePage() {
       {/* Before/After Section */}
       <section className="hidden sm:block py-12 sm:py-16 relative overflow-hidden">
         {/* Enhanced Floating Sparkles */}
-        <div className="absolute inset-0 opacity-30 pointer-events-none">
+        <div className="absolute inset-0 opacity-50 pointer-events-none">
           <div className="absolute top-16 left-8 w-6 h-6 text-yellow animate-bounce drop-shadow-lg">
             <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
               <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
@@ -409,7 +409,7 @@ export default function HomePage() {
       {/* High-Intent Keywords Section */}
       <section className="hidden sm:block py-8 sm:py-12 lg:py-16 bg-white relative overflow-hidden">
         {/* Enhanced Corner Sparkles */}
-        <div className="absolute inset-0 opacity-25 pointer-events-none">
+        <div className="absolute inset-0 opacity-45 pointer-events-none">
           <div className="absolute top-8 right-8 w-5 h-5 text-yellow animate-pulse drop-shadow-lg">
             <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
               <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
@@ -481,7 +481,7 @@ export default function HomePage() {
       {/* Why Choose Us Section */}
       <section className="py-12 sm:py-16 bg-navy text-white relative overflow-hidden">
         {/* Enhanced Sparkle Overlay - Left Side */}
-        <div className="absolute top-8 left-4 sm:top-12 sm:left-8 lg:top-16 lg:left-12 opacity-40 pointer-events-none">
+        <div className="absolute top-8 left-4 sm:top-12 sm:left-8 lg:top-16 lg:left-12 opacity-60 pointer-events-none">
           <div className="relative">
             {/* Large Sparkle */}
             <div className="absolute w-10 h-10 text-yellow opacity-90 animate-pulse drop-shadow-xl">
@@ -656,7 +656,7 @@ export default function HomePage() {
       {/* CTA Section */}
       <section className="hidden sm:block py-16 bg-yellow relative overflow-hidden">
         {/* Enhanced Decorative Sparkles */}
-        <div className="absolute inset-0 opacity-35 pointer-events-none">
+        <div className="absolute inset-0 opacity-55 pointer-events-none">
           <div className="absolute top-8 left-8 w-7 h-7 text-navy animate-pulse drop-shadow-xl">
             <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
               <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
