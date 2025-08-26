@@ -54,7 +54,7 @@ export default function ServicePage({ params }: ServicePageProps) {
     'window-cleaning': [
       {
         question: `How much does professional window cleaning cost in Orange County?`,
-        answer: `Professional window cleaning in Orange County typically costs $8-15 per window for residential properties and $3-8 per window for commercial buildings. Factors affecting price include window size, accessibility, frequency of service, and additional services like screen cleaning. We provide free estimates with transparent pricing.`
+        answer: `Professional window cleaning costs vary based on several factors including window size, accessibility, frequency of service, and additional services like screen cleaning. We provide free estimates with transparent pricing tailored to your specific needs.`
       },
       {
         question: `How often should I have my windows professionally cleaned?`,
@@ -1256,7 +1256,7 @@ export default function ServicePage({ params }: ServicePageProps) {
                   </CardHeader>
                   <CardContent className="text-center">
                     <div className="retro-badge mb-4">
-                      {relatedService.priceRange}
+                      Get Custom Quote
                     </div>
                     <Link href={`/services/${relatedService.id}`}>
                       <Button variant="outline" className="w-full group-hover:bg-yellow group-hover:text-navy transition-colors">
@@ -1737,7 +1737,7 @@ export default function ServicePage({ params }: ServicePageProps) {
                     </CardHeader>
                     <CardContent>
                       <p className="body-text text-gray-700 text-sm">
-                        Our {service.name.toLowerCase()} services in Orange County typically range from {service.priceRange}, depending on the size and complexity of your property. We provide free, detailed estimates with transparent pricing and no hidden fees.
+                        Our {service.name.toLowerCase()} services in Orange County are competitively priced based on the size and complexity of your property. We provide free, detailed estimates with transparent pricing and no hidden fees.
                       </p>
                     </CardContent>
                   </Card>

@@ -328,7 +328,7 @@ export default function CityPage({ params }: CityPageProps) {
                 <CardContent className="text-center">
                   <div className="space-y-3">
                     <div className="retro-badge">
-                      {service.priceRange}
+                      Get Custom Quote
                     </div>
                     <Link href={`/services/${service.id}`}>
                       <Button variant="outline" className="w-full group-hover:bg-yellow group-hover:text-navy transition-colors">
