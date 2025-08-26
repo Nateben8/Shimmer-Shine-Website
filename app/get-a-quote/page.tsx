@@ -92,7 +92,7 @@ export default function GetQuotePage() {
             {/* Left Side - Content */}
             <div className="text-center lg:text-left">
               <div className="retro-badge mb-6 inline-block animate-pulse">
-                🚨 LIMITED TIME: Only 12 Spots Left This Month!
+                LIMITED TIME: Only 12 Spots Left This Month!
               </div>
               
               <h1 className="heading-decorative text-4xl md:text-6xl text-yellow mb-2 leading-tight">
@@ -103,7 +103,7 @@ export default function GetQuotePage() {
               </h2>
               
               <div className="bg-yellow text-navy px-4 py-2 rounded-full font-bold text-lg mb-4 inline-block">
-                💰 Save $50-200 on Your First Service!
+                Save $50-200 on Your First Service!
               </div>
               
               <p className="body-text text-xl text-gray-100 mb-6 leading-relaxed">
@@ -174,7 +174,7 @@ export default function GetQuotePage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <div className="inline-block bg-yellow text-navy px-4 py-2 rounded-full font-bold text-sm mb-4 border-2 border-navy shadow-retro-yellow animate-pulse">
-                ⚡ INSTANT QUOTE - RESPONDS IN 2 HOURS GUARANTEED
+                INSTANT QUOTE - RESPONDS IN 2 HOURS GUARANTEED
               </div>
               <h2 className="heading-primary text-3xl md:text-4xl mb-4">
                 Complete Your Free Quote Below
@@ -293,7 +293,7 @@ export default function GetQuotePage() {
                     </div>
                     <div className="mt-4 p-3 bg-yellow-50 rounded-lg border border-yellow-200">
                       <p className="text-xs text-center text-navy font-medium">
-                        🚚 Free on-site estimates within 30 miles
+                        Free on-site estimates within 30 miles
                       </p>
                     </div>
                   </CardContent>
@@ -317,7 +317,7 @@ export default function GetQuotePage() {
                 <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
               </div>
               <h3 className="heading-primary text-2xl md:text-3xl text-navy mb-3">
-                🚨 URGENT: Only 12 Spots Left This Month!
+                URGENT: Only 12 Spots Left This Month!
               </h3>
               <p className="body-text text-gray-700 mb-4">
                 <strong>Don't miss out!</strong> This exclusive 10% discount + FREE quote expires in 6 days. Join 47 customers who've already saved $50-200 this week!
@@ -332,7 +332,7 @@ export default function GetQuotePage() {
                   <span className="font-medium text-green-700">47 saved this week</span>
                 </div>
                 <div className="flex items-center justify-center space-x-2 bg-yellow-50 p-3 rounded-lg">
-                  <span className="text-yellow-600 font-bold">💰</span>
+                  <span className="text-yellow-600 font-bold">$</span>
                   <span className="font-medium text-yellow-700">$50-200 savings</span>
                 </div>
               </div>
@@ -380,7 +380,7 @@ export default function GetQuotePage() {
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
             <h3 className="heading-decorative text-4xl md:text-5xl text-navy mb-4">
-              🚨 Don't Miss Out - Only 12 Spots Left!
+              Don't Miss Out - Only 12 Spots Left!
             </h3>
             <p className="body-text text-xl text-navy-700 mb-6">
               Join 500+ satisfied customers who've already saved with our exclusive discount. Get your FREE quote + 10% OFF before this offer expires!
@@ -426,7 +426,7 @@ export default function GetQuotePage() {
             <div className="mt-6">
               <div className="bg-red-50 border border-red-200 rounded-lg p-4 max-w-lg mx-auto">
                 <p className="text-sm text-red-700 font-medium">
-                  🚨 <strong>WARNING:</strong> Only 12 discounted spots remaining this month. Don't miss out on this limited-time offer!
+                  <strong>WARNING:</strong> Only 12 discounted spots remaining this month. Don't miss out on this limited-time offer!
                 </p>
               </div>
             </div>

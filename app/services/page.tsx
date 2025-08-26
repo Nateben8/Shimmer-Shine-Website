@@ -283,7 +283,7 @@ export default function ServicesPage() {
 
           <div className="mt-8">
             <p className="text-sm text-navy-600">
-              🚨 <strong>Limited Time:</strong> 10% off when you book 2 or more services together!
+              <strong>Limited Time:</strong> 10% off when you book 2 or more services together!
             </p>
           </div>
         </div>

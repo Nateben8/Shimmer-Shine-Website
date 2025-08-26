@@ -391,7 +391,7 @@ export default function HomePage() {
 
           <div className="mt-8">
             <p className="text-sm text-navy-600">
-              🚨 <strong>Limited Time:</strong> 10% off your first service when you book this month!
+              <strong>Limited Time:</strong> 10% off your first service when you book this month!
             </p>
           </div>
         </div>

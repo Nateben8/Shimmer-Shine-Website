@@ -106,7 +106,7 @@ export default function CitiesPage() {
               <Card className="retro-card">
                 <CardHeader className="text-center">
                   <CardTitle className="heading-primary text-3xl text-navy mb-2">
-                    🍊 Orange County
+                    Orange County
                   </CardTitle>
                   <p className="text-gray-600">
                     {orangeCountyCities.length} cities and communities served
@@ -170,7 +170,7 @@ export default function CitiesPage() {
               <Card className="retro-card">
                 <CardHeader className="text-center">
                   <CardTitle className="heading-primary text-3xl text-navy mb-2">
-                    🏖️ San Diego County
+                    San Diego County
                   </CardTitle>
                   <p className="text-gray-600">
                     {sanDiegoCities.length} cities and communities served

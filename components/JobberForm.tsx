@@ -186,13 +186,13 @@ function JobberFormContent() {
             href="tel:(714) 497-0035" 
             className="retro-button inline-block mr-4"
           >
-            📞 Call (714) 497-0035
+            Call (714) 497-0035
           </a>
           <a 
             href="mailto:support@shimmershinepropertydetailing.com?subject=Free Quote Request&body=Hi! I'd like to request a free quote for window cleaning services. Please contact me at your earliest convenience."
             className="retro-button-navy inline-block"
           >
-            ✉️ Email for Quote
+            Email for Quote
           </a>
         </div>
       </div>
@@ -256,11 +256,11 @@ export default function JobberForm() {
       {/* Enhanced Form Header */}
       <div className="form-section-header">
         <div className="bg-yellow text-navy px-4 py-2 rounded-full font-bold text-sm mb-3 inline-block animate-pulse">
-          🚨 URGENT: Only 12 Spots Left This Month!
+          URGENT: Only 12 Spots Left This Month!
         </div>
         <h3 className="heading-primary text-2xl mb-2">Get Your FREE Quote + 10% OFF</h3>
         <p className="body-text text-gray-600 mb-2">Only 4 fields required • Takes 30 seconds • Guaranteed 2-hour response!</p>
-        <p className="text-sm text-green-600 font-medium">💰 Save $50-200 on your first service</p>
+        <p className="text-sm text-green-600 font-medium">Save $50-200 on your first service</p>
       </div>
       
       {/* Enhanced Trust Indicators */}

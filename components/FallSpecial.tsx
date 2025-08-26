@@ -48,9 +48,7 @@ export default function FallSpecial() {
     <div className="bg-gradient-to-r from-orange-600 via-red-600 to-yellow-600 text-white py-3 px-4 relative overflow-hidden shadow-md">
       {/* Background elements */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-2 left-4 animate-bounce text-base">🍂</div>
-        <div className="absolute top-2 right-4 animate-pulse text-base">🍁</div>
-        <div className="absolute bottom-2 left-1/3 animate-bounce delay-300 text-sm">🍂</div>
+
       </div>
 
       <div className="container mx-auto relative z-10 px-2 sm:px-4">
@@ -60,7 +58,7 @@ export default function FallSpecial() {
           {/* Centered main content */}
           <div className="flex flex-col space-y-2 sm:space-y-0 sm:flex-row sm:items-center sm:space-x-3 text-center">
             <div className="flex items-center justify-center space-x-2">
-              <span className="text-base sm:text-lg animate-bounce">🍂</span>
+
               <h3 className="text-sm sm:text-base md:text-lg font-bold text-yellow-200">
                 FALL SPECIAL:
               </h3>
@@ -98,12 +96,12 @@ export default function FallSpecial() {
             <div className="flex items-center space-x-3">
               <Link href="/get-a-quote">
                 <button className="bg-yellow-400 hover:bg-yellow-300 text-orange-900 font-bold py-1.5 px-3 sm:py-2 sm:px-4 rounded-full transition-all duration-200 hover:scale-105 shadow-lg text-xs sm:text-sm border border-yellow-300">
-                  🍂 CLAIM
+                  CLAIM
                 </button>
               </Link>
               <Link href="tel:(714) 497-0035">
                 <button className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-bold py-1.5 px-3 sm:py-2 sm:px-4 rounded-full transition-all duration-200 hover:scale-105 border border-white/30 text-xs sm:text-sm">
-                  📞 Call
+                  Call
                 </button>
               </Link>
             </div>

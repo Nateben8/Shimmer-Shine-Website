@@ -749,7 +749,7 @@ export default function CityPage({ params }: CityPageProps) {
 
           <div className="mt-8">
             <p className="text-sm text-navy-600">
-              🏠 <strong>Local Promise:</strong> Same-day service available for {cityName} residents!
+              <strong>Local Promise:</strong> Same-day service available for {cityName} residents!
             </p>
           </div>
         </div>

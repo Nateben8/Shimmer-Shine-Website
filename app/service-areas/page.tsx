@@ -15,7 +15,7 @@ export default function ServiceAreasPage() {
   const serviceAreas = [
     {
       name: "Orange County",
-      emoji: "🍊",
+      emoji: "",
       description: "Serving all of Orange County with premium window cleaning and pressure washing services",
       cities: ["Costa Mesa", "Newport Beach", "Irvine", "Santa Ana", "Anaheim", "Huntington Beach", "Fullerton", "Garden Grove", "Orange", "Tustin"],
       totalCities: 34,
@@ -31,7 +31,7 @@ export default function ServiceAreasPage() {
     },
     {
       name: "San Diego County",
-      emoji: "🏖️", 
+      emoji: "", 
       description: "From downtown San Diego to North County, we've got you covered",
       cities: ["San Diego", "La Jolla", "Del Mar", "Encinitas", "Carlsbad", "Oceanside", "Pacific Beach", "Mission Beach", "Chula Vista", "Escondido"],
       totalCities: 32,
@@ -95,7 +95,7 @@ export default function ServiceAreasPage() {
                 <div className="relative h-80 rounded-lg overflow-hidden">
                   <div className="bg-gradient-to-br from-blue-100 to-yellow-100 flex items-center justify-center h-full border-4 border-navy shadow-lg">
                     <div className="text-center text-navy bg-white/90 p-6 rounded-lg shadow-retro">
-                      <div className="text-4xl mb-4">🗺️</div>
+                      <div className="text-4xl mb-4">Map</div>
                       <p className="text-xl font-bold text-navy mb-2">Southern California</p>
                       <p className="text-sm text-gray-700 mb-3">Orange • LA • San Diego</p>
                       <div className="flex justify-center space-x-1">
@@ -273,7 +273,7 @@ export default function ServiceAreasPage() {
 
           <div className="text-center">
             <p className="text-sm text-gray-300">
-              🚨 <strong>Limited Time:</strong> 10% off your first service when you book this month!
+              <strong>Limited Time:</strong> 10% off your first service when you book this month!
             </p>
           </div>
         </div>

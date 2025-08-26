@@ -191,22 +191,22 @@ export default function Header() {
                 {/* Service Highlights */}
                 <div className="bg-navy/5 rounded-xl p-5 border border-navy/10">
                   <div className="text-center">
-                    <div className="text-navy font-bold text-base mb-3">🏆 Why Choose Us?</div>
+                    <div className="text-navy font-bold text-base mb-3">Why Choose Us?</div>
                     <div className="grid grid-cols-2 gap-3 text-sm text-gray-600">
                       <div className="flex items-center space-x-2">
-                        <span className="text-yellow text-lg">✓</span>
+                        <span className="text-yellow text-lg">•</span>
                         <span>Licensed & Insured</span>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <span className="text-yellow text-lg">✓</span>
+                        <span className="text-yellow text-lg">•</span>
                         <span>Same Day Service</span>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <span className="text-yellow text-lg">✓</span>
+                        <span className="text-yellow text-lg">•</span>
                         <span>500+ 5-Star Reviews</span>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <span className="text-yellow text-lg">✓</span>
+                        <span className="text-yellow text-lg">•</span>
                         <span>Free Estimates</span>
                       </div>
                     </div>
