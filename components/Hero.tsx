@@ -19,13 +19,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
           {/* Content */}
           <div className="space-y-6 sm:space-y-8">
-            {/* Trust Badge */}
-            <div className="flex items-center mb-3 sm:mb-4">
-              <div className="retro-badge text-sm sm:text-base">
-                <Award className="h-4 w-4 sm:h-5 sm:w-5 mr-1 sm:mr-2" />
-                Licensed & Insured
-              </div>
-            </div>
+
 
             {/* Main Headline */}
             <div className="space-y-3 sm:space-y-4">
