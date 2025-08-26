@@ -59,52 +59,24 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services by Category - Horizontal Layout */}
+      {/* Services Grid - Pink's Windows Style */}
       <section className="py-12 sm:py-16">
-        <div className="w-full">
-          <div className="container mx-auto px-4 mb-12">
-            <h2 className="heading-primary text-3xl sm:text-4xl md:text-5xl text-center mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
-              Our Professional Services
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="heading-primary text-3xl sm:text-4xl md:text-5xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
+              We look forward to serving you
             </h2>
-            <p className="body-text text-lg text-gray-600 text-center max-w-3xl mx-auto">
-              Browse our services by category. Scroll horizontally within each section to see all options.
+            <p className="body-text text-lg text-gray-600 max-w-3xl mx-auto">
+              Professional cleaning services for your home and business. Click on any service to see details and get a quote.
             </p>
           </div>
           
-          {/* Category Sections */}
-          {Object.entries(servicesByCategory).map(([category, services]) => (
-            <div key={category} className="mb-16">
-              <div className="container mx-auto px-4 mb-8">
-                <h3 className="heading-primary text-2xl sm:text-3xl md:text-4xl text-center mb-4 capitalize" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
-                  {category === 'cleaning' ? 'Core Cleaning Services' : 
-                   category === 'specialty' ? 'Specialty Services' : 
-                   category === 'maintenance' ? 'Maintenance Services' : 
-                   category === 'commercial' ? 'Commercial Services' : category}
-                </h3>
-              </div>
-              
-              {/* Horizontal Scrolling Container for Category */}
-              <div className="w-full overflow-x-auto pb-4">
-                <div className="flex gap-4 sm:gap-6 px-4 sm:px-6 lg:px-8" style={{width: 'max-content'}}>
-                  {services.map((service) => (
-                    <div key={service.id} className="flex-shrink-0 w-72 sm:w-80 md:w-96">
-                      <ServicePageCard service={service} />
-                    </div>
-                  ))}
-                </div>
-              </div>
-              
-              {/* Scroll Hint for Category */}
-              <div className="text-center mt-4 px-4">
-                <p className="text-xs text-gray-400">
-                  ← Scroll to see all {category === 'cleaning' ? 'cleaning' : 
-                   category === 'specialty' ? 'specialty' : 
-                   category === 'maintenance' ? 'maintenance' : 
-                   category === 'commercial' ? 'commercial' : category} services →
-                </p>
-              </div>
-            </div>
-          ))}
+          {/* Services Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
+            {SERVICES.map((service) => (
+              <ServicePageCard key={service.id} service={service} />
+            ))}
+          </div>
         </div>
       </section>
 
