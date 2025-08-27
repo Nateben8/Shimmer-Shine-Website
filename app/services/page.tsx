@@ -37,17 +37,16 @@ export default function ServicesPage() {
             </div>
             
             <h1 className="heading-decorative text-4xl sm:text-5xl md:text-7xl text-yellow mb-4" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
-              <span className="block sm:inline">Professional Services</span>{' '}
-              <span className="block sm:inline">Orange County</span>
+              Professional Services
             </h1>
             
             <h2 className="heading-primary text-xl sm:text-2xl md:text-3xl text-white mb-4 sm:mb-6" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
               <span className="block sm:inline">Same Day Pressure Washing &</span>{' '}
-              <span className="block sm:inline">Window Cleaning Orange County</span>
+              <span className="block sm:inline">Window Cleaning Services</span>
             </h2>
             
             <p className="body-text text-lg sm:text-xl text-gray-100 mb-6 sm:mb-8 leading-relaxed">
-              Best pressure washing Orange County and window cleaners with same day service. Professional pressure washing Orange County and licensed window cleaning Orange County for residential and commercial properties. Pressure washing quotes Orange County and free window cleaning quotes with affordable pricing.
+              Best pressure washing and window cleaning services with same day availability. Professional pressure washing and licensed window cleaning for residential and commercial properties throughout Southern California. Free quotes with competitive, affordable pricing.
             </p>
 
             {/* Service Areas */}
