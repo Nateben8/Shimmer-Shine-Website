@@ -41,12 +41,11 @@ export default function ServicesPage() {
             </h1>
             
             <h2 className="heading-primary text-xl sm:text-2xl md:text-3xl text-white mb-4 sm:mb-6" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
-              <span className="block sm:inline">Same Day Pressure Washing &</span>{' '}
-              <span className="block sm:inline">Window Cleaning Services</span>
+              Professional Pressure Washing & Window Cleaning Services
             </h2>
             
             <p className="body-text text-lg sm:text-xl text-gray-100 mb-6 sm:mb-8 leading-relaxed">
-              Best pressure washing and window cleaning services with same day availability. Professional pressure washing and licensed window cleaning for residential and commercial properties throughout Southern California. Free quotes with competitive, affordable pricing.
+              We believe your property should shine from top to bottom. At Shimmer Shine, we deliver professional pressure washing and window cleaning that brings back that fresh, clean look you love. Licensed and trusted by homeowners and businesses throughout Southern California, we treat every project with care and attention to detail. Get your free quote today – because quality service doesn't have to break the bank.
             </p>
 
             {/* Service Areas */}
