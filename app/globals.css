@@ -177,29 +177,54 @@ html, body {
     }
   }
   
+  /* Enhanced Retro Button System */
   .retro-button {
-    @apply bg-yellow text-navy font-bold py-3 px-6 rounded-lg shadow-retro-yellow 
+    @apply bg-yellow text-navy font-bold py-4 px-8 rounded-lg shadow-retro-yellow 
            border-2 border-navy hover:translate-x-1 hover:translate-y-1 
-           hover:shadow-none transition-all duration-200 uppercase tracking-wide;
+           hover:shadow-none transition-all duration-300 uppercase tracking-wide
+           focus:ring-4 focus:ring-yellow/50 focus:outline-none;
+    letter-spacing: 0.05em;
+    min-height: 48px;
+  }
+  
+  .retro-button-navy {
+    @apply bg-navy text-white font-bold py-4 px-8 rounded-lg shadow-retro 
+           border-2 border-navy hover:translate-x-1 hover:translate-y-1 
+           hover:shadow-none hover:bg-navy-600 transition-all duration-300 uppercase tracking-wide
+           focus:ring-4 focus:ring-navy/50 focus:outline-none;
+    letter-spacing: 0.05em;
+    min-height: 48px;
+  }
+
+  /* Enhanced button variants */
+  .button-primary {
+    @apply bg-yellow text-navy font-bold py-3 px-6 rounded-lg 
+           border-2 border-navy shadow-lg hover:shadow-xl
+           hover:translate-y-[-2px] hover:bg-yellow/90
+           transition-all duration-300 focus:ring-4 focus:ring-yellow/50;
+    letter-spacing: 0.025em;
+    min-height: 44px;
+  }
+
+  .button-secondary {
+    @apply bg-white text-navy font-bold py-3 px-6 rounded-lg 
+           border-2 border-navy shadow-md hover:shadow-lg
+           hover:translate-y-[-2px] hover:bg-gray-50
+           transition-all duration-300 focus:ring-4 focus:ring-navy/30;
+    letter-spacing: 0.025em;
+    min-height: 44px;
   }
   
   /* Mobile-optimized button sizing */
   @media (max-width: 640px) {
-    .retro-button {
-      @apply py-3 px-4 text-sm min-h-[44px];
+    .retro-button, .retro-button-navy {
+      @apply py-3 px-6 text-sm;
+      min-height: 48px;
     }
-  }
-  
-  .retro-button-navy {
-    @apply bg-navy text-white font-bold py-3 px-6 rounded-lg shadow-retro 
-           border-2 border-navy hover:translate-x-1 hover:translate-y-1 
-           hover:shadow-none transition-all duration-200 uppercase tracking-wide;
-  }
-  
-  /* Mobile-optimized navy button sizing */
-  @media (max-width: 640px) {
-    .retro-button-navy {
-      @apply py-3 px-4 text-sm min-h-[44px];
+    
+    .button-primary, .button-secondary {
+      @apply py-3 px-5 text-sm;
+      min-height: 44px;
     }
   }
   
@@ -231,31 +256,68 @@ html, body {
     @apply border-4 border-double border-navy rounded-lg p-6;
   }
   
-  /* Typography classes */
+  /* Enhanced Typography System */
   .heading-decorative {
     @apply font-yellowtail text-yellow;
+    line-height: 1.3;
+    letter-spacing: 0.05em;
   }
   
   .heading-primary {
     @apply font-arvo font-bold text-navy;
+    line-height: 1.2;
+    letter-spacing: 0.025em;
   }
   
   .body-text {
     @apply font-roboto-condensed text-gray-800;
+    line-height: 1.6;
+    letter-spacing: 0.025em;
+  }
+
+  /* Enhanced heading variants for better hierarchy */
+  .heading-xl {
+    @apply font-arvo font-bold text-4xl md:text-5xl lg:text-6xl;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+  }
+
+  .heading-lg {
+    @apply font-arvo font-bold text-2xl md:text-3xl lg:text-4xl;
+    line-height: 1.2;
+    letter-spacing: 0.025em;
+  }
+
+  .heading-md {
+    @apply font-arvo font-bold text-xl md:text-2xl;
+    line-height: 1.3;
+    letter-spacing: 0.025em;
+  }
+
+  .body-lg {
+    @apply font-roboto-condensed text-lg;
+    line-height: 1.7;
+    letter-spacing: 0.025em;
+  }
+
+  .body-sm {
+    @apply font-roboto-condensed text-sm;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
   }
   
   /* Mobile typography improvements */
   @media (max-width: 640px) {
     .heading-decorative {
-      @apply leading-tight;
+      line-height: 1.2;
     }
     
-    .heading-primary {
-      @apply leading-tight;
+    .heading-primary, .heading-xl, .heading-lg, .heading-md {
+      line-height: 1.2;
     }
     
-    .body-text {
-      @apply leading-relaxed;
+    .body-text, .body-lg, .body-sm {
+      line-height: 1.6;
     }
   }
   
@@ -784,15 +846,42 @@ html {
 }
 
 /* 9. ENHANCED RETRO CARDS WITH GLASSMORPHISM */
-.retro-card-glass {
-  @apply bg-white/90 backdrop-blur-md border-2 border-navy/20 shadow-2xl rounded-xl overflow-hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
+  /* Enhanced Card System */
+  .card-enhanced {
+    @apply rounded-xl border border-gray-200 bg-white shadow-sm hover:shadow-lg 
+           transition-all duration-300 hover:translate-y-[-2px] hover:border-gray-300;
+  }
 
-.retro-card-glass:hover {
-  @apply bg-white/95 border-navy/30 shadow-2xl;
-  transform: translateY(-5px) scale(1.02);
-}
+  .card-glass-enhanced {
+    @apply bg-white/95 backdrop-blur-sm border border-white/20 rounded-xl 
+           shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-white/98;
+  }
+
+  .retro-card-glass {
+    @apply bg-white/90 backdrop-blur-md border-2 border-navy/20 shadow-2xl rounded-xl overflow-hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .retro-card-glass:hover {
+    @apply bg-white/95 border-navy/30 shadow-2xl;
+    transform: translateY(-5px) scale(1.02);
+  }
+
+  /* Professional card variants */
+  .card-professional {
+    @apply bg-white rounded-xl border-2 border-gray-100 shadow-md 
+           hover:shadow-xl hover:border-gray-200 transition-all duration-300;
+  }
+
+  .card-professional:hover {
+    transform: translateY(-4px);
+  }
+
+  .card-service {
+    @apply bg-white rounded-xl border-2 border-navy/10 shadow-lg 
+           hover:shadow-xl hover:border-navy/20 transition-all duration-300
+           hover:translate-y-[-3px];
+  }
 
 /* 10. WATER WAVE EFFECTS */
 @keyframes wave {
@@ -816,13 +905,53 @@ html {
   animation: wave 3s ease-in-out infinite;
 }
 
-/* Mobile optimizations for new effects */
+/* Enhanced Mobile Responsiveness & Optimizations */
 @media (max-width: 640px) {
-  .hover-lift:hover,
-  .hover-lift-subtle:hover {
-    transform: none; /* Disable hover effects on touch devices */
+  /* Touch-friendly targets */
+  .touch-target {
+    min-height: 48px;
+    min-width: 48px;
+    padding: 12px;
   }
   
+  /* Mobile grid optimizations */
+  .mobile-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  /* Mobile spacing consistency */
+  .mobile-spacing {
+    padding: 1rem;
+    margin: 0.5rem 0;
+  }
+  
+  /* Disable hover effects on touch devices */
+  .hover-lift:hover,
+  .hover-lift-subtle:hover,
+  .card-enhanced:hover,
+  .card-professional:hover,
+  .card-service:hover {
+    transform: none;
+    box-shadow: inherit;
+  }
+  
+  /* Enhanced mobile button accessibility */
+  button, .button-primary, .button-secondary, .retro-button, .retro-button-navy {
+    min-height: 48px;
+    touch-action: manipulation;
+  }
+  
+  /* Mobile text utilities */
+  .mobile-text-center {
+    text-align: center;
+  }
+  
+  .mobile-text-left {
+    text-align: left;
+  }
+  
+  /* Mobile-specific effect optimizations */
   .water-droplet {
     width: 6px;
     height: 9px;
