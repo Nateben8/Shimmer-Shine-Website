@@ -69,7 +69,7 @@ export default function ServiceAreasPage() {
                   <div className="text-sm">Happy Customers</div>
                 </div>
                 <div className="text-center bg-white/10 rounded-lg p-4">
-                  <div className="text-3xl font-bold text-yellow">29</div>
+                  <div className="text-3xl font-bold text-yellow">4</div>
                   <div className="text-sm">Years Experience</div>
                 </div>
               </div>
@@ -275,7 +275,7 @@ export default function ServiceAreasPage() {
           <div className="text-center mb-12">
             <h3 className="heading-primary text-3xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>Why Choose Shimmer Shine?</h3>
             <p className="body-text text-gray-600">
-              Professional experience serving Southern California communities
+              4 years of professional experience serving Southern California communities
             </p>
           </div>
 
@@ -286,7 +286,7 @@ export default function ServiceAreasPage() {
               </div>
               <h4 className="heading-primary text-lg mb-2">Since 2021</h4>
               <p className="body-text text-gray-600 text-sm">
-                Professional trusted service across Southern California
+                4 years of trusted service across Southern California
               </p>
             </div>
 

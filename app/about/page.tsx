@@ -414,7 +414,7 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent>
                 <p className="body-text text-sm text-gray-700">
-                  Our team consists of fully licensed, insured, and trained professionals with years of experience in property detailing. Each technician undergoes continuous training to maintain our high standards.
+                  Our team consists of fully licensed, insured, and trained professionals with 4 years of experience in property detailing. Each technician undergoes continuous training to maintain our high standards.
                 </p>
               </CardContent>
             </Card>
