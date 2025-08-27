@@ -163,10 +163,8 @@ function JobberFormContent() {
     return () => clearTimeout(minLoadingTimer)
   }, [])
 
-  // Simplified Jobber form loading
+  // Simplified Jobber form loading - load immediately
   useEffect(() => {
-    if (!isVisible) return
-
     console.log('Loading Jobber form...')
     
     // Clean up any existing scripts/styles first
@@ -217,7 +215,7 @@ function JobberFormContent() {
     return () => {
       clearTimeout(fallbackTimer)
     }
-  }, [isVisible])
+  }, [])
 
   if (error) {
     return (
@@ -244,7 +242,7 @@ function JobberFormContent() {
   return (
     <div className="relative" ref={containerRef}>
       {/* Show loading bar while form is loading */}
-      {(showLoading || !isLoaded || !isVisible) ? (
+      {(showLoading && !isLoaded) ? (
         <div className="w-full">
           <JobberFormSkeleton />
         </div>
@@ -258,7 +256,7 @@ function JobberFormContent() {
           />
           
           {/* Manual refresh option if form doesn't load */}
-          {isVisible && !isLoaded && !error && (
+          {!isLoaded && !error && (
             <div className="absolute bottom-4 right-4 z-30">
               <button
                 onClick={() => window.location.reload()}
