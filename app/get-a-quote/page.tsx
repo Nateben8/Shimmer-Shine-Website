@@ -605,13 +605,7 @@ export default function GetQuotePage() {
               </Link>
             </div>
 
-            <div className="mt-6">
-              <div className="bg-red-50 border border-red-200 rounded-lg p-4 max-w-lg mx-auto">
-                <p className="text-sm text-red-700 font-medium">
-                  <strong>WARNING:</strong> Only 12 discounted spots remaining this month. Don't miss out on this limited-time offer!
-                </p>
-              </div>
-            </div>
+
           </div>
         </div>
       </section>
