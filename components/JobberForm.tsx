@@ -20,6 +20,7 @@ const preloadJobberResources = () => {
   cssLink.rel = 'preload'
   cssLink.href = JOBBER_CSS_URL
   cssLink.as = 'style'
+  // @ts-ignore - fetchPriority is a valid HTML attribute but not in TypeScript types yet
   cssLink.fetchPriority = 'high'
   cssLink.onload = () => {
     cssLink.rel = 'stylesheet'
@@ -31,6 +32,7 @@ const preloadJobberResources = () => {
   jsLink.rel = 'preload'
   jsLink.href = JOBBER_JS_URL
   jsLink.as = 'script'
+  // @ts-ignore - fetchPriority is a valid HTML attribute but not in TypeScript types yet
   jsLink.fetchPriority = 'high'
   document.head.appendChild(jsLink)
   
@@ -176,7 +178,7 @@ function JobberFormContent() {
 
     // Check if CSS is already loaded from preload
     let cssLoaded = false
-    const existingCSS = document.querySelector(`link[href="${JOBBER_CSS_URL}"]`)
+    const existingCSS = document.querySelector(`link[href="${JOBBER_CSS_URL}"]`) as HTMLLinkElement
     if (existingCSS && existingCSS.rel === 'stylesheet') {
       cssLoaded = true
       console.log('Jobber CSS already loaded from preload')
@@ -196,6 +198,7 @@ function JobberFormContent() {
     script.setAttribute('clienthub_id', CLIENT_HUB_ID)
     script.setAttribute('form_url', FORM_URL)
     script.async = true
+    // @ts-ignore - fetchPriority is a valid HTML attribute but not in TypeScript types yet
     script.fetchPriority = 'high' // High priority loading
     
     script.onload = () => {
