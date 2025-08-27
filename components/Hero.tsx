@@ -129,33 +129,36 @@ export default function Hero() {
 
           </div>
 
-          {/* Hero Image with Mascot */}
+          {/* Hero Video Section */}
           <div className="relative order-first lg:order-last">
             <div className="polaroid-frame">
-              <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] rounded-lg overflow-hidden">
-                <div className="bg-gradient-to-br from-blue-100 to-yellow-100 flex items-center justify-center h-full border-4 border-navy shadow-lg">
-                  <div className="relative w-full h-full flex items-center justify-center">
-                    <video
-                      src="/Homepage video1.MOV"
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="w-full h-full object-cover rounded-lg"
-                      style={{ objectFit: 'cover' }}
-                    >
-                      Your browser does not support the video tag.
-                    </video>
+              <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-2xl">
+                <div className="relative w-full h-full bg-navy">
+                  <video
+                    src="/Homepage video1.MOV"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                    style={{ objectFit: 'cover' }}
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                  {/* Video Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/30 via-transparent to-transparent pointer-events-none" />
+                  
+                  {/* Mobile Play Indicator */}
+                  <div className="absolute top-4 right-4 bg-black/50 text-white px-2 py-1 rounded text-xs font-semibold backdrop-blur-sm sm:hidden">
+                    LIVE
                   </div>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent" />
               </div>
               <div className="text-center mt-4 text-navy">
-                <p className="font-arvo font-bold">See Our Work in Action!</p>
+                <p className="font-arvo font-bold text-base sm:text-lg">See Our Work in Action!</p>
                 <p className="text-sm text-gray-600">Professional Property Detailing</p>
               </div>
             </div>
-
           </div>
         </div>
       </div>
