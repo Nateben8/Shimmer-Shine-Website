@@ -5,7 +5,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { MapPin, Star, Phone, Award, Shield, Clock, Users } from "lucide-react"
 import { BUSINESS_INFO } from "@/lib/constants"
-import InteractiveMap from "@/components/InteractiveMap"
 
 export const metadata = {
   title: "Service Areas | Orange County, LA & San Diego | Shimmer Shine",
@@ -90,16 +89,7 @@ export default function ServiceAreasPage() {
               </div>
             </div>
 
-            {/* Interactive Map */}
-            <div className="flex justify-center">
-              <div className="polaroid-frame max-w-2xl w-full">
-                <InteractiveMap />
-                <div className="text-center mt-4 text-navy">
-                  <p className="font-arvo font-bold">Interactive Service Area Map</p>
-                  <p className="text-sm text-gray-600">Explore our coverage areas • Zoom to find your city</p>
-                </div>
-              </div>
-            </div>
+
           </div>
         </div>
       </section>

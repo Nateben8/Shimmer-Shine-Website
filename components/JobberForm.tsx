@@ -129,6 +129,7 @@ function JobberFormContent() {
   const [isLoaded, setIsLoaded] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [isVisible, setIsVisible] = useState(false)
+  const [showLoading, setShowLoading] = useState(true)
   const containerRef = useRef<HTMLDivElement>(null)
 
   // Intersection Observer for lazy loading
@@ -151,6 +152,16 @@ function JobberFormContent() {
     }
 
     return () => observer.disconnect()
+  }, [])
+
+  // Enhanced loading animation with minimum display time
+  useEffect(() => {
+    // Always show loading for at least 2 seconds for better UX
+    const minLoadingTimer = setTimeout(() => {
+      setShowLoading(false)
+    }, 2000)
+
+    return () => clearTimeout(minLoadingTimer)
   }, [])
 
   // Simplified Jobber form loading
@@ -187,7 +198,10 @@ function JobberFormContent() {
         const formElement = document.getElementById(CLIENT_HUB_ID)
         if (formElement) {
           console.log('Form element found')
-          setIsLoaded(true)
+          // Wait for minimum loading time before showing form
+          setTimeout(() => {
+            setIsLoaded(true)
+          }, 1500)
         } else {
           console.log('Form element not found, retrying...')
           setTimeout(checkForm, 100)
@@ -201,6 +215,7 @@ function JobberFormContent() {
     script.onerror = (e) => {
       console.error('Jobber script failed to load:', e)
       setError('Form temporarily unavailable. Please call us directly at (714) 497-0035.')
+      setShowLoading(false)
     }
     
     document.head.appendChild(script)
@@ -209,7 +224,8 @@ function JobberFormContent() {
     const fallbackTimer = setTimeout(() => {
       console.log('Fallback timer triggered')
       setIsLoaded(true)
-    }, 3000)
+      setShowLoading(false)
+    }, 5000)
 
     return () => {
       clearTimeout(fallbackTimer)
@@ -240,8 +256,8 @@ function JobberFormContent() {
 
   return (
     <div className="relative" ref={containerRef}>
-      {/* Show skeleton while loading */}
-      {(!isLoaded || !isVisible) && (
+      {/* Show enhanced skeleton while loading */}
+      {(showLoading || !isLoaded || !isVisible) && (
         <div className="absolute inset-0 z-10 bg-white rounded-lg">
           <JobberFormSkeleton />
         </div>
@@ -250,31 +266,12 @@ function JobberFormContent() {
       {/* Jobber form container - matches the div from your embed code */}
       <div 
         id={CLIENT_HUB_ID}
-        className={`w-full transition-opacity duration-300 ${isLoaded && isVisible ? 'opacity-100' : 'opacity-0'}`}
+        className={`w-full transition-opacity duration-500 ${isLoaded && isVisible && !showLoading ? 'opacity-100' : 'opacity-0'}`}
         style={{ minHeight: '400px' }}
       />
       
-      {/* Optimized loading indicator */}
-      {!isLoaded && isVisible && !error && (
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
-          <div className="flex flex-col items-center space-y-2 text-navy">
-            <Loader2 className="h-6 w-6 animate-spin text-yellow" />
-            <div className="text-sm font-medium">Loading form...</div>
-          </div>
-        </div>
-      )}
-      
-      {/* Lazy loading placeholder */}
-      {!isVisible && (
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
-          <div className="flex flex-col items-center space-y-2 text-navy">
-            <div className="text-sm font-medium">Form ready to load...</div>
-          </div>
-        </div>
-      )}
-      
       {/* Manual refresh option if form doesn't load */}
-      {isVisible && !isLoaded && !error && (
+      {isVisible && !isLoaded && !error && !showLoading && (
         <div className="absolute bottom-4 right-4 z-30">
           <button
             onClick={() => window.location.reload()}

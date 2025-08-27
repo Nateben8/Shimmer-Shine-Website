@@ -2,7 +2,6 @@
 
 import { useState, useRef } from "react"
 import Hero from "@/components/Hero"
-import FallSpecial from "@/components/FallSpecial"
 import { SERVICES, BUSINESS_INFO, FAQ_DATA } from "@/lib/constants"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -82,7 +81,6 @@ export default function HomePage() {
           __html: JSON.stringify(serviceBundleSchema),
         }}
       />
-      <FallSpecial />
       <Hero />
       
       {/* Section Divider */}
