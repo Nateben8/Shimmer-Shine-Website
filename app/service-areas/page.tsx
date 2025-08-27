@@ -5,6 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { MapPin, Star, Phone, Award, Shield, Clock, Users } from "lucide-react"
 import { BUSINESS_INFO } from "@/lib/constants"
+import InteractiveMap from "@/components/InteractiveMap"
 
 export const metadata = {
   title: "Service Areas | Orange County, LA & San Diego | Shimmer Shine",
@@ -92,37 +93,10 @@ export default function ServiceAreasPage() {
             {/* Interactive Map */}
             <div className="flex justify-center">
               <div className="polaroid-frame max-w-2xl w-full">
-                <div className="relative h-96 rounded-lg overflow-hidden">
-                  {/* Google Maps Embed */}
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d424142.3302750769!2d-118.69191969999999!3d33.817962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sOrange%20County%2C%20CA!5e0!3m2!1sen!2sus!4v1699999999999!5m2!1sen!2sus"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen={true}
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Shimmer Shine Property Detailing Service Areas - Orange County, Los Angeles, San Diego"
-                    className="w-full h-full"
-                  />
-                  
-                  {/* Overlay with service info */}
-                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm p-4 rounded-lg shadow-lg border-2 border-yellow max-w-xs">
-                    <div className="text-center text-navy">
-                      <div className="text-lg font-bold mb-2">🗺️ Southern California</div>
-                      <p className="text-sm text-gray-700 mb-2">Orange • LA • San Diego</p>
-                      <div className="flex justify-center space-x-1 mb-2">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="h-3 w-3 text-yellow fill-current" />
-                        ))}
-                      </div>
-                      <p className="text-xs text-gray-600">Trusted Since 2021</p>
-                    </div>
-                  </div>
-                </div>
+                <InteractiveMap />
                 <div className="text-center mt-4 text-navy">
                   <p className="font-arvo font-bold">Interactive Service Area Map</p>
-                  <p className="text-sm text-gray-600">Click and drag to explore • Zoom to see cities</p>
+                  <p className="text-sm text-gray-600">Explore our coverage areas • Zoom to find your city</p>
                 </div>
               </div>
             </div>
