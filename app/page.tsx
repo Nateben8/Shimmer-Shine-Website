@@ -9,10 +9,10 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
 import { Star, ArrowRight, CheckCircle, Award, Shield, Clock, MapPin, ChevronLeft, ChevronRight } from "lucide-react"
-import BeforeAfterSlider from "@/components/BeforeAfterSlider"
 import GoogleReviews from "@/components/GoogleReviews"
 import ExpandableServiceCard from "@/components/ExpandableServiceCard"
 // import RelatedContent from "@/components/RelatedContent"
+import { ScrollAnimation, WaterDroplets, BeforeAfterSlider } from "@/components/ScrollAnimations"
 import { getFAQSchema, getFallSpecialEventSchema, getServiceBundleSchema } from "@/lib/schema"
 
 export default function HomePage() {
@@ -112,30 +112,33 @@ export default function HomePage() {
       </div>
       
       {/* Services Section */}
-      <section className="py-12 sm:py-16 bg-gray-50 relative overflow-hidden">
+      <section className="py-12 sm:py-16 bg-gradient-to-br from-gray-50 via-blue-50/30 to-gray-50 relative overflow-hidden">
+        {/* Water Droplets Animation */}
+        <WaterDroplets count={6} />
+        
         {/* Enhanced Background Sparkles - Mobile Safe */}
         <div className="absolute inset-0 opacity-40 pointer-events-none">
-          <div className="absolute top-20 left-4 sm:left-10 w-6 h-6 text-yellow animate-pulse">
+          <div className="absolute top-20 left-4 sm:left-10 w-6 h-6 text-yellow sparkle-enhanced">
             <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full drop-shadow-lg">
               <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
             </svg>
           </div>
-          <div className="absolute top-32 right-4 sm:right-16 w-4 h-4 text-yellow animate-bounce delay-1000">
+          <div className="absolute top-32 right-4 sm:right-16 w-4 h-4 text-yellow sparkle-enhanced delay-1000">
             <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full drop-shadow-md">
               <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
             </svg>
           </div>
-          <div className="absolute bottom-20 left-1/4 w-8 h-8 text-yellow animate-pulse delay-500">
+          <div className="absolute bottom-20 left-1/4 w-8 h-8 text-yellow sparkle-enhanced delay-500">
             <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full drop-shadow-xl">
               <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
             </svg>
           </div>
-          <div className="absolute top-40 right-1/3 w-5 h-5 text-yellow animate-bounce delay-700">
+          <div className="absolute top-40 right-1/3 w-5 h-5 text-yellow sparkle-enhanced delay-700">
             <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full drop-shadow-lg">
               <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
             </svg>
           </div>
-          <div className="absolute top-60 left-1/2 w-3 h-3 text-yellow animate-pulse delay-300">
+          <div className="absolute top-60 left-1/2 w-3 h-3 text-yellow sparkle-enhanced delay-300">
             <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full drop-shadow-md">
               <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
             </svg>
@@ -199,7 +202,7 @@ export default function HomePage() {
             </div>
           </div>
           
-          <div className="text-center mb-8 sm:mb-12">
+          <ScrollAnimation animation="fade-in-up" className="text-center mb-8 sm:mb-12">
             <h2 className="heading-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 px-2" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
               <span className="block sm:inline">Bringing the Shine</span>{' '}
               <span className="block sm:inline">Back to Life</span>
@@ -207,11 +210,18 @@ export default function HomePage() {
             <p className="body-text text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed">
               We believe every property has the potential to truly shine. At Shimmer Shine, we don't just clean – we restore that pride-of-ownership feeling. Whether it's crystal-clear windows, pressure-washed walkways, or spotless solar panels, we treat your property like our own. Licensed, insured, and dedicated to bringing out the best in every surface we touch.
             </p>
-          </div>
+          </ScrollAnimation>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {featuredServices.map((service) => (
-              <ExpandableServiceCard key={service.id} service={service} />
+            {featuredServices.map((service, index) => (
+              <ScrollAnimation 
+                key={service.id} 
+                animation="fade-in-up" 
+                delay={index * 100}
+                className="hover-lift-subtle"
+              >
+                <ExpandableServiceCard service={service} />
+              </ScrollAnimation>
             ))}
           </div>
 
@@ -301,24 +311,24 @@ export default function HomePage() {
                     style={{ width: `${100 / images.length}%` }}
                   >
                     <div className="relative h-64 rounded-lg overflow-hidden mx-2">
-                      <Image
+                <Image
                         src={image.src}
                         alt={image.alt}
                         title={image.title}
-                        fill
-                        className="object-cover"
+                  fill
+                  className="object-cover"
                         sizes="100vw"
                         priority={index === 0}
-                        quality={90}
+                  quality={90}
                         placeholder="blur"
                         blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-                      />
-                      <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-3">
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-3">
                         <p className="font-bold text-center text-sm">{image.caption}</p>
                         <p className="text-xs text-center opacity-90">{image.description}</p>
-                      </div>
-                    </div>
-                  </div>
+                </div>
+              </div>
+            </div>
                 ))}
               </div>
             </div>
@@ -340,68 +350,37 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Desktop: Grid layout */}
-          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            <div className="polaroid-frame">
-              <div className="relative h-64 sm:h-64 md:h-80 rounded-lg overflow-hidden">
-                <Image
-                  src="/window-cleaning-before-after.png"
-                  alt="Window Cleaning Before and After in Newport Beach, CA - Professional residential window cleaning service showing dramatic improvement from dirty to crystal clear windows by Shimmer Shine Property Detailing"
-                  title="Newport Beach Window Cleaning Results | Shimmer Shine Property Detailing"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  priority={true}
-                  quality={90}
-                  placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-3">
-                  <p className="font-bold text-center text-sm sm:text-base">Window Cleaning - Newport Beach, CA</p>
-                  <p className="text-xs text-center opacity-90">Professional before & after results</p>
-                </div>
-              </div>
-            </div>
-            <div className="polaroid-frame">
-              <div className="relative h-64 sm:h-64 md:h-80 rounded-lg overflow-hidden">
-                <Image
-                  src="/pressure-washing-before-after.png"
-                  alt="Concrete Pressure Washing Before and After in Anaheim Hills, CA - Professional driveway and concrete cleaning service showing transformation from stained to spotless concrete by Shimmer Shine Property Detailing"
-                  title="Anaheim Hills Pressure Washing Results | Shimmer Shine Property Detailing"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  quality={90}
-                  priority={true}
-                  placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-3">
-                  <p className="font-bold text-center text-sm sm:text-base">Pressure Washing - Anaheim Hills, CA</p>
-                  <p className="text-xs text-center opacity-90">Concrete restoration results</p>
-                </div>
-              </div>
-            </div>
-            <div className="polaroid-frame">
-              <div className="relative h-64 sm:h-64 md:h-80 rounded-lg overflow-hidden">
-                <Image
-                  src="/Post construction cleanup.jpg"
-                  alt="Post-Construction Cleanup Before and After in Orange County, CA - Professional construction site cleaning service showing transformation from construction debris to spotless property by Shimmer Shine Property Detailing"
-                  title="Orange County Post-Construction Cleanup Results | Shimmer Shine Property Detailing"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  quality={90}
-                  priority={true}
-                  placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-3">
-                  <p className="font-bold text-center text-sm sm:text-base">Post-Construction Cleanup - Orange County, CA</p>
-                  <p className="text-xs text-center opacity-90">Professional construction site cleaning</p>
-                </div>
-              </div>
-            </div>
+          {/* Desktop: Interactive Before/After Sliders */}
+          <div className="hidden sm:grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
+            <ScrollAnimation animation="fade-in-left" delay={100}>
+              <BeforeAfterSlider
+                beforeImage="/Before and After images/House siding & window wash.jpg"
+                afterImage="/window-cleaning-before-after.png"
+                beforeAlt="Dirty windows and siding before professional cleaning"
+                afterAlt="Crystal clear windows and clean siding after Shimmer Shine cleaning"
+                className="h-64 sm:h-80 hover-lift-subtle"
+              />
+            </ScrollAnimation>
+            
+            <ScrollAnimation animation="fade-in-up" delay={200}>
+              <BeforeAfterSlider
+                beforeImage="/Before and After images/concrete driveway pressure wash 6.jpg"
+                afterImage="/pressure-washing-before-after.png"
+                beforeAlt="Stained concrete driveway before pressure washing"
+                afterAlt="Clean, restored concrete driveway after pressure washing"
+                className="h-64 sm:h-80 hover-lift-subtle"
+              />
+            </ScrollAnimation>
+            
+            <ScrollAnimation animation="fade-in-right" delay={300} className="lg:col-span-2 xl:col-span-1">
+              <BeforeAfterSlider
+                beforeImage="/Post Construction Cleanup2.jpeg"
+                afterImage="/Post construction cleanup.jpg"
+                beforeAlt="Construction debris and mess before cleanup"
+                afterAlt="Spotless property after post-construction cleanup"
+                className="h-64 sm:h-80 hover-lift-subtle"
+              />
+            </ScrollAnimation>
           </div>
         </div>
       </section>
@@ -479,47 +458,50 @@ export default function HomePage() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-12 sm:py-16 bg-navy text-white relative overflow-hidden">
+      <section className="py-12 sm:py-16 bg-gradient-to-br from-navy via-navy-700 to-navy text-white relative overflow-hidden water-wave">
+        {/* Water Droplets */}
+        <WaterDroplets count={4} />
+        
         {/* Enhanced Sparkle Overlay - Left Side */}
         <div className="absolute top-8 left-4 sm:top-12 sm:left-8 lg:top-16 lg:left-12 opacity-60 pointer-events-none">
           <div className="relative">
             {/* Large Sparkle */}
-            <div className="absolute w-10 h-10 text-yellow opacity-90 animate-pulse drop-shadow-xl">
+            <div className="absolute w-10 h-10 text-yellow opacity-90 sparkle-enhanced drop-shadow-xl">
               <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
                 <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
               </svg>
             </div>
             {/* Medium Sparkle */}
-            <div className="absolute w-7 h-7 text-yellow opacity-80 top-8 left-12 animate-bounce delay-300 drop-shadow-lg">
+            <div className="absolute w-7 h-7 text-yellow opacity-80 top-8 left-12 sparkle-enhanced delay-300 drop-shadow-lg">
               <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
                 <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
               </svg>
             </div>
             {/* Small Sparkle */}
-            <div className="absolute w-5 h-5 text-yellow opacity-85 top-2 left-8 animate-pulse delay-500 drop-shadow-md">
+            <div className="absolute w-5 h-5 text-yellow opacity-85 top-2 left-8 sparkle-enhanced delay-500 drop-shadow-md">
               <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
                 <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
               </svg>
             </div>
             {/* Tiny Sparkle */}
-            <div className="absolute w-4 h-4 text-yellow opacity-75 top-12 left-4 animate-bounce delay-700 drop-shadow-sm">
+            <div className="absolute w-4 h-4 text-yellow opacity-75 top-12 left-4 sparkle-enhanced delay-700 drop-shadow-sm">
               <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
                 <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
               </svg>
             </div>
             {/* Additional Small Sparkle */}
-            <div className="absolute w-6 h-6 text-yellow opacity-70 top-16 left-10 animate-pulse delay-200 drop-shadow-lg">
+            <div className="absolute w-6 h-6 text-yellow opacity-70 top-16 left-10 sparkle-enhanced delay-200 drop-shadow-lg">
               <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
                 <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
               </svg>
             </div>
             {/* Extra Sparkles for More Visibility */}
-            <div className="absolute w-3 h-3 text-yellow opacity-80 top-20 left-16 animate-bounce delay-1000 drop-shadow-sm">
+            <div className="absolute w-3 h-3 text-yellow opacity-80 top-20 left-16 sparkle-enhanced delay-1000 drop-shadow-sm">
               <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
                 <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
               </svg>
             </div>
-            <div className="absolute w-4 h-4 text-yellow opacity-65 top-4 left-16 animate-pulse delay-800 drop-shadow-md">
+            <div className="absolute w-4 h-4 text-yellow opacity-65 top-4 left-16 sparkle-enhanced delay-800 drop-shadow-md">
               <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
                 <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
               </svg>
@@ -540,18 +522,19 @@ export default function HomePage() {
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="heading-decorative text-3xl sm:text-4xl md:text-5xl text-yellow mb-4" style={{textShadow: '6px 6px 12px rgba(0,0,0,1), 3px 3px 6px rgba(0,0,0,0.8), 1px 1px 3px rgba(0,0,0,0.9)'}}>
+          <ScrollAnimation animation="fade-in-up" className="text-center mb-8 sm:mb-12">
+            <h2 className="heading-decorative text-3xl sm:text-4xl md:text-5xl text-yellow mb-4 float-animation" style={{textShadow: '6px 6px 12px rgba(0,0,0,1), 3px 3px 6px rgba(0,0,0,0.8), 1px 1px 3px rgba(0,0,0,0.9)'}}>
               Why Choose Shimmer Shine?
             </h2>
             <p className="body-text text-lg sm:text-xl text-gray-100">
               Best window cleaners in Orange County with three decades of experience
             </p>
-          </div>
+          </ScrollAnimation>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
-            <div className="text-center space-y-3 sm:space-y-4 sm:col-span-2 md:col-span-1">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-yellow rounded-full flex items-center justify-center mx-auto">
+            <ScrollAnimation animation="fade-in-left" delay={100} className="text-center space-y-3 sm:space-y-4 sm:col-span-2 md:col-span-1">
+              <div className="glass-card-strong p-6 rounded-xl hover-lift-subtle">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-yellow rounded-full flex items-center justify-center mx-auto mb-4 float-animation">
                 <Award className="h-6 w-6 sm:h-8 sm:w-8 text-navy" />
               </div>
               <h3 className="heading-primary text-lg sm:text-xl text-white">Professional Excellence</h3>
@@ -559,9 +542,11 @@ export default function HomePage() {
                 Three decades of window cleaning expertise with old-school values and modern techniques.
               </p>
             </div>
+            </ScrollAnimation>
 
-            <div className="text-center space-y-3 sm:space-y-4">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-yellow rounded-full flex items-center justify-center mx-auto">
+            <ScrollAnimation animation="fade-in-up" delay={200} className="text-center space-y-3 sm:space-y-4">
+              <div className="glass-card-strong p-6 rounded-xl hover-lift-subtle">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-yellow rounded-full flex items-center justify-center mx-auto mb-4 float-animation-reverse">
                 <Shield className="h-6 w-6 sm:h-8 sm:w-8 text-navy" />
               </div>
               <h3 className="heading-primary text-lg sm:text-xl text-white">Licensed & Insured</h3>
@@ -569,9 +554,11 @@ export default function HomePage() {
                 Fully licensed, bonded, and insured for your complete peace of mind and protection.
               </p>
             </div>
+            </ScrollAnimation>
 
-            <div className="text-center space-y-3 sm:space-y-4">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-yellow rounded-full flex items-center justify-center mx-auto">
+            <ScrollAnimation animation="fade-in-right" delay={300} className="text-center space-y-3 sm:space-y-4">
+              <div className="glass-card-strong p-6 rounded-xl hover-lift-subtle">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-yellow rounded-full flex items-center justify-center mx-auto mb-4 float-animation">
                 <Clock className="h-6 w-6 sm:h-8 sm:w-8 text-navy" />
               </div>
               <h3 className="heading-primary text-lg sm:text-xl text-white">Reliable Service</h3>
@@ -579,6 +566,7 @@ export default function HomePage() {
                 On-time arrivals, consistent quality, and same-day service available when you need it most.
               </p>
             </div>
+            </ScrollAnimation>
           </div>
         </div>
       </section>

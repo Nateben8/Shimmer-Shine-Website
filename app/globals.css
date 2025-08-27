@@ -528,3 +528,312 @@ html {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;  /* Safari and Chrome */
 }
+
+/* ========================================
+   ADVANCED DESIGN ELEMENTS
+   ======================================== */
+
+/* 1. GLASSMORPHISM EFFECTS */
+.glass-card {
+  @apply bg-white/20 backdrop-blur-lg border border-white/30 shadow-xl;
+}
+
+.glass-card-strong {
+  @apply bg-white/30 backdrop-blur-xl border border-white/40 shadow-2xl;
+}
+
+.glass-overlay {
+  @apply bg-white/10 backdrop-blur-sm border border-white/20;
+}
+
+/* 2. HOVER LIFT EFFECTS */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.hover-lift-subtle {
+  transition: all 0.2s ease-out;
+}
+
+.hover-lift-subtle:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+/* 3. WATER DROPLET ANIMATIONS */
+@keyframes droplet-fall {
+  0% {
+    transform: translateY(-20px) scale(0);
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(-15px) scale(0.8);
+    opacity: 0.7;
+  }
+  90% {
+    transform: translateY(100vh) scale(1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(100vh) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes droplet-ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.water-droplet {
+  position: absolute;
+  width: 8px;
+  height: 12px;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(45deg);
+  animation: droplet-fall 3s linear infinite;
+}
+
+.water-droplet::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid #3b82f6;
+  border-radius: 50%;
+  animation: droplet-ripple 1s ease-out infinite;
+}
+
+/* 4. SCROLL FADE-IN ANIMATIONS */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-up.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-left.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-right.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in.animate-in {
+  opacity: 1;
+}
+
+/* Staggered animation delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* 5. BEFORE/AFTER SLIDER */
+.before-after-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.before-after-slider {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: #fdc737;
+  cursor: ew-resize;
+  z-index: 10;
+  transform: translateX(-50%);
+  box-shadow: 0 0 0 2px #00357a, 0 0 10px rgba(253, 199, 55, 0.5);
+}
+
+.before-after-slider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background: #fdc737;
+  border: 3px solid #00357a;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.before-after-slider::after {
+  content: '⟷';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #00357a;
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.before-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.after-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
+  transition: clip-path 0.1s ease-out;
+}
+
+/* 6. ENHANCED SPARKLE EFFECTS */
+@keyframes sparkle-twinkle {
+  0%, 100% { 
+    opacity: 0.3; 
+    transform: scale(1) rotate(0deg);
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1.2) rotate(180deg);
+  }
+}
+
+.sparkle-enhanced {
+  animation: sparkle-twinkle 2s ease-in-out infinite;
+}
+
+/* 7. FLOATING ELEMENTS */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes float-reverse {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(10px); }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+.float-animation-reverse {
+  animation: float-reverse 4s ease-in-out infinite;
+}
+
+/* 8. GRADIENT ANIMATIONS */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-animated {
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+/* 9. ENHANCED RETRO CARDS WITH GLASSMORPHISM */
+.retro-card-glass {
+  @apply bg-white/90 backdrop-blur-md border-2 border-navy/20 shadow-2xl rounded-xl overflow-hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.retro-card-glass:hover {
+  @apply bg-white/95 border-navy/30 shadow-3xl;
+  transform: translateY(-5px) scale(1.02);
+}
+
+/* 10. WATER WAVE EFFECTS */
+@keyframes wave {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.water-wave {
+  position: relative;
+  overflow: hidden;
+}
+
+.water-wave::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+  animation: wave 3s ease-in-out infinite;
+}
+
+/* Mobile optimizations for new effects */
+@media (max-width: 640px) {
+  .hover-lift:hover,
+  .hover-lift-subtle:hover {
+    transform: none; /* Disable hover effects on touch devices */
+  }
+  
+  .water-droplet {
+    width: 6px;
+    height: 9px;
+  }
+  
+  .before-after-slider {
+    width: 6px;
+  }
+  
+  .before-after-slider::before {
+    width: 30px;
+    height: 30px;
+  }
+}
