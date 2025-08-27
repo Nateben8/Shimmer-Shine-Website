@@ -78,14 +78,8 @@ function JobberFormSkeleton() {
         <div className="pt-4" style={{animationDelay: '0.6s'}}>
           <div className="h-14 bg-gradient-to-r from-yellow to-yellow/90 rounded-lg shadow-lg flex items-center justify-center relative overflow-hidden border-2 border-navy">
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse"></div>
-            <div className="flex flex-col items-center space-y-3 relative z-10 w-full">
+            <div className="flex items-center space-x-3 relative z-10">
               <span className="heading-primary text-navy">Preparing Your Form</span>
-              
-              {/* Loading Bar */}
-              <div className="w-full max-w-xs bg-navy/20 rounded-full h-3 overflow-hidden">
-                <div className="h-full bg-gradient-to-r from-navy to-navy/80 rounded-full progress-bar-fill"></div>
-              </div>
-              
               <div className="flex space-x-1">
                 <div className="w-2 h-2 bg-navy rounded-full animate-bounce"></div>
                 <div className="w-2 h-2 bg-navy rounded-full animate-bounce delay-100"></div>
@@ -161,10 +155,10 @@ function JobberFormContent() {
 
   // Enhanced loading animation with minimum display time
   useEffect(() => {
-    // Always show loading for at least 2 seconds for better UX
+    // Always show loading for at least 3 seconds for better UX
     const minLoadingTimer = setTimeout(() => {
       setShowLoading(false)
-    }, 2000)
+    }, 3000)
 
     return () => clearTimeout(minLoadingTimer)
   }, [])
@@ -198,23 +192,11 @@ function JobberFormContent() {
     script.onload = () => {
       console.log('Jobber script loaded successfully')
       
-      // Simple form ready check
-      const checkForm = () => {
-        const formElement = document.getElementById(CLIENT_HUB_ID)
-        if (formElement) {
-          console.log('Form element found')
-          // Wait for minimum loading time before showing form
-          setTimeout(() => {
-            setIsLoaded(true)
-          }, 1500)
-        } else {
-          console.log('Form element not found, retrying...')
-          setTimeout(checkForm, 100)
-        }
-      }
-      
-      // Start checking after a brief delay
-      setTimeout(checkForm, 200)
+      // Set loaded after a reasonable delay to allow form to render
+      setTimeout(() => {
+        setIsLoaded(true)
+        console.log('Form marked as loaded')
+      }, 1000)
     }
     
     script.onerror = (e) => {
@@ -225,12 +207,12 @@ function JobberFormContent() {
     
     document.head.appendChild(script)
 
-    // Fallback timer
+    // Fallback timer - ensure form shows after maximum wait time
     const fallbackTimer = setTimeout(() => {
-      console.log('Fallback timer triggered')
+      console.log('Fallback timer triggered - forcing form to show')
       setIsLoaded(true)
       setShowLoading(false)
-    }, 5000)
+    }, 4000)
 
     return () => {
       clearTimeout(fallbackTimer)
