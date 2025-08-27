@@ -790,7 +790,7 @@ html {
 }
 
 .retro-card-glass:hover {
-  @apply bg-white/95 border-navy/30 shadow-3xl;
+  @apply bg-white/95 border-navy/30 shadow-2xl;
   transform: translateY(-5px) scale(1.02);
 }
 

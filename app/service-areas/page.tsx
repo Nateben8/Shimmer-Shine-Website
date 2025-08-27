@@ -8,7 +8,7 @@ import { BUSINESS_INFO } from "@/lib/constants"
 
 export const metadata = {
   title: "Service Areas | Orange County, LA & San Diego | Shimmer Shine",
-  description: "Professional window cleaning and pressure washing services across Orange County, Los Angeles County, and San Diego County. See all areas we serve since 1995.",
+  description: "Professional window cleaning and pressure washing services across Orange County, Los Angeles County, and San Diego County. See all areas we serve since 2021.",
 }
 
 export default function ServiceAreasPage() {
@@ -51,7 +51,7 @@ export default function ServiceAreasPage() {
                 Our Service Areas
               </h1>
               <p className="body-text text-xl text-gray-100 mb-6 leading-relaxed">
-                Professional window cleaning, pressure washing, and property detailing services across Southern California since 1995.
+                Professional window cleaning, pressure washing, and property detailing services across Southern California since 2021.
               </p>
               
               {/* Stats */}
@@ -89,27 +89,40 @@ export default function ServiceAreasPage() {
               </div>
             </div>
 
-            {/* Map/Visual */}
+            {/* Interactive Map */}
             <div className="flex justify-center">
-              <div className="polaroid-frame max-w-md">
-                <div className="relative h-80 rounded-lg overflow-hidden">
-                  <div className="bg-gradient-to-br from-blue-100 to-yellow-100 flex items-center justify-center h-full border-4 border-navy shadow-lg">
-                    <div className="text-center text-navy bg-white/90 p-6 rounded-lg shadow-retro">
-                      <div className="text-4xl mb-4">Map</div>
-                      <p className="text-xl font-bold text-navy mb-2">Southern California</p>
-                      <p className="text-sm text-gray-700 mb-3">Orange • LA • San Diego</p>
-                      <div className="flex justify-center space-x-1">
+              <div className="polaroid-frame max-w-2xl w-full">
+                <div className="relative h-96 rounded-lg overflow-hidden">
+                  {/* Google Maps Embed */}
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d424142.3302750769!2d-118.69191969999999!3d33.817962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sOrange%20County%2C%20CA!5e0!3m2!1sen!2sus!4v1699999999999!5m2!1sen!2sus"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen={true}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Shimmer Shine Property Detailing Service Areas - Orange County, Los Angeles, San Diego"
+                    className="w-full h-full"
+                  />
+                  
+                  {/* Overlay with service info */}
+                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm p-4 rounded-lg shadow-lg border-2 border-yellow max-w-xs">
+                    <div className="text-center text-navy">
+                      <div className="text-lg font-bold mb-2">🗺️ Southern California</div>
+                      <p className="text-sm text-gray-700 mb-2">Orange • LA • San Diego</p>
+                      <div className="flex justify-center space-x-1 mb-2">
                         {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="h-4 w-4 text-yellow fill-current" />
+                          <Star key={i} className="h-3 w-3 text-yellow fill-current" />
                         ))}
                       </div>
-                      <p className="text-xs text-gray-600 mt-1">Trusted Since 1995</p>
+                      <p className="text-xs text-gray-600">Trusted Since 2021</p>
                     </div>
                   </div>
                 </div>
                 <div className="text-center mt-4 text-navy">
-                  <p className="font-arvo font-bold">Serving 150+ Cities</p>
-                  <p className="text-sm text-gray-600">Southern California - 2024</p>
+                  <p className="font-arvo font-bold">Interactive Service Area Map</p>
+                  <p className="text-sm text-gray-600">Click and drag to explore • Zoom to see cities</p>
                 </div>
               </div>
             </div>
@@ -199,7 +212,7 @@ export default function ServiceAreasPage() {
           <div className="text-center mb-12">
             <h3 className="heading-primary text-3xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>Why Choose Shimmer Shine?</h3>
             <p className="body-text text-gray-600">
-              Nearly three decades of experience serving Southern California communities
+              Professional experience serving Southern California communities
             </p>
           </div>
 
@@ -208,9 +221,9 @@ export default function ServiceAreasPage() {
               <div className="w-16 h-16 bg-yellow rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="h-8 w-8 text-navy" />
               </div>
-              <h4 className="heading-primary text-lg mb-2">Since 1995</h4>
+              <h4 className="heading-primary text-lg mb-2">Since 2021</h4>
               <p className="body-text text-gray-600 text-sm">
-                Nearly three decades of trusted service across Southern California
+                Professional trusted service across Southern California
               </p>
             </div>
 

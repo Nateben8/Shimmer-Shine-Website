@@ -19,6 +19,7 @@ import {
   MapPin
 } from "lucide-react"
 import { BUSINESS_INFO, TESTIMONIALS } from "@/lib/constants"
+import { ScrollAnimation, WaterDroplets } from "@/components/ScrollAnimations"
 
 export const metadata = getPageSEO('get-a-quote')
 
@@ -86,7 +87,10 @@ export default function GetQuotePage() {
       />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-navy to-navy-700 text-white py-12 lg:py-16 relative overflow-hidden">
+      <section className="bg-gradient-to-br from-navy to-navy-700 text-white py-12 lg:py-16 relative overflow-hidden water-wave">
+        {/* Water Droplets */}
+        <WaterDroplets count={5} />
+        
         {/* Hero Sparkles & Brand Overlays */}
         <div className="absolute inset-0 opacity-50 pointer-events-none">
           {/* Cleaning Equipment Overlays */}
@@ -141,8 +145,8 @@ export default function GetQuotePage() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Content */}
-            <div className="text-center lg:text-left">
-              <div className="retro-badge mb-6 inline-block">
+            <ScrollAnimation animation="fade-in-left" className="text-center lg:text-left">
+              <div className="retro-badge mb-6 inline-block float-animation">
                 Professional Service Since 2021
               </div>
               
@@ -203,20 +207,20 @@ export default function GetQuotePage() {
                   <div className="flex items-center space-x-3">
                     <div className="w-8 h-8 bg-yellow rounded-full flex items-center justify-center flex-shrink-0">
                       <Shield className="h-4 w-4 text-navy" />
-                    </div>
-                    <span className="text-sm font-medium">Licensed & Insured</span>
                   </div>
+                  <span className="text-sm font-medium">Licensed & Insured</span>
+                </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-8 h-8 bg-yellow rounded-full flex items-center justify-center flex-shrink-0">
-                      <Award className="h-4 w-4 text-navy" />
-                    </div>
-                    <span className="text-sm font-medium">Since {BUSINESS_INFO.foundedYear}</span>
+                    <Award className="h-4 w-4 text-navy" />
                   </div>
+                  <span className="text-sm font-medium">Since {BUSINESS_INFO.foundedYear}</span>
+                </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-8 h-8 bg-yellow rounded-full flex items-center justify-center flex-shrink-0">
-                      <Zap className="h-4 w-4 text-navy" />
-                    </div>
-                    <span className="text-sm font-medium">Same Day Service</span>
+                    <Zap className="h-4 w-4 text-navy" />
+                  </div>
+                  <span className="text-sm font-medium">Same Day Service</span>
                   </div>
                 </div>
               </div>
@@ -224,29 +228,29 @@ export default function GetQuotePage() {
               {/* Call Button */}
               <div className="mb-6">
                 <Link href={`tel:${BUSINESS_INFO.phone}`}>
-                  <Button variant="retro" size="lg" className="text-lg px-8 py-4">
+                  <Button variant="retro" size="lg" className="text-lg px-8 py-4 hover-lift-subtle">
                     <Phone className="h-5 w-5 mr-2" />
                     Call {BUSINESS_INFO.phone}
                   </Button>
                 </Link>
               </div>
-            </div>
+            </ScrollAnimation>
 
-                               {/* Right Side - Hero Image */}
-                   <div className="w-full">
-                     <div className="relative">
-                       <Image
-                         src="/window-cleaning-quote.png"
-                         alt="Professional window cleaning service in Orange County - Shimmer Shine Property Detailing team providing residential and commercial window cleaning with guaranteed results"
-                         width={600}
-                         height={400}
-                         className="w-full h-auto rounded-xl shadow-2xl"
-                         priority
-                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                       />
-                       <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent rounded-xl"></div>
-                     </div>
-                   </div>
+            {/* Right Side - Hero Image */}
+            <ScrollAnimation animation="fade-in-right" delay={200} className="w-full">
+              <div className="relative hover-lift-subtle">
+                <Image
+                  src="/window-cleaning-quote.png"
+                  alt="Professional window cleaning service in Orange County - Shimmer Shine Property Detailing team providing residential and commercial window cleaning with guaranteed results"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto rounded-xl shadow-2xl"
+                  priority
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent rounded-xl"></div>
+              </div>
+            </ScrollAnimation>
           </div>
         </div>
       </section>
