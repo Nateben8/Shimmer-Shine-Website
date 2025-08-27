@@ -953,6 +953,16 @@ html {
   border-width: 3px;
 }
 
+/* Floating animation for service area graphics */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
 /* Enhanced Mobile Responsiveness & Optimizations */
 @media (max-width: 640px) {
   /* Touch-friendly targets */

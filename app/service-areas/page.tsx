@@ -89,6 +89,105 @@ export default function ServiceAreasPage() {
               </div>
             </div>
 
+            {/* Service Areas Visual */}
+            <div className="relative">
+              <div className="polaroid-frame">
+                {/* Southern California Service Map Graphic */}
+                <div className="relative h-96 bg-gradient-to-br from-gray-50 to-blue-50 rounded-lg overflow-hidden shadow-2xl border-4 border-white">
+                  {/* Background Pattern */}
+                  <div className="absolute inset-0 opacity-10">
+                    <div className="absolute inset-0" style={{
+                      backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300357a' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+                    }} />
+                  </div>
+
+                  {/* Southern California Outline */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <svg viewBox="0 0 400 300" className="w-full h-full max-w-sm">
+                      {/* California Coast Outline */}
+                      <path
+                        d="M80 50 L120 45 L160 55 L200 60 L240 70 L280 85 L320 100 L340 130 L350 160 L345 190 L340 220 L330 240 L310 250 L280 245 L250 240 L220 235 L190 225 L160 210 L130 190 L110 160 L100 130 L90 100 L85 75 Z"
+                        fill="none"
+                        stroke="#00357a"
+                        strokeWidth="3"
+                        strokeDasharray="5,5"
+                        className="animate-pulse"
+                      />
+                      
+                      {/* Service Area Markers */}
+                      {/* Orange County */}
+                      <circle cx="200" cy="180" r="8" fill="#fdc737" className="animate-bounce" style={{animationDelay: '0s'}} />
+                      <text x="210" y="185" fill="#00357a" fontSize="12" fontWeight="bold">OC</text>
+                      
+                      {/* Los Angeles */}
+                      <circle cx="160" cy="150" r="8" fill="#fdc737" className="animate-bounce" style={{animationDelay: '0.3s'}} />
+                      <text x="170" y="155" fill="#00357a" fontSize="12" fontWeight="bold">LA</text>
+                      
+                      {/* San Diego */}
+                      <circle cx="220" cy="220" r="8" fill="#fdc737" className="animate-bounce" style={{animationDelay: '0.6s'}} />
+                      <text x="230" y="225" fill="#00357a" fontSize="12" fontWeight="bold">SD</text>
+                      
+                      {/* Connection Lines */}
+                      <line x1="160" y1="150" x2="200" y2="180" stroke="#00357a" strokeWidth="2" opacity="0.5" strokeDasharray="3,3" />
+                      <line x1="200" y1="180" x2="220" y2="220" stroke="#00357a" strokeWidth="2" opacity="0.5" strokeDasharray="3,3" />
+                    </svg>
+                  </div>
+
+                  {/* Floating Service Icons */}
+                  <div className="absolute top-4 left-4 w-12 h-12 bg-yellow/20 rounded-full flex items-center justify-center animate-float">
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-navy">
+                      <rect x="3" y="3" width="18" height="12" rx="2" fill="none" stroke="currentColor" strokeWidth="2"/>
+                      <path d="M8 21h8M12 17v4"/>
+                    </svg>
+                  </div>
+                  
+                  <div className="absolute top-4 right-4 w-12 h-12 bg-yellow/20 rounded-full flex items-center justify-center animate-float" style={{animationDelay: '1s'}}>
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-navy">
+                      <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z" fill="none" stroke="currentColor" strokeWidth="2"/>
+                      <path d="M9 12l2 2 4-4"/>
+                    </svg>
+                  </div>
+                  
+                  <div className="absolute bottom-4 left-4 w-12 h-12 bg-yellow/20 rounded-full flex items-center justify-center animate-float" style={{animationDelay: '2s'}}>
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-navy">
+                      <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" strokeWidth="2"/>
+                      <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/>
+                    </svg>
+                  </div>
+                  
+                  <div className="absolute bottom-4 right-4 w-12 h-12 bg-yellow/20 rounded-full flex items-center justify-center animate-float" style={{animationDelay: '3s'}}>
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-navy">
+                      <path d="M3 6h18l-2 13H5L3 6zM3 6l-1-4M7 10l4 4 4-4"/>
+                    </svg>
+                  </div>
+
+                  {/* Sparkle Effects */}
+                  <div className="absolute top-8 left-1/3 w-4 h-4 text-yellow animate-pulse">
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full drop-shadow-lg">
+                      <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+                    </svg>
+                  </div>
+                  <div className="absolute bottom-8 right-1/3 w-3 h-3 text-yellow animate-bounce delay-500">
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full drop-shadow-md">
+                      <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+                    </svg>
+                  </div>
+
+                  {/* Coverage Area Indicator */}
+                  <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-navy/90 text-white px-4 py-2 rounded-full text-sm font-bold">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-yellow rounded-full animate-pulse"></div>
+                      <span>150+ Cities Covered</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="text-center mt-4 text-navy">
+                  <p className="font-arvo font-bold text-lg">Southern California Coverage</p>
+                  <p className="text-sm text-gray-600">Orange County • Los Angeles • San Diego</p>
+                </div>
+              </div>
+            </div>
 
           </div>
         </div>
