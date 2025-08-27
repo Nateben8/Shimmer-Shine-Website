@@ -25,17 +25,18 @@ export default function Hero() {
             <div className="space-y-3 sm:space-y-4 relative">
               {/* Sparkles around Classic Shine */}
               <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute -top-4 -left-2 w-6 h-6 text-yellow opacity-80 animate-pulse">
+                {/* Mobile: Keep sparkles within bounds */}
+                <div className="absolute top-2 left-2 sm:-top-4 sm:-left-2 w-6 h-6 text-yellow opacity-80 animate-pulse">
                   <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full drop-shadow-lg">
                     <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
                   </svg>
                 </div>
-                <div className="absolute -top-2 right-8 w-4 h-4 text-yellow opacity-90 animate-bounce delay-300">
+                <div className="absolute top-4 right-8 sm:-top-2 sm:right-8 w-4 h-4 text-yellow opacity-90 animate-bounce delay-300">
                   <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full drop-shadow-md">
                     <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
                   </svg>
                 </div>
-                <div className="absolute top-8 -left-4 w-5 h-5 text-yellow opacity-75 animate-pulse delay-500">
+                <div className="absolute top-8 left-2 sm:top-8 sm:-left-4 w-5 h-5 text-yellow opacity-75 animate-pulse delay-500">
                   <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full drop-shadow-lg">
                     <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
                   </svg>
@@ -50,7 +51,7 @@ export default function Hero() {
                     <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
                   </svg>
                 </div>
-                <div className="absolute bottom-2 right-12 w-5 h-5 text-yellow opacity-70 animate-bounce delay-1000">
+                <div className="absolute bottom-2 right-8 sm:right-12 w-5 h-5 text-yellow opacity-70 animate-bounce delay-1000">
                   <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full drop-shadow-lg">
                     <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
                   </svg>

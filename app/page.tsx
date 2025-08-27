@@ -113,14 +113,14 @@ export default function HomePage() {
       
       {/* Services Section */}
       <section className="py-12 sm:py-16 bg-gray-50 relative overflow-hidden">
-        {/* Enhanced Background Sparkles */}
+        {/* Enhanced Background Sparkles - Mobile Safe */}
         <div className="absolute inset-0 opacity-40 pointer-events-none">
-          <div className="absolute top-20 left-10 w-6 h-6 text-yellow animate-pulse">
+          <div className="absolute top-20 left-4 sm:left-10 w-6 h-6 text-yellow animate-pulse">
             <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full drop-shadow-lg">
               <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
             </svg>
           </div>
-          <div className="absolute top-32 right-16 w-4 h-4 text-yellow animate-bounce delay-1000">
+          <div className="absolute top-32 right-4 sm:right-16 w-4 h-4 text-yellow animate-bounce delay-1000">
             <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full drop-shadow-md">
               <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
             </svg>
@@ -148,23 +148,23 @@ export default function HomePage() {
               {/* Animated Background Circle */}
               <div className="absolute inset-0 w-32 h-32 mx-auto bg-gradient-to-br from-yellow/20 to-yellow/10 rounded-full animate-pulse"></div>
               
-              {/* Enhanced Sparkle Effects */}
-              <div className="absolute -top-2 -left-2 w-6 h-6 text-yellow opacity-90 animate-bounce drop-shadow-lg">
+              {/* Enhanced Sparkle Effects - Mobile Safe */}
+              <div className="absolute top-2 left-2 sm:-top-2 sm:-left-2 w-6 h-6 text-yellow opacity-90 animate-bounce drop-shadow-lg">
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
                   <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
                 </svg>
               </div>
-              <div className="absolute -top-1 -right-3 w-5 h-5 text-yellow opacity-80 animate-bounce delay-300 drop-shadow-md">
+              <div className="absolute top-3 right-2 sm:-top-1 sm:-right-3 w-5 h-5 text-yellow opacity-80 animate-bounce delay-300 drop-shadow-md">
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
                   <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
                 </svg>
               </div>
-              <div className="absolute -bottom-2 -left-3 w-4 h-4 text-yellow opacity-75 animate-bounce delay-500 drop-shadow-md">
+              <div className="absolute bottom-2 left-2 sm:-bottom-2 sm:-left-3 w-4 h-4 text-yellow opacity-75 animate-bounce delay-500 drop-shadow-md">
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
                   <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
                 </svg>
               </div>
-              <div className="absolute -bottom-1 -right-2 w-3 h-3 text-yellow opacity-85 animate-bounce delay-700 drop-shadow-sm">
+              <div className="absolute bottom-3 right-2 sm:-bottom-1 sm:-right-2 w-3 h-3 text-yellow opacity-85 animate-bounce delay-700 drop-shadow-sm">
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
                   <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
                 </svg>
