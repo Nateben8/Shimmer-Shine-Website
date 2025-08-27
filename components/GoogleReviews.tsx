@@ -207,27 +207,27 @@ export default function GoogleReviews({
 
         {/* Optimized Review Display */}
         <div className="relative max-w-4xl mx-auto">
-          {/* Navigation Arrows */}
+          {/* Navigation Arrows - Larger on Mobile */}
           <button
             onClick={prevReview}
             disabled={reviews.length <= 1}
-            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 bg-white hover:bg-gray-50 disabled:bg-gray-200 disabled:cursor-not-allowed rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg border-2 border-yellow"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-14 h-14 sm:w-12 sm:h-12 bg-white hover:bg-gray-50 disabled:bg-gray-200 disabled:cursor-not-allowed rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg border-2 border-yellow"
             aria-label="Previous review"
           >
-            <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6 text-navy" />
+            <ChevronLeft className="h-8 w-8 sm:h-6 sm:w-6 text-navy" />
           </button>
 
           <button
             onClick={nextReview}
             disabled={reviews.length <= 1}
-            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 bg-white hover:bg-gray-50 disabled:bg-gray-200 disabled:cursor-not-allowed rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg border-2 border-yellow"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-14 h-14 sm:w-12 sm:h-12 bg-white hover:bg-gray-50 disabled:bg-gray-200 disabled:cursor-not-allowed rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg border-2 border-yellow"
             aria-label="Next review"
           >
-            <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 text-navy" />
+            <ChevronRight className="h-8 w-8 sm:h-6 sm:w-6 text-navy" />
           </button>
 
           {/* Current Review - Compact */}
-          <div className="mx-12 sm:mx-16">
+          <div className="mx-16 sm:mx-16">
             {reviews.length > 0 && (
               <div className="bg-white rounded-xl shadow-xl border-2 border-yellow/20 p-4 sm:p-6 md:p-8 relative overflow-hidden">
                 {/* Decorative Corner Elements */}
