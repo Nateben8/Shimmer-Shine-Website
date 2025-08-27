@@ -9,76 +9,115 @@ const JOBBER_JS_URL = 'https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/
 const CLIENT_HUB_ID = 'c6041d28-0ae8-4628-a9c4-14a29c7ff3e8'
 const FORM_URL = 'https://clienthub.getjobber.com/client_hubs/c6041d28-0ae8-4628-a9c4-14a29c7ff3e8/public/work_request/embedded_work_request_form'
 
-// Enhanced loading form indicator
+// Enhanced loading form indicator with professional animations
 function JobberFormSkeleton() {
   return (
-    <div className="bg-white rounded-xl border-2 border-gray-200 p-6 shadow-lg">
-      {/* Loading Header */}
-      <div className="text-center mb-6">
-        <div className="flex items-center justify-center space-x-2 mb-3">
-          <div className="w-4 h-4 bg-yellow rounded-full animate-pulse"></div>
-          <div className="text-navy font-bold text-lg">Loading Your Quote Form...</div>
-          <div className="w-4 h-4 bg-yellow rounded-full animate-pulse"></div>
+    <div className="bg-gradient-to-br from-white to-blue-50 rounded-xl border-2 border-navy/20 p-6 shadow-2xl relative overflow-hidden">
+      {/* Animated Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow/10 to-transparent animate-pulse"></div>
+      
+      {/* Loading Header with Enhanced Animation */}
+      <div className="text-center mb-8 relative z-10">
+        <div className="flex items-center justify-center space-x-3 mb-4">
+          {/* Animated Sparkles */}
+          <div className="w-5 h-5 text-yellow animate-bounce">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full drop-shadow-lg">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
+          <div className="heading-primary text-xl text-navy">Loading Your Quote Form</div>
+          <div className="w-5 h-5 text-yellow animate-bounce delay-300">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full drop-shadow-lg">
+              <path d="M12 0L14.09 8.26L22 6L14.09 15.74L12 24L9.91 15.74L2 18L9.91 8.26L12 0Z"/>
+            </svg>
+          </div>
         </div>
-        <div className="text-sm text-gray-600">Please wait while we prepare your personalized form</div>
+        
+        {/* Animated Progress Bar */}
+        <div className="w-full bg-gray-200 rounded-full h-2 mb-3 overflow-hidden">
+          <div className="h-full bg-gradient-to-r from-yellow to-navy rounded-full progress-bar-fill"></div>
+        </div>
+        
+        <div className="body-text text-gray-600 mb-2">Preparing your personalized quote form...</div>
+        <div className="text-xs text-navy font-medium">🔒 SSL Secured • 100% Free • 2-Hour Response Guaranteed</div>
       </div>
 
-      {/* Form Field Skeletons */}
-      <div className="space-y-4">
+      {/* Enhanced Form Field Skeletons with Staggered Animation */}
+      <div className="space-y-6 relative z-10">
         {/* Name Field */}
-        <div>
-          <div className="h-4 bg-gray-200 rounded w-20 mb-2 animate-pulse"></div>
-          <div className="h-12 bg-gray-100 rounded-lg border-2 border-gray-200 animate-pulse"></div>
+        <div className="stagger-fade" style={{animationDelay: '0.1s'}}>
+          <div className="h-4 bg-gradient-to-r from-gray-200 to-gray-300 rounded w-20 mb-2 shimmer-effect"></div>
+          <div className="h-12 bg-gradient-to-r from-gray-100 to-gray-200 rounded-lg border-2 border-gray-200 shimmer-effect"></div>
         </div>
         
         {/* Email Field */}
-        <div>
-          <div className="h-4 bg-gray-200 rounded w-24 mb-2 animate-pulse"></div>
-          <div className="h-12 bg-gray-100 rounded-lg border-2 border-gray-200 animate-pulse"></div>
+        <div className="stagger-fade" style={{animationDelay: '0.2s'}}>
+          <div className="h-4 bg-gradient-to-r from-gray-200 to-gray-300 rounded w-24 mb-2 shimmer-effect"></div>
+          <div className="h-12 bg-gradient-to-r from-gray-100 to-gray-200 rounded-lg border-2 border-gray-200 shimmer-effect"></div>
         </div>
         
         {/* Phone Field */}
-        <div>
-          <div className="h-4 bg-gray-200 rounded w-28 mb-2 animate-pulse"></div>
-          <div className="h-12 bg-gray-100 rounded-lg border-2 border-gray-200 animate-pulse"></div>
+        <div className="stagger-fade" style={{animationDelay: '0.3s'}}>
+          <div className="h-4 bg-gradient-to-r from-gray-200 to-gray-300 rounded w-28 mb-2 shimmer-effect"></div>
+          <div className="h-12 bg-gradient-to-r from-gray-100 to-gray-200 rounded-lg border-2 border-gray-200 shimmer-effect"></div>
         </div>
         
         {/* Service Selection */}
-        <div>
-          <div className="h-4 bg-gray-200 rounded w-32 mb-2 animate-pulse"></div>
-          <div className="h-12 bg-gray-100 rounded-lg border-2 border-gray-200 animate-pulse"></div>
+        <div className="stagger-fade" style={{animationDelay: '0.4s'}}>
+          <div className="h-4 bg-gradient-to-r from-gray-200 to-gray-300 rounded w-32 mb-2 shimmer-effect"></div>
+          <div className="h-12 bg-gradient-to-r from-gray-100 to-gray-200 rounded-lg border-2 border-gray-200 shimmer-effect"></div>
         </div>
         
         {/* Message Field */}
-        <div>
-          <div className="h-4 bg-gray-200 rounded w-36 mb-2 animate-pulse"></div>
-          <div className="h-24 bg-gray-100 rounded-lg border-2 border-gray-200 animate-pulse"></div>
+        <div className="stagger-fade" style={{animationDelay: '0.5s'}}>
+          <div className="h-4 bg-gradient-to-r from-gray-200 to-gray-300 rounded w-36 mb-2 shimmer-effect"></div>
+          <div className="h-24 bg-gradient-to-r from-gray-100 to-gray-200 rounded-lg border-2 border-gray-200 shimmer-effect"></div>
         </div>
         
-        {/* Submit Button */}
-        <div className="pt-4">
-          <div className="h-14 bg-yellow rounded-lg animate-pulse flex items-center justify-center">
-            <div className="flex items-center space-x-2">
-              <div className="w-5 h-5 border-2 border-navy border-t-transparent rounded-full animate-spin"></div>
-              <span className="text-navy font-bold">Preparing Form...</span>
+        {/* Enhanced Submit Button */}
+        <div className="pt-4" style={{animationDelay: '0.6s'}}>
+          <div className="h-14 bg-gradient-to-r from-yellow to-yellow/90 rounded-lg shadow-lg flex items-center justify-center relative overflow-hidden border-2 border-navy">
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse"></div>
+            <div className="flex items-center space-x-3 relative z-10">
+              <div className="w-6 h-6 border-3 border-navy border-t-transparent rounded-full animate-spin"></div>
+              <span className="heading-primary text-navy">Preparing Your Form</span>
+              <div className="flex space-x-1">
+                <div className="w-2 h-2 bg-navy rounded-full animate-bounce"></div>
+                <div className="w-2 h-2 bg-navy rounded-full animate-bounce delay-100"></div>
+                <div className="w-2 h-2 bg-navy rounded-full animate-bounce delay-200"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
       
-      {/* Trust Indicators */}
-      <div className="flex items-center justify-center space-x-6 mt-6 text-xs text-gray-500">
-        <div className="flex items-center space-x-1">
-          <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-          <span>SSL Secured</span>
+      {/* Enhanced Trust Indicators */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8 relative z-10">
+        <div className="flex flex-col items-center space-y-1 bg-white/50 rounded-lg p-3 animate-pulse">
+          <div className="w-3 h-3 bg-green-400 rounded-full animate-bounce"></div>
+          <span className="text-xs font-medium text-gray-600">SSL Secured</span>
         </div>
-        <div className="flex items-center space-x-1">
-          <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-          <span>100% Free Quote</span>
+        <div className="flex flex-col items-center space-y-1 bg-white/50 rounded-lg p-3 animate-pulse" style={{animationDelay: '0.1s'}}>
+          <div className="w-3 h-3 bg-green-400 rounded-full animate-bounce delay-100"></div>
+          <span className="text-xs font-medium text-gray-600">100% Free</span>
         </div>
-        <div className="flex items-center space-x-1">
-          <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-          <span>2-Hour Response</span>
+        <div className="flex flex-col items-center space-y-1 bg-white/50 rounded-lg p-3 animate-pulse" style={{animationDelay: '0.2s'}}>
+          <div className="w-3 h-3 bg-green-400 rounded-full animate-bounce delay-200"></div>
+          <span className="text-xs font-medium text-gray-600">2-Hour Response</span>
+        </div>
+        <div className="flex flex-col items-center space-y-1 bg-white/50 rounded-lg p-3 animate-pulse" style={{animationDelay: '0.3s'}}>
+          <div className="w-3 h-3 bg-green-400 rounded-full animate-bounce delay-300"></div>
+          <span className="text-xs font-medium text-gray-600">No Spam</span>
+        </div>
+      </div>
+      
+      {/* Loading Tips */}
+      <div className="mt-6 text-center relative z-10">
+        <div className="bg-navy/10 rounded-lg p-4 border border-navy/20">
+          <div className="text-sm text-navy font-medium mb-2">💡 While you wait...</div>
+          <div className="text-xs text-gray-600">
+            Our form is being customized with your local pricing and available time slots!
+          </div>
         </div>
       </div>
     </div>
