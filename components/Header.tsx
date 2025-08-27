@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -9,6 +10,7 @@ import { Menu, X, Phone, MapPin } from "lucide-react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -30,6 +32,14 @@ export default function Header() {
     { name: "Blog", href: "/blog" },
     { name: "Get Quote", href: "/get-a-quote" },
   ];
+
+  // Function to check if navigation item is active
+  const isActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+    return pathname.startsWith(href);
+  };
 
   return (
     <>
@@ -154,25 +164,48 @@ export default function Header() {
           <div className="flex-1 overflow-y-auto">
             <nav className="px-6 py-8 space-y-6">
               <div className="space-y-3">
-                {navigation.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className={`block w-full text-left font-bold py-5 px-6 rounded-xl border-2 transition-all duration-200 text-xl tracking-wide min-h-[64px] flex items-center touch-manipulation shadow-lg hover:shadow-xl ${
-                      item.name === 'Get Quote' 
-                        ? 'bg-yellow text-navy hover:bg-yellow/90 border-navy hover:border-navy' 
-                        : 'bg-white text-navy hover:text-navy hover:bg-white/90 border-yellow hover:border-yellow'
-                    }`}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    <div className="flex items-center justify-between w-full">
-                      <span className="heading-primary text-navy">{item.name.toUpperCase()}</span>
-                      <div className={`w-3 h-3 rounded-full opacity-60 ${
-                        item.name === 'Get Quote' ? 'bg-navy' : 'bg-navy'
-                      }`}></div>
-                    </div>
-                  </Link>
-                ))}
+                {navigation.map((item) => {
+                  const active = isActive(item.href);
+                  return (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className={`block w-full text-left font-bold py-5 px-6 rounded-xl border-2 transition-all duration-200 text-xl tracking-wide min-h-[64px] flex items-center touch-manipulation shadow-lg hover:shadow-xl ${
+                        item.name === 'Get Quote' 
+                          ? active
+                            ? 'bg-yellow text-navy border-navy shadow-xl scale-105 ring-2 ring-yellow/50'
+                            : 'bg-yellow text-navy hover:bg-yellow/90 border-navy hover:border-navy'
+                          : active
+                            ? 'bg-navy text-yellow border-yellow shadow-xl scale-105 ring-2 ring-navy/50'
+                            : 'bg-white text-navy hover:text-navy hover:bg-white/90 border-yellow hover:border-yellow'
+                      }`}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <div className="flex items-center justify-between w-full">
+                        <span className={`heading-primary ${
+                          item.name === 'Get Quote' 
+                            ? 'text-navy' 
+                            : active 
+                              ? 'text-yellow' 
+                              : 'text-navy'
+                        }`}>
+                          {item.name.toUpperCase()}
+                        </span>
+                        <div className={`w-3 h-3 rounded-full ${
+                          active 
+                            ? 'opacity-100 animate-pulse' 
+                            : 'opacity-60'
+                        } ${
+                          item.name === 'Get Quote' 
+                            ? 'bg-navy' 
+                            : active 
+                              ? 'bg-yellow' 
+                              : 'bg-navy'
+                        }`}></div>
+                      </div>
+                    </Link>
+                  );
+                })}
               </div>
               
               <div className="bg-white/10 rounded-xl p-6 border-2 border-white/30 shadow-lg">
