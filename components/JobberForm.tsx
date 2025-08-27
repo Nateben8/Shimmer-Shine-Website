@@ -2,12 +2,49 @@
 
 import { Suspense, useEffect, useState, useCallback, useRef } from "react"
 import { Loader2 } from "lucide-react"
+import dynamic from 'next/dynamic'
 
 // Performance constants
 const JOBBER_CSS_URL = 'https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css'
 const JOBBER_JS_URL = 'https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js'
 const CLIENT_HUB_ID = 'c6041d28-0ae8-4628-a9c4-14a29c7ff3e8'
 const FORM_URL = 'https://clienthub.getjobber.com/client_hubs/c6041d28-0ae8-4628-a9c4-14a29c7ff3e8/public/work_request/embedded_work_request_form'
+
+// Performance optimization: Aggressive resource preloading
+let resourcesPreloaded = false
+const preloadJobberResources = () => {
+  if (typeof window === 'undefined' || resourcesPreloaded) return
+  
+  // Preload CSS and convert to stylesheet when loaded
+  const cssLink = document.createElement('link')
+  cssLink.rel = 'preload'
+  cssLink.href = JOBBER_CSS_URL
+  cssLink.as = 'style'
+  cssLink.fetchPriority = 'high'
+  cssLink.onload = () => {
+    cssLink.rel = 'stylesheet'
+  }
+  document.head.appendChild(cssLink)
+  
+  // Preload JavaScript
+  const jsLink = document.createElement('link')
+  jsLink.rel = 'preload'
+  jsLink.href = JOBBER_JS_URL
+  jsLink.as = 'script'
+  jsLink.fetchPriority = 'high'
+  document.head.appendChild(jsLink)
+  
+  // Prefetch the form endpoint
+  const formLink = document.createElement('link')
+  formLink.rel = 'prefetch'
+  formLink.href = FORM_URL
+  document.head.appendChild(formLink)
+  
+  resourcesPreloaded = true
+}
+
+// Preload immediately when module loads
+preloadJobberResources()
 
 // Enhanced loading form indicator with professional animations
 function JobberFormSkeleton() {
@@ -129,52 +166,49 @@ function JobberFormContent() {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    console.log('Starting Jobber form load...')
-    console.log('CLIENT_HUB_ID:', CLIENT_HUB_ID)
-    console.log('FORM_URL:', FORM_URL)
+    console.log('Starting optimized Jobber form load...')
     
-    // Show loading for 3 seconds minimum
+    // Reduced loading time for better performance
     const loadingTimer = setTimeout(() => {
       setShowLoading(false)
       console.log('Loading animation complete')
-      
-      // Check if form element exists after loading
-      const formContainer = document.getElementById(CLIENT_HUB_ID)
-      console.log('Form container after loading:', formContainer)
-      if (formContainer) {
-        console.log('Form container innerHTML:', formContainer.innerHTML)
-      }
-    }, 3000)
+    }, 1500) // Reduced from 3000ms to 1500ms
 
-    // Load Jobber CSS
-    const cssLink = document.createElement('link')
-    cssLink.rel = 'stylesheet'
-    cssLink.href = JOBBER_CSS_URL
-    cssLink.media = 'all'
-    document.head.appendChild(cssLink)
-    console.log('Jobber CSS loaded')
+    // Check if CSS is already loaded from preload
+    let cssLoaded = false
+    const existingCSS = document.querySelector(`link[href="${JOBBER_CSS_URL}"]`)
+    if (existingCSS && existingCSS.rel === 'stylesheet') {
+      cssLoaded = true
+      console.log('Jobber CSS already loaded from preload')
+    } else {
+      // Load CSS if not preloaded
+      const cssLink = document.createElement('link')
+      cssLink.rel = 'stylesheet'
+      cssLink.href = JOBBER_CSS_URL
+      cssLink.media = 'all'
+      document.head.appendChild(cssLink)
+      console.log('Jobber CSS loaded')
+    }
 
-    // Load Jobber script
+    // Load Jobber script with performance optimizations
     const script = document.createElement('script')
     script.src = JOBBER_JS_URL
     script.setAttribute('clienthub_id', CLIENT_HUB_ID)
     script.setAttribute('form_url', FORM_URL)
     script.async = true
+    script.fetchPriority = 'high' // High priority loading
     
     script.onload = () => {
       console.log('Jobber script loaded successfully')
       
-      // Check if the script created any global functions
-      console.log('Window object keys after script load:', Object.keys(window).filter(key => key.toLowerCase().includes('jobber')))
-      
-      // Check form container immediately after script load
+      // Faster form check with reduced timeout
       setTimeout(() => {
         const formContainer = document.getElementById(CLIENT_HUB_ID)
-        console.log('Form container after script load:', formContainer)
-        if (formContainer) {
-          console.log('Form container content:', formContainer.innerHTML)
+        if (formContainer && formContainer.innerHTML.trim()) {
+          console.log('Form content detected, hiding loading early')
+          setShowLoading(false)
         }
-      }, 500)
+      }, 200) // Reduced from 500ms to 200ms
     }
     
     script.onerror = (e) => {
@@ -184,7 +218,6 @@ function JobberFormContent() {
     }
     
     document.head.appendChild(script)
-    console.log('Jobber script added to head')
 
     return () => {
       clearTimeout(loadingTimer)

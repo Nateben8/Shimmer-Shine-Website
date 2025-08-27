@@ -35,8 +35,33 @@ export default function GoogleReviews({
 
   useEffect(() => {
     async function loadReviews() {
+      // Check cache first for instant loading
+      if (typeof window !== 'undefined') {
+        const cached = localStorage.getItem('google-reviews-cache')
+        if (cached) {
+          try {
+            const { data, timestamp, ttl } = JSON.parse(cached)
+            if (Date.now() - timestamp < ttl) {
+              setPlaceDetails(data)
+              setReviews(data.reviews?.slice(0, maxReviews) || [])
+              setSource(data.source || 'fallback')
+              setLoading(false)
+              console.log('Loaded reviews from cache instantly')
+              return
+            }
+          } catch (cacheErr) {
+            console.error('Cache parse error:', cacheErr)
+          }
+        }
+      }
+
       try {
-        const response = await fetch('/api/google-reviews')
+        // Performance optimization: Add cache control headers
+        const response = await fetch('/api/google-reviews', {
+          headers: {
+            'Cache-Control': 'public, s-maxage=900, stale-while-revalidate=1800'
+          }
+        })
         
         if (!response.ok) {
           throw new Error('Failed to fetch reviews')
@@ -48,10 +73,37 @@ export default function GoogleReviews({
           setPlaceDetails(data.data)
           setReviews(data.data.reviews?.slice(0, maxReviews) || [])
           setSource(data.source || 'fallback')
+          
+          // Cache in localStorage for instant subsequent loads
+          if (typeof window !== 'undefined') {
+            localStorage.setItem('google-reviews-cache', JSON.stringify({
+              data: data.data,
+              timestamp: Date.now(),
+              ttl: 900000 // 15 minutes
+            }))
+          }
         }
       } catch (err) {
         console.error('Error loading Google reviews:', err)
-        // Component will show loading state
+        
+        // Try to load from localStorage cache on error
+        if (typeof window !== 'undefined') {
+          const cached = localStorage.getItem('google-reviews-cache')
+          if (cached) {
+            try {
+              const { data, timestamp, ttl } = JSON.parse(cached)
+              // Use stale cache on error (up to 1 hour old)
+              if (Date.now() - timestamp < 3600000) {
+                setPlaceDetails(data)
+                setReviews(data.reviews?.slice(0, maxReviews) || [])
+                setSource(data.source || 'fallback')
+                console.log('Loaded stale reviews from cache due to error')
+              }
+            } catch (cacheErr) {
+              console.error('Cache parse error:', cacheErr)
+            }
+          }
+        }
       } finally {
         setLoading(false)
       }
