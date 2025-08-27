@@ -33,27 +33,27 @@ export default function AboutPage() {
       />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-navy to-navy-700 text-white py-20">
+      <section className="bg-gradient-to-br from-navy to-navy-700 text-white py-12 sm:py-20">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
               <div className="retro-badge mb-6">
                 Professional Since {BUSINESS_INFO.foundedYear}
               </div>
               
-              <h1 className="heading-decorative text-5xl md:text-7xl text-yellow mb-4" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
+              <h1 className="heading-decorative text-4xl sm:text-5xl md:text-7xl text-yellow mb-4" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
                 About Us
               </h1>
               
-              <h2 className="heading-primary text-2xl md:text-3xl text-white mb-6" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
+              <h2 className="heading-primary text-xl sm:text-2xl md:text-3xl text-white mb-4 sm:mb-6" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
                 From Pressure Washing to Full Property Detailing
               </h2>
               
-              <p className="body-text text-xl text-gray-100 leading-relaxed mb-6">
+              <p className="body-text text-lg sm:text-xl text-gray-100 leading-relaxed mb-4 sm:mb-6">
                 At Shimmer Shine Property Detailing, we are dedicated to delivering crystal-clear views and exceptional property maintenance services with a commitment to 100% customer satisfaction. With over four years of professional experience serving the vibrant communities of Los Angeles County, Orange County, and San Diego County, we have honed our expertise to ensure every project sparkles with quality.
               </p>
 
-              <div className="grid grid-cols-3 gap-4 mb-6">
+              <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-4 sm:mb-6">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-yellow">4+</div>
                   <div className="text-sm text-gray-300">Years Experience</div>
@@ -75,9 +75,9 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="relative">
+            <div className="relative mt-8 lg:mt-0">
               <div className="polaroid-frame">
-                <div className="relative h-96 rounded-lg overflow-hidden">
+                <div className="relative h-64 sm:h-80 lg:h-96 rounded-lg overflow-hidden">
                   <Image
                     src="/About us image.png"
                     alt="Shimmer Shine Property Detailing - Professional Window Cleaning, Pressure Washing & Solar Panel Cleaning Team Orange County - Licensed & Insured Since 2021"
@@ -103,10 +103,10 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story */}
-      <section className="py-16">
+      <section className="py-8 sm:py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
+            <div className="text-center mb-8 sm:mb-12">
               <h3 className="heading-primary text-3xl md:text-4xl mb-6" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
                 Our Growth Story
               </h3>
@@ -115,7 +115,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
               <Card className="retro-card text-center">
                 <CardHeader>
                   <div className="w-16 h-16 bg-yellow rounded-full flex items-center justify-center mx-auto mb-4">
@@ -215,9 +215,9 @@ export default function AboutPage() {
       </section>
 
       {/* Values Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 sm:py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 sm:mb-16">
             <h3 className="heading-primary text-3xl md:text-4xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
               What Sets Us Apart
             </h3>
@@ -226,7 +226,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-12">
             <div className="text-center space-y-4">
               <div className="w-20 h-20 bg-navy rounded-full flex items-center justify-center mx-auto shadow-lg">
                 <Heart className="h-10 w-10 text-yellow" />
@@ -299,9 +299,9 @@ export default function AboutPage() {
       </section>
 
       {/* Founders Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 sm:py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 sm:mb-16">
             <h3 className="heading-primary text-3xl md:text-4xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
               Meet Our Founders
             </h3>
@@ -310,7 +310,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 max-w-5xl mx-auto mb-8 sm:mb-16">
             <Card className="retro-card h-full">
               <CardHeader className="text-center">
                 <div className="w-32 h-32 bg-navy rounded-full mx-auto mb-6 flex items-center justify-center shadow-lg">
@@ -390,9 +390,9 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-20">
+      <section className="py-12 sm:py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 sm:mb-16">
             <h3 className="heading-primary text-3xl md:text-4xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
               Our Professional Team
             </h3>
@@ -401,7 +401,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
             <Card className="retro-card text-center h-full">
               <CardHeader>
                 <div className="w-24 h-24 bg-yellow rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
@@ -480,9 +480,9 @@ export default function AboutPage() {
       </section>
 
       {/* Achievements */}
-      <section className="py-20 bg-navy text-white">
+      <section className="py-12 sm:py-20 bg-navy text-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 sm:mb-16">
             <h3 className="heading-decorative text-4xl md:text-5xl text-yellow mb-4" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
               Proven Excellence
             </h3>
@@ -491,7 +491,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-12">
             <div className="text-center">
               <div className="text-5xl font-bold text-yellow mb-3">4+</div>
               <p className="text-lg text-gray-200 font-semibold">Years of Excellence</p>
@@ -553,16 +553,16 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-yellow">
+      <section className="py-12 sm:py-20 bg-yellow">
         <div className="container mx-auto px-4 text-center">
-          <h3 className="heading-decorative text-4xl md:text-5xl text-navy mb-6" style={{textShadow: '2px 2px 0px #FFFFFF, 3px 3px 0px #F5F5F5, 4px 4px 0px #E0E0E0'}}>
+          <h3 className="heading-decorative text-3xl sm:text-4xl md:text-5xl text-navy mb-4 sm:mb-6" style={{textShadow: '2px 2px 0px #FFFFFF, 3px 3px 0px #F5F5F5, 4px 4px 0px #E0E0E0'}}>
             Ready to Experience the Difference?
           </h3>
-          <p className="body-text text-xl text-navy-700 mb-8 max-w-4xl mx-auto">
+          <p className="body-text text-lg sm:text-xl text-navy-700 mb-6 sm:mb-8 max-w-4xl mx-auto">
             Contact us today to experience the difference with Shimmer Shine Property Detailing, where every window cleaning, pressure washing, and property maintenance job is completed with care, precision, and a smile. Join hundreds of satisfied residential and commercial customers throughout Orange County, Los Angeles County, and San Diego County who trust us for exceptional results and 100% customer satisfaction.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-6 sm:mb-8">
             <Link href="/get-a-quote">
               <Button variant="retro-navy" size="lg" className="text-lg px-10 py-4 shadow-lg hover:shadow-xl transition-all">
                 Get Your Free Quote Today
