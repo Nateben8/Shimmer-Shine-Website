@@ -123,64 +123,38 @@ function JobberFormSkeleton() {
   )
 }
 
-// Simplified and more reliable Jobber form component
+// Simplified Jobber form component - basic approach
 function JobberFormContent() {
-  const [isLoaded, setIsLoaded] = useState(false)
-  const [error, setError] = useState<string | null>(null)
-  const [isVisible, setIsVisible] = useState(false)
   const [showLoading, setShowLoading] = useState(true)
-  const containerRef = useRef<HTMLDivElement>(null)
+  const [error, setError] = useState<string | null>(null)
 
-  // Intersection Observer for lazy loading
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setIsVisible(true)
-          observer.disconnect()
-        }
-      },
-      { 
-        threshold: 0.1,
-        rootMargin: '50px'
-      }
-    )
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
-
-  // Enhanced loading animation with minimum display time
-  useEffect(() => {
-    // Always show loading for at least 3 seconds for better UX
-    const minLoadingTimer = setTimeout(() => {
+    console.log('Starting Jobber form load...')
+    console.log('CLIENT_HUB_ID:', CLIENT_HUB_ID)
+    console.log('FORM_URL:', FORM_URL)
+    
+    // Show loading for 3 seconds minimum
+    const loadingTimer = setTimeout(() => {
       setShowLoading(false)
+      console.log('Loading animation complete')
+      
+      // Check if form element exists after loading
+      const formContainer = document.getElementById(CLIENT_HUB_ID)
+      console.log('Form container after loading:', formContainer)
+      if (formContainer) {
+        console.log('Form container innerHTML:', formContainer.innerHTML)
+      }
     }, 3000)
 
-    return () => clearTimeout(minLoadingTimer)
-  }, [])
-
-  // Simplified Jobber form loading - load immediately
-  useEffect(() => {
-    console.log('Loading Jobber form...')
-    
-    // Clean up any existing scripts/styles first
-    const existingScript = document.querySelector('script[src*="work_request_embed_snippet.js"]')
-    if (existingScript) {
-      existingScript.remove()
-    }
-    
-    // Load CSS
+    // Load Jobber CSS
     const cssLink = document.createElement('link')
     cssLink.rel = 'stylesheet'
     cssLink.href = JOBBER_CSS_URL
     cssLink.media = 'all'
     document.head.appendChild(cssLink)
+    console.log('Jobber CSS loaded')
 
-    // Load and execute script
+    // Load Jobber script
     const script = document.createElement('script')
     script.src = JOBBER_JS_URL
     script.setAttribute('clienthub_id', CLIENT_HUB_ID)
@@ -190,30 +164,30 @@ function JobberFormContent() {
     script.onload = () => {
       console.log('Jobber script loaded successfully')
       
-      // Set loaded after a reasonable delay to allow form to render
+      // Check if the script created any global functions
+      console.log('Window object keys after script load:', Object.keys(window).filter(key => key.toLowerCase().includes('jobber')))
+      
+      // Check form container immediately after script load
       setTimeout(() => {
-        setIsLoaded(true)
-        console.log('Form marked as loaded')
-      }, 1000)
+        const formContainer = document.getElementById(CLIENT_HUB_ID)
+        console.log('Form container after script load:', formContainer)
+        if (formContainer) {
+          console.log('Form container content:', formContainer.innerHTML)
+        }
+      }, 500)
     }
     
     script.onerror = (e) => {
       console.error('Jobber script failed to load:', e)
-      setError('Form temporarily unavailable. Please call us directly at (714) 497-0035.')
+      setError('Form temporarily unavailable. Please call us directly.')
       setShowLoading(false)
     }
     
     document.head.appendChild(script)
-
-    // Fallback timer - ensure form shows after maximum wait time
-    const fallbackTimer = setTimeout(() => {
-      console.log('Fallback timer triggered - forcing form to show')
-      setIsLoaded(true)
-      setShowLoading(false)
-    }, 4000)
+    console.log('Jobber script added to head')
 
     return () => {
-      clearTimeout(fallbackTimer)
+      clearTimeout(loadingTimer)
     }
   }, [])
 
@@ -229,7 +203,7 @@ function JobberFormContent() {
             Call (714) 497-0035
           </a>
           <a 
-            href="mailto:support@shimmershinepropertydetailing.com?subject=Free Quote Request&body=Hi! I'd like to request a free quote for window cleaning services. Please contact me at your earliest convenience."
+            href="mailto:support@shimmershinepropertydetailing.com?subject=Free Quote Request"
             className="retro-button-navy inline-block"
           >
             Email for Quote
@@ -240,34 +214,20 @@ function JobberFormContent() {
   }
 
   return (
-    <div className="relative" ref={containerRef}>
-      {/* Show loading bar while form is loading */}
-      {(showLoading && !isLoaded) ? (
+    <div className="relative">
+      {/* Show loading while initializing */}
+      {showLoading && (
         <div className="w-full">
           <JobberFormSkeleton />
         </div>
-      ) : (
-        <>
-          {/* Jobber form container - matches the div from your embed code */}
-          <div 
-            id={CLIENT_HUB_ID}
-            className="w-full transition-opacity duration-500 opacity-100"
-            style={{ minHeight: '400px' }}
-          />
-          
-          {/* Manual refresh option if form doesn't load */}
-          {!isLoaded && !error && (
-            <div className="absolute bottom-4 right-4 z-30">
-              <button
-                onClick={() => window.location.reload()}
-                className="bg-yellow text-navy px-3 py-1 rounded text-xs font-medium hover:bg-yellow-400 transition-colors"
-              >
-                Refresh Form
-              </button>
-            </div>
-          )}
-        </>
       )}
+      
+      {/* Jobber form container */}
+      <div 
+        id={CLIENT_HUB_ID}
+        className={`w-full transition-opacity duration-500 ${showLoading ? 'opacity-0 absolute inset-0' : 'opacity-100'}`}
+        style={{ minHeight: '400px' }}
+      />
     </div>
   )
 }
