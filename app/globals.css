@@ -853,12 +853,14 @@ html {
   }
 
   .card-glass-enhanced {
-    @apply bg-white/95 backdrop-blur-sm border border-white/20 rounded-xl 
-           shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-white/98;
+    @apply bg-white/95 border border-white/20 rounded-xl 
+           shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-white;
+    backdrop-filter: blur(4px);
   }
 
   .retro-card-glass {
-    @apply bg-white/90 backdrop-blur-md border-2 border-navy/20 shadow-2xl rounded-xl overflow-hidden;
+    @apply bg-white/90 border-2 border-navy/20 shadow-2xl rounded-xl overflow-hidden;
+    backdrop-filter: blur(8px);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 

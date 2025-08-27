@@ -1,7 +1,8 @@
 "use client"
 
 import { motion, AnimatePresence, Variants } from 'framer-motion'
-import { ReactNode } from 'react'
+import { ReactNode, useState, useCallback, useEffect } from 'react'
+import Image from 'next/image'
 
 interface MotionWrapperProps {
   children: ReactNode
