@@ -441,7 +441,64 @@ export default function GalleryPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {/* Mobile: Single column with optimized cards */}
+            <div className="block sm:hidden space-y-6">
+              {category.items.map((item) => (
+                <Card key={item.id} className="retro-card hover:shadow-retro-yellow transition-all duration-300 group overflow-hidden">
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    {/* Combined Before/After Image */}
+                    <div className="relative h-full">
+                      <Image
+                        src={item.beforeImage}
+                        alt={`${item.title} - ${item.service} before and after results`}
+                        fill
+                        className="object-cover"
+                        sizes="100vw"
+                        priority={category.items.indexOf(item) < 2}
+                      />
+                      <div className="absolute top-3 left-3 bg-red-500 text-white px-3 py-2 rounded-lg text-sm font-bold shadow-lg">
+                        BEFORE
+                      </div>
+                      <div className="absolute top-3 right-3 bg-green-500 text-white px-3 py-2 rounded-lg text-sm font-bold shadow-lg">
+                        AFTER
+                      </div>
+                    </div>
+                  </div>
+
+                  <CardHeader className="pb-3">
+                    <CardTitle className="heading-primary text-lg text-navy leading-tight">
+                      {item.title}
+                    </CardTitle>
+                    <div className="flex items-center space-x-2 text-sm text-gray-600">
+                      <div className="flex items-center space-x-1">
+                        <MapPin className="h-4 w-4 flex-shrink-0" />
+                        <span className="truncate">{item.location}</span>
+                      </div>
+                    </div>
+                  </CardHeader>
+                  
+                  <CardContent className="pt-0">
+                    <div className="space-y-4">
+                      <div className="retro-badge text-sm">
+                        {item.service}
+                      </div>
+                      <p className="body-text text-sm text-gray-700 leading-relaxed">
+                        {item.description}
+                      </p>
+                      <Link href="/get-a-quote">
+                        <Button variant="outline" className="w-full group-hover:bg-yellow group-hover:text-navy transition-colors py-3 text-base font-semibold">
+                          Get Similar Results
+                          <ArrowRight className="h-5 w-5 ml-2" />
+                        </Button>
+                      </Link>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            {/* Desktop: Original grid layout */}
+            <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {category.items.map((item) => (
                 <Card key={item.id} className="retro-card hover:shadow-retro-yellow transition-all duration-300 group overflow-hidden">
                   <div className="relative h-48 sm:h-64 overflow-hidden">
@@ -510,7 +567,58 @@ export default function GalleryPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+          {/* Mobile: Single column with optimized spacing */}
+          <div className="block lg:hidden space-y-8 mb-12">
+            {/* Window Cleaning Showcase */}
+            <div className="relative">
+              <div className="polaroid-frame">
+                <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+                  <Image
+                    src="/window-cleaning-before-after.png"
+                    alt="Dramatic window cleaning transformation in Newport Beach showing crystal clear results"
+                    fill
+                    className="object-cover"
+                    sizes="100vw"
+                    quality={90}
+                    priority
+                  />
+                  <div className="absolute top-3 left-3 bg-yellow text-navy px-3 py-2 rounded-lg font-bold text-sm shadow-lg">
+                    FEATURED PROJECT
+                  </div>
+                </div>
+                <div className="text-center mt-4">
+                  <h4 className="font-arvo font-bold text-yellow text-lg leading-tight">Newport Beach Oceanfront Home</h4>
+                  <p className="text-sm text-gray-300 mt-1">Professional window cleaning restoration</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Pressure Washing Showcase */}
+            <div className="relative">
+              <div className="polaroid-frame">
+                <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+                  <Image
+                    src="/pressure-washing-before-after.png"
+                    alt="Dramatic pressure washing transformation in Anaheim Hills showing concrete restoration"
+                    fill
+                    className="object-cover"
+                    sizes="100vw"
+                    quality={90}
+                  />
+                  <div className="absolute top-3 left-3 bg-yellow text-navy px-3 py-2 rounded-lg font-bold text-sm shadow-lg">
+                    FEATURED PROJECT
+                  </div>
+                </div>
+                <div className="text-center mt-4">
+                  <h4 className="font-arvo font-bold text-yellow text-lg leading-tight">Anaheim Hills Estate Driveway</h4>
+                  <p className="text-sm text-gray-300 mt-1">Professional pressure washing restoration</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop: Original grid layout */}
+          <div className="hidden lg:grid lg:grid-cols-2 gap-12 mb-16">
             {/* Window Cleaning Showcase */}
             <div className="relative">
               <div className="polaroid-frame">
@@ -520,7 +628,7 @@ export default function GalleryPage() {
                     alt="Dramatic window cleaning transformation in Newport Beach showing crystal clear results"
                     fill
                     className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    sizes="50vw"
                     quality={90}
                   />
                   <div className="absolute top-4 left-4 bg-yellow text-navy px-3 py-1 rounded-lg font-bold text-sm">
@@ -543,7 +651,7 @@ export default function GalleryPage() {
                     alt="Dramatic pressure washing transformation in Anaheim Hills showing concrete restoration"
                     fill
                     className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    sizes="50vw"
                     quality={90}
                   />
                   <div className="absolute top-4 left-4 bg-yellow text-navy px-3 py-1 rounded-lg font-bold text-sm">
@@ -558,10 +666,11 @@ export default function GalleryPage() {
             </div>
           </div>
 
-          {/* Post-Construction Showcase */}
+          {/* Post-Construction Showcase - Mobile Optimized */}
           <div className="max-w-4xl mx-auto">
             <div className="polaroid-frame">
-              <div className="relative h-96 rounded-lg overflow-hidden">
+              {/* Mobile: Aspect ratio optimized */}
+              <div className="relative aspect-[4/3] lg:h-96 rounded-lg overflow-hidden">
                 <Image
                   src="/PostContructioncleanup2.jpg"
                   alt="Professional post-construction cleanup transformation in Orange County showing complete debris removal and site preparation"
@@ -570,13 +679,13 @@ export default function GalleryPage() {
                   sizes="100vw"
                   quality={90}
                 />
-                <div className="absolute top-4 left-4 bg-yellow text-navy px-3 py-1 rounded-lg font-bold text-sm">
+                <div className="absolute top-3 left-3 lg:top-4 lg:left-4 bg-yellow text-navy px-3 py-2 rounded-lg font-bold text-sm shadow-lg">
                   LATEST PROJECT
                 </div>
               </div>
               <div className="text-center mt-4">
-                <h4 className="font-arvo font-bold text-yellow text-xl">Orange County Construction Site</h4>
-                <p className="text-gray-300">Complete post-construction cleanup and site preparation</p>
+                <h4 className="font-arvo font-bold text-yellow text-lg lg:text-xl leading-tight">Orange County Construction Site</h4>
+                <p className="text-sm lg:text-base text-gray-300 mt-1">Complete post-construction cleanup and site preparation</p>
               </div>
             </div>
           </div>
@@ -716,7 +825,7 @@ export default function GalleryPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             <Card className="retro-card">
               <CardHeader>
                 <div className="flex items-center space-x-1 mb-2">
@@ -793,14 +902,14 @@ export default function GalleryPage() {
             Join the hundreds of satisfied customers featured in our gallery. Experience the Shimmer Shine difference with professional cleaning services that deliver dramatic, lasting results.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
-            <Link href="/get-a-quote">
-              <Button variant="retro-navy" size="lg" className="text-lg px-10 py-4 shadow-lg hover:shadow-xl transition-all">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-8">
+            <Link href="/get-a-quote" className="w-full sm:w-auto">
+              <Button variant="retro-navy" size="lg" className="w-full sm:w-auto text-base sm:text-lg px-8 sm:px-10 py-4 shadow-lg hover:shadow-xl transition-all min-h-[56px]">
                 Get Your Free Quote Today
               </Button>
             </Link>
-            <Link href={`tel:${BUSINESS_INFO.phone}`}>
-              <Button variant="outline" size="lg" className="text-lg px-10 py-4 border-2 border-yellow text-yellow hover:bg-yellow hover:text-navy shadow-lg">
+            <Link href={`tel:${BUSINESS_INFO.phone}`} className="w-full sm:w-auto">
+              <Button variant="outline" size="lg" className="w-full sm:w-auto text-base sm:text-lg px-8 sm:px-10 py-4 border-2 border-navy text-navy hover:bg-navy hover:text-yellow shadow-lg min-h-[56px]">
                 Call {BUSINESS_INFO.phone}
               </Button>
             </Link>
