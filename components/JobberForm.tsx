@@ -261,30 +261,32 @@ function JobberFormContent() {
 
   return (
     <div className="relative" ref={containerRef}>
-      {/* Show enhanced skeleton while loading */}
-      {(showLoading || !isLoaded || !isVisible) && (
-        <div className="absolute inset-0 z-10 bg-white rounded-lg">
+      {/* Show loading bar while form is loading */}
+      {(showLoading || !isLoaded || !isVisible) ? (
+        <div className="w-full">
           <JobberFormSkeleton />
         </div>
-      )}
-      
-      {/* Jobber form container - matches the div from your embed code */}
-      <div 
-        id={CLIENT_HUB_ID}
-        className={`w-full transition-opacity duration-500 ${isLoaded && isVisible && !showLoading ? 'opacity-100' : 'opacity-0'}`}
-        style={{ minHeight: '400px' }}
-      />
-      
-      {/* Manual refresh option if form doesn't load */}
-      {isVisible && !isLoaded && !error && !showLoading && (
-        <div className="absolute bottom-4 right-4 z-30">
-          <button
-            onClick={() => window.location.reload()}
-            className="bg-yellow text-navy px-3 py-1 rounded text-xs font-medium hover:bg-yellow-400 transition-colors"
-          >
-            Refresh Form
-          </button>
-        </div>
+      ) : (
+        <>
+          {/* Jobber form container - matches the div from your embed code */}
+          <div 
+            id={CLIENT_HUB_ID}
+            className="w-full transition-opacity duration-500 opacity-100"
+            style={{ minHeight: '400px' }}
+          />
+          
+          {/* Manual refresh option if form doesn't load */}
+          {isVisible && !isLoaded && !error && (
+            <div className="absolute bottom-4 right-4 z-30">
+              <button
+                onClick={() => window.location.reload()}
+                className="bg-yellow text-navy px-3 py-1 rounded text-xs font-medium hover:bg-yellow-400 transition-colors"
+              >
+                Refresh Form
+              </button>
+            </div>
+          )}
+        </>
       )}
     </div>
   )
