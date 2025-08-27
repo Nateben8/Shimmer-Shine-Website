@@ -148,11 +148,6 @@ export default function Hero() {
                   </video>
                   {/* Video Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/30 via-transparent to-transparent pointer-events-none" />
-                  
-                  {/* Mobile Play Indicator */}
-                  <div className="absolute top-4 right-4 bg-black/50 text-white px-2 py-1 rounded text-xs font-semibold backdrop-blur-sm sm:hidden">
-                    LIVE
-                  </div>
                 </div>
               </div>
               <div className="text-center mt-4 text-navy">
