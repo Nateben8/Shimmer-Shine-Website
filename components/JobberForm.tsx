@@ -299,8 +299,8 @@ export default function JobberForm() {
         <p className="text-sm text-green-600 font-medium">Save $50-200 on your first service</p>
       </div>
       
-      {/* Enhanced Trust Indicators */}
-      <div className="trust-indicator">
+      {/* Enhanced Trust Indicators - Always Visible */}
+      <div className="trust-indicator mb-6">
         <div className="flex items-center space-x-1">
           <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
           <span>SSL Secured</span>
@@ -319,11 +319,12 @@ export default function JobberForm() {
         </div>
       </div>
       
-      
-      
-      <Suspense fallback={<JobberFormSkeleton />}>
-        <JobberFormContent />
-      </Suspense>
+      {/* Form Content Area */}
+      <div className="relative">
+        <Suspense fallback={<JobberFormSkeleton />}>
+          <JobberFormContent />
+        </Suspense>
+      </div>
     </div>
   )
 }
