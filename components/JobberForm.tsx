@@ -78,9 +78,14 @@ function JobberFormSkeleton() {
         <div className="pt-4" style={{animationDelay: '0.6s'}}>
           <div className="h-14 bg-gradient-to-r from-yellow to-yellow/90 rounded-lg shadow-lg flex items-center justify-center relative overflow-hidden border-2 border-navy">
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse"></div>
-            <div className="flex items-center space-x-3 relative z-10">
-              <div className="w-6 h-6 border-3 border-navy border-t-transparent rounded-full animate-spin"></div>
+            <div className="flex flex-col items-center space-y-3 relative z-10 w-full">
               <span className="heading-primary text-navy">Preparing Your Form</span>
+              
+              {/* Loading Bar */}
+              <div className="w-full max-w-xs bg-navy/20 rounded-full h-3 overflow-hidden">
+                <div className="h-full bg-gradient-to-r from-navy to-navy/80 rounded-full progress-bar-fill"></div>
+              </div>
+              
               <div className="flex space-x-1">
                 <div className="w-2 h-2 bg-navy rounded-full animate-bounce"></div>
                 <div className="w-2 h-2 bg-navy rounded-full animate-bounce delay-100"></div>
