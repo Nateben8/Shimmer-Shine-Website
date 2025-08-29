@@ -32,7 +32,7 @@ export default function GetQuotePage() {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Free Window Cleaning Quote Orange County",
-    "description": "Get a free quote for professional window cleaning, pressure washing, and property detailing services in Orange County. Same day service available with 10% discount for new customers.",
+    "description": "Get a free quote for professional window cleaning, pressure washing, and property detailing services in Orange County. Same day service available with 15% discount for new customers.",
     "provider": {
       "@type": "LocalBusiness",
       "name": "Shimmer Shine Property Detailing",
@@ -58,7 +58,7 @@ export default function GetQuotePage() {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD",
-      "description": "Free quote with 10% discount on first service",
+      "description": "Free quote with 15% discount on first service",
       "validThrough": "2024-12-31"
     },
     "serviceType": [
@@ -152,7 +152,7 @@ export default function GetQuotePage() {
               
               <h1 className="heading-decorative text-4xl md:text-6xl text-yellow mb-2 leading-tight" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
                 <span className="block sm:inline">Get Your FREE Quote</span>{' '}
-                <span className="block sm:inline text-red-800" style={{color: '#FF4500', textShadow: '2px 2px 0px #FFFFFF, 3px 3px 0px #FFE4E1, 4px 4px 0px #FFA07A'}}>+ 10% OFF</span>
+                <span className="block sm:inline text-red-800" style={{color: '#FF4500', textShadow: '2px 2px 0px #FFFFFF, 3px 3px 0px #FFE4E1, 4px 4px 0px #FFA07A'}}>+ 15% OFF</span>
               </h1>
               <h2 className="heading-primary text-2xl md:text-3xl text-white mb-4" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
                 in 60 Seconds
@@ -471,7 +471,7 @@ export default function GetQuotePage() {
                 Get Your FREE Quote + Save Big!
               </h3>
               <p className="body-text text-gray-700 text-lg mb-6 max-w-2xl mx-auto leading-relaxed">
-                <strong>Professional window cleaning made affordable!</strong> Get your complimentary quote and enjoy an exclusive <span className="font-bold text-xl" style={{color: '#8B0000'}}>10% discount</span> on your first service. Join hundreds of satisfied Orange County customers!
+                <strong>Professional window cleaning made affordable!</strong> Get your complimentary quote and enjoy an exclusive <span className="font-bold text-xl" style={{color: '#8B0000'}}>15% discount</span> on your first service. Join hundreds of satisfied Orange County customers!
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm max-w-2xl mx-auto">
                 <div className="flex items-center justify-center space-x-3 bg-navy/5 p-4 rounded-xl border border-navy/10">
@@ -584,7 +584,7 @@ export default function GetQuotePage() {
               <span className="block sm:inline">Started Today?</span>
             </h3>
             <p className="body-text text-xl text-navy-700 mb-6">
-              Join 500+ satisfied customers who've already saved with our exclusive discount. Get your FREE quote + <span className="font-bold" style={{color: '#FF4500'}}>10% OFF</span> before this offer expires!
+              Join 500+ satisfied customers who've already saved with our exclusive discount. Get your FREE quote + <span className="font-bold" style={{color: '#FF4500'}}>15% OFF</span> before this offer expires!
             </p>
             
             {/* Final Urgency Counter */}
@@ -614,7 +614,7 @@ export default function GetQuotePage() {
                 size="lg" 
                 className="text-lg px-8 py-4 animate-pulse"
               >
-                🚀 Claim My FREE Quote + <span style={{color: '#FF4500'}}>10% OFF</span> ↑
+                🚀 Claim My FREE Quote + <span style={{color: '#FF4500'}}>15% OFF</span> ↑
               </ScrollToFormButton>
               <Link href={`tel:${BUSINESS_INFO.phone}`}>
                 <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-navy text-navy hover:bg-navy hover:text-white">

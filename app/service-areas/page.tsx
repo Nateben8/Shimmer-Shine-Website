@@ -349,7 +349,7 @@ export default function ServiceAreasPage() {
 
           <div className="text-center">
             <p className="text-sm text-gray-300">
-              <strong>Limited Time:</strong> 10% off your first service when you book this month!
+              <strong>Limited Time:</strong> 15% off your first service when you book this month!
             </p>
           </div>
         </div>

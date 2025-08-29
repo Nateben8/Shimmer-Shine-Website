@@ -277,7 +277,7 @@ export default function JobberForm() {
         <div className="bg-yellow text-navy px-4 py-2 rounded-full font-bold text-sm mb-3 inline-block">
           Professional Service Since 2021
         </div>
-        <h3 className="heading-primary text-2xl mb-2">Get Your FREE Quote + 10% OFF</h3>
+        <h3 className="heading-primary text-2xl mb-2">Get Your FREE Quote + 15% OFF</h3>
 
         <p className="text-sm text-green-600 font-medium">Save $50-200 on your first service</p>
       </div>
