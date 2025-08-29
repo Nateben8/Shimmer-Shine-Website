@@ -152,7 +152,7 @@ export default function GetQuotePage() {
               
               <h1 className="heading-decorative text-4xl md:text-6xl text-yellow mb-2 leading-tight" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
                 <span className="block sm:inline">Get Your FREE Quote</span>{' '}
-                <span className="block sm:inline text-red-800" style={{color: '#FF4500', textShadow: '2px 2px 0px #FFFFFF, 3px 3px 0px #FFE4E1, 4px 4px 0px #FFA07A'}}>+ 15% OFF</span>
+                <span className="block sm:inline text-red-800" style={{color: '#FF4500', textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>+ 15% OFF</span>
               </h1>
               <h2 className="heading-primary text-2xl md:text-3xl text-white mb-4" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
                 in 60 Seconds
