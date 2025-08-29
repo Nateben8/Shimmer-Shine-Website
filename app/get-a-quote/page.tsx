@@ -584,7 +584,7 @@ export default function GetQuotePage() {
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-3xl mx-auto">
             <h3 className="heading-decorative text-4xl md:text-5xl text-navy mb-4" style={{textShadow: '2px 2px 0px #FFFFFF, 3px 3px 0px #F5F5F5, 4px 4px 0px #E0E0E0'}}>
-              <span className="block sm:inline">Don't Miss Out -</span>{' '}
+              <span className="block sm:inline">Ready to Get</span>{' '}
               <span className="block sm:inline">Started Today?</span>
             </h3>
             <p className="body-text text-xl text-navy-700 mb-6">
