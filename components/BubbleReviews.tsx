@@ -205,8 +205,147 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
 
         {/* Carousel Bubble Container */}
         <div className="relative mb-4" style={{ paddingTop: '40px', paddingBottom: '20px', overflow: 'visible' }}>
-          {/* First row of bubbles */}
-          <div className="flex gap-4 sm:gap-6 lg:gap-8 mb-6" style={{ overflow: 'visible' }}>
+          {/* Mobile: Horizontal scrolling carousel */}
+          <div className="block md:hidden">
+            <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide" style={{ scrollSnapType: 'x mandatory' }}>
+              {EXTENDED_TESTIMONIALS.slice(0, 15).map((testimonial, index) => {
+                const isExpanded = expandedId === testimonial.id
+                const bubbleSize = 'w-32 h-32' // Fixed size for mobile
+                
+                return (
+                  <motion.div
+                    key={`mobile-${testimonial.id}`}
+                    className="relative flex-shrink-0"
+                    style={{ scrollSnapAlign: 'start' }}
+                  >
+                    {/* Mobile Bubble */}
+                    <motion.button
+                      className={`
+                        ${isExpanded ? 'w-80 h-80 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2' : bubbleSize} 
+                        rounded-full relative overflow-hidden cursor-pointer
+                        bg-gradient-to-br from-navy-100/90 via-white/95 to-navy-50/90
+                        border-2 border-navy-200/60 shadow-2xl backdrop-blur-sm
+                        hover:shadow-3xl transition-all duration-500
+                        focus:outline-none focus:ring-4 focus:ring-navy-300/50
+                        ${isExpanded ? 'z-50' : 'z-10'}
+                      `}
+                      onClick={() => handleBubbleClick(testimonial.id)}
+                      onKeyDown={(e) => handleKeyDown(e, testimonial.id)}
+                      aria-expanded={isExpanded}
+                      aria-controls={`review-${testimonial.id}`}
+                      whileHover={!isExpanded ? { scale: 1.03, y: -5 } : {}}
+                      whileTap={!isExpanded ? { scale: 0.97 } : {}}
+                      layout
+                      transition={{
+                        layout: { duration: 0.6, ease: "easeInOut" },
+                        scale: { duration: 0.3 }
+                      }}
+                    >
+                      {/* Sophisticated shine effects */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-white/70 via-transparent to-transparent rounded-full" />
+                      <div className="absolute top-3 left-4 w-6 h-6 bg-white/50 rounded-full blur-sm" />
+                      <div className="absolute top-6 right-4 w-3 h-3 bg-white/70 rounded-full" />
+                      <div className="absolute bottom-4 left-6 w-4 h-4 bg-white/40 rounded-full blur-sm" />
+                      
+                      {/* Premium rim highlight */}
+                      <div className="absolute inset-0 rounded-full border-2 border-white/60" />
+                      <div className="absolute inset-1 rounded-full border border-navy-100/40" />
+                      
+                      {/* Content inside bubble */}
+                      <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
+                        {!isExpanded ? (
+                          // Preview content
+                          <div className="text-center space-y-1 w-full">
+                            {/* Customer name */}
+                            <h3 className="font-bold text-navy-900 text-xs leading-tight">
+                              {testimonial.name}
+                            </h3>
+                            
+                            {/* Star rating */}
+                            <div className="flex items-center justify-center gap-1">
+                              {[...Array(testimonial.rating)].map((_, i) => (
+                                <Star key={i} className="w-2 h-2 fill-yellow-500 text-yellow-500" />
+                              ))}
+                            </div>
+                            
+                            {/* Preview text */}
+                            <p className="text-xs text-navy-700 font-medium leading-tight px-1">
+                              "{getPreviewText(testimonial.review, 4)}"
+                            </p>
+                            
+                            {/* Click indicator */}
+                            <div className="mt-1">
+                              <span className="text-xs text-navy-500 bg-navy-100/50 px-1 py-0.5 rounded-full">
+                                Tap to read
+                              </span>
+                            </div>
+                          </div>
+                        ) : (
+                          // Expanded content for mobile
+                          <motion.div
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.2, duration: 0.4 }}
+                            className="w-full h-full flex flex-col relative"
+                          >
+                            {/* Close button - Fixed positioning for mobile */}
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation()
+                                handleBubbleClick(testimonial.id)
+                              }}
+                              className="absolute -top-2 -right-2 w-12 h-12 bg-red-500 hover:bg-red-600 rounded-full flex items-center justify-center transition-colors z-30 shadow-xl border-2 border-white"
+                            >
+                              <X className="w-6 h-6 text-white font-bold" />
+                            </button>
+                            
+                            {/* Expanded review content */}
+                            <div className="flex-1 flex flex-col justify-center space-y-4 p-6">
+                              {/* Header */}
+                              <div className="text-center space-y-2">
+                                <h3 className="font-bold text-navy-900 text-xl">
+                                  {testimonial.name}
+                                </h3>
+                                <div className="flex items-center justify-center gap-1">
+                                  {[...Array(testimonial.rating)].map((_, i) => (
+                                    <Star key={i} className="w-6 h-6 fill-yellow-500 text-yellow-500" />
+                                  ))}
+                                </div>
+                              </div>
+                              
+                              {/* Full review text */}
+                              <div className="text-center">
+                                <p className="text-navy-800 text-base leading-relaxed font-medium">
+                                  "{testimonial.review}"
+                                </p>
+                              </div>
+                              
+                              {/* Date and service info */}
+                              <div className="text-center space-y-1">
+                                <p className="text-sm text-navy-600 font-medium">
+                                  {formatDate(testimonial.date)}
+                                </p>
+                                {'service' in testimonial && testimonial.service && (
+                                  <p className="text-xs text-navy-500 bg-navy-100/60 px-3 py-1 rounded-full inline-block">
+                                    {testimonial.service}
+                                  </p>
+                                )}
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </div>
+                    </motion.button>
+                  </motion.div>
+                )
+              })}
+            </div>
+          </div>
+
+          {/* Desktop: Original grid layout */}
+          <div className="hidden md:block">
+            {/* First row of bubbles */}
+            <div className="flex gap-4 sm:gap-6 lg:gap-8 mb-6" style={{ overflow: 'visible' }}>
             {EXTENDED_TESTIMONIALS.slice(0, 10).map((testimonial, index) => {
               const isExpanded = expandedId === testimonial.id
               const bubbleSize = getBubbleSize(index)
@@ -525,7 +664,7 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
             })}
           </div>
 
-          {/* Background decorative elements */}
+          {/* Background decorative elements for desktop */}
           <div className="absolute inset-0 pointer-events-none">
             {[...Array(12)].map((_, i) => (
               <motion.div
@@ -549,6 +688,7 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                 }}
               />
             ))}
+          </div>
           </div>
         </div>
 
