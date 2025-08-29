@@ -187,7 +187,7 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
   }
 
   return (
-    <section className={`py-4 sm:py-6 md:py-8 lg:py-10 bg-white ${sectionClassName}`}>
+    <section className={`py-3 sm:py-4 md:py-8 lg:py-10 bg-white ${sectionClassName}`}>
       <div className="container mx-auto px-4">
         {/* Header - Mobile Optimized */}
         <div className="text-center mb-4 md:mb-6">
@@ -204,8 +204,8 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
         </div>
 
         {/* Carousel Bubble Container */}
-        <div className="relative mb-2 md:mb-4 pt-5 pb-2 md:pt-10 md:pb-5" style={{ overflow: 'visible' }}>
-          {/* Mobile: Horizontal scrolling carousel */}
+        <div className="relative mb-2 md:mb-4 pt-3 pb-1 md:pt-10 md:pb-5" style={{ overflow: 'visible' }}>
+          {/* Mobile: Horizontal swipe carousel - Compact */}
           <div className="block md:hidden">
             {/* Mobile backdrop overlay when expanded */}
             <AnimatePresence>
@@ -214,16 +214,18 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+                  className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
                   onClick={() => setExpandedId(null)}
                 />
               )}
             </AnimatePresence>
             
-            <div className="flex gap-3 overflow-x-auto pb-6 px-4 scrollbar-hide" style={{ scrollSnapType: 'x mandatory' }}>
-              {EXTENDED_TESTIMONIALS.slice(0, 12).map((testimonial, index) => {
-                const isExpanded = expandedId === testimonial.id
-                const bubbleSize = 'w-28 h-28' // Optimized size for mobile
+            {/* Compact horizontal scroll container */}
+            <div className="relative">
+              <div className="flex gap-4 overflow-x-auto pb-2 px-4 scrollbar-hide" style={{ scrollSnapType: 'x mandatory', scrollBehavior: 'smooth' }}>
+                {EXTENDED_TESTIMONIALS.slice(0, 8).map((testimonial, index) => {
+                  const isExpanded = expandedId === testimonial.id
+                  const bubbleSize = 'w-24 h-24' // Smaller, more compact size
                 
                 return (
                   <motion.div
@@ -231,16 +233,17 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                     className="relative flex-shrink-0"
                     style={{ scrollSnapAlign: 'start' }}
                   >
-                    {/* Mobile Bubble */}
+                    {/* Mobile Bubble - Compact */}
                     <motion.button
                       className={`
-                        ${isExpanded ? 'w-[90vw] h-[90vw] max-w-sm max-h-sm fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2' : bubbleSize} 
-                        rounded-full relative overflow-hidden cursor-pointer
-                        bg-gradient-to-br from-navy-100/90 via-white/95 to-navy-50/90
-                        border-2 border-navy-200/60 shadow-2xl backdrop-blur-sm
-                        transition-all duration-500
-                        focus:outline-none focus:ring-4 focus:ring-navy-300/50
+                        ${isExpanded ? 'w-[85vw] h-[70vh] max-w-md fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-2xl' : `${bubbleSize} rounded-full`} 
+                        relative overflow-hidden cursor-pointer
+                        bg-gradient-to-br from-navy-100/95 via-white/98 to-navy-50/95
+                        border-2 border-navy-200/70 shadow-xl backdrop-blur-sm
+                        transition-all duration-400
+                        focus:outline-none focus:ring-3 focus:ring-navy-300/50
                         ${isExpanded ? 'z-50' : 'z-10'}
+                        hover:shadow-2xl hover:scale-105
                       `}
                       onClick={() => handleBubbleClick(testimonial.id)}
                       onKeyDown={(e) => handleKeyDown(e, testimonial.id)}
@@ -249,7 +252,7 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                       whileTap={{ scale: 0.95 }}
                       layout
                       transition={{
-                        layout: { duration: 0.5, ease: "easeInOut" }
+                        layout: { duration: 0.4, ease: "easeInOut" }
                       }}
                     >
                       {/* Sophisticated shine effects */}
@@ -265,8 +268,8 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                       {/* Content inside bubble */}
                       <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
                         {!isExpanded ? (
-                          // Preview content - Mobile optimized
-                          <div className="text-center space-y-1 w-full px-1">
+                          // Compact preview content
+                          <div className="text-center space-y-0.5 w-full px-1">
                             {/* Customer name */}
                             <h3 className="font-bold text-navy-900 text-xs leading-tight">
                               {testimonial.name.split(' ')[0]}
@@ -275,69 +278,67 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                             {/* Star rating */}
                             <div className="flex items-center justify-center gap-0.5">
                               {[...Array(testimonial.rating)].map((_, i) => (
-                                <Star key={i} className="w-2.5 h-2.5 fill-yellow-500 text-yellow-500" />
+                                <Star key={i} className="w-2 h-2 fill-yellow-500 text-yellow-500" />
                               ))}
                             </div>
                             
-                            {/* Preview text */}
+                            {/* Preview text - Very short */}
                             <p className="text-xs text-navy-700 font-medium leading-tight px-0.5">
-                              "{getPreviewText(testimonial.review, 3)}"
+                              "{getPreviewText(testimonial.review, 2)}"
                             </p>
                             
-                            {/* Click indicator */}
+                            {/* Tap indicator */}
                             <div className="mt-0.5">
-                              <span className="text-xs text-navy-500 bg-navy-100/50 px-1.5 py-0.5 rounded-full">
-                                Tap
-                              </span>
+                              <div className="w-2 h-2 bg-navy-400 rounded-full mx-auto animate-pulse"></div>
                             </div>
                           </div>
                         ) : (
-                          // Expanded content for mobile - Better optimized
+                          // Expanded card content - Mobile optimized
                           <motion.div
-                            initial={{ opacity: 0, scale: 0.8 }}
+                            initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.1, duration: 0.3 }}
-                            className="w-full h-full flex flex-col relative"
+                            className="w-full h-full flex flex-col relative p-4"
                           >
-                            {/* Close button - Better mobile positioning */}
+                            {/* Close button - Top right corner */}
                             <button
                               onClick={(e) => {
                                 e.stopPropagation()
                                 handleBubbleClick(testimonial.id)
                               }}
-                              className="absolute -top-3 -right-3 w-10 h-10 bg-red-500 hover:bg-red-600 rounded-full flex items-center justify-center transition-colors z-30 shadow-xl border-2 border-white"
+                              className="absolute top-3 right-3 w-8 h-8 bg-red-500 hover:bg-red-600 rounded-full flex items-center justify-center transition-colors z-30 shadow-lg"
                             >
-                              <X className="w-5 h-5 text-white font-bold" />
+                              <X className="w-4 h-4 text-white font-bold" />
                             </button>
                             
-                            {/* Expanded review content - Mobile optimized */}
-                            <div className="flex-1 flex flex-col justify-center space-y-3 p-4">
+                            {/* Expanded review content - Card style */}
+                            <div className="flex-1 flex flex-col justify-center space-y-4 pt-6">
                               {/* Header */}
                               <div className="text-center space-y-2">
-                                <h3 className="font-bold text-navy-900 text-lg">
+                                <h3 className="font-bold text-navy-900 text-xl">
                                   {testimonial.name}
                                 </h3>
                                 <div className="flex items-center justify-center gap-1">
                                   {[...Array(testimonial.rating)].map((_, i) => (
-                                    <Star key={i} className="w-5 h-5 fill-yellow-500 text-yellow-500" />
+                                    <Star key={i} className="w-6 h-6 fill-yellow-500 text-yellow-500" />
                                   ))}
                                 </div>
                               </div>
                               
                               {/* Full review text */}
-                              <div className="text-center px-2">
-                                <p className="text-navy-800 text-sm leading-relaxed font-medium">
+                              <div className="text-center px-2 flex-1 flex items-center">
+                                <p className="text-navy-800 text-base leading-relaxed font-medium">
                                   "{testimonial.review}"
                                 </p>
                               </div>
                               
                               {/* Date and service info */}
-                              <div className="text-center space-y-1">
-                                <p className="text-xs text-navy-600 font-medium">
+                              <div className="text-center space-y-2 pt-2">
+                                <p className="text-sm text-navy-600 font-medium">
                                   {formatDate(testimonial.date)}
                                 </p>
                                 {'service' in testimonial && testimonial.service && (
-                                  <p className="text-xs text-navy-500 bg-navy-100/60 px-2 py-1 rounded-full inline-block">
+                                  <p className="text-xs text-navy-500 bg-navy-100/60 px-3 py-1 rounded-full inline-block">
                                     {testimonial.service}
                                   </p>
                                 )}
@@ -350,6 +351,16 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                   </motion.div>
                 )
               })}
+              </div>
+              
+              {/* Scroll indicator */}
+              <div className="flex justify-center mt-2">
+                <div className="flex space-x-1">
+                  {[...Array(3)].map((_, i) => (
+                    <div key={i} className="w-1.5 h-1.5 bg-navy-300 rounded-full animate-pulse" style={{ animationDelay: `${i * 0.2}s` }}></div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
 
