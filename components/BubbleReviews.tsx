@@ -187,24 +187,24 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
   }
 
   return (
-    <section className={`py-6 sm:py-8 lg:py-10 bg-white ${sectionClassName}`}>
+    <section className={`py-4 sm:py-6 md:py-8 lg:py-10 bg-white ${sectionClassName}`}>
       <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-6">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-100 to-amber-100 px-4 py-2 rounded-full mb-4 shadow-lg">
-            <Star className="w-4 h-4 fill-yellow-500 text-yellow-500" />
+        {/* Header - Mobile Optimized */}
+        <div className="text-center mb-4 md:mb-6">
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-100 to-amber-100 px-3 py-1.5 md:px-4 md:py-2 rounded-full mb-3 md:mb-4 shadow-lg">
+            <Star className="w-3 h-3 md:w-4 md:h-4 fill-yellow-500 text-yellow-500" />
             <span className="text-xs font-bold text-amber-900">5 Star Rated Service</span>
           </div>
-          <h2 className="heading-primary text-3xl sm:text-4xl lg:text-5xl mb-3 text-navy-900">
+          <h2 className="heading-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-2 md:mb-3 text-navy-900 px-2">
             What Our Customers Say
           </h2>
-          <p className="text-base text-navy-600 max-w-2xl mx-auto">
+          <p className="text-sm md:text-base text-navy-600 max-w-2xl mx-auto px-4">
             Real reviews from satisfied customers across Orange County
           </p>
         </div>
 
         {/* Carousel Bubble Container */}
-        <div className="relative mb-4" style={{ paddingTop: '40px', paddingBottom: '20px', overflow: 'visible' }}>
+        <div className="relative mb-2 md:mb-4 pt-5 pb-2 md:pt-10 md:pb-5" style={{ overflow: 'visible' }}>
           {/* Mobile: Horizontal scrolling carousel */}
           <div className="block md:hidden">
             {/* Mobile backdrop overlay when expanded */}
