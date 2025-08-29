@@ -161,9 +161,10 @@ export default function GetQuotePage() {
               <ScrollToFormButton 
                 variant="retro" 
                 size="lg" 
-                className="bg-yellow text-navy px-6 py-3 rounded-full font-bold text-lg mb-4 hover:bg-yellow-400 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="bg-yellow text-navy px-4 sm:px-6 py-3 rounded-full font-bold text-base sm:text-lg mb-4 hover:bg-yellow-400 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
-                💰 Save $50-200 on Your First Service!
+                <span className="hidden sm:inline">💰 Save $50-200 on Your First Service!</span>
+                <span className="sm:hidden">💰 Save $50-200!</span>
               </ScrollToFormButton>
               
               <p className="body-text text-xl text-gray-100 mb-6 leading-relaxed">
