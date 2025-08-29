@@ -16,7 +16,7 @@ const EXTENDED_TESTIMONIALS = [
   // Convert original testimonials to use 'review' property
   ...TESTIMONIALS.map(t => ({
     ...t,
-    review: t.text || t.review || "Amazing service! Professional, reliable, and excellent results every time."
+    review: t.text || "Amazing service! Professional, reliable, and excellent results every time."
   })),
   {
     id: 5,
@@ -349,7 +349,7 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                               <p className="text-sm text-navy-600 font-medium">
                                 {formatDate(testimonial.date)}
                               </p>
-                              {testimonial.service && (
+                              {'service' in testimonial && testimonial.service && (
                                 <p className="text-xs text-navy-500 bg-navy-100/60 px-3 py-1 rounded-full inline-block">
                                   {testimonial.service}
                                 </p>
@@ -509,7 +509,7 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                               <p className="text-sm text-navy-600 font-medium">
                                 {formatDate(testimonial.date)}
                               </p>
-                              {testimonial.service && (
+                              {'service' in testimonial && testimonial.service && (
                                 <p className="text-xs text-navy-500 bg-navy-100/60 px-3 py-1 rounded-full inline-block">
                                   {testimonial.service}
                                 </p>
