@@ -158,9 +158,13 @@ export default function GetQuotePage() {
                 in 60 Seconds
               </h2>
               
-              <div className="bg-yellow text-navy px-4 py-2 rounded-full font-bold text-lg mb-4 inline-block">
-                Save $50-200 on Your First Service!
-              </div>
+              <ScrollToFormButton 
+                variant="retro" 
+                size="lg" 
+                className="bg-yellow text-navy px-6 py-3 rounded-full font-bold text-lg mb-4 hover:bg-yellow-400 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                💰 Save $50-200 on Your First Service!
+              </ScrollToFormButton>
               
               <p className="body-text text-xl text-gray-100 mb-6 leading-relaxed">
                 Professional window cleaning, pressure washing, and property detailing. Family-owned since {BUSINESS_INFO.foundedYear} with 5-star rated service.
