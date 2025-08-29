@@ -207,10 +207,23 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
         <div className="relative mb-4" style={{ paddingTop: '40px', paddingBottom: '20px', overflow: 'visible' }}>
           {/* Mobile: Horizontal scrolling carousel */}
           <div className="block md:hidden">
-            <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide" style={{ scrollSnapType: 'x mandatory' }}>
-              {EXTENDED_TESTIMONIALS.slice(0, 15).map((testimonial, index) => {
+            {/* Mobile backdrop overlay when expanded */}
+            <AnimatePresence>
+              {expandedId && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+                  onClick={() => setExpandedId(null)}
+                />
+              )}
+            </AnimatePresence>
+            
+            <div className="flex gap-3 overflow-x-auto pb-6 px-4 scrollbar-hide" style={{ scrollSnapType: 'x mandatory' }}>
+              {EXTENDED_TESTIMONIALS.slice(0, 12).map((testimonial, index) => {
                 const isExpanded = expandedId === testimonial.id
-                const bubbleSize = 'w-32 h-32' // Fixed size for mobile
+                const bubbleSize = 'w-28 h-28' // Optimized size for mobile
                 
                 return (
                   <motion.div
@@ -221,11 +234,11 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                     {/* Mobile Bubble */}
                     <motion.button
                       className={`
-                        ${isExpanded ? 'w-80 h-80 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2' : bubbleSize} 
+                        ${isExpanded ? 'w-[90vw] h-[90vw] max-w-sm max-h-sm fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2' : bubbleSize} 
                         rounded-full relative overflow-hidden cursor-pointer
                         bg-gradient-to-br from-navy-100/90 via-white/95 to-navy-50/90
                         border-2 border-navy-200/60 shadow-2xl backdrop-blur-sm
-                        hover:shadow-3xl transition-all duration-500
+                        transition-all duration-500
                         focus:outline-none focus:ring-4 focus:ring-navy-300/50
                         ${isExpanded ? 'z-50' : 'z-10'}
                       `}
@@ -233,12 +246,10 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                       onKeyDown={(e) => handleKeyDown(e, testimonial.id)}
                       aria-expanded={isExpanded}
                       aria-controls={`review-${testimonial.id}`}
-                      whileHover={!isExpanded ? { scale: 1.03, y: -5 } : {}}
-                      whileTap={!isExpanded ? { scale: 0.97 } : {}}
+                      whileTap={{ scale: 0.95 }}
                       layout
                       transition={{
-                        layout: { duration: 0.6, ease: "easeInOut" },
-                        scale: { duration: 0.3 }
+                        layout: { duration: 0.5, ease: "easeInOut" }
                       }}
                     >
                       {/* Sophisticated shine effects */}
@@ -254,79 +265,79 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                       {/* Content inside bubble */}
                       <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
                         {!isExpanded ? (
-                          // Preview content
-                          <div className="text-center space-y-1 w-full">
+                          // Preview content - Mobile optimized
+                          <div className="text-center space-y-1 w-full px-1">
                             {/* Customer name */}
                             <h3 className="font-bold text-navy-900 text-xs leading-tight">
-                              {testimonial.name}
+                              {testimonial.name.split(' ')[0]}
                             </h3>
                             
                             {/* Star rating */}
-                            <div className="flex items-center justify-center gap-1">
+                            <div className="flex items-center justify-center gap-0.5">
                               {[...Array(testimonial.rating)].map((_, i) => (
-                                <Star key={i} className="w-2 h-2 fill-yellow-500 text-yellow-500" />
+                                <Star key={i} className="w-2.5 h-2.5 fill-yellow-500 text-yellow-500" />
                               ))}
                             </div>
                             
                             {/* Preview text */}
-                            <p className="text-xs text-navy-700 font-medium leading-tight px-1">
-                              "{getPreviewText(testimonial.review, 4)}"
+                            <p className="text-xs text-navy-700 font-medium leading-tight px-0.5">
+                              "{getPreviewText(testimonial.review, 3)}"
                             </p>
                             
                             {/* Click indicator */}
-                            <div className="mt-1">
-                              <span className="text-xs text-navy-500 bg-navy-100/50 px-1 py-0.5 rounded-full">
-                                Tap to read
+                            <div className="mt-0.5">
+                              <span className="text-xs text-navy-500 bg-navy-100/50 px-1.5 py-0.5 rounded-full">
+                                Tap
                               </span>
                             </div>
                           </div>
                         ) : (
-                          // Expanded content for mobile
+                          // Expanded content for mobile - Better optimized
                           <motion.div
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: 0.2, duration: 0.4 }}
+                            transition={{ delay: 0.1, duration: 0.3 }}
                             className="w-full h-full flex flex-col relative"
                           >
-                            {/* Close button - Fixed positioning for mobile */}
+                            {/* Close button - Better mobile positioning */}
                             <button
                               onClick={(e) => {
                                 e.stopPropagation()
                                 handleBubbleClick(testimonial.id)
                               }}
-                              className="absolute -top-2 -right-2 w-12 h-12 bg-red-500 hover:bg-red-600 rounded-full flex items-center justify-center transition-colors z-30 shadow-xl border-2 border-white"
+                              className="absolute -top-3 -right-3 w-10 h-10 bg-red-500 hover:bg-red-600 rounded-full flex items-center justify-center transition-colors z-30 shadow-xl border-2 border-white"
                             >
-                              <X className="w-6 h-6 text-white font-bold" />
+                              <X className="w-5 h-5 text-white font-bold" />
                             </button>
                             
-                            {/* Expanded review content */}
-                            <div className="flex-1 flex flex-col justify-center space-y-4 p-6">
+                            {/* Expanded review content - Mobile optimized */}
+                            <div className="flex-1 flex flex-col justify-center space-y-3 p-4">
                               {/* Header */}
                               <div className="text-center space-y-2">
-                                <h3 className="font-bold text-navy-900 text-xl">
+                                <h3 className="font-bold text-navy-900 text-lg">
                                   {testimonial.name}
                                 </h3>
                                 <div className="flex items-center justify-center gap-1">
                                   {[...Array(testimonial.rating)].map((_, i) => (
-                                    <Star key={i} className="w-6 h-6 fill-yellow-500 text-yellow-500" />
+                                    <Star key={i} className="w-5 h-5 fill-yellow-500 text-yellow-500" />
                                   ))}
                                 </div>
                               </div>
                               
                               {/* Full review text */}
-                              <div className="text-center">
-                                <p className="text-navy-800 text-base leading-relaxed font-medium">
+                              <div className="text-center px-2">
+                                <p className="text-navy-800 text-sm leading-relaxed font-medium">
                                   "{testimonial.review}"
                                 </p>
                               </div>
                               
                               {/* Date and service info */}
                               <div className="text-center space-y-1">
-                                <p className="text-sm text-navy-600 font-medium">
+                                <p className="text-xs text-navy-600 font-medium">
                                   {formatDate(testimonial.date)}
                                 </p>
                                 {'service' in testimonial && testimonial.service && (
-                                  <p className="text-xs text-navy-500 bg-navy-100/60 px-3 py-1 rounded-full inline-block">
+                                  <p className="text-xs text-navy-500 bg-navy-100/60 px-2 py-1 rounded-full inline-block">
                                     {testimonial.service}
                                   </p>
                                 )}
