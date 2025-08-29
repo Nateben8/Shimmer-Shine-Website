@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
 import { Star, ArrowRight, CheckCircle, Award, Shield, Clock, MapPin, ChevronLeft, ChevronRight } from "lucide-react"
-import GoogleReviews from "@/components/GoogleReviews"
+import BubbleReviews from "@/components/BubbleReviews"
 import ExpandableServiceCard from "@/components/ExpandableServiceCard"
 // import RelatedContent from "@/components/RelatedContent"
 import { ScrollAnimation, WaterDroplets, BeforeAfterSlider } from "@/components/ScrollAnimations"
@@ -406,11 +406,11 @@ export default function HomePage() {
         <div className="container mx-auto px-3 sm:px-4 relative z-10">
           <div className="text-center mb-6 sm:mb-8 lg:mb-12">
             <h2 className="heading-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-3 sm:mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
-              <span className="block sm:inline">Commercial Cleaning</span>{' '}
-              <span className="block sm:inline">Near Me Orange County</span>
+              <span className="block sm:inline">Professional Business</span>{' '}
+              <span className="block sm:inline">Cleaning Solutions</span>
             </h2>
             <p className="body-text text-base sm:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto px-2">
-              Keep your business looking professional with our comprehensive commercial cleaning services throughout Orange County. We specialize in creating customized cleaning solutions for offices, medical facilities, restaurants, and retail spaces. Our flexible B2B contracts include recurring maintenance, deep cleaning, and specialized janitorial services designed to meet your business needs and budget. From daily office cleaning to specialized medical facility sanitization, we help Orange County businesses maintain clean, healthy work environments.
+              Elevate your business with our professional commercial cleaning services across Orange County. We deliver customized cleaning solutions for offices, medical facilities, restaurants, and retail spaces with the same old-school craftsmanship and modern reliability that sets us apart. Our flexible B2B contracts feature recurring maintenance, deep cleaning, and specialized janitorial services tailored to your specific needs. From daily office maintenance to medical facility sanitization, we help Southern California businesses maintain pristine, healthy work environments that reflect their professional standards.
             </p>
           </div>
 
@@ -570,7 +570,7 @@ export default function HomePage() {
       </section>
 
       {/* Google Reviews Section */}
-      <GoogleReviews maxReviews={3} />
+      <BubbleReviews />
 
 
 

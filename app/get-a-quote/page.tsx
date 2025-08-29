@@ -152,7 +152,7 @@ export default function GetQuotePage() {
               
               <h1 className="heading-decorative text-4xl md:text-6xl text-yellow mb-2 leading-tight" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
                 <span className="block sm:inline">Get Your FREE Quote</span>{' '}
-                <span className="block sm:inline">+ 10% OFF</span>
+                <span className="block sm:inline text-red-800" style={{color: '#FF4500', textShadow: '2px 2px 0px #FFFFFF, 3px 3px 0px #FFE4E1, 4px 4px 0px #FFA07A'}}>+ 10% OFF</span>
               </h1>
               <h2 className="heading-primary text-2xl md:text-3xl text-white mb-4" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
                 in 60 Seconds
@@ -320,10 +320,19 @@ export default function GetQuotePage() {
                   <CardHeader className="pb-3 lg:pb-6">
                     <CardTitle className="heading-primary text-lg lg:text-xl flex items-center">
                       <Award className="h-5 w-5 lg:h-6 lg:w-6 mr-2 text-yellow flex-shrink-0" />
-                      <span className="leading-tight">Why 500+ Customers Choose Us</span>
+                      <span className="leading-tight">Why Our Customers Love Us</span>
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-3 lg:space-y-4">
+                    <div className="flex items-start space-x-2 lg:space-x-3">
+                      <div className="w-6 h-6 lg:w-8 lg:h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <ThumbsUp className="h-4 w-4 lg:h-5 lg:w-5 text-green-600" />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <p className="font-bold text-navy text-sm lg:text-base leading-tight">100% Satisfaction Guarantee</p>
+                        <p className="text-xs lg:text-sm text-gray-600 leading-tight mt-0.5">Not happy? We'll make it right or refund you</p>
+                      </div>
+                    </div>
                     <div className="flex items-start space-x-2 lg:space-x-3">
                       <div className="w-6 h-6 lg:w-8 lg:h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
                         <CheckCircle className="h-4 w-4 lg:h-5 lg:w-5 text-green-600" />
@@ -349,15 +358,6 @@ export default function GetQuotePage() {
                       <div className="min-w-0 flex-1">
                         <p className="font-bold text-navy text-sm lg:text-base leading-tight">Same-Day Service Available</p>
                         <p className="text-xs lg:text-sm text-gray-600 leading-tight mt-0.5">Emergency cleaning when you need it most</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start space-x-2 lg:space-x-3">
-                      <div className="w-6 h-6 lg:w-8 lg:h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <ThumbsUp className="h-4 w-4 lg:h-5 lg:w-5 text-green-600" />
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        <p className="font-bold text-navy text-sm lg:text-base leading-tight">100% Satisfaction Guarantee</p>
-                        <p className="text-xs lg:text-sm text-gray-600 leading-tight mt-0.5">Not happy? We'll make it right or refund you</p>
                       </div>
                     </div>
                   </CardContent>
@@ -461,30 +461,45 @@ export default function GetQuotePage() {
         <div className="container mx-auto px-4 relative z-10">
           {/* Urgency Banner */}
           <div className="max-w-4xl mx-auto mb-16">
-            <div className="bg-gradient-to-r from-red-50 to-yellow-50 border-2 border-yellow rounded-xl p-6 text-center">
-              <div className="flex items-center justify-center space-x-2 mb-4">
-                <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-                <span className="font-bold text-red-600 uppercase tracking-wide">Limited Time Offer</span>
-                <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+            <div className="bg-gradient-to-br from-white to-yellow-50 border-2 border-yellow rounded-xl p-8 text-center shadow-retro-yellow">
+              <div className="flex items-center justify-center space-x-2 mb-6">
+                <div className="w-4 h-4 bg-yellow rounded-full animate-pulse shadow-lg"></div>
+                <span className="font-bold text-navy uppercase tracking-wide text-lg">Special Offer</span>
+                <div className="w-4 h-4 bg-yellow rounded-full animate-pulse shadow-lg"></div>
               </div>
-              <h3 className="heading-primary text-2xl md:text-3xl text-navy mb-3" style={{textShadow: '2px 2px 0px #FFFFFF, 3px 3px 0px #F5F5F5, 4px 4px 0px #E0E0E0'}}>
-                Get Your Free Quote Today!
+              <h3 className="heading-decorative text-3xl md:text-4xl text-navy mb-4" style={{textShadow: '2px 2px 0px #FFC107, 3px 3px 0px #FFD54F'}}>
+                Get Your FREE Quote + Save Big!
               </h3>
-              <p className="body-text text-gray-700 mb-4">
-                <strong>Don't miss out!</strong> This exclusive 10% discount + FREE quote expires in 6 days. Join 47 customers who've already saved $50-200 this week!
+              <p className="body-text text-gray-700 text-lg mb-6 max-w-2xl mx-auto leading-relaxed">
+                <strong>Professional window cleaning made affordable!</strong> Get your complimentary quote and enjoy an exclusive <span className="font-bold text-xl" style={{color: '#8B0000'}}>10% discount</span> on your first service. Join hundreds of satisfied Orange County customers!
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
-                <div className="flex items-center justify-center space-x-2 bg-red-50 p-3 rounded-lg">
-                  <Clock className="h-4 w-4 text-red-500" />
-                  <span className="font-medium text-red-700">6 days left</span>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm max-w-2xl mx-auto">
+                <div className="flex items-center justify-center space-x-3 bg-navy/5 p-4 rounded-xl border border-navy/10">
+                  <div className="w-10 h-10 bg-yellow rounded-full flex items-center justify-center">
+                    <Clock className="h-5 w-5 text-navy" />
+                  </div>
+                  <div className="text-left">
+                    <p className="font-bold text-navy">Quick Response</p>
+                    <p className="text-gray-600">Same day quotes</p>
+                  </div>
                 </div>
-                <div className="flex items-center justify-center space-x-2 bg-green-50 p-3 rounded-lg">
-                  <Users className="h-4 w-4 text-green-500" />
-                  <span className="font-medium text-green-700">47 saved this week</span>
+                <div className="flex items-center justify-center space-x-3 bg-navy/5 p-4 rounded-xl border border-navy/10">
+                  <div className="w-10 h-10 bg-yellow rounded-full flex items-center justify-center">
+                    <Users className="h-5 w-5 text-navy" />
+                  </div>
+                  <div className="text-left">
+                    <p className="font-bold text-navy">Trusted Service</p>
+                    <p className="text-gray-600">500+ happy customers</p>
+                  </div>
                 </div>
-                <div className="flex items-center justify-center space-x-2 bg-yellow-50 p-3 rounded-lg">
-                  <span className="text-yellow-600 font-bold">$</span>
-                  <span className="font-medium text-yellow-700">$50-200 savings</span>
+                <div className="flex items-center justify-center space-x-3 bg-navy/5 p-4 rounded-xl border border-navy/10">
+                  <div className="w-10 h-10 bg-yellow rounded-full flex items-center justify-center">
+                    <Star className="h-5 w-5 text-navy" />
+                  </div>
+                  <div className="text-left">
+                    <p className="font-bold text-navy">Big Savings</p>
+                    <p className="text-gray-600" style={{color: '#8B0000'}}>Save $50-200</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -569,7 +584,7 @@ export default function GetQuotePage() {
               <span className="block sm:inline">Started Today?</span>
             </h3>
             <p className="body-text text-xl text-navy-700 mb-6">
-              Join 500+ satisfied customers who've already saved with our exclusive discount. Get your FREE quote + 10% OFF before this offer expires!
+              Join 500+ satisfied customers who've already saved with our exclusive discount. Get your FREE quote + <span className="font-bold" style={{color: '#FF4500'}}>10% OFF</span> before this offer expires!
             </p>
             
             {/* Final Urgency Counter */}
@@ -599,7 +614,7 @@ export default function GetQuotePage() {
                 size="lg" 
                 className="text-lg px-8 py-4 animate-pulse"
               >
-                🚀 Claim My FREE Quote + 10% OFF ↑
+                🚀 Claim My FREE Quote + <span style={{color: '#FF4500'}}>10% OFF</span> ↑
               </ScrollToFormButton>
               <Link href={`tel:${BUSINESS_INFO.phone}`}>
                 <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-navy text-navy hover:bg-navy hover:text-white">
