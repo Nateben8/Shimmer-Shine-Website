@@ -205,7 +205,7 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
 
         {/* Carousel Bubble Container */}
         <div className="relative mb-2 md:mb-4 pt-3 pb-1 md:pt-10 md:pb-5" style={{ overflow: 'visible' }}>
-          {/* Mobile: Horizontal swipe carousel - Compact */}
+          {/* Mobile: Modern card carousel */}
           <div className="block md:hidden">
             {/* Mobile backdrop overlay when expanded */}
             <AnimatePresence>
@@ -214,18 +214,17 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
+                  className="fixed inset-0 bg-black/70 backdrop-blur-sm z-40"
                   onClick={() => setExpandedId(null)}
                 />
               )}
             </AnimatePresence>
             
-            {/* Compact horizontal scroll container */}
+            {/* Modern card scroll container */}
             <div className="relative">
-              <div className="flex gap-4 overflow-x-auto pb-2 px-4 scrollbar-hide" style={{ scrollSnapType: 'x mandatory', scrollBehavior: 'smooth' }}>
-                {EXTENDED_TESTIMONIALS.slice(0, 8).map((testimonial, index) => {
+              <div className="flex gap-3 overflow-x-auto pb-4 px-4 scrollbar-hide" style={{ scrollSnapType: 'x mandatory', scrollBehavior: 'smooth' }}>
+                {EXTENDED_TESTIMONIALS.slice(0, 10).map((testimonial, index) => {
                   const isExpanded = expandedId === testimonial.id
-                  const bubbleSize = 'w-24 h-24' // Smaller, more compact size
                 
                 return (
                   <motion.div
@@ -233,92 +232,85 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                     className="relative flex-shrink-0"
                     style={{ scrollSnapAlign: 'start' }}
                   >
-                    {/* Mobile Bubble - Compact */}
+                    {/* Mobile Review Card */}
                     <motion.button
                       className={`
-                        ${isExpanded ? 'w-[85vw] h-[70vh] max-w-md fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-2xl' : `${bubbleSize} rounded-full`} 
+                        ${isExpanded ? 'w-[90vw] h-[80vh] max-w-lg fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl' : 'w-64 h-32 rounded-2xl'} 
                         relative overflow-hidden cursor-pointer
-                        bg-gradient-to-br from-navy-100/95 via-white/98 to-navy-50/95
-                        border-2 border-navy-200/70 shadow-xl backdrop-blur-sm
-                        transition-all duration-400
-                        focus:outline-none focus:ring-3 focus:ring-navy-300/50
+                        bg-white shadow-lg border border-gray-200
+                        transition-all duration-300
+                        focus:outline-none focus:ring-2 focus:ring-navy-400/50
                         ${isExpanded ? 'z-50' : 'z-10'}
-                        hover:shadow-2xl hover:scale-105
+                        hover:shadow-xl hover:-translate-y-1
                       `}
                       onClick={() => handleBubbleClick(testimonial.id)}
                       onKeyDown={(e) => handleKeyDown(e, testimonial.id)}
                       aria-expanded={isExpanded}
                       aria-controls={`review-${testimonial.id}`}
-                      whileTap={{ scale: 0.95 }}
+                      whileTap={{ scale: 0.98 }}
                       layout
                       transition={{
-                        layout: { duration: 0.4, ease: "easeInOut" }
+                        layout: { duration: 0.3, ease: "easeInOut" }
                       }}
                     >
-                      {/* Sophisticated shine effects */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-white/70 via-transparent to-transparent rounded-full" />
-                      <div className="absolute top-3 left-4 w-6 h-6 bg-white/50 rounded-full blur-sm" />
-                      <div className="absolute top-6 right-4 w-3 h-3 bg-white/70 rounded-full" />
-                      <div className="absolute bottom-4 left-6 w-4 h-4 bg-white/40 rounded-full blur-sm" />
-                      
-                      {/* Premium rim highlight */}
-                      <div className="absolute inset-0 rounded-full border-2 border-white/60" />
-                      <div className="absolute inset-1 rounded-full border border-navy-100/40" />
-                      
-                      {/* Content inside bubble */}
-                      <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
+                      {/* Card Content */}
+                      <div className="absolute inset-0 flex flex-col p-4">
                         {!isExpanded ? (
-                          // Compact preview content
-                          <div className="text-center space-y-0.5 w-full px-1">
-                            {/* Customer name */}
-                            <h3 className="font-bold text-navy-900 text-xs leading-tight">
-                              {testimonial.name.split(' ')[0]}
-                            </h3>
-                            
-                            {/* Star rating */}
-                            <div className="flex items-center justify-center gap-0.5">
-                              {[...Array(testimonial.rating)].map((_, i) => (
-                                <Star key={i} className="w-2 h-2 fill-yellow-500 text-yellow-500" />
-                              ))}
+                          // Clean card preview
+                          <div className="flex flex-col h-full">
+                            {/* Header */}
+                            <div className="flex items-center justify-between mb-2">
+                              <h3 className="font-bold text-navy-900 text-sm">
+                                {testimonial.name}
+                              </h3>
+                              <div className="flex items-center gap-0.5">
+                                {[...Array(testimonial.rating)].map((_, i) => (
+                                  <Star key={i} className="w-3 h-3 fill-yellow-500 text-yellow-500" />
+                                ))}
+                              </div>
                             </div>
                             
-                            {/* Preview text - Very short */}
-                            <p className="text-xs text-navy-700 font-medium leading-tight px-0.5">
-                              "{getPreviewText(testimonial.review, 2)}"
-                            </p>
+                            {/* Review preview */}
+                            <div className="flex-1 flex items-center">
+                              <p className="text-sm text-gray-700 leading-relaxed line-clamp-3">
+                                "{getPreviewText(testimonial.review, 12)}"
+                              </p>
+                            </div>
                             
-                            {/* Tap indicator */}
-                            <div className="mt-0.5">
-                              <div className="w-2 h-2 bg-navy-400 rounded-full mx-auto animate-pulse"></div>
+                            {/* Read more indicator */}
+                            <div className="flex items-center justify-center mt-2">
+                              <span className="text-xs text-navy-600 bg-navy-50 px-2 py-1 rounded-full">
+                                Tap to read full review
+                              </span>
                             </div>
                           </div>
                         ) : (
-                          // Expanded card content - Mobile optimized
+                          // Expanded card content - Clean design
                           <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
+                            initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: 0.1, duration: 0.3 }}
-                            className="w-full h-full flex flex-col relative p-4"
+                            transition={{ delay: 0.1, duration: 0.2 }}
+                            className="w-full h-full flex flex-col relative"
                           >
-                            {/* Close button - Top right corner */}
+                            {/* Close button - Modern style */}
                             <button
                               onClick={(e) => {
                                 e.stopPropagation()
                                 handleBubbleClick(testimonial.id)
                               }}
-                              className="absolute top-3 right-3 w-8 h-8 bg-red-500 hover:bg-red-600 rounded-full flex items-center justify-center transition-colors z-30 shadow-lg"
+                              className="absolute top-4 right-4 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-colors z-30"
                             >
-                              <X className="w-4 h-4 text-white font-bold" />
+                              <X className="w-4 h-4 text-gray-600" />
                             </button>
                             
-                            {/* Expanded review content - Card style */}
-                            <div className="flex-1 flex flex-col justify-center space-y-4 pt-6">
+                            {/* Expanded review content */}
+                            <div className="flex-1 flex flex-col p-6 pt-12">
                               {/* Header */}
-                              <div className="text-center space-y-2">
-                                <h3 className="font-bold text-navy-900 text-xl">
+                              <div className="text-center mb-6">
+                                <h3 className="font-bold text-navy-900 text-2xl mb-2">
                                   {testimonial.name}
                                 </h3>
-                                <div className="flex items-center justify-center gap-1">
+                                <div className="flex items-center justify-center gap-1 mb-4">
                                   {[...Array(testimonial.rating)].map((_, i) => (
                                     <Star key={i} className="w-6 h-6 fill-yellow-500 text-yellow-500" />
                                   ))}
@@ -326,19 +318,21 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                               </div>
                               
                               {/* Full review text */}
-                              <div className="text-center px-2 flex-1 flex items-center">
-                                <p className="text-navy-800 text-base leading-relaxed font-medium">
-                                  "{testimonial.review}"
-                                </p>
+                              <div className="flex-1 flex items-center justify-center">
+                                <div className="max-w-md">
+                                  <p className="text-gray-800 text-lg leading-relaxed text-center">
+                                    "{testimonial.review}"
+                                  </p>
+                                </div>
                               </div>
                               
-                              {/* Date and service info */}
-                              <div className="text-center space-y-2 pt-2">
-                                <p className="text-sm text-navy-600 font-medium">
+                              {/* Footer info */}
+                              <div className="text-center pt-6 border-t border-gray-100">
+                                <p className="text-sm text-gray-500 mb-2">
                                   {formatDate(testimonial.date)}
                                 </p>
                                 {'service' in testimonial && testimonial.service && (
-                                  <p className="text-xs text-navy-500 bg-navy-100/60 px-3 py-1 rounded-full inline-block">
+                                  <p className="text-xs text-navy-600 bg-navy-50 px-3 py-1 rounded-full inline-block">
                                     {testimonial.service}
                                   </p>
                                 )}
@@ -354,11 +348,14 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
               </div>
               
               {/* Scroll indicator */}
-              <div className="flex justify-center mt-2">
-                <div className="flex space-x-1">
-                  {[...Array(3)].map((_, i) => (
-                    <div key={i} className="w-1.5 h-1.5 bg-navy-300 rounded-full animate-pulse" style={{ animationDelay: `${i * 0.2}s` }}></div>
-                  ))}
+              <div className="flex justify-center mt-3">
+                <div className="flex items-center space-x-2 text-xs text-gray-500">
+                  <span>Swipe for more reviews</span>
+                  <div className="flex space-x-1">
+                    {[...Array(3)].map((_, i) => (
+                      <div key={i} className="w-1 h-1 bg-gray-400 rounded-full animate-pulse" style={{ animationDelay: `${i * 0.3}s` }}></div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
