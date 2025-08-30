@@ -222,7 +222,7 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
 
         {/* Reviews Container */}
         <div className="relative mb-6">
-          {/* Mobile: Simple Clean Cards */}
+          {/* Mobile: Horizontal Swipe Cards */}
           <div className="block md:hidden">
             {/* Modal backdrop */}
             <AnimatePresence>
@@ -238,12 +238,13 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
             </AnimatePresence>
             
             {/* Horizontal scroll container */}
-            <div className="overflow-x-auto pb-4 -mx-4 px-4">
+            <div className="relative">
               <div 
-                className="flex gap-4 w-max"
+                className="flex gap-4 overflow-x-auto pb-4 px-4 scrollbar-hide"
                 style={{ 
                   scrollSnapType: 'x mandatory',
-                  scrollBehavior: 'smooth'
+                  scrollBehavior: 'smooth',
+                  WebkitOverflowScrolling: 'touch'
                 }}
               >
                 {EXTENDED_TESTIMONIALS.slice(0, 8).map((testimonial, index) => {
@@ -255,12 +256,12 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                       className="flex-shrink-0"
                       style={{ scrollSnapAlign: 'start' }}
                     >
-                      {/* Simple Review Card */}
+                      {/* Review Card */}
                       <motion.button
                         className={`
                           ${isExpanded 
-                            ? 'fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-sm h-[80vh] max-h-[600px] z-50' 
-                            : 'w-72 h-40'
+                            ? 'fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-sm h-[85vh] max-h-[600px] z-50' 
+                            : 'w-80 h-48'
                           } 
                           bg-white rounded-2xl shadow-lg border border-gray-100
                           transition-all duration-300 ease-out
@@ -277,37 +278,37 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                           {!isExpanded ? (
                             // Card Preview
                             <>
-                              {/* Header */}
-                              <div className="flex items-center gap-3 mb-3">
-                                <div className="w-10 h-10 bg-gradient-to-br from-navy-100 to-navy-200 rounded-full flex items-center justify-center">
-                                  <span className="text-navy-800 font-bold text-sm">
+                              {/* Header with Name and Avatar */}
+                              <div className="flex items-center gap-3 mb-4">
+                                <div className="w-12 h-12 bg-gradient-to-br from-navy-100 to-navy-200 rounded-full flex items-center justify-center">
+                                  <span className="text-navy-800 font-bold text-base">
                                     {testimonial.name.split(' ').map(n => n[0]).join('')}
                                   </span>
                                 </div>
                                 <div className="flex-1 text-left">
-                                  <h3 className="font-semibold text-navy-900 text-sm leading-tight">
+                                  <h3 className="font-bold text-navy-900 text-base leading-tight">
                                     {testimonial.name}
                                   </h3>
-                                  <div className="flex items-center gap-0.5 mt-1">
+                                  <div className="flex items-center gap-0.5 mt-2">
                                     {[...Array(testimonial.rating)].map((_, i) => (
-                                      <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                                     ))}
                                   </div>
                                 </div>
                               </div>
                               
-                              {/* Review Preview */}
-                              <div className="flex-1 flex items-center">
-                                <p className="text-sm text-gray-700 leading-relaxed text-left">
-                                  "{getPreviewText(testimonial.review, 15)}"
+                              {/* Review Text */}
+                              <div className="flex-1 flex flex-col justify-center">
+                                <p className="text-sm text-gray-700 leading-relaxed text-left mb-4">
+                                  "{getPreviewText(testimonial.review, 20)}"
                                 </p>
-                              </div>
-                              
-                              {/* Read More */}
-                              <div className="mt-3 text-center">
-                                <span className="text-xs text-navy-600 bg-navy-50 px-3 py-1.5 rounded-full font-medium">
-                                  Tap to read full review
-                                </span>
+                                
+                                {/* Read More Button */}
+                                <div className="text-center">
+                                  <span className="text-xs text-navy-600 bg-navy-50 px-4 py-2 rounded-full font-medium">
+                                    Tap to read full review
+                                  </span>
+                                </div>
                               </div>
                             </>
                           ) : (
@@ -341,7 +342,7 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                                   <h3 className="font-bold text-navy-900 text-xl mb-3">
                                     {testimonial.name}
                                   </h3>
-                                  <div className="flex items-center justify-center gap-1">
+                                  <div className="flex items-center justify-center gap-1 mb-4">
                                     {[...Array(testimonial.rating)].map((_, i) => (
                                       <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                                     ))}
@@ -375,11 +376,11 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                   )
                 })}
               </div>
-            </div>
-            
-            {/* Scroll Indicator */}
-            <div className="text-center mt-4">
-              <p className="text-sm text-gray-500">Swipe to see more reviews</p>
+              
+              {/* Scroll Indicator */}
+              <div className="text-center mt-4">
+                <p className="text-sm text-gray-500">← Swipe to see more reviews →</p>
+              </div>
             </div>
           </div>
 
