@@ -222,172 +222,159 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
 
         {/* Carousel Bubble Container */}
         <div className="relative mb-2 md:mb-4 pt-3 pb-1 md:pt-10 md:pb-5" style={{ overflow: 'visible' }}>
-          {/* Mobile: Ultra-Premium Carousel */}
+          {/* Mobile: Horizontal Swipe Carousel */}
           <div className="block md:hidden">
-            {/* Ultra-smooth backdrop overlay */}
+            {/* Clean backdrop overlay */}
             <AnimatePresence>
               {expandedId && (
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="fixed inset-0 bg-gradient-to-br from-black/80 via-navy-900/70 to-black/80 backdrop-blur-md z-40"
+                  className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
                   onClick={() => setExpandedId(null)}
                 />
               )}
             </AnimatePresence>
             
-            {/* Premium carousel container */}
-            <div className="relative -mx-4 px-4">
-              {/* Gradient fade edges */}
-              <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
-              <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
-              
-              {/* Ultra-smooth scroll container */}
-              <div className="flex gap-4 overflow-x-auto pb-6 px-6 scrollbar-hide" style={{ 
-                scrollSnapType: 'x mandatory', 
-                scrollBehavior: 'smooth',
-                WebkitOverflowScrolling: 'touch'
-              }}>
-                {EXTENDED_TESTIMONIALS.slice(0, 12).map((testimonial, index) => {
+            {/* Horizontal carousel container */}
+            <div className="relative overflow-hidden">
+              {/* Horizontal scroll container */}
+              <div 
+                className="flex gap-4 overflow-x-auto pb-4 px-4 scrollbar-hide"
+                style={{ 
+                  scrollSnapType: 'x mandatory',
+                  scrollBehavior: 'smooth',
+                  WebkitOverflowScrolling: 'touch'
+                }}
+              >
+                {EXTENDED_TESTIMONIALS.slice(0, 10).map((testimonial, index) => {
                   const isExpanded = expandedId === testimonial.id
                 
                 return (
-                  <motion.div
+                  <div
                     key={`mobile-${testimonial.id}`}
-                    className="relative flex-shrink-0"
-                    style={{ scrollSnapAlign: 'center' }}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1, duration: 0.5 }}
+                    className="flex-shrink-0"
+                    style={{ scrollSnapAlign: 'start' }}
                   >
-                    {/* Ultra-Premium Review Card */}
+                    {/* Review Card */}
                     <motion.button
                       className={`
                         ${isExpanded 
-                          ? 'w-[92vw] h-[85vh] max-w-md fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl shadow-2xl' 
-                          : 'w-72 h-40 rounded-2xl shadow-lg hover:shadow-xl'
+                          ? 'w-[90vw] h-[75vh] max-w-md fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl' 
+                          : 'w-64 h-36 rounded-2xl'
                         } 
                         relative overflow-hidden cursor-pointer
-                        bg-gradient-to-br from-white via-gray-50/50 to-white
-                        border border-gray-200/60 backdrop-blur-sm
-                        transition-all duration-500 ease-out
-                        focus:outline-none focus:ring-2 focus:ring-navy-400/50 focus:ring-offset-2
+                        bg-white shadow-lg border border-gray-200
+                        transition-all duration-300 ease-out
+                        focus:outline-none focus:ring-2 focus:ring-navy-400/50
                         ${isExpanded ? 'z-50' : 'z-10'}
-                        hover:-translate-y-2 hover:scale-[1.02]
-                        active:scale-[0.98]
+                        hover:shadow-xl hover:-translate-y-1
                       `}
                       onClick={() => handleBubbleClick(testimonial.id)}
                       onKeyDown={(e) => handleKeyDown(e, testimonial.id)}
                       aria-expanded={isExpanded}
                       aria-controls={`review-${testimonial.id}`}
-                      whileTap={{ scale: 0.96 }}
+                      whileTap={{ scale: 0.98 }}
                       layout
                       transition={{
-                        layout: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }
+                        layout: { duration: 0.3, ease: "easeInOut" }
                       }}
                     >
-                      {/* Premium shine effect */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-transparent to-transparent rounded-2xl" />
-                      <div className="absolute top-4 right-4 w-8 h-8 bg-white/40 rounded-full blur-sm" />
-                      
                       {/* Card Content */}
-                      <div className="absolute inset-0 flex flex-col p-5">
+                      <div className="absolute inset-0 flex flex-col p-4">
                         {!isExpanded ? (
-                          // Ultra-clean preview design
+                          // Card preview
                           <div className="flex flex-col h-full">
-                            {/* Premium header */}
-                            <div className="flex items-start justify-between mb-3">
+                            {/* Header */}
+                            <div className="flex items-start justify-between mb-2">
                               <div className="flex-1">
-                                <h3 className="font-bold text-navy-900 text-base leading-tight mb-1">
+                                <h3 className="font-bold text-navy-900 text-sm leading-tight mb-1">
                                   {testimonial.name}
                                 </h3>
                                 <div className="flex items-center gap-0.5">
                                   {[...Array(testimonial.rating)].map((_, i) => (
-                                    <Star key={i} className="w-3.5 h-3.5 fill-yellow-500 text-yellow-500" />
+                                    <Star key={i} className="w-3 h-3 fill-yellow-500 text-yellow-500" />
                                   ))}
                                 </div>
                               </div>
-                              <div className="w-10 h-10 bg-gradient-to-br from-navy-100 to-navy-50 rounded-full flex items-center justify-center">
-                                <span className="text-navy-700 font-bold text-sm">
+                              <div className="w-8 h-8 bg-navy-100 rounded-full flex items-center justify-center">
+                                <span className="text-navy-700 font-bold text-xs">
                                   {testimonial.name.split(' ').map(n => n[0]).join('')}
                                 </span>
                               </div>
                             </div>
                             
-                            {/* Premium review preview */}
+                            {/* Review preview */}
                             <div className="flex-1 flex items-center">
-                              <p className="text-sm text-gray-700 leading-relaxed font-medium">
-                                "{getPreviewText(testimonial.review, 15)}"
+                              <p className="text-xs text-gray-700 leading-relaxed">
+                                "{getPreviewText(testimonial.review, 12)}"
                               </p>
                             </div>
                             
-                            {/* Premium read more indicator */}
-                            <div className="flex items-center justify-center mt-3">
-                              <div className="bg-gradient-to-r from-navy-600 to-navy-700 text-white px-4 py-2 rounded-full text-xs font-semibold shadow-md">
-                                Tap to read full review
-                              </div>
+                            {/* Read more indicator */}
+                            <div className="flex items-center justify-center mt-2">
+                              <span className="text-xs text-navy-600 bg-navy-50 px-2 py-1 rounded-full">
+                                Tap to read more
+                              </span>
                             </div>
                           </div>
                         ) : (
-                          // Ultra-premium expanded design
+                          // Expanded modal content
                           <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
+                            initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: 0.15, duration: 0.3, ease: "easeOut" }}
+                            transition={{ delay: 0.1, duration: 0.2 }}
                             className="w-full h-full flex flex-col relative"
                           >
-                            {/* Premium close button */}
+                            {/* Close button */}
                             <button
                               onClick={(e) => {
                                 e.stopPropagation()
                                 handleBubbleClick(testimonial.id)
                               }}
-                              className="absolute top-5 right-5 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center transition-all duration-200 shadow-lg hover:shadow-xl z-30 backdrop-blur-sm border border-gray-200/50"
+                              className="absolute top-4 right-4 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-colors z-30"
                             >
-                              <X className="w-5 h-5 text-gray-600" />
+                              <X className="w-4 h-4 text-gray-600" />
                             </button>
                             
-                            {/* Premium expanded content */}
-                            <div className="flex-1 flex flex-col p-8 pt-16">
-                              {/* Premium header */}
-                              <div className="text-center mb-8">
-                                <div className="w-16 h-16 bg-gradient-to-br from-navy-100 to-navy-200 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                                  <span className="text-navy-800 font-bold text-xl">
+                            {/* Expanded content */}
+                            <div className="flex-1 flex flex-col p-6 pt-12">
+                              {/* Header */}
+                              <div className="text-center mb-6">
+                                <div className="w-12 h-12 bg-navy-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                  <span className="text-navy-800 font-bold text-lg">
                                     {testimonial.name.split(' ').map(n => n[0]).join('')}
                                   </span>
                                 </div>
-                                <h3 className="font-bold text-navy-900 text-2xl mb-3 leading-tight">
+                                <h3 className="font-bold text-navy-900 text-xl mb-2">
                                   {testimonial.name}
                                 </h3>
-                                <div className="flex items-center justify-center gap-1 mb-2">
+                                <div className="flex items-center justify-center gap-1 mb-4">
                                   {[...Array(testimonial.rating)].map((_, i) => (
-                                    <Star key={i} className="w-6 h-6 fill-yellow-500 text-yellow-500" />
+                                    <Star key={i} className="w-5 h-5 fill-yellow-500 text-yellow-500" />
                                   ))}
                                 </div>
-                                <div className="w-12 h-0.5 bg-gradient-to-r from-navy-300 to-navy-500 mx-auto rounded-full" />
                               </div>
                               
-                              {/* Premium review text */}
+                              {/* Full review text */}
                               <div className="flex-1 flex items-center justify-center">
                                 <div className="max-w-sm">
-                                  <p className="text-gray-800 text-lg leading-relaxed text-center font-medium">
+                                  <p className="text-gray-800 text-base leading-relaxed text-center">
                                     "{testimonial.review}"
                                   </p>
                                 </div>
                               </div>
                               
-                              {/* Premium footer */}
-                              <div className="text-center pt-8 border-t border-gray-100">
-                                <p className="text-sm text-gray-600 mb-3 font-medium">
+                              {/* Footer info */}
+                              <div className="text-center pt-6 border-t border-gray-100">
+                                <p className="text-sm text-gray-500 mb-2">
                                   {formatDate(testimonial.date)}
                                 </p>
                                 {'service' in testimonial && testimonial.service && (
-                                  <div className="bg-gradient-to-r from-navy-50 to-navy-100 px-4 py-2 rounded-full inline-block border border-navy-200/50">
-                                    <p className="text-xs text-navy-700 font-semibold">
-                                      {testimonial.service}
-                                    </p>
-                                  </div>
+                                  <p className="text-xs text-navy-600 bg-navy-50 px-3 py-1 rounded-full inline-block">
+                                    {testimonial.service}
+                                  </p>
                                 )}
                               </div>
                             </div>
@@ -395,33 +382,19 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                         )}
                       </div>
                     </motion.button>
-                  </motion.div>
+                  </div>
                 )
               })}
               </div>
               
-              {/* Premium scroll indicator */}
-              <div className="flex justify-center mt-6">
-                <div className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg border border-gray-200/50">
-                  <div className="flex items-center space-x-3 text-sm text-gray-600">
-                    <div className="flex space-x-1">
-                      {[...Array(3)].map((_, i) => (
-                        <motion.div 
-                          key={i} 
-                          className="w-1.5 h-1.5 bg-navy-400 rounded-full" 
-                          animate={{ 
-                            scale: [1, 1.3, 1],
-                            opacity: [0.5, 1, 0.5]
-                          }}
-                          transition={{
-                            duration: 1.5,
-                            repeat: Infinity,
-                            delay: i * 0.2
-                          }}
-                        />
-                      ))}
-                    </div>
-                    <span className="font-medium">Swipe for more reviews</span>
+              {/* Simple scroll indicator */}
+              <div className="flex justify-center mt-4">
+                <div className="flex items-center space-x-2 text-sm text-gray-500">
+                  <span>Swipe for more reviews</span>
+                  <div className="flex space-x-1">
+                    {[...Array(3)].map((_, i) => (
+                      <div key={i} className="w-1 h-1 bg-gray-400 rounded-full animate-pulse" style={{ animationDelay: `${i * 0.3}s` }}></div>
+                    ))}
                   </div>
                 </div>
               </div>
