@@ -222,7 +222,7 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
 
         {/* Reviews Container */}
         <div className="relative mb-6">
-          {/* Mobile: Horizontal Swipe Cards */}
+          {/* Mobile: True Horizontal Carousel */}
           <div className="block md:hidden">
             {/* Modal backdrop */}
             <AnimatePresence>
@@ -231,16 +231,17 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
+                  className="fixed inset-0 bg-black/70 backdrop-blur-sm z-40"
                   onClick={() => setExpandedId(null)}
                 />
               )}
             </AnimatePresence>
             
-            {/* Horizontal scroll container */}
-            <div className="relative">
+            {/* Carousel Container */}
+            <div className="relative -mx-4">
+              {/* Horizontal Scroll Area */}
               <div 
-                className="flex gap-4 overflow-x-auto pb-4 px-4 scrollbar-hide"
+                className="flex gap-3 overflow-x-auto px-4 pb-4 scrollbar-hide"
                 style={{ 
                   scrollSnapType: 'x mandatory',
                   scrollBehavior: 'smooth',
@@ -260,13 +261,12 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                       <motion.button
                         className={`
                           ${isExpanded 
-                            ? 'fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-sm h-[85vh] max-h-[600px] z-50' 
-                            : 'w-80 h-48'
+                            ? 'fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[95vw] max-w-md h-[90vh] max-h-[700px] z-50' 
+                            : 'w-72 h-44'
                           } 
-                          bg-white rounded-2xl shadow-lg border border-gray-100
+                          bg-white rounded-xl shadow-lg border border-gray-100
                           transition-all duration-300 ease-out
                           focus:outline-none focus:ring-2 focus:ring-navy-300
-                          hover:shadow-xl
                         `}
                         onClick={() => handleBubbleClick(testimonial.id)}
                         onKeyDown={(e) => handleKeyDown(e, testimonial.id)}
@@ -274,39 +274,39 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                         layout
                         transition={{ layout: { duration: 0.3, ease: "easeInOut" } }}
                       >
-                        <div className="h-full p-5 flex flex-col">
+                        <div className="h-full p-4 flex flex-col">
                           {!isExpanded ? (
                             // Card Preview
                             <>
-                              {/* Header with Name and Avatar */}
-                              <div className="flex items-center gap-3 mb-4">
-                                <div className="w-12 h-12 bg-gradient-to-br from-navy-100 to-navy-200 rounded-full flex items-center justify-center">
-                                  <span className="text-navy-800 font-bold text-base">
+                              {/* Header */}
+                              <div className="flex items-center gap-3 mb-3">
+                                <div className="w-10 h-10 bg-gradient-to-br from-navy-100 to-navy-200 rounded-full flex items-center justify-center flex-shrink-0">
+                                  <span className="text-navy-800 font-bold text-sm">
                                     {testimonial.name.split(' ').map(n => n[0]).join('')}
                                   </span>
                                 </div>
-                                <div className="flex-1 text-left">
-                                  <h3 className="font-bold text-navy-900 text-base leading-tight">
+                                <div className="flex-1 min-w-0">
+                                  <h3 className="font-semibold text-navy-900 text-sm leading-tight truncate">
                                     {testimonial.name}
                                   </h3>
-                                  <div className="flex items-center gap-0.5 mt-2">
+                                  <div className="flex items-center gap-0.5 mt-1">
                                     {[...Array(testimonial.rating)].map((_, i) => (
-                                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                                      <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
                                     ))}
                                   </div>
                                 </div>
                               </div>
                               
-                              {/* Review Text */}
+                              {/* Review Preview */}
                               <div className="flex-1 flex flex-col justify-center">
-                                <p className="text-sm text-gray-700 leading-relaxed text-left mb-4">
-                                  "{getPreviewText(testimonial.review, 20)}"
+                                <p className="text-xs text-gray-700 leading-relaxed text-left mb-3 line-clamp-3">
+                                  "{getPreviewText(testimonial.review, 18)}"
                                 </p>
                                 
-                                {/* Read More Button */}
+                                {/* Read More */}
                                 <div className="text-center">
-                                  <span className="text-xs text-navy-600 bg-navy-50 px-4 py-2 rounded-full font-medium">
-                                    Tap to read full review
+                                  <span className="text-xs text-navy-600 bg-navy-50 px-3 py-1.5 rounded-full font-medium">
+                                    Tap to read more
                                   </span>
                                 </div>
                               </div>
@@ -314,10 +314,10 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                           ) : (
                             // Expanded Modal
                             <motion.div
-                              initial={{ opacity: 0, y: 20 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ delay: 0.1, duration: 0.3 }}
-                              className="h-full flex flex-col relative"
+                              initial={{ opacity: 0, scale: 0.95 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              transition={{ delay: 0.1, duration: 0.2 }}
+                              className="h-full flex flex-col relative overflow-hidden"
                             >
                               {/* Close Button */}
                               <button
@@ -325,44 +325,46 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                                   e.stopPropagation()
                                   setExpandedId(null)
                                 }}
-                                className="absolute top-0 right-0 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-colors"
+                                className="absolute top-2 right-2 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-colors z-10"
                               >
                                 <X className="w-4 h-4 text-gray-600" />
                               </button>
                               
                               {/* Modal Content */}
-                              <div className="flex-1 flex flex-col pt-8">
+                              <div className="flex-1 flex flex-col pt-6 pb-4 px-2 overflow-y-auto">
                                 {/* Header */}
-                                <div className="text-center mb-6">
-                                  <div className="w-16 h-16 bg-gradient-to-br from-navy-100 to-navy-200 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <span className="text-navy-800 font-bold text-xl">
+                                <div className="text-center mb-4 flex-shrink-0">
+                                  <div className="w-14 h-14 bg-gradient-to-br from-navy-100 to-navy-200 rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <span className="text-navy-800 font-bold text-lg">
                                       {testimonial.name.split(' ').map(n => n[0]).join('')}
                                     </span>
                                   </div>
-                                  <h3 className="font-bold text-navy-900 text-xl mb-3">
+                                  <h3 className="font-bold text-navy-900 text-lg mb-2 leading-tight">
                                     {testimonial.name}
                                   </h3>
-                                  <div className="flex items-center justify-center gap-1 mb-4">
+                                  <div className="flex items-center justify-center gap-1 mb-3">
                                     {[...Array(testimonial.rating)].map((_, i) => (
-                                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                                     ))}
                                   </div>
                                 </div>
                                 
                                 {/* Full Review */}
-                                <div className="flex-1 flex items-center justify-center px-4">
-                                  <p className="text-gray-800 text-base leading-relaxed text-center max-w-xs">
-                                    "{testimonial.review}"
-                                  </p>
+                                <div className="flex-1 flex items-center justify-center px-2">
+                                  <div className="max-w-xs">
+                                    <p className="text-gray-800 text-sm leading-relaxed text-center">
+                                      "{testimonial.review}"
+                                    </p>
+                                  </div>
                                 </div>
                                 
                                 {/* Footer */}
-                                <div className="text-center pt-6 border-t border-gray-100 mt-6">
-                                  <p className="text-sm text-gray-500 mb-2">
+                                <div className="text-center pt-4 border-t border-gray-100 mt-4 flex-shrink-0">
+                                  <p className="text-xs text-gray-500 mb-2">
                                     {formatDate(testimonial.date)}
                                   </p>
                                   {'service' in testimonial && testimonial.service && (
-                                    <span className="text-xs text-navy-600 bg-navy-50 px-3 py-1 rounded-full">
+                                    <span className="text-xs text-navy-600 bg-navy-50 px-2 py-1 rounded-full">
                                       {testimonial.service}
                                     </span>
                                   )}
@@ -378,8 +380,8 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
               </div>
               
               {/* Scroll Indicator */}
-              <div className="text-center mt-4">
-                <p className="text-sm text-gray-500">← Swipe to see more reviews →</p>
+              <div className="text-center mt-3">
+                <p className="text-xs text-gray-500">Swipe left and right to see more reviews</p>
               </div>
             </div>
           </div>
