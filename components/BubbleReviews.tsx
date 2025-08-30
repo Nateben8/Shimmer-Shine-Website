@@ -222,167 +222,100 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
 
         {/* Reviews Container */}
         <div className="relative mb-6">
-          {/* Mobile: True Horizontal Carousel */}
+          {/* Mobile: Brand-Aligned Review Showcase */}
           <div className="block md:hidden">
-            {/* Modal backdrop */}
-            <AnimatePresence>
-              {expandedId && (
+            {/* Featured Review Card */}
+            <div className="bg-gradient-to-br from-navy-50 to-white border-2 border-navy-100 rounded-2xl p-6 mb-6 shadow-lg">
+              <div className="text-center mb-4">
+                <div className="flex items-center justify-center gap-1 mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <h3 className="font-bold text-navy-900 text-lg mb-2">
+                  {EXTENDED_TESTIMONIALS[0].name}
+                </h3>
+                <p className="text-navy-700 text-sm leading-relaxed italic">
+                  "{EXTENDED_TESTIMONIALS[0].review}"
+                </p>
+                <div className="mt-3 text-xs text-navy-600">
+                  {formatDate(EXTENDED_TESTIMONIALS[0].date)}
+                </div>
+              </div>
+            </div>
+
+            {/* Review Grid */}
+            <div className="grid grid-cols-1 gap-4 mb-6">
+              {EXTENDED_TESTIMONIALS.slice(1, 4).map((testimonial, index) => (
                 <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  className="fixed inset-0 bg-black/70 backdrop-blur-sm z-40"
-                  onClick={() => setExpandedId(null)}
-                />
-              )}
-            </AnimatePresence>
-            
-            {/* Carousel Container */}
-            <div className="relative -mx-4">
-              {/* Horizontal Scroll Area */}
-              <div 
-                className="flex gap-3 overflow-x-auto px-4 pb-4 scrollbar-hide"
-                style={{ 
-                  scrollSnapType: 'x mandatory',
-                  scrollBehavior: 'smooth',
-                  WebkitOverflowScrolling: 'touch'
-                }}
-              >
-                {EXTENDED_TESTIMONIALS.slice(0, 8).map((testimonial, index) => {
-                  const isExpanded = expandedId === testimonial.id
-                
-                  return (
-                    <div
-                      key={`mobile-${testimonial.id}`}
-                      className="flex-shrink-0"
-                      style={{ scrollSnapAlign: 'start' }}
-                    >
-                      {/* Review Card */}
-                      <motion.button
-                        className={`
-                          ${isExpanded 
-                            ? 'fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[95vw] max-w-md h-[90vh] max-h-[700px] z-50' 
-                            : 'w-72 h-44'
-                          } 
-                          bg-white rounded-xl shadow-lg border border-gray-100
-                          transition-all duration-300 ease-out
-                          focus:outline-none focus:ring-2 focus:ring-navy-300
-                        `}
-                        onClick={() => handleBubbleClick(testimonial.id)}
-                        onKeyDown={(e) => handleKeyDown(e, testimonial.id)}
-                        aria-expanded={isExpanded}
-                        layout
-                        transition={{ layout: { duration: 0.3, ease: "easeInOut" } }}
-                      >
-                        <div className="h-full p-4 flex flex-col">
-                          {!isExpanded ? (
-                            // Card Preview
-                            <>
-                              {/* Header */}
-                              <div className="flex items-center gap-3 mb-3">
-                                <div className="w-10 h-10 bg-gradient-to-br from-navy-100 to-navy-200 rounded-full flex items-center justify-center flex-shrink-0">
-                                  <span className="text-navy-800 font-bold text-sm">
-                                    {testimonial.name.split(' ').map(n => n[0]).join('')}
-                                  </span>
-                                </div>
-                                <div className="flex-1 min-w-0">
-                                  <h3 className="font-semibold text-navy-900 text-sm leading-tight truncate">
-                                    {testimonial.name}
-                                  </h3>
-                                  <div className="flex items-center gap-0.5 mt-1">
-                                    {[...Array(testimonial.rating)].map((_, i) => (
-                                      <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
-                                    ))}
-                                  </div>
-                                </div>
-                              </div>
-                              
-                              {/* Review Preview */}
-                              <div className="flex-1 flex flex-col justify-center">
-                                <p className="text-xs text-gray-700 leading-relaxed text-left mb-3 line-clamp-3">
-                                  "{getPreviewText(testimonial.review, 18)}"
-                                </p>
-                                
-                                {/* Read More */}
-                                <div className="text-center">
-                                  <span className="text-xs text-navy-600 bg-navy-50 px-3 py-1.5 rounded-full font-medium">
-                                    Tap to read more
-                                  </span>
-                                </div>
-                              </div>
-                            </>
-                          ) : (
-                            // Expanded Modal
-                            <motion.div
-                              initial={{ opacity: 0, scale: 0.95 }}
-                              animate={{ opacity: 1, scale: 1 }}
-                              transition={{ delay: 0.1, duration: 0.2 }}
-                              className="h-full flex flex-col relative overflow-hidden"
-                            >
-                              {/* Close Button */}
-                              <button
-                                onClick={(e) => {
-                                  e.stopPropagation()
-                                  setExpandedId(null)
-                                }}
-                                className="absolute top-2 right-2 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-colors z-10"
-                              >
-                                <X className="w-4 h-4 text-gray-600" />
-                              </button>
-                              
-                              {/* Modal Content */}
-                              <div className="flex-1 flex flex-col pt-6 pb-4 px-2 overflow-y-auto">
-                                {/* Header */}
-                                <div className="text-center mb-4 flex-shrink-0">
-                                  <div className="w-14 h-14 bg-gradient-to-br from-navy-100 to-navy-200 rounded-full flex items-center justify-center mx-auto mb-3">
-                                    <span className="text-navy-800 font-bold text-lg">
-                                      {testimonial.name.split(' ').map(n => n[0]).join('')}
-                                    </span>
-                                  </div>
-                                  <h3 className="font-bold text-navy-900 text-lg mb-2 leading-tight">
-                                    {testimonial.name}
-                                  </h3>
-                                  <div className="flex items-center justify-center gap-1 mb-3">
-                                    {[...Array(testimonial.rating)].map((_, i) => (
-                                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                                    ))}
-                                  </div>
-                                </div>
-                                
-                                {/* Full Review */}
-                                <div className="flex-1 flex items-center justify-center px-2">
-                                  <div className="max-w-xs">
-                                    <p className="text-gray-800 text-sm leading-relaxed text-center">
-                                      "{testimonial.review}"
-                                    </p>
-                                  </div>
-                                </div>
-                                
-                                {/* Footer */}
-                                <div className="text-center pt-4 border-t border-gray-100 mt-4 flex-shrink-0">
-                                  <p className="text-xs text-gray-500 mb-2">
-                                    {formatDate(testimonial.date)}
-                                  </p>
-                                  {'service' in testimonial && testimonial.service && (
-                                    <span className="text-xs text-navy-600 bg-navy-50 px-2 py-1 rounded-full">
-                                      {testimonial.service}
-                                    </span>
-                                  )}
-                                </div>
-                              </div>
-                            </motion.div>
-                          )}
-                        </div>
-                      </motion.button>
+                  key={`mobile-grid-${testimonial.id}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.3 }}
+                  className="bg-white border border-navy-100 rounded-xl p-4 shadow-md"
+                >
+                  <div className="flex items-start gap-3">
+                    <div className="w-12 h-12 bg-gradient-to-br from-navy-600 to-navy-800 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-white font-bold text-sm">
+                        {testimonial.name.split(' ').map(n => n[0]).join('')}
+                      </span>
                     </div>
-                  )
-                })}
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <h4 className="font-semibold text-navy-900 text-sm">
+                          {testimonial.name}
+                        </h4>
+                        <div className="flex items-center gap-0.5">
+                          {[...Array(testimonial.rating)].map((_, i) => (
+                            <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                          ))}
+                        </div>
+                      </div>
+                      <p className="text-gray-700 text-xs leading-relaxed">
+                        "{getPreviewText(testimonial.review, 25)}"
+                      </p>
+                      <div className="mt-2 text-xs text-gray-500">
+                        {formatDate(testimonial.date)}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="bg-navy-900 text-white rounded-2xl p-6 text-center">
+              <div className="grid grid-cols-3 gap-4 mb-4">
+                <div>
+                  <div className="text-2xl font-bold text-yellow-400">500+</div>
+                  <div className="text-xs text-navy-200">Happy Customers</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-yellow-400">5.0</div>
+                  <div className="text-xs text-navy-200">Star Rating</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-yellow-400">100%</div>
+                  <div className="text-xs text-navy-200">Satisfaction</div>
+                </div>
               </div>
-              
-              {/* Scroll Indicator */}
-              <div className="text-center mt-3">
-                <p className="text-xs text-gray-500">Swipe left and right to see more reviews</p>
-              </div>
+              <p className="text-sm text-navy-100 mb-4">
+                Join hundreds of satisfied customers across Orange County who trust us for professional, reliable service.
+              </p>
+              <Button
+                asChild
+                className="bg-yellow hover:bg-yellow-400 text-navy-900 font-bold px-6 py-2 rounded-full text-sm w-full"
+              >
+                <a 
+                  href="/reviews" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2"
+                >
+                  Read All Reviews
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </Button>
             </div>
           </div>
 
