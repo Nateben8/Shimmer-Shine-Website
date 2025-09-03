@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
 import { Calendar, Clock, User, ArrowRight, Tag } from "lucide-react"
+import GetQuoteButton from "@/components/GetQuoteButton"
 
 export const metadata = getPageSEO('blog')
 
@@ -350,7 +351,7 @@ export default function BlogPage() {
             </div>
             
             <h1 className="heading-decorative text-5xl md:text-7xl text-yellow mb-4">
-              Our Blog
+              Property Cleaning Tips & Guides
             </h1>
             
             <h2 className="heading-primary text-2xl md:text-3xl text-white mb-6">
@@ -569,11 +570,8 @@ export default function BlogPage() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link href="/get-a-quote">
-              <Button variant="retro-navy" size="lg" className="text-lg px-8 py-4">
-                Get Free Quote
-              </Button>
-            </Link>
+            <GetQuoteButton variant="retro-navy" size="lg" className="text-lg px-8 py-4">Get Free Quote
+              </GetQuoteButton>
             <Link href="/services">
               <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-navy text-navy hover:bg-navy hover:text-white">
                 View All Services

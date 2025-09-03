@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Star, Phone, Award, Shield, Users } from "lucide-react"
 import { BUSINESS_INFO } from "@/lib/constants"
 import { MotionWrapper, SlideUp, StaggerContainer, MotionButton } from "@/components/MotionWrapper"
+import GetQuoteButton from "./GetQuoteButton"
 
 export default function Hero() {
   return (
@@ -79,10 +80,10 @@ export default function Hero() {
                   </MotionWrapper>
                 </div>
                 
-                <h1 className="heading-decorative text-5xl sm:text-4xl md:text-6xl lg:text-7xl text-yellow text-center sm:text-left relative z-10" style={{textShadow: '1px 1px 0px #FFFFFF, 2px 2px 0px #F5F5F5'}}>
+                <h1 className="heading-decorative text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-yellow text-center sm:text-left relative z-10" style={{textShadow: '1px 1px 0px #FFFFFF, 2px 2px 0px #F5F5F5'}}>
                   Classic Shine,
                 </h1>
-                <h2 className="heading-primary text-4xl sm:text-3xl md:text-5xl lg:text-6xl text-white text-center sm:text-left relative z-10" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
+                <h2 className="heading-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white text-center sm:text-left relative z-10" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
                   Modern Quality!
                 </h2>
               </div>
@@ -91,7 +92,7 @@ export default function Hero() {
             {/* Subheading */}
             <SlideUp delay={400}>
               <p className="body-lg text-gray-100 text-center sm:text-left px-2 sm:px-0">
-                Delivering old-school craftsmanship with modern reliability since 2021. Professional window cleaning, pressure washing, and property detailing across Orange County, Los Angeles, and San Diego. Same-day service available with free, no-obligation quotes.
+                Delivering old-school craftsmanship with modern reliability since 2021. Professional window cleaning, pressure washing, and property detailing across Southern California including Orange County, Los Angeles, and San Diego. Same-day service available with free, no-obligation quotes.
               </p>
             </SlideUp>
 
@@ -136,15 +137,9 @@ export default function Hero() {
             {/* CTA Buttons */}
             <SlideUp delay={1100}>
               <div className="flex flex-col gap-4 relative z-10">
-                <Link 
-                  href="/get-a-quote" 
-                  className="w-full block relative z-10 no-underline"
-                  style={{ textDecoration: 'none' }}
-                >
-                  <MotionButton className="retro-button w-full text-lg px-8 py-5 min-h-[60px] font-bold shadow-lg cursor-pointer text-center flex items-center justify-center relative z-10 select-none">
-                    Get Free Quote in 60 Seconds
-                  </MotionButton>
-                </Link>
+                <GetQuoteButton className="retro-button w-full text-lg px-8 py-5 min-h-[60px] font-bold shadow-lg cursor-pointer text-center flex items-center justify-center relative z-10 select-none">
+                  Get Free Quote in 60 Seconds
+                </GetQuoteButton>
                 <Link 
                   href={`tel:${BUSINESS_INFO.phone}`} 
                   className="w-full block relative z-10 no-underline"

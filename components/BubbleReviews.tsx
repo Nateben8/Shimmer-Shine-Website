@@ -16,63 +16,80 @@ const EXTENDED_TESTIMONIALS = [
   // Convert original testimonials to use 'review' property
   ...TESTIMONIALS.map(t => ({
     ...t,
-    review: t.text || "Amazing service! Professional, reliable, and excellent results every time."
+    review: t.text || "Amazing service! Professional, reliable, and excellent results every time.",
+    service: t.service || "Window Cleaning"
   })),
   {
     id: 5,
     name: "Jennifer Martinez",
     rating: 5,
     review: "Absolutely amazing service! They transformed our dirty windows into crystal clear perfection. Professional, punctual, and the results speak for themselves. Highly recommend!",
-    date: "2024-01-15"
+    date: "2024-01-15",
+    service: "Window Cleaning",
+    location: "Newport Beach"
   },
   {
     id: 6,
     name: "David Thompson",
     rating: 5,
     review: "Best window cleaning service I've ever used. They handled our commercial building with ease and left every window spotless. The team was professional and efficient.",
-    date: "2024-01-10"
+    date: "2024-01-10",
+    service: "Commercial Cleaning",
+    location: "Irvine"
   },
   {
     id: 7,
     name: "Lisa Chen",
     rating: 5,
     review: "Outstanding work! They cleaned our high-rise windows and the difference is incredible. Safe, reliable, and the quality is unmatched. Will definitely use them again.",
-    date: "2024-01-08"
+    date: "2024-01-08",
+    service: "Window Cleaning",
+    location: "Costa Mesa"
   },
   {
     id: 8,
     name: "Robert Wilson",
     rating: 5,
     review: "Professional, thorough, and reasonably priced. They cleaned our entire house including hard-to-reach windows. The results exceeded our expectations!",
-    date: "2024-01-05"
+    date: "2024-01-05",
+    service: "Pressure Washing",
+    location: "Huntington Beach"
   },
   {
     id: 9,
     name: "Amanda Foster",
     rating: 5,
     review: "Fantastic service! They were on time, professional, and did an incredible job. Our windows have never looked better. Highly recommend for any property!",
-    date: "2024-01-03"
+    date: "2024-01-03",
+    service: "Solar Panel Cleaning",
+    location: "Laguna Beach"
   },
   {
     id: 10,
     name: "Michael Brown",
     rating: 5,
     review: "Excellent window cleaning service. They handled our commercial property with professionalism and attention to detail. The results are outstanding!",
-    date: "2024-01-01"
+    date: "2024-01-01",
+    service: "Gutter Cleaning",
+    location: "Anaheim"
   },
   {
     id: 11,
     name: "Sarah Williams",
     rating: 5,
     review: "Incredible attention to detail! They cleaned our restaurant windows and the difference is night and day. Professional, reliable, and the quality is exceptional.",
-    date: "2023-12-28"
+    date: "2023-12-28",
+    service: "Commercial Cleaning",
+    location: "Fullerton"
   },
   {
     id: 12,
     name: "James Davis",
     rating: 5,
     review: "Top-notch service! They handled our medical facility with the utmost care and professionalism. Every window is spotless and the team was incredibly thorough.",
-    date: "2023-12-25"
+    date: "2023-12-25",
+    service: "Post-Construction Cleanup",
+    location: "Mission Viejo"
   },
   {
     id: 13,
@@ -161,16 +178,32 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
     return words.slice(0, wordCount).join(' ') + (words.length > wordCount ? '...' : '')
   }
 
-  // Bubble size variations - more compact oval shapes
+  // Enhanced bubble size variations with more variety
   const getBubbleSize = (index: number) => {
     const sizes = [
-      'w-40 h-28', // 160x112px
       'w-44 h-32', // 176x128px  
       'w-48 h-36', // 192x144px
       'w-52 h-40', // 208x160px
-      'w-56 h-44'  // 224x176px
+      'w-56 h-44', // 224x176px
+      'w-60 h-48', // 240x192px
+      'w-64 h-52', // 256x208px
+      'w-40 h-28'  // 160x112px (smaller)
     ]
     return sizes[index % sizes.length]
+  }
+
+  // Get bubble color variations
+  const getBubbleGradient = (index: number) => {
+    const gradients = [
+      'from-navy-100/95 via-white/98 to-blue-50/90',
+      'from-blue-50/95 via-white/98 to-navy-100/90', 
+      'from-yellow-50/95 via-white/98 to-amber-50/90',
+      'from-purple-50/95 via-white/98 to-indigo-50/90',
+      'from-green-50/95 via-white/98 to-emerald-50/90',
+      'from-pink-50/95 via-white/98 to-rose-50/90',
+      'from-orange-50/95 via-white/98 to-yellow-50/90'
+    ]
+    return gradients[index % gradients.length]
   }
 
   // Carousel animation variations
@@ -215,66 +248,94 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
               What Our Customers Say
             </h2>
             <p className="text-base text-navy-600 max-w-2xl mx-auto">
-              Real reviews from satisfied customers across Orange County
+              Real reviews from satisfied customers across Southern California
             </p>
           </div>
         </div>
 
         {/* Reviews Container */}
         <div className="relative mb-6">
-          {/* Mobile: Brand-Aligned Review Showcase */}
+          {/* Mobile: Enhanced Review Showcase */}
           <div className="block md:hidden">
-            {/* Featured Review Card */}
-            <div className="bg-gradient-to-br from-navy-50 to-white border-2 border-navy-100 rounded-2xl p-6 mb-6 shadow-lg">
+            {/* Featured Review Card with Animation */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700 text-white rounded-3xl p-6 mb-6 shadow-2xl relative overflow-hidden"
+            >
+              {/* Decorative elements */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-yellow/10 rounded-full -translate-y-16 translate-x-16"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full translate-y-12 -translate-x-12"></div>
+              
+              <div className="relative z-10">
               <div className="text-center mb-4">
                 <div className="flex items-center justify-center gap-1 mb-3">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, scale: 0 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.3 + i * 0.1, duration: 0.3 }}
+                      >
+                        <Star className="w-6 h-6 fill-yellow-400 text-yellow-400" />
+                      </motion.div>
                   ))}
                 </div>
-                <h3 className="font-bold text-navy-900 text-lg mb-2">
+                  <h3 className="font-bold text-white text-xl mb-2">
                   {EXTENDED_TESTIMONIALS[0].name}
                 </h3>
-                <p className="text-navy-700 text-sm leading-relaxed italic">
+                  <div className="text-yellow-300 text-sm font-medium mb-3">
+                    {EXTENDED_TESTIMONIALS[0].service} • {EXTENDED_TESTIMONIALS[0].location || 'Southern California'}
+                  </div>
+                  <p className="text-gray-100 text-sm leading-relaxed italic">
                   "{EXTENDED_TESTIMONIALS[0].review}"
                 </p>
-                <div className="mt-3 text-xs text-navy-600">
+                  <div className="mt-4 text-xs text-gray-300">
                   {formatDate(EXTENDED_TESTIMONIALS[0].date)}
+                  </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            {/* Review Grid */}
-            <div className="grid grid-cols-1 gap-4 mb-6">
-              {EXTENDED_TESTIMONIALS.slice(1, 4).map((testimonial, index) => (
+            {/* Enhanced Review Grid */}
+            <div className="space-y-4 mb-6">
+              {EXTENDED_TESTIMONIALS.slice(1, 5).map((testimonial, index) => (
                 <motion.div
                   key={`mobile-grid-${testimonial.id}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1, duration: 0.3 }}
-                  className="bg-white border border-navy-100 rounded-xl p-4 shadow-md"
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.8 + index * 0.15, duration: 0.5 }}
+                  className="bg-gradient-to-r from-white to-gray-50 border-2 border-navy-100 rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  <div className="flex items-start gap-3">
-                    <div className="w-12 h-12 bg-gradient-to-br from-navy-600 to-navy-800 rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-white font-bold text-sm">
+                  <div className="flex items-start gap-4">
+                    <motion.div 
+                      className="w-14 h-14 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg"
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <span className="text-navy-900 font-bold text-sm">
                         {testimonial.name.split(' ').map(n => n[0]).join('')}
                       </span>
-                    </div>
+                    </motion.div>
                     <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        <h4 className="font-semibold text-navy-900 text-sm">
+                      <div className="flex items-center justify-between mb-2">
+                        <h4 className="font-bold text-navy-900 text-base">
                           {testimonial.name}
                         </h4>
                         <div className="flex items-center gap-0.5">
                           {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                           ))}
                         </div>
                       </div>
-                      <p className="text-gray-700 text-xs leading-relaxed">
-                        "{getPreviewText(testimonial.review, 25)}"
+                      <div className="text-yellow-600 text-xs font-medium mb-2">
+                        {testimonial.service} • {testimonial.location || 'Southern California'}
+                      </div>
+                      <p className="text-gray-700 text-sm leading-relaxed mb-2">
+                        "{getPreviewText(testimonial.review, 20)}"
                       </p>
-                      <div className="mt-2 text-xs text-gray-500">
+                      <div className="text-xs text-gray-500">
                         {formatDate(testimonial.date)}
                       </div>
                     </div>
@@ -283,40 +344,77 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
               ))}
             </div>
 
-            {/* Trust Indicators */}
-            <div className="bg-navy-900 text-white rounded-2xl p-6 text-center">
-              <div className="grid grid-cols-3 gap-4 mb-4">
-                <div>
-                  <div className="text-2xl font-bold text-yellow-400">500+</div>
-                  <div className="text-xs text-navy-200">Happy Customers</div>
+            {/* Enhanced Trust Indicators */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.5, duration: 0.6 }}
+              className="bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700 text-white rounded-3xl p-6 text-center relative overflow-hidden shadow-2xl"
+            >
+              {/* Background decoration */}
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow/5 via-transparent to-white/5"></div>
+              <div className="absolute top-0 left-0 w-20 h-20 bg-yellow/10 rounded-full -translate-x-10 -translate-y-10"></div>
+              <div className="absolute bottom-0 right-0 w-16 h-16 bg-white/5 rounded-full translate-x-8 translate-y-8"></div>
+              
+              <div className="relative z-10">
+                <motion.h3 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1.8, duration: 0.5 }}
+                  className="text-lg font-bold text-yellow-400 mb-4"
+                >
+                  Trusted by Southern California
+                </motion.h3>
+                
+                <div className="grid grid-cols-3 gap-4 mb-6">
+                  {[
+                    { number: "1,200+", label: "Happy Customers", delay: 2.0 },
+                    { number: "5.0", label: "Star Rating", delay: 2.1 },
+                    { number: "100%", label: "Satisfaction", delay: 2.2 }
+                  ].map((stat, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, scale: 0.5 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: stat.delay, duration: 0.4 }}
+                    >
+                      <div className="text-3xl font-bold text-yellow-400 mb-1">{stat.number}</div>
+                      <div className="text-xs text-navy-200 font-medium">{stat.label}</div>
+                    </motion.div>
+                  ))}
                 </div>
-                <div>
-                  <div className="text-2xl font-bold text-yellow-400">5.0</div>
-                  <div className="text-xs text-navy-200">Star Rating</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-yellow-400">100%</div>
-                  <div className="text-xs text-navy-200">Satisfaction</div>
-                </div>
-              </div>
-              <p className="text-sm text-navy-100 mb-4">
-                Join hundreds of satisfied customers across Orange County who trust us for professional, reliable service.
-              </p>
+                
+                <motion.p 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 2.3, duration: 0.5 }}
+                  className="text-sm text-navy-100 mb-5 leading-relaxed"
+                >
+                  Join over 1,200 satisfied customers across Southern California who trust us for professional, reliable service.
+                </motion.p>
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 2.5, duration: 0.5 }}
+                >
               <Button
                 asChild
-                className="bg-yellow hover:bg-yellow-400 text-navy-900 font-bold px-6 py-2 rounded-full text-sm w-full"
+                    className="bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-navy-900 font-bold px-8 py-3 rounded-full text-sm w-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
                 <a 
-                  href="/reviews" 
+                      href="https://www.google.com/search?q=shimmer+shine+property+detailing+reviews" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2"
                 >
-                  Read All Reviews
+                      Read All Google Reviews
                   <ExternalLink className="w-4 h-4" />
                 </a>
               </Button>
+                </motion.div>
             </div>
+            </motion.div>
           </div>
 
           {/* Desktop: Original grid layout */}
@@ -326,6 +424,7 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
             {EXTENDED_TESTIMONIALS.slice(0, 10).map((testimonial, index) => {
               const isExpanded = expandedId === testimonial.id
               const bubbleSize = getBubbleSize(index)
+              const bubbleGradient = getBubbleGradient(index)
               const carouselAnim = getCarouselAnimation(index)
               
               return (
@@ -363,10 +462,11 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                     className={`
                       ${isExpanded ? 'w-80 h-80' : bubbleSize} 
                       rounded-full relative overflow-hidden cursor-pointer
-                      bg-gradient-to-br from-navy-100/90 via-white/95 to-navy-50/90
-                      border-2 border-navy-200/60 shadow-2xl backdrop-blur-sm
+                      bg-gradient-to-br ${bubbleGradient}
+                      border-2 border-white/80 shadow-2xl backdrop-blur-sm
                       hover:shadow-3xl transition-all duration-500
-                      focus:outline-none focus:ring-4 focus:ring-navy-300/50
+                      focus:outline-none focus:ring-4 focus:ring-yellow-300/50
+                      hover:border-yellow-300/60
                       ${isExpanded ? 'z-50' : 'z-10'}
                     `}
                     onClick={() => handleBubbleClick(testimonial.id)}
@@ -461,15 +561,22 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                             </div>
                             
                             {/* Date and service info */}
-                            <div className="text-center space-y-1">
+                            <div className="text-center space-y-2">
+                              <div className="flex items-center justify-center gap-2 flex-wrap">
+                                {'service' in testimonial && testimonial.service && (
+                                  <span className="text-xs text-yellow-700 bg-yellow-100 px-3 py-1 rounded-full font-medium">
+                                    {testimonial.service}
+                                  </span>
+                                )}
+                                {'location' in testimonial && testimonial.location && (
+                                  <span className="text-xs text-blue-700 bg-blue-100 px-3 py-1 rounded-full font-medium">
+                                    {testimonial.location}
+                                  </span>
+                                )}
+                              </div>
                               <p className="text-sm text-navy-600 font-medium">
                                 {formatDate(testimonial.date)}
                               </p>
-                              {'service' in testimonial && testimonial.service && (
-                                <p className="text-xs text-navy-500 bg-navy-100/60 px-3 py-1 rounded-full inline-block">
-                                  {testimonial.service}
-                                </p>
-                              )}
                             </div>
                           </div>
                         </motion.div>
@@ -486,6 +593,7 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
             {EXTENDED_TESTIMONIALS.slice(10, 20).map((testimonial, index) => {
               const isExpanded = expandedId === testimonial.id
               const bubbleSize = getBubbleSize(index + 5)
+              const bubbleGradient = getBubbleGradient(index + 5)
               const carouselAnim = getCarouselAnimation(index + 12)
               
               return (
@@ -523,10 +631,11 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                     className={`
                       ${isExpanded ? 'w-80 h-80' : bubbleSize} 
                       rounded-full relative overflow-hidden cursor-pointer
-                      bg-gradient-to-br from-navy-100/90 via-white/95 to-navy-50/90
-                      border-2 border-navy-200/60 shadow-2xl backdrop-blur-sm
+                      bg-gradient-to-br ${bubbleGradient}
+                      border-2 border-white/80 shadow-2xl backdrop-blur-sm
                       hover:shadow-3xl transition-all duration-500
-                      focus:outline-none focus:ring-4 focus:ring-navy-300/50
+                      focus:outline-none focus:ring-4 focus:ring-yellow-300/50
+                      hover:border-yellow-300/60
                       ${isExpanded ? 'z-50' : 'z-10'}
                     `}
                     onClick={() => handleBubbleClick(testimonial.id)}
@@ -621,15 +730,22 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                             </div>
                             
                             {/* Date and service info */}
-                            <div className="text-center space-y-1">
+                            <div className="text-center space-y-2">
+                              <div className="flex items-center justify-center gap-2 flex-wrap">
+                                {'service' in testimonial && testimonial.service && (
+                                  <span className="text-xs text-yellow-700 bg-yellow-100 px-3 py-1 rounded-full font-medium">
+                                    {testimonial.service}
+                                  </span>
+                                )}
+                                {'location' in testimonial && testimonial.location && (
+                                  <span className="text-xs text-blue-700 bg-blue-100 px-3 py-1 rounded-full font-medium">
+                                    {testimonial.location}
+                                  </span>
+                                )}
+                              </div>
                               <p className="text-sm text-navy-600 font-medium">
                                 {formatDate(testimonial.date)}
                               </p>
-                              {'service' in testimonial && testimonial.service && (
-                                <p className="text-xs text-navy-500 bg-navy-100/60 px-3 py-1 rounded-full inline-block">
-                                  {testimonial.service}
-                                </p>
-                              )}
                             </div>
                           </div>
                         </motion.div>
@@ -669,22 +785,36 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
           </div>
         </div>
 
-        {/* Enhanced CTA Button */}
-        <div className="text-center">
+        {/* Enhanced CTA Button - Desktop Only */}
+        <div className="text-center hidden md:block">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.0, duration: 0.6 }}
+          >
           <Button
             asChild
-            className="bg-gradient-to-r from-navy-600 to-navy-800 hover:from-navy-700 hover:to-navy-900 text-white px-10 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-lg font-bold"
+              className="bg-gradient-to-r from-navy-600 via-navy-700 to-navy-800 hover:from-navy-700 hover:via-navy-800 hover:to-navy-900 text-white px-12 py-5 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-110 text-xl font-bold relative overflow-hidden group"
           >
             <a 
-              href="/reviews" 
+                href="https://www.google.com/search?q=shimmer+shine+property+detailing+reviews" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3"
+                className="inline-flex items-center gap-3 relative z-10"
             >
+                {/* Animated background */}
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-yellow-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
               Read All Google Reviews
-              <ExternalLink className="w-5 h-5" />
+                <motion.div
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <ExternalLink className="w-6 h-6" />
+                </motion.div>
             </a>
           </Button>
+          </motion.div>
         </div>
       </div>
     </section>

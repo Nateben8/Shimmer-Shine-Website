@@ -6,6 +6,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Calendar, Clock, User, ArrowRight, ArrowLeft, Tag } from "lucide-react"
 import { notFound } from "next/navigation"
+import GetQuoteButton from "@/components/GetQuoteButton"
 
 // Real blog posts data - same as blog page
 const blogPosts = [
@@ -552,11 +553,8 @@ export default function CategoryPage({ params }: CategoryPageProps) {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link href="/get-a-quote">
-              <Button size="lg" className="bg-yellow text-navy hover:bg-yellow/90 text-lg px-8 py-4">
-                Get Free Quote
-              </Button>
-            </Link>
+            <GetQuoteButton size="lg" className="bg-yellow text-navy hover:bg-yellow/90 text-lg px-8 py-4">Get Free Quote
+              </GetQuoteButton>
             <Link href={`tel:${BUSINESS_INFO.phone}`}>
               <Button variant="outline" size="lg" className="border-yellow text-yellow hover:bg-yellow hover:text-navy text-lg px-8 py-4">
                 Call {BUSINESS_INFO.phone}

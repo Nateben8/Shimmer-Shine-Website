@@ -14,6 +14,64 @@ interface BreadcrumbsProps {
   className?: string
 }
 
+// Generate breadcrumbs for different page types
+export function generateBreadcrumbs(type: string, params: any): BreadcrumbItem[] {
+  const breadcrumbs: BreadcrumbItem[] = []
+  
+  switch (type) {
+    case 'city':
+      breadcrumbs.push({ name: 'Cities', url: '/cities' })
+      if (params.cityName) {
+        breadcrumbs.push({ 
+          name: params.cityName, 
+          url: `/cities/${params.slug}` 
+        })
+      }
+      break
+    
+    case 'service':
+      breadcrumbs.push({ name: 'Services', url: '/services' })
+      if (params.serviceName) {
+        breadcrumbs.push({ 
+          name: params.serviceName, 
+          url: `/services/${params.slug}` 
+        })
+      }
+      break
+    
+    case 'service-city':
+      breadcrumbs.push({ name: 'Services', url: '/services' })
+      if (params.serviceName) {
+        breadcrumbs.push({ 
+          name: params.serviceName, 
+          url: `/services/${params.serviceSlug}` 
+        })
+      }
+      if (params.cityName) {
+        breadcrumbs.push({ 
+          name: `${params.serviceName} in ${params.cityName}`, 
+          url: `/services/${params.serviceSlug}/${params.citySlug}` 
+        })
+      }
+      break
+    
+    case 'county':
+      breadcrumbs.push({ name: 'Counties', url: '/counties' })
+      if (params.countyName) {
+        breadcrumbs.push({ 
+          name: params.countyName, 
+          url: `/counties/${params.slug}` 
+        })
+      }
+      break
+    
+    default:
+      break
+  }
+  
+  return breadcrumbs
+}
+
 export default function Breadcrumbs({ items, className = '' }: BreadcrumbsProps) {
   // Always include Home as the first item
   const allItems = [
@@ -74,83 +132,4 @@ export default function Breadcrumbs({ items, className = '' }: BreadcrumbsProps)
   )
 }
 
-// Helper function to generate breadcrumbs for different page types
-export function generateBreadcrumbs(pageType: string, params?: any): BreadcrumbItem[] {
-  switch (pageType) {
-    case 'services':
-      return [
-        { name: 'Services', url: 'https://www.shimmershinepropertydetailing.com/services' }
-      ]
-    
-    case 'service':
-      const serviceName = params?.serviceName || 'Service'
-      return [
-        { name: 'Services', url: 'https://www.shimmershinepropertydetailing.com/services' },
-        { name: serviceName, url: `https://www.shimmershinepropertydetailing.com/services/${params?.slug}` }
-      ]
-    
-    case 'cities':
-      return [
-        { name: 'Service Areas', url: 'https://www.shimmershinepropertydetailing.com/cities' }
-      ]
-    
-    case 'city':
-      const cityName = params?.cityName || 'City'
-      return [
-        { name: 'Service Areas', url: 'https://www.shimmershinepropertydetailing.com/cities' },
-        { name: cityName, url: `https://www.shimmershinepropertydetailing.com/cities/${params?.slug}` }
-      ]
-    
-    case 'blog':
-      return [
-        { name: 'Blog', url: 'https://www.shimmershinepropertydetailing.com/blog' }
-      ]
-    
-    case 'blog-post':
-      const postTitle = params?.title || 'Blog Post'
-      return [
-        { name: 'Blog', url: 'https://www.shimmershinepropertydetailing.com/blog' },
-        { name: postTitle, url: `https://www.shimmershinepropertydetailing.com/blog/${params?.slug}` }
-      ]
-    
-    case 'blog-category':
-      const categoryName = params?.categoryName || 'Category'
-      return [
-        { name: 'Blog', url: 'https://www.shimmershinepropertydetailing.com/blog' },
-        { name: categoryName, url: `https://www.shimmershinepropertydetailing.com/blog/category/${params?.slug}` }
-      ]
-    
-    case 'about':
-      return [
-        { name: 'About Us', url: 'https://www.shimmershinepropertydetailing.com/about' }
-      ]
-    
-    case 'gallery':
-      return [
-        { name: 'Gallery', url: 'https://www.shimmershinepropertydetailing.com/gallery' }
-      ]
-    
-    case 'get-a-quote':
-      return [
-        { name: 'Get a Quote', url: 'https://www.shimmershinepropertydetailing.com/get-a-quote' }
-      ]
-    
-    case 'privacy-policy':
-      return [
-        { name: 'Privacy Policy', url: 'https://www.shimmershinepropertydetailing.com/privacy-policy' }
-      ]
-    
-    case 'terms-of-service':
-      return [
-        { name: 'Terms of Service', url: 'https://www.shimmershinepropertydetailing.com/terms-of-service' }
-      ]
-    
-    case 'sitemap':
-      return [
-        { name: 'Sitemap', url: 'https://www.shimmershinepropertydetailing.com/sitemap' }
-      ]
-    
-    default:
-      return []
-  }
-}
+

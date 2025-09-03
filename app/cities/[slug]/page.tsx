@@ -7,7 +7,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
+import ContextualServiceLinks from "@/components/ContextualServiceLinks"
+import LocalAreaLinks from "@/components/LocalAreaLinks"
+import RelatedContentLinks from "@/components/RelatedContentLinks"
+import Breadcrumbs, { generateBreadcrumbs } from "@/components/Breadcrumbs"
 import { 
+import GetQuoteButton from "@/components/GetQuoteButton"
   MapPin, 
   Phone, 
   Star, 
@@ -122,10 +127,10 @@ export default function CityPage({ params }: CityPageProps) {
   const localBusinessSchema = getLocalBusinessSchema()
 
   const featuredServices = SERVICES.slice(0, 4)
-  // const breadcrumbs = generateBreadcrumbs('city', { 
-  //   cityName: cityName, 
-  //   slug: params.slug 
-  // })
+  const breadcrumbs = generateBreadcrumbs('city', { 
+    cityName: cityName, 
+    slug: params.slug 
+  })
 
   return (
     <>
@@ -141,9 +146,9 @@ export default function CityPage({ params }: CityPageProps) {
       <section className="bg-gradient-to-br from-navy to-navy-700 text-white py-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumbs */}
-          {/* <div className="mb-8">
+          <div className="mb-8">
             <Breadcrumbs items={breadcrumbs} className="text-gray-300" />
-          </div> */}
+          </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -154,7 +159,7 @@ export default function CityPage({ params }: CityPageProps) {
               </div>
               
               <h1 className="heading-decorative text-5xl md:text-6xl text-yellow mb-4" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
-                {cityName} Commercial Cleaning & Business Services
+                Professional Cleaning Services in {cityName}
               </h1>
               
               <h2 className="heading-primary text-2xl md:text-3xl text-white mb-6" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
@@ -187,11 +192,8 @@ export default function CityPage({ params }: CityPageProps) {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/get-a-quote">
-                  <Button variant="retro" size="lg" className="text-lg px-8 py-4">
-                    Free Quote {cityName} Pressure Washing
-                  </Button>
-                </Link>
+                <GetQuoteButton variant="retro" size="lg" className="text-lg px-8 py-4">Free Quote {cityName} Pressure Washing
+                  </GetQuoteButton>
                 <Link href={`tel:${BUSINESS_INFO.phone}`}>
                   <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-yellow text-yellow hover:bg-yellow hover:text-navy">
                     <Phone className="h-5 w-5 mr-2" />
@@ -439,11 +441,8 @@ export default function CityPage({ params }: CityPageProps) {
               Professional commercial cleaning {cityName} with B2B contract solutions. Our office cleaning services {cityName} and business cleaning services {cityName} includes medical office cleaning {cityName}, restaurant cleaning services {cityName}, industrial cleaning {cityName}, and day porter services {cityName} for all business types.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/get-a-quote">
-                <Button variant="retro" size="lg" className="text-lg px-8 py-4">
-                  Get Free {cityName} Commercial Quote
-                </Button>
-              </Link>
+              <GetQuoteButton variant="retro" size="lg" className="text-lg px-8 py-4">Get Free {cityName} Commercial Quote
+                </GetQuoteButton>
               <Link href={`tel:${BUSINESS_INFO.phone}`}>
                 <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-navy text-navy hover:bg-navy hover:text-white">
                   <Phone className="h-5 w-5 mr-2" />
@@ -468,32 +467,44 @@ export default function CityPage({ params }: CityPageProps) {
               <CardContent className="prose prose-lg max-w-none">
                 <div className="body-text text-gray-700 leading-relaxed space-y-4">
                   <p>
-                    <strong>{cityName} residents and business owners</strong> have trusted Shimmer Shine Property Detailing for nearly three decades. Our professional company understands the unique challenges that {county}'s climate presents for property maintenance.
+                    <strong>Professional window cleaning {cityName}</strong> and <strong>pressure washing {cityName}</strong> services have been our specialty since 2021. As your trusted <strong>local cleaning company {cityName}</strong>, we understand the unique challenges that {county}'s climate and environment present for property maintenance.
                   </p>
                   
                   <p>
-                    Whether you need window cleaning for your {cityName} home's ocean views, pressure washing to remove California's persistent dust and grime, or solar panel cleaning to maintain peak efficiency, our experienced team delivers old-school quality with modern reliability.
+                    Whether you need <strong>residential window cleaning {cityName}</strong> for your home's stunning views, <strong>commercial pressure washing {cityName}</strong> for your business, or <strong>solar panel cleaning {cityName}</strong> to maintain peak efficiency, our experienced team delivers professional results with same-day availability.
+                  </p>
+
+                  <h3 className="heading-primary text-xl text-navy mt-6 mb-4">Why Choose Our {cityName} Cleaning Services?</h3>
+                  
+                  <p>
+                    Our <strong>{cityName} cleaning services</strong> are designed specifically for the local environment and community needs. We've completed over 500 successful projects in {county}, earning 5-star ratings from satisfied customers who appreciate our attention to detail and professional approach.
                   </p>
                   
                   <p>
-                    <strong>Our {cityName} services include:</strong>
+                    <strong>Comprehensive {cityName} cleaning services include:</strong>
                   </p>
                   
                   <ul className="list-disc pl-6 space-y-2">
-                    <li>Residential and commercial window cleaning in {cityName}</li>
-                    <li>Pressure washing for {cityName} driveways, patios, and building exteriors</li>
-                    <li>Solar panel cleaning to maximize energy efficiency</li>
-                    <li>Gutter cleaning and maintenance services</li>
-                    <li>Post-construction cleanup for {cityName} new builds and renovations</li>
-                    <li>Regular maintenance programs for {cityName} businesses</li>
+                    <li><strong>Window cleaning {cityName}</strong> - Interior, exterior, and screen cleaning</li>
+                    <li><strong>Pressure washing {cityName}</strong> - Driveways, patios, and building exteriors</li>
+                    <li><strong>Solar panel cleaning {cityName}</strong> - Efficiency restoration and maintenance</li>
+                    <li><strong>Gutter cleaning {cityName}</strong> - Debris removal and downspout clearing</li>
+                    <li><strong>Post-construction cleanup {cityName}</strong> - New builds and renovations</li>
+                    <li><strong>Commercial cleaning {cityName}</strong> - Regular maintenance programs for businesses</li>
                   </ul>
+
+                  <h3 className="heading-primary text-xl text-navy mt-6 mb-4">Local {cityName} Expertise & Community Focus</h3>
                   
                   <p>
-                    We're proud to serve the {cityName} community with the same values that started our business in 1995: honest pricing, reliable service, and a commitment to customer satisfaction that goes beyond the job itself.
+                    As a <strong>local {cityName} cleaning company</strong>, we're familiar with the area's specific cleaning challenges - from coastal salt air effects to inland dust accumulation. Our team regularly services properties throughout {cityName}, building lasting relationships with homeowners, property managers, and business owners who value reliable, professional service.
+                  </p>
+
+                  <p>
+                    We're proud to serve the {cityName} community with transparent pricing, reliable scheduling, and a 100% satisfaction guarantee. Our <strong>licensed and insured {cityName} cleaning services</strong> ensure your complete peace of mind, and our same-day availability means we're here when you need us most.
                   </p>
                   
                   <p>
-                    <strong>Ready to experience the Shimmer Shine difference in {cityName}?</strong> Contact us today for your free estimate and join hundreds of satisfied customers throughout {county}.
+                    <strong>Ready to experience professional cleaning in {cityName}?</strong> Contact us today at {BUSINESS_INFO.phone} for your free estimate and join hundreds of satisfied customers throughout {county} who trust Shimmer Shine for all their property cleaning needs.
                   </p>
                 </div>
               </CardContent>
@@ -723,6 +734,126 @@ export default function CityPage({ params }: CityPageProps) {
           </div>
         </section>
 
+      {/* Internal Linking Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h3 className="heading-primary text-3xl md:text-4xl mb-4">
+                More Ways We Serve {cityName}
+              </h3>
+              <p className="body-text text-xl text-gray-600">
+                Explore our complete range of services and nearby areas
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              
+              {/* All Services for This City */}
+              <div className="lg:col-span-1">
+                <Card className="retro-card h-full">
+                  <CardContent className="p-6">
+                    <ContextualServiceLinks 
+                      currentCity={params.slug}
+                      maxLinks={5}
+                      className="h-full"
+                    />
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Nearby Cities */}
+              <div className="lg:col-span-1">
+                <Card className="retro-card h-full">
+                  <CardContent className="p-6">
+                    <LocalAreaLinks 
+                      currentCity={params.slug}
+                      showNearby={true}
+                      maxLinks={6}
+                      className="h-full"
+                    />
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Related Content & Tips */}
+              <div className="lg:col-span-1">
+                <Card className="retro-card h-full">
+                  <CardContent className="p-6">
+                    <RelatedContentLinks 
+                      currentPage="city"
+                      context={{ city: params.slug }}
+                      maxLinks={3}
+                      className="h-full"
+                    />
+                  </CardContent>
+                </Card>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Available Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h3 className="heading-primary text-3xl md:text-4xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
+              Professional Services in {cityName}
+            </h3>
+            <p className="body-text text-lg text-gray-600 max-w-2xl mx-auto">
+              Complete property detailing solutions for {cityName} homes and businesses
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {SERVICES.map((service) => (
+              <Card key={service.id} className="retro-card hover:shadow-retro-yellow transition-all duration-300">
+                <CardHeader className="text-center">
+                  <div className="text-4xl mb-3">{service.icon}</div>
+                  <CardTitle className="heading-primary text-lg text-navy">
+                    <Link 
+                      href={`/services/${service.id}`}
+                      className="hover:text-yellow transition-colors"
+                    >
+                      {service.name} {cityName}
+                    </Link>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="body-text text-gray-600 text-sm mb-4 leading-relaxed">
+                    Professional {service.name.toLowerCase()} services for {cityName} properties. {service.shortDescription}
+                  </p>
+                  <div className="space-y-2">
+                    <Link 
+                      href={`/services/${service.id}`}
+                      className="block text-blue-600 hover:text-blue-800 hover:underline text-sm font-medium"
+                    >
+                      Learn About {service.name} →
+                    </Link>
+                    <Link 
+                      href="/get-a-quote"
+                      className="block text-navy hover:text-yellow text-sm font-medium"
+                    >
+                      Get {cityName} Quote →
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="/services">
+              <Button variant="outline" size="lg" className="hover:bg-yellow hover:text-navy">
+                View All Services
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 bg-yellow">
         <div className="container mx-auto px-4 text-center">
@@ -734,11 +865,8 @@ export default function CityPage({ params }: CityPageProps) {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link href="/get-a-quote">
-              <Button variant="retro-navy" size="lg" className="text-lg px-8 py-4">
-                Get Free {cityName} Quote
-              </Button>
-            </Link>
+            <GetQuoteButton variant="retro-navy" size="lg" className="text-lg px-8 py-4">Get Free {cityName} Quote
+              </GetQuoteButton>
             <Link href={`tel:${BUSINESS_INFO.phone}`}>
               <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-navy text-navy hover:bg-navy hover:text-white">
                 <Phone className="h-5 w-5 mr-2" />

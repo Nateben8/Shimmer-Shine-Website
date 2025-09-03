@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
 import { 
+import GetQuoteButton from "@/components/GetQuoteButton"
   Camera, 
   Star, 
   ArrowRight,
@@ -14,24 +15,7 @@ import {
   Calendar
 } from "lucide-react"
 
-export const metadata = {
-  title: "Gallery - Before & After Results | Shimmer Shine Property Detailing",
-  description: "View our amazing before and after results from window cleaning, pressure washing, and property detailing services across Orange County, Los Angeles, and San Diego.",
-  keywords: "before after gallery, window cleaning results, pressure washing before after, property detailing gallery, Orange County cleaning results, Los Angeles pressure washing, San Diego window cleaning",
-  openGraph: {
-    title: "Gallery - Before & After Results | Shimmer Shine Property Detailing",
-    description: "View our amazing before and after results from window cleaning, pressure washing, and property detailing services across Orange County, Los Angeles, and San Diego.",
-    url: "https://www.shimmershinepropertydetailing.com/gallery",
-    images: [
-      {
-        url: "https://www.shimmershinepropertydetailing.com/logo.png",
-        width: 1200,
-        height: 630,
-        alt: "Shimmer Shine Property Detailing Gallery"
-      }
-    ]
-  }
-}
+export const metadata = getPageSEO('gallery')
 
 const galleryCategories = [
   {
@@ -373,7 +357,7 @@ export default function GalleryPage() {
             </div>
             
             <h1 className="heading-decorative text-4xl sm:text-5xl md:text-7xl text-yellow mb-4 sm:mb-6" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
-              Our Gallery
+              Before & After Cleaning Results
             </h1>
             
             <h2 className="heading-primary text-xl sm:text-2xl md:text-3xl text-white mb-4 sm:mb-6" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
@@ -400,11 +384,8 @@ export default function GalleryPage() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-              <Link href="/get-a-quote" className="w-full sm:w-auto">
-                <Button variant="retro" size="lg" className="w-full text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 min-h-[48px]">
-                  Get Your Free Quote
-                </Button>
-              </Link>
+              <GetQuoteButton variant="retro" size="lg" className="w-full text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 min-h-[48px]">Get Your Free Quote
+                </GetQuoteButton>
               <Link href={`tel:${BUSINESS_INFO.phone}`} className="w-full sm:w-auto">
                 <Button variant="outline" size="lg" className="w-full text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 border-2 border-yellow text-yellow hover:bg-yellow hover:text-navy min-h-[48px]">
                   Call {BUSINESS_INFO.phone}
@@ -424,7 +405,7 @@ export default function GalleryPage() {
                 {category.iconType === "image" ? (
                   <Image
                     src={category.icon}
-                    alt={`${category.name} icon`}
+                    alt={`Professional ${category.name.toLowerCase()} service icon - Shimmer Shine Property Detailing Orange County cleaning services`}
                     width={80}
                     height={80}
                     className="object-contain"
@@ -450,7 +431,7 @@ export default function GalleryPage() {
                     <div className="relative h-full">
                       <Image
                         src={item.beforeImage}
-                        alt={`${item.title} - ${item.service} before and after results`}
+                        alt={`Before and after ${item.service.toLowerCase()} in ${item.location} - Professional cleaning transformation showing dramatic improvement from dirty to spotless condition by Shimmer Shine Property Detailing`}
                         fill
                         className="object-cover"
                         sizes="100vw"
@@ -506,7 +487,7 @@ export default function GalleryPage() {
                     <div className="relative h-full">
                       <Image
                         src={item.beforeImage}
-                        alt={`${item.title} - ${item.service} before and after results`}
+                        alt={`Before and after ${item.service.toLowerCase()} in ${item.location} - Professional cleaning transformation showing dramatic improvement from dirty to spotless condition by Shimmer Shine Property Detailing`}
                         fill
                         className="object-cover"
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -903,11 +884,8 @@ export default function GalleryPage() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-8">
-            <Link href="/get-a-quote" className="w-full sm:w-auto">
-              <Button variant="retro-navy" size="lg" className="w-full sm:w-auto text-base sm:text-lg px-8 sm:px-10 py-4 shadow-lg hover:shadow-xl transition-all min-h-[56px]">
-                Get Your Free Quote Today
-              </Button>
-            </Link>
+            <GetQuoteButton variant="retro-navy" size="lg" className="w-full sm:w-auto text-base sm:text-lg px-8 sm:px-10 py-4 shadow-lg hover:shadow-xl transition-all min-h-[56px]">Get Your Free Quote Today
+              </GetQuoteButton>
             <Link href={`tel:${BUSINESS_INFO.phone}`} className="w-full sm:w-auto">
               <Button variant="outline" size="lg" className="w-full sm:w-auto text-base sm:text-lg px-8 sm:px-10 py-4 border-2 border-navy text-navy hover:bg-navy hover:text-yellow shadow-lg min-h-[56px]">
                 Call {BUSINESS_INFO.phone}

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, ChevronDown, ChevronUp, ExternalLink } from "lucide-react"
+import GetQuoteButton from "@/components/GetQuoteButton"
 
 interface Service {
   id: string
@@ -119,11 +120,8 @@ export default function ServicePageCard({ service }: ServicePageCardProps) {
         
         <CardContent className="p-6 pt-0 mt-auto">
           <div className="space-y-3">
-            <Link href="/get-a-quote">
-              <Button className="w-full bg-yellow hover:bg-yellow/90 text-navy font-bold py-3 px-4 rounded-lg transition-all duration-300 hover:shadow-lg">
-                Get Free Quote
-              </Button>
-            </Link>
+            <GetQuoteButton className="w-full bg-yellow hover:bg-yellow/90 text-navy font-bold py-3 px-4 rounded-lg transition-all duration-300 hover:shadow-lg">Get Free Quote
+              </GetQuoteButton>
             <Link href={`/services/${service.id}`}>
               <Button variant="outline" className="w-full border-gray-300 text-gray-700 hover:bg-gray-50 font-medium py-2 px-4 rounded-lg transition-all duration-300 text-sm">
                 <span>Learn More</span>

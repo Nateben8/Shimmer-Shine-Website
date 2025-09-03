@@ -7,6 +7,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
+import ContextualServiceLinks from "@/components/ContextualServiceLinks"
+import LocalAreaLinks from "@/components/LocalAreaLinks"
+import RelatedContentLinks from "@/components/RelatedContentLinks"
+import Breadcrumbs, { generateBreadcrumbs } from "@/components/Breadcrumbs"
 
 import { 
   CheckCircle, 
@@ -163,10 +167,10 @@ export default function ServicePage({ params }: ServicePageProps) {
   
   const faqSchema = getFAQSchema(serviceFAQs[service.id as keyof typeof serviceFAQs] || [])
   
-  // const breadcrumbs = generateBreadcrumbs('service', { 
-  //   serviceName: service.name, 
-  //   slug: service.id 
-  // })
+  const breadcrumbs = generateBreadcrumbs('service', { 
+    serviceName: service.name, 
+    slug: service.id 
+  })
 
   // Get related services - prioritize same category, then others, show up to 6 services
   const sameCategory = SERVICES.filter(s => s.id !== service.id && s.category === service.category)
@@ -194,9 +198,9 @@ export default function ServicePage({ params }: ServicePageProps) {
       <section className="bg-gradient-to-br from-navy to-navy-700 text-white py-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumbs */}
-          {/* <div className="mb-8">
+          <div className="mb-8">
             <Breadcrumbs items={breadcrumbs} className="text-gray-300" />
-          </div> */}
+          </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -209,7 +213,7 @@ export default function ServicePage({ params }: ServicePageProps) {
               </div>
               
               <h1 className="heading-decorative text-5xl md:text-6xl text-yellow mb-4" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
-                {service.name}
+                Professional {service.name} in Orange County
               </h1>
               
               <h2 className="heading-primary text-2xl md:text-3xl text-white mb-6" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
@@ -426,10 +430,13 @@ export default function ServicePage({ params }: ServicePageProps) {
                   <CardContent>
                       <div className="prose prose-lg max-w-none">
                         <p className="body-text text-gray-700 leading-relaxed mb-4">
-                          As the <strong>best window cleaners in Orange County</strong>, we provide comprehensive <strong>residential window cleaning Orange County</strong> and <strong>commercial window cleaning Orange County</strong> services. Our <strong>same day window cleaning Orange County</strong> is available for urgent needs, and we offer <strong>free quote window cleaning Orange County</strong> with transparent pricing.
+                          As <strong>professional window cleaners Orange County</strong> with over 4 years of experience, we provide comprehensive <strong>residential window cleaning Orange County</strong> and <strong>commercial window cleaners Orange County</strong> services. Our <strong>same day window cleaning Orange County</strong> is available for urgent needs, and we offer <strong>free quote window cleaning Orange County</strong> with transparent pricing.
                         </p>
                         <p className="body-text text-gray-700 leading-relaxed mb-4">
-                          Our <strong>licensed window cleaning Orange County</strong> team specializes in <strong>Newport Beach window cleaning</strong>, <strong>Irvine window cleaning services</strong>, and <strong>Huntington Beach window cleaning</strong>. We provide <strong>affordable window cleaning Orange County</strong> with <strong>recurring window cleaning Orange County</strong> maintenance programs.
+                          Our <strong>licensed window cleaning Orange County</strong> team specializes in <strong>Newport Beach window cleaning</strong>, <strong>Irvine window cleaning services</strong>, <strong>Huntington Beach window cleaning</strong>, and <strong>commercial window cleaners LA County</strong>. We provide <strong>affordable window cleaning Orange County</strong> with <strong>recurring window cleaning Orange County</strong> maintenance programs and serve as your trusted <strong>local window cleaners near me</strong>.
+                        </p>
+                        <p className="body-text text-gray-700 leading-relaxed mb-4">
+                          Whether you need <strong>Orange County window cleaning</strong> for your home or business, our <strong>professional window cleaning Orange County</strong> service delivers streak-free results. We're the top choice for <strong>window cleaning services Orange County</strong> with 5-star ratings and complete customer satisfaction.
                         </p>
                         <h3 className="heading-primary text-xl text-navy mb-3">Specialized Window Cleaning Services</h3>
                         <ul className="list-disc list-inside space-y-2 text-gray-700">
@@ -499,10 +506,13 @@ export default function ServicePage({ params }: ServicePageProps) {
                     <CardContent>
                       <div className="prose prose-lg max-w-none">
                         <p className="body-text text-gray-700 leading-relaxed mb-4">
-                          As the <strong>best pressure washing Orange County</strong> company, we provide comprehensive <strong>residential pressure washing Orange County</strong> and <strong>commercial pressure washing Orange County</strong> services. Our <strong>same day pressure washing Orange County</strong> is available for urgent needs, and we offer <strong>pressure washing quotes Orange County</strong> with transparent pricing.
+                          As <strong>professional pressure washing Orange County</strong> specialists, we provide comprehensive <strong>residential pressure washing Orange County</strong> and <strong>commercial pressure washing Orange County</strong> services. Our <strong>same day pressure washing Orange County</strong> is available for urgent needs, and we offer <strong>pressure washing quotes Orange County</strong> with transparent pricing.
                         </p>
                         <p className="body-text text-gray-700 leading-relaxed mb-4">
-                          Our <strong>local pressure washing near me Orange County</strong> team specializes in <strong>driveway pressure washing Orange County</strong>, <strong>oil stain removal Orange County</strong>, and <strong>graffiti removal Orange County</strong>. We provide <strong>affordable pressure washing Orange County</strong> with professional results.
+                          Our <strong>local pressure washing near me Orange County</strong> team specializes in <strong>driveway pressure washing Orange County</strong>, <strong>Anaheim pressure washing</strong>, <strong>oil stain removal Orange County</strong>, and <strong>graffiti removal Orange County</strong>. We provide <strong>affordable pressure washing Orange County</strong> with professional results and serve <strong>pressure washing LA County</strong> areas.
+                        </p>
+                        <p className="body-text text-gray-700 leading-relaxed mb-4">
+                          Whether you need <strong>concrete pressure washing Orange County</strong>, <strong>driveway cleaning Orange County</strong>, or <strong>building pressure washing</strong>, our <strong>pressure washing services Orange County</strong> deliver exceptional results. We're your trusted <strong>pressure washing company Orange County</strong> with 5-star ratings.
                         </p>
                         <h3 className="heading-primary text-xl text-navy mb-3">Specialized Pressure Washing Services</h3>
                         <ul className="list-disc list-inside space-y-2 text-gray-700">
@@ -584,10 +594,13 @@ export default function ServicePage({ params }: ServicePageProps) {
                     <CardContent>
                       <div className="prose prose-lg max-w-none">
                         <p className="body-text text-gray-700 leading-relaxed mb-4">
-                          As the <strong>best solar panel cleaners in Orange County</strong>, we provide comprehensive <strong>residential solar panel cleaning Orange County</strong> and <strong>commercial solar panel cleaning Orange County</strong> services. Our <strong>solar panel cleaning near me Orange County</strong> team specializes in <strong>safe solar panel cleaning Orange County</strong> using <strong>purified water Orange County</strong> techniques.
+                          As <strong>professional solar panel cleaners Orange County</strong> specialists, we provide comprehensive <strong>residential solar panel cleaning Orange County</strong> and <strong>commercial solar panel cleaning Orange County</strong> services. Our <strong>solar panel cleaning near me Orange County</strong> team specializes in <strong>safe solar panel cleaning Orange County</strong> using <strong>purified water Orange County</strong> techniques and serves <strong>Los Angeles solar panel cleaning</strong> areas.
                         </p>
                         <p className="body-text text-gray-700 leading-relaxed mb-4">
                           Our <strong>professional solar panel cleaning Orange County</strong> services can <strong>improve solar panel efficiency Orange County</strong> by up to 30% and <strong>increase solar panel output Orange County</strong>. We offer <strong>solar panel cleaning quotes Orange County</strong> with transparent pricing and <strong>same day solar panel cleaning Orange County</strong> for urgent needs.
+                        </p>
+                        <p className="body-text text-gray-700 leading-relaxed mb-4">
+                          Whether you need <strong>solar panel cleaning Orange County</strong>, <strong>solar panel maintenance Orange County</strong>, or <strong>solar panel washing Orange County</strong>, our <strong>solar panel cleaning services Orange County</strong> deliver maximum efficiency restoration. We're your trusted <strong>solar panel cleaning company Orange County</strong> with warranty-safe methods.
                         </p>
                         <h3 className="heading-primary text-xl text-navy mb-3">Specialized Solar Panel Services</h3>
                         <ul className="list-disc list-inside space-y-2 text-gray-700">
@@ -1782,6 +1795,162 @@ export default function ServicePage({ params }: ServicePageProps) {
                   </Card>
                 </>
               )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Areas Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h3 className="heading-primary text-3xl md:text-4xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
+              {service.name} Service Areas
+            </h3>
+            <p className="body-text text-lg text-gray-600 max-w-2xl mx-auto">
+              Professional {service.name.toLowerCase()} services available across Orange County, Los Angeles County, and San Diego County
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            {/* Orange County Cities */}
+            <Card className="retro-card">
+              <CardHeader className="text-center">
+                <CardTitle className="heading-primary text-xl text-navy">Orange County</CardTitle>
+                <p className="text-gray-600">Premier {service.name.toLowerCase()} services</p>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2">
+                  {["Costa Mesa", "Newport Beach", "Irvine", "Anaheim", "Huntington Beach", "Fullerton"].map((city) => (
+                    <Link 
+                      key={city}
+                      href={`/cities/${city.toLowerCase().replace(/\s+/g, '-')}`}
+                      className="block text-blue-600 hover:text-blue-800 hover:underline text-sm"
+                    >
+                      {service.name} {city}
+                    </Link>
+                  ))}
+                  <Link 
+                    href="/service-areas"
+                    className="block text-navy hover:text-yellow font-semibold text-sm mt-3"
+                  >
+                    View All Orange County Cities →
+                  </Link>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Los Angeles County Cities */}
+            <Card className="retro-card">
+              <CardHeader className="text-center">
+                <CardTitle className="heading-primary text-xl text-navy">Los Angeles County</CardTitle>
+                <p className="text-gray-600">Expert {service.name.toLowerCase()} solutions</p>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2">
+                  {["Los Angeles", "Beverly Hills", "Santa Monica", "Manhattan Beach", "Torrance", "Pasadena"].map((city) => (
+                    <Link 
+                      key={city}
+                      href={`/cities/${city.toLowerCase().replace(/\s+/g, '-')}`}
+                      className="block text-blue-600 hover:text-blue-800 hover:underline text-sm"
+                    >
+                      {service.name} {city}
+                    </Link>
+                  ))}
+                  <Link 
+                    href="/service-areas"
+                    className="block text-navy hover:text-yellow font-semibold text-sm mt-3"
+                  >
+                    View All LA County Cities →
+                  </Link>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* San Diego County Cities */}
+            <Card className="retro-card">
+              <CardHeader className="text-center">
+                <CardTitle className="heading-primary text-xl text-navy">San Diego County</CardTitle>
+                <p className="text-gray-600">Professional {service.name.toLowerCase()} care</p>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2">
+                  {["San Diego", "La Jolla", "Del Mar", "Encinitas", "Carlsbad", "Oceanside"].map((city) => (
+                    <Link 
+                      key={city}
+                      href={`/cities/${city.toLowerCase().replace(/\s+/g, '-')}`}
+                      className="block text-blue-600 hover:text-blue-800 hover:underline text-sm"
+                    >
+                      {service.name} {city}
+                    </Link>
+                  ))}
+                  <Link 
+                    href="/service-areas"
+                    className="block text-navy hover:text-yellow font-semibold text-sm mt-3"
+                  >
+                    View All San Diego Cities →
+                  </Link>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center">
+            <Link href="/service-areas">
+              <Button variant="outline" size="lg" className="hover:bg-yellow hover:text-navy">
+                View All Service Areas
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Internal Linking Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              
+              {/* Related Services */}
+              <div className="lg:col-span-1">
+                <Card className="retro-card h-full">
+                  <CardContent className="p-6">
+                    <ContextualServiceLinks 
+                      currentService={service.id}
+                      maxLinks={4}
+                      className="h-full"
+                    />
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Service Areas */}
+              <div className="lg:col-span-1">
+                <Card className="retro-card h-full">
+                  <CardContent className="p-6">
+                    <LocalAreaLinks 
+                      serviceType={service.id}
+                      maxLinks={6}
+                      className="h-full"
+                    />
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Related Content */}
+              <div className="lg:col-span-1">
+                <Card className="retro-card h-full">
+                  <CardContent className="p-6">
+                    <RelatedContentLinks 
+                      currentPage="service"
+                      context={{ service: service.id }}
+                      maxLinks={3}
+                      className="h-full"
+                    />
+                  </CardContent>
+                </Card>
+              </div>
+
             </div>
           </div>
         </div>

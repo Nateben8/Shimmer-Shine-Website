@@ -6,9 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "analyze": "ANALYZE=true next build",
+    "build:analyze": "npm run analyze",
+    "lighthouse": "lighthouse http://localhost:3000 --output=html --output-path=./lighthouse-report.html --chrome-flags='--headless'",
+    "perf": "npm run build && npm run start & sleep 5 && npm run lighthouse"
   },
   "dependencies": {
+    "@next/bundle-analyzer": "^15.5.2",
     "@radix-ui/react-icons": "^1.3.0",
     "@radix-ui/react-slot": "^1.0.2",
     "autoprefixer": "^10.4.21",
@@ -22,6 +27,7 @@
     "react-dom": "^18",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
+    "web-vitals": "^5.1.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {

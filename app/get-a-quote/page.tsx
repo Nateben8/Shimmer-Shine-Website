@@ -2,6 +2,7 @@ import { getPageSEO } from "@/lib/seo"
 import { getLocalBusinessSchema } from "@/lib/schema"
 import JobberForm from "@/components/JobberForm"
 import ScrollToFormButton from "@/components/ScrollToFormButton"
+import GetQuoteButton from "@/components/GetQuoteButton"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
@@ -151,8 +152,7 @@ export default function GetQuotePage() {
               </div>
               
               <h1 className="heading-decorative text-4xl md:text-6xl text-yellow mb-2 leading-tight" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
-                <span className="block sm:inline">Get Your FREE Quote</span>{' '}
-                <span className="block sm:inline text-red-800" style={{color: '#FF4500', textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>+ 15% OFF</span>
+                Free Orange County Cleaning Quote
               </h1>
               <h2 className="heading-primary text-2xl md:text-3xl text-white mb-4" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
                 in 60 Seconds
@@ -614,13 +614,14 @@ export default function GetQuotePage() {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <ScrollToFormButton 
+              <GetQuoteButton 
                 variant="retro-navy" 
                 size="lg" 
                 className="text-lg px-8 py-4 animate-pulse"
+                redirectPath="/get-a-quote"
               >
                 🚀 Claim My FREE Quote + <span style={{color: '#FF4500'}}>15% OFF</span> ↑
-              </ScrollToFormButton>
+              </GetQuoteButton>
               <Link href={`tel:${BUSINESS_INFO.phone}`}>
                 <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-navy text-navy hover:bg-navy hover:text-white">
                   <Phone className="h-5 w-5 mr-2" />

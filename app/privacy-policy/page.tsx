@@ -1,20 +1,9 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { BUSINESS_INFO } from '@/lib/constants'
+import { getPageSEO } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Privacy Policy | Shimmer Shine Property Detailing',
-  description: 'Privacy Policy for Shimmer Shine Property Detailing. Learn how we collect, use, and protect your personal information when you use our services.',
-  robots: 'index, follow',
-  openGraph: {
-    title: 'Privacy Policy | Shimmer Shine Property Detailing',
-    description: 'Privacy Policy for Shimmer Shine Property Detailing. Learn how we collect, use, and protect your personal information when you use our services.',
-    url: 'https://www.shimmershinepropertydetailing.com/privacy-policy',
-    siteName: 'Shimmer Shine Property Detailing',
-    locale: 'en_US',
-    type: 'website',
-  },
-}
+export const metadata = getPageSEO('privacy-policy')
 
 export default function PrivacyPolicyPage() {
   return (

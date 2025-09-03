@@ -7,6 +7,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, MapPin, Phone, Star, Clock, CheckCircle } from "lucide-react"
 import ServiceRow from "@/components/ServiceRow"
+import GetQuoteButton from "@/components/GetQuoteButton"
 // import Breadcrumbs, { generateBreadcrumbs } from "@/components/Breadcrumbs"
 
 export const metadata = getPageSEO('services')
@@ -37,7 +38,7 @@ export default function ServicesPage() {
             </div>
             
             <h1 className="heading-decorative text-4xl sm:text-5xl md:text-7xl text-yellow mb-4" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
-              Professional Services
+              Southern California Cleaning Services
             </h1>
             
             <h2 className="heading-primary text-xl sm:text-2xl md:text-3xl text-white mb-4 sm:mb-6" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
@@ -62,7 +63,7 @@ export default function ServicesPage() {
         <div className="text-center mb-12">
           <div className="container mx-auto px-4">
             <h2 className="heading-primary text-3xl sm:text-4xl md:text-5xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
-              We look forward to serving you
+              Complete Property Cleaning Services
             </h2>
             <p className="body-text text-lg text-gray-600 max-w-3xl mx-auto">
               Professional cleaning services for your home and business. Click on any service to see details and get a quote.
@@ -82,9 +83,9 @@ export default function ServicesPage() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h3 className="heading-primary text-3xl md:text-4xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
-              Where We Serve
-            </h3>
+            <h2 className="heading-primary text-3xl md:text-4xl mb-4" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
+              Service Areas Across Southern California
+            </h2>
             <p className="body-text text-xl text-gray-600">
               Professional property detailing across Southern California
             </p>
@@ -195,11 +196,9 @@ export default function ServicesPage() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link href="/get-a-quote">
-              <Button variant="retro-navy" size="lg" className="text-lg px-8 py-4">
-                Get Free Quote Now
-              </Button>
-            </Link>
+            <GetQuoteButton variant="retro-navy" size="lg" className="text-lg px-8 py-4">
+              Get Free Quote Now
+            </GetQuoteButton>
             <Link href={`tel:${BUSINESS_INFO.phone}`}>
               <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-navy text-navy hover:bg-navy hover:text-white">
                 <Phone className="h-5 w-5 mr-2" />

@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { BUSINESS_INFO, SITE_CONFIG, SERVICES } from "@/lib/constants"
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Star } from "lucide-react"
+import GetQuoteButton from "@/components/GetQuoteButton"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()

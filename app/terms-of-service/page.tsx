@@ -1,20 +1,9 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { BUSINESS_INFO } from '@/lib/constants'
+import { getPageSEO } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Terms of Service | Shimmer Shine Property Detailing',
-  description: 'Terms of Service for Shimmer Shine Property Detailing. Read our terms and conditions for using our professional cleaning and property detailing services.',
-  robots: 'index, follow',
-  openGraph: {
-    title: 'Terms of Service | Shimmer Shine Property Detailing',
-    description: 'Terms of Service for Shimmer Shine Property Detailing. Read our terms and conditions for using our professional cleaning and property detailing services.',
-    url: 'https://www.shimmershinepropertydetailing.com/terms-of-service',
-    siteName: 'Shimmer Shine Property Detailing',
-    locale: 'en_US',
-    type: 'website',
-  },
-}
+export const metadata = getPageSEO('terms-of-service')
 
 export default function TermsOfServicePage() {
   return (

@@ -4,11 +4,9 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { MapPin, Star, Phone } from "lucide-react"
 import { BUSINESS_INFO } from "@/lib/constants"
+import GetQuoteButton from "@/components/GetQuoteButton"
 
-export const metadata = {
-  title: "Cities We Serve | Window Cleaning & Pressure Washing | Shimmer Shine",
-  description: "Professional window cleaning and pressure washing services across Orange County, Los Angeles County, and San Diego County. See all cities we serve.",
-}
+export const metadata = getPageSEO('cities')
 
 export default function CitiesPage() {
   // Organize cities by county
@@ -59,7 +57,7 @@ export default function CitiesPage() {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="heading-decorative text-4xl md:text-6xl text-yellow mb-4">
-              Cities We Serve
+              Professional Cleaning Services Across Southern California
             </h1>
             <p className="body-text text-xl text-gray-100 mb-8">
               Professional window cleaning, pressure washing, and property detailing services across Southern California
@@ -138,7 +136,7 @@ export default function CitiesPage() {
               <Card className="retro-card">
                 <CardHeader className="text-center">
                   <CardTitle className="heading-primary text-3xl text-navy mb-2">
-                    🌴 Los Angeles County
+                    Los Angeles County
                   </CardTitle>
                   <p className="text-gray-600">
                     {losAngelesCities.length} cities and communities served
@@ -211,11 +209,9 @@ export default function CitiesPage() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link href="/get-a-quote">
-              <Button variant="retro-navy" size="lg" className="text-lg px-8 py-4">
-                Get Free Quote
-              </Button>
-            </Link>
+            <GetQuoteButton variant="retro-navy" size="lg" className="text-lg px-8 py-4">
+              Get Free Quote
+            </GetQuoteButton>
             <Link href={`tel:${BUSINESS_INFO.phone}`}>
               <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-navy text-navy hover:bg-navy hover:text-white">
                 <Phone className="h-5 w-5 mr-2" />

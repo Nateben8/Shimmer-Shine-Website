@@ -7,12 +7,14 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
+import OptimizedImage from "@/components/OptimizedImage"
 import { Star, ArrowRight, CheckCircle, Award, Shield, Clock, MapPin, ChevronLeft, ChevronRight } from "lucide-react"
 import BubbleReviews from "@/components/BubbleReviews"
 import ExpandableServiceCard from "@/components/ExpandableServiceCard"
 // import RelatedContent from "@/components/RelatedContent"
 import { ScrollAnimation, WaterDroplets, BeforeAfterSlider } from "@/components/ScrollAnimations"
 import { getFAQSchema, getFallSpecialEventSchema, getServiceBundleSchema } from "@/lib/schema"
+import GetQuoteButton from "@/components/GetQuoteButton"
 
 export default function HomePage() {
   const featuredServices = SERVICES.slice(0, 4)
@@ -178,13 +180,14 @@ export default function HomePage() {
               
               {/* Main Mascot */}
               <div className="relative z-10 p-4">
-                <Image
+                <OptimizedImage
                   src="/mascot.png"
-                  alt="Shimmer Shine Mascot"
+                  alt="Shimmer Shine Property Detailing mascot - Professional window cleaning and pressure washing company logo Orange County California"
                   width={120}
                   height={120}
                   className="w-24 h-24 mx-auto drop-shadow-lg hover:scale-110 transition-transform duration-300"
                   loading="lazy"
+                  quality={90}
                 />
               </div>
               
@@ -202,8 +205,7 @@ export default function HomePage() {
           
           <ScrollAnimation animation="fade-in-up" className="text-center mb-8 sm:mb-12">
             <h2 className="heading-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 px-2" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
-              <span className="block sm:inline">Bringing the Shine</span>{' '}
-              <span className="block sm:inline">Back to Life</span>
+              Why Southern California Trusts Shimmer Shine
             </h2>
             <p className="body-text text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed">
               We believe every property has the potential to truly shine. At Shimmer Shine, we don't just clean – we restore that pride-of-ownership feeling. Whether it's crystal-clear windows, pressure-washed walkways, or spotless solar panels, we treat your property like our own. Licensed, insured, and dedicated to bringing out the best in every surface we touch.
@@ -226,7 +228,7 @@ export default function HomePage() {
           <div className="text-center mt-12">
             <Link href="/services">
               <Button variant="retro" size="lg">
-                View All Orange County Cleaning Services
+                View All Southern California Cleaning Services
               </Button>
             </Link>
           </div>
@@ -354,8 +356,8 @@ export default function HomePage() {
               <BeforeAfterSlider
                 beforeImage="/Before and After images/House siding & window wash.jpg"
                 afterImage="/window-cleaning-before-after.png"
-                beforeAlt="Dirty windows and siding before professional cleaning"
-                afterAlt="Crystal clear windows and clean siding after Shimmer Shine cleaning"
+                beforeAlt="Dirty windows and stained house siding before professional window cleaning and pressure washing service in Orange County"
+                afterAlt="Crystal clear windows and spotless clean siding after professional cleaning by Shimmer Shine Property Detailing Orange County"
                 className="h-64 sm:h-80 hover-lift-subtle"
               />
             </ScrollAnimation>
@@ -364,8 +366,8 @@ export default function HomePage() {
               <BeforeAfterSlider
                 beforeImage="/Before and After images/concrete driveway pressure wash 6.jpg"
                 afterImage="/pressure-washing-before-after.png"
-                beforeAlt="Stained concrete driveway before pressure washing"
-                afterAlt="Clean, restored concrete driveway after pressure washing"
+                beforeAlt="Heavily stained and dirty concrete driveway before professional pressure washing service in Orange County"
+                afterAlt="Completely restored and spotless concrete driveway after professional pressure washing by Shimmer Shine Property Detailing"
                 className="h-64 sm:h-80 hover-lift-subtle"
               />
             </ScrollAnimation>
@@ -374,8 +376,8 @@ export default function HomePage() {
               <BeforeAfterSlider
                 beforeImage="/Post Construction Cleanup2.jpeg"
                 afterImage="/Post construction cleanup.jpg"
-                beforeAlt="Construction debris and mess before cleanup"
-                afterAlt="Spotless property after post-construction cleanup"
+                beforeAlt="Construction site with debris, dust, and mess before professional post-construction cleanup service in Orange County"
+                afterAlt="Completely clean and spotless property ready for occupancy after professional post-construction cleanup by Shimmer Shine"
                 className="h-64 sm:h-80 hover-lift-subtle"
               />
             </ScrollAnimation>
@@ -410,7 +412,7 @@ export default function HomePage() {
               <span className="block sm:inline">Cleaning Solutions</span>
             </h2>
             <p className="body-text text-base sm:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto px-2">
-              Elevate your business with our professional commercial cleaning services across Orange County. We deliver customized cleaning solutions for offices, medical facilities, restaurants, and retail spaces with the same old-school craftsmanship and modern reliability that sets us apart. Our flexible B2B contracts feature recurring maintenance, deep cleaning, and specialized janitorial services tailored to your specific needs. From daily office maintenance to medical facility sanitization, we help Southern California businesses maintain pristine, healthy work environments that reflect their professional standards.
+              Elevate your business with our professional commercial cleaning services across Southern California. We deliver customized cleaning solutions for offices, medical facilities, restaurants, and retail spaces with the same old-school craftsmanship and modern reliability that sets us apart. Our flexible B2B contracts feature recurring maintenance, deep cleaning, and specialized janitorial services tailored to your specific needs. From daily office maintenance to medical facility sanitization, we help Southern California businesses maintain pristine, healthy work environments that reflect their professional standards.
             </p>
           </div>
 
@@ -422,7 +424,7 @@ export default function HomePage() {
                 </svg>
               </div>
               <h3 className="heading-primary text-lg mb-2">B2B Contracts</h3>
-              <p className="body-text text-sm">Commercial cleaning contracts Orange County with recurring service</p>
+              <p className="body-text text-sm">Commercial cleaning contracts Southern California with recurring service</p>
             </div>
             <div className="text-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:shadow-md group relative overflow-hidden">
               <div className="absolute top-2 right-2 w-2 h-2 text-yellow opacity-0 group-hover:opacity-60 transition-opacity duration-300">
@@ -431,7 +433,7 @@ export default function HomePage() {
                 </svg>
               </div>
               <h3 className="heading-primary text-lg mb-2">After Hours Service</h3>
-              <p className="body-text text-sm">After hours commercial cleaning Orange County available</p>
+              <p className="body-text text-sm">After hours commercial cleaning Southern California available</p>
             </div>
             <div className="text-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:shadow-md group relative overflow-hidden">
               <div className="absolute top-2 right-2 w-2 h-2 text-yellow opacity-0 group-hover:opacity-60 transition-opacity duration-300">
@@ -440,7 +442,7 @@ export default function HomePage() {
                 </svg>
               </div>
               <h3 className="heading-primary text-lg mb-2">Free Estimates</h3>
-              <p className="body-text text-sm">Commercial cleaning estimate Orange County in 24 hours</p>
+              <p className="body-text text-sm">Commercial cleaning estimate Southern California in 24 hours</p>
             </div>
             <div className="text-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:shadow-md group relative overflow-hidden">
               <div className="absolute top-2 right-2 w-2 h-2 text-yellow opacity-0 group-hover:opacity-60 transition-opacity duration-300">
@@ -449,7 +451,7 @@ export default function HomePage() {
                 </svg>
               </div>
               <h3 className="heading-primary text-lg mb-2">Licensed & Insured</h3>
-              <p className="body-text text-sm">Licensed commercial cleaning Orange County with full B2B coverage</p>
+              <p className="body-text text-sm">Licensed commercial cleaning Southern California with full B2B coverage</p>
             </div>
           </div>
         </div>
@@ -511,7 +513,7 @@ export default function HomePage() {
         <div className="absolute top-4 right-4 sm:top-8 sm:right-8 lg:top-12 lg:right-12 opacity-20 pointer-events-none">
           <Image
             src="/mascot.png2.png"
-            alt="Shimmer Shine Mascot"
+            alt="Shimmer Shine Property Detailing mascot logo - Trusted window cleaning and pressure washing services Orange County since 2021"
             width={150}
             height={150}
             className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 xl:w-40 xl:h-40"
@@ -522,10 +524,10 @@ export default function HomePage() {
         <div className="container mx-auto px-4 relative z-10">
           <ScrollAnimation animation="fade-in-up" className="text-center mb-8 sm:mb-12">
             <h2 className="heading-decorative text-3xl sm:text-4xl md:text-5xl text-yellow mb-4 float-animation" style={{textShadow: '6px 6px 12px rgba(0,0,0,1), 3px 3px 6px rgba(0,0,0,0.8), 1px 1px 3px rgba(0,0,0,0.9)'}}>
-              Why Choose Shimmer Shine?
+              Why Southern California Trusts Shimmer Shine
             </h2>
             <p className="body-text text-lg sm:text-xl text-gray-100">
-              Best window cleaners in Orange County with three decades of experience
+              Best window cleaners in Southern California with three decades of experience
             </p>
           </ScrollAnimation>
 
@@ -579,8 +581,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
             <h2 className="heading-decorative text-3xl md:text-4xl text-yellow mb-4" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
-              <span className="block sm:inline">Professional Services</span>{' '}
-              <span className="block sm:inline">Throughout Southern California</span>
+              Complete Property Cleaning Services
             </h2>
             <p className="text-lg text-gray-200 max-w-3xl mx-auto">
               From window cleaning in Costa Mesa to pressure washing in Beverly Hills, we serve over 139 cities with same-day availability and guaranteed results.
@@ -603,7 +604,7 @@ export default function HomePage() {
               <h3 className="font-bold text-yellow mb-3">Pressure Washing</h3>
               <ul className="space-y-1 text-gray-300">
                 <li>• Pressure washing Los Angeles</li>
-                <li>• Driveway cleaning Orange County</li>
+                <li>• Driveway cleaning Southern California</li>
                 <li>• Patio cleaning San Diego</li>
                 <li>• House washing services</li>
                 <li>• Concrete cleaning</li>
@@ -624,7 +625,7 @@ export default function HomePage() {
             <div>
               <h3 className="font-bold text-yellow mb-3">Solar Panel Cleaning</h3>
               <ul className="space-y-1 text-gray-300">
-                <li>• Solar cleaning Orange County</li>
+                <li>• Solar cleaning Southern California</li>
                 <li>• Solar cleaning Los Angeles</li>
                 <li>• Solar panel maintenance</li>
                 <li>• Solar efficiency optimization</li>
@@ -681,19 +682,16 @@ export default function HomePage() {
         </div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="heading-decorative text-4xl md:text-5xl text-navy mb-4" style={{textShadow: '2px 2px 0px #FFFFFF, 3px 3px 0px #F5F5F5, 4px 4px 0px #E0E0E0'}}>
-            <span className="block sm:inline">Ready for That</span>{' '}
-            <span className="block sm:inline">Classic Shine?</span>
+            Get Your Free Quote Today
           </h2>
           <p className="body-text text-xl text-navy-700 mb-8 max-w-2xl mx-auto">
             Join thousands of satisfied customers across Orange County, Los Angeles, and San Diego. Get your free quote today!
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link href="/get-a-quote">
-              <Button variant="retro-navy" size="lg" className="text-lg px-8 py-4">
-                Get Free Quote
-              </Button>
-            </Link>
+            <GetQuoteButton variant="retro-navy" size="lg" className="text-lg px-8 py-4">
+              Get Free Quote
+            </GetQuoteButton>
             <Link href={`tel:${BUSINESS_INFO.phone}`}>
               <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-navy text-navy hover:bg-navy hover:text-white">
                 Call {BUSINESS_INFO.phone}

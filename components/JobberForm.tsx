@@ -1,6 +1,7 @@
 "use client"
 
 import { Suspense, useEffect, useState, useCallback, useRef } from "react"
+import { useSearchParams } from "next/navigation"
 import { Loader2 } from "lucide-react"
 import dynamic from 'next/dynamic'
 
@@ -166,6 +167,11 @@ function JobberFormSkeleton() {
 function JobberFormContent() {
   const [showLoading, setShowLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const searchParams = useSearchParams()
+  
+  // Get ZIP code and county from URL parameters or session storage
+  const zipCode = searchParams?.get('zip') || (typeof window !== 'undefined' ? sessionStorage.getItem('userZipCode') : null)
+  const county = searchParams?.get('county') || (typeof window !== 'undefined' ? sessionStorage.getItem('userCounty') : null)
 
   useEffect(() => {
     console.log('Starting optimized Jobber form load...')
@@ -251,6 +257,24 @@ function JobberFormContent() {
 
   return (
     <div className="relative">
+      {/* ZIP Code Information Display */}
+      {zipCode && county && (
+        <div className="mb-6 p-4 bg-green-50 border-2 border-green-200 rounded-xl">
+          <div className="flex items-center justify-center space-x-2">
+            <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+            <span className="text-green-700 font-bold">Service Area Confirmed!</span>
+          </div>
+          <div className="text-center mt-2">
+            <p className="text-sm text-green-600">
+              <strong>ZIP Code:</strong> {zipCode} • <strong>County:</strong> {county}
+            </p>
+            <p className="text-xs text-green-500 mt-1">
+              ✓ We provide professional cleaning services in your area
+            </p>
+          </div>
+        </div>
+      )}
+      
       {/* Show loading while initializing */}
       {showLoading && (
         <div className="w-full">

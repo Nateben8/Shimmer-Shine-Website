@@ -6,9 +6,20 @@ import { getLocalBusinessSchema, getWebsiteSchema, getOrganizationSchema } from 
 import { SITE_CONFIG, BUSINESS_INFO } from "@/lib/constants"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
+import WebVitals from "@/components/WebVitals"
+import PerformanceOptimizer from "@/components/PerformanceOptimizer"
+import LocalBusinessSchema from "@/components/LocalBusinessSchema"
+// import { ZipCodeProvider } from "@/components/ZipCodeProvider"
 
-
-const inter = Inter({ subsets: ["latin"] })
+// Optimized font loading with display swap for better performance
+const inter = Inter({ 
+  subsets: ["latin"],
+  display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'arial'],
+  adjustFontFallback: true,
+  variable: '--font-inter'
+})
 
 export const metadata: Metadata = getPageSEO('home')
 
@@ -110,14 +121,16 @@ export default function RootLayout({
           </>
         )}
       </head>
-      <body className={`${inter.className} font-roboto-condensed`}>
+      <body className={`${inter.variable} font-roboto-condensed`}>
+        <WebVitals />
+        <PerformanceOptimizer />
+        <LocalBusinessSchema />
         <div className="min-h-screen flex flex-col">
           <Header />
           <main className="flex-1">
             {children}
           </main>
           <Footer />
-
         </div>
       </body>
     </html>

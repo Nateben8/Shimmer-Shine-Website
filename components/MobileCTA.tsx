@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Phone, MessageSquare, X } from "lucide-react"
 import { BUSINESS_INFO } from "@/lib/constants"
 import { motion, AnimatePresence } from "framer-motion"
+import GetQuoteButton from "@/components/GetQuoteButton"
 
 export default function MobileCTA() {
   const [isVisible, setIsVisible] = useState(false)

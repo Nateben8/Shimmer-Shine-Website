@@ -31,6 +31,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/get-a-quote/los-angeles`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/get-a-quote/san-diego`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
@@ -66,15 +78,101 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  // Service + City combinations (high-value local SEO pages)
+  // Service + City combinations (comprehensive geo-targeting)
   const serviceCityPages = []
-  for (const service of SERVICES.slice(0, 4)) { // Top 4 services
-    for (const city of BUSINESS_INFO.cities.slice(0, 10)) { // Top 10 cities
+  for (const service of SERVICES) {
+    for (const city of BUSINESS_INFO.cities) {
       serviceCityPages.push({
         url: `${baseUrl}/services/${service.id}/${city.toLowerCase().replace(/\s+/g, '-')}`,
         lastModified: new Date(),
         changeFrequency: 'monthly' as const,
+        priority: 0.7,
+      })
+    }
+  }
+
+  // County pages
+  const countyPages = [
+    {
+      url: `${baseUrl}/counties/orange-county`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/counties/los-angeles-county`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/counties/san-diego-county`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
+    },
+  ]
+
+  // County service pages
+  const countyServicePages = [
+    {
+      url: `${baseUrl}/counties/orange-county/services`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/counties/los-angeles-county/services`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/counties/san-diego-county/services`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+  ]
+
+  // Seasonal pages for major cities
+  const seasonalPages = []
+  const seasons = ['spring', 'summer', 'fall', 'winter']
+  const majorCities = [
+    'Newport Beach', 'Irvine', 'Costa Mesa', 'Huntington Beach', 'Santa Ana', 'Anaheim',
+    'Los Angeles', 'Beverly Hills', 'Santa Monica', 'Manhattan Beach', 'Pasadena', 'Burbank',
+    'San Diego', 'La Jolla', 'Del Mar', 'Carlsbad', 'Encinitas', 'Oceanside'
+  ]
+  
+  for (const season of seasons) {
+    for (const city of majorCities) {
+      seasonalPages.push({
+        url: `${baseUrl}/seasonal/${season}/${city.toLowerCase().replace(/\s+/g, '-')}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly' as const,
         priority: 0.6,
+      })
+    }
+  }
+
+  // Emergency service pages for major cities
+  const emergencyPages = majorCities.map((city) => ({
+    url: `${baseUrl}/emergency/${city.toLowerCase().replace(/\s+/g, '-')}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.5,
+  }))
+
+  // Competitive pages for major services and cities
+  const competitivePages = []
+  const topServices = ['Window Cleaning', 'Pressure Washing', 'Solar Panel Cleaning']
+  for (const service of topServices) {
+    for (const city of majorCities.slice(0, 10)) { // Top 10 cities for competitive pages
+      competitivePages.push({
+        url: `${baseUrl}/best/${service.toLowerCase().replace(/\s+/g, '-')}/${city.toLowerCase().replace(/\s+/g, '-')}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.5,
       })
     }
   }
@@ -154,7 +252,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...staticPages,
     ...servicePages,
     ...cityPages,
+    ...countyPages,
+    ...countyServicePages,
     ...serviceCityPages,
+    ...seasonalPages,
+    ...emergencyPages,
+    ...competitivePages,
     ...blogCategoryPages,
     ...blogPostPages,
     ...legalPages,

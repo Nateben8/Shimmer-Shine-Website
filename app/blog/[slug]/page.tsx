@@ -4,8 +4,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
+import ContextualServiceLinks from "@/components/ContextualServiceLinks"
+import LocalAreaLinks from "@/components/LocalAreaLinks"
+import RelatedContentLinks from "@/components/RelatedContentLinks"
 import { Calendar, Clock, User, ArrowLeft, ArrowRight, Tag } from "lucide-react"
 import { BUSINESS_INFO } from "@/lib/constants"
+import GetQuoteButton from "@/components/GetQuoteButton"
 
 // BlogContent component to render full article content
 function BlogContent({ post }: { post: any }) {
@@ -688,11 +692,8 @@ function WindowCleaningContent() {
           Ready for crystal-clear windows? Contact Shimmer Shine Property Detailing for professional window cleaning services throughout Orange County.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link href="/get-a-quote">
-            <Button size="lg" className="bg-yellow text-navy hover:bg-yellow/90">
-              Get Free Quote
-            </Button>
-          </Link>
+          <GetQuoteButton size="lg" className="bg-yellow text-navy hover:bg-yellow/90">Get Free Quote
+            </GetQuoteButton>
           <Link href={`tel:${BUSINESS_INFO.phone}`}>
             <Button variant="outline" size="lg" className="border-yellow text-yellow hover:bg-yellow hover:text-navy">
               Call {BUSINESS_INFO.phone}
@@ -727,11 +728,8 @@ function DefaultContent({ post }: { post: any }) {
           Don't wait for problems to develop. Contact Shimmer Shine Property Detailing today for expert {post.category.toLowerCase()} services throughout Orange County, Los Angeles County, and San Diego County.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link href="/get-a-quote">
-            <Button size="lg" className="bg-yellow text-navy hover:bg-yellow/90">
-              Get Free Quote
-            </Button>
-          </Link>
+          <GetQuoteButton size="lg" className="bg-yellow text-navy hover:bg-yellow/90">Get Free Quote
+            </GetQuoteButton>
           <Link href={`tel:${BUSINESS_INFO.phone}`}>
             <Button variant="outline" size="lg" className="border-yellow text-yellow hover:bg-yellow hover:text-navy">
               Call {BUSINESS_INFO.phone}
@@ -801,11 +799,8 @@ function PressureWashingContent() {
           Ready for a cleaner property? Contact Shimmer Shine Property Detailing for professional pressure washing services throughout Los Angeles County.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link href="/get-a-quote">
-            <Button size="lg" className="bg-yellow text-navy hover:bg-yellow/90">
-              Get Free Quote
-            </Button>
-          </Link>
+          <GetQuoteButton size="lg" className="bg-yellow text-navy hover:bg-yellow/90">Get Free Quote
+            </GetQuoteButton>
           <Link href={`tel:${BUSINESS_INFO.phone}`}>
             <Button variant="outline" size="lg" className="border-yellow text-yellow hover:bg-yellow hover:text-navy">
               Call {BUSINESS_INFO.phone}
@@ -878,11 +873,8 @@ function GutterCleaningContent() {
           Ready for properly functioning gutters? Contact Shimmer Shine Property Detailing for professional gutter cleaning services throughout San Diego County.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link href="/get-a-quote">
-            <Button size="lg" className="bg-yellow text-navy hover:bg-yellow/90">
-              Get Free Quote
-            </Button>
-          </Link>
+          <GetQuoteButton size="lg" className="bg-yellow text-navy hover:bg-yellow/90">Get Free Quote
+            </GetQuoteButton>
           <Link href={`tel:${BUSINESS_INFO.phone}`}>
             <Button variant="outline" size="lg" className="border-yellow text-yellow hover:bg-yellow hover:text-navy">
               Call {BUSINESS_INFO.phone}
@@ -959,11 +951,8 @@ function SolarPanelContent() {
           Ready to optimize your solar efficiency? Contact Shimmer Shine Property Detailing for professional solar panel cleaning services throughout Southern California.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link href="/get-a-quote">
-            <Button size="lg" className="bg-yellow text-navy hover:bg-yellow/90">
-              Get Free Quote
-            </Button>
-          </Link>
+          <GetQuoteButton size="lg" className="bg-yellow text-navy hover:bg-yellow/90">Get Free Quote
+            </GetQuoteButton>
           <Link href={`tel:${BUSINESS_INFO.phone}`}>
             <Button variant="outline" size="lg" className="border-yellow text-yellow hover:bg-yellow hover:text-navy">
               Call {BUSINESS_INFO.phone}
@@ -1072,11 +1061,8 @@ function PostConstructionContent() {
           Ready for professional post-construction cleanup? Contact Shimmer Shine Property Detailing for comprehensive construction cleanup services throughout Orange County.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link href="/get-a-quote">
-            <Button size="lg" className="bg-yellow text-navy hover:bg-yellow/90">
-              Get Free Cleanup Quote
-            </Button>
-          </Link>
+          <GetQuoteButton size="lg" className="bg-yellow text-navy hover:bg-yellow/90">Get Free Cleanup Quote
+            </GetQuoteButton>
           <Link href={`tel:${BUSINESS_INFO.phone}`}>
             <Button variant="outline" size="lg" className="border-yellow text-yellow hover:bg-yellow hover:text-navy">
               Call {BUSINESS_INFO.phone}
@@ -1166,11 +1152,8 @@ function CommercialMaintenanceContent() {
           Ready for professional commercial property maintenance? Contact Shimmer Shine Property Detailing for comprehensive commercial cleaning services throughout Los Angeles County.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link href="/get-a-quote">
-            <Button size="lg" className="bg-yellow text-navy hover:bg-yellow/90">
-              Get Free Commercial Quote
-            </Button>
-          </Link>
+          <GetQuoteButton size="lg" className="bg-yellow text-navy hover:bg-yellow/90">Get Free Commercial Quote
+            </GetQuoteButton>
           <Link href={`tel:${BUSINESS_INFO.phone}`}>
             <Button variant="outline" size="lg" className="border-yellow text-yellow hover:bg-yellow hover:text-navy">
               Call {BUSINESS_INFO.phone}
@@ -1252,11 +1235,8 @@ function EcoFriendlyContent() {
           Ready for sustainable property cleaning? Contact Shimmer Shine Property Detailing for eco-friendly cleaning services throughout <strong>Orange County</strong>, <strong>Los Angeles County</strong>, and <strong>San Diego County</strong>.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link href="/get-a-quote">
-            <Button size="lg" className="bg-yellow text-navy hover:bg-yellow/90">
-              Get Free Eco-Friendly Quote
-            </Button>
-          </Link>
+          <GetQuoteButton size="lg" className="bg-yellow text-navy hover:bg-yellow/90">Get Free Eco-Friendly Quote
+            </GetQuoteButton>
           <Link href={`tel:${BUSINESS_INFO.phone}`}>
             <Button variant="outline" size="lg" className="border-yellow text-yellow hover:bg-yellow hover:text-navy">
               Call {BUSINESS_INFO.phone}
@@ -1713,6 +1693,68 @@ export default function BlogPostPage({ params }: BlogPostProps) {
         </div>
       </section>
 
+      {/* Internal Linking Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h3 className="heading-primary text-3xl md:text-4xl mb-4">
+                Ready to Get Professional Service?
+              </h3>
+              <p className="body-text text-xl text-gray-600">
+                Turn these tips into action with our expert cleaning services
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              
+              {/* Service Recommendations */}
+              <div>
+                <Card className="retro-card h-full">
+                  <CardContent className="p-6">
+                    <RelatedContentLinks 
+                      currentPage="blog"
+                      context={{ 
+                        service: post.tags.includes('Window Cleaning') ? 'window-cleaning' : 
+                                post.tags.includes('Pressure Washing') ? 'pressure-washing' :
+                                post.tags.includes('Solar Panel Cleaning') ? 'solar-panel-cleaning' :
+                                post.tags.includes('Gutter Cleaning') ? 'gutter-cleaning' : undefined,
+                        city: post.tags.find(tag => 
+                          ['Costa Mesa', 'Newport Beach', 'Irvine', 'Beverly Hills', 'Santa Monica', 'San Diego', 'La Jolla']
+                          .includes(tag)
+                        )?.toLowerCase().replace(/\s+/g, '-')
+                      }}
+                      maxLinks={3}
+                      className="h-full"
+                    />
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Service Areas */}
+              <div>
+                <Card className="retro-card h-full">
+                  <CardContent className="p-6">
+                    <LocalAreaLinks 
+                      serviceType={
+                        post.tags.includes('Window Cleaning') ? 'window-cleaning' : 
+                        post.tags.includes('Pressure Washing') ? 'pressure-washing' :
+                        post.tags.includes('Solar Panel Cleaning') ? 'solar-panel-cleaning' :
+                        post.tags.includes('Gutter Cleaning') ? 'gutter-cleaning' : undefined
+                      }
+                      showNearby={false}
+                      maxLinks={6}
+                      className="h-full"
+                    />
+                  </CardContent>
+                </Card>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Related Posts */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -1822,11 +1864,8 @@ function ResidentialWindowContent() {
           Ready for sparkling clean windows? Contact Shimmer Shine Property Detailing for expert residential window cleaning services throughout San Diego County.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link href="/get-a-quote">
-            <Button size="lg" className="bg-yellow text-navy hover:bg-yellow/90">
-              Get Free Window Quote
-            </Button>
-          </Link>
+          <GetQuoteButton size="lg" className="bg-yellow text-navy hover:bg-yellow/90">Get Free Window Quote
+            </GetQuoteButton>
           <Link href={`tel:${BUSINESS_INFO.phone}`}>
             <Button variant="outline" size="lg" className="border-yellow text-yellow hover:bg-yellow hover:text-navy">
               Call {BUSINESS_INFO.phone}
@@ -1896,11 +1935,8 @@ function CommercialWindowContent() {
           Ready for professional commercial window cleaning? Contact Shimmer Shine Property Detailing for comprehensive commercial window services throughout Los Angeles County.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link href="/get-a-quote">
-            <Button size="lg" className="bg-yellow text-navy hover:bg-yellow/90">
-              Get Free Commercial Quote
-            </Button>
-          </Link>
+          <GetQuoteButton size="lg" className="bg-yellow text-navy hover:bg-yellow/90">Get Free Commercial Quote
+            </GetQuoteButton>
           <Link href={`tel:${BUSINESS_INFO.phone}`}>
             <Button variant="outline" size="lg" className="border-yellow text-yellow hover:bg-yellow hover:text-navy">
               Call {BUSINESS_INFO.phone}
@@ -1976,11 +2012,8 @@ function DrivewayPressureContent() {
           Ready for a cleaner driveway? Contact Shimmer Shine Property Detailing for expert driveway pressure washing services throughout Orange County.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link href="/get-a-quote">
-            <Button size="lg" className="bg-yellow text-navy hover:bg-yellow/90">
-              Get Free Driveway Quote
-            </Button>
-          </Link>
+          <GetQuoteButton size="lg" className="bg-yellow text-navy hover:bg-yellow/90">Get Free Driveway Quote
+            </GetQuoteButton>
           <Link href={`tel:${BUSINESS_INFO.phone}`}>
             <Button variant="outline" size="lg" className="border-yellow text-yellow hover:bg-yellow hover:text-navy">
               Call {BUSINESS_INFO.phone}
@@ -2027,11 +2060,8 @@ function ConcretePressureContent() {
           Ready for pristine concrete surfaces? Contact Shimmer Shine Property Detailing for expert concrete pressure washing services throughout San Diego County.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link href="/get-a-quote">
-            <Button size="lg" className="bg-yellow text-navy hover:bg-yellow/90">
-              Get Free Concrete Quote
-            </Button>
-          </Link>
+          <GetQuoteButton size="lg" className="bg-yellow text-navy hover:bg-yellow/90">Get Free Concrete Quote
+            </GetQuoteButton>
           <Link href={`tel:${BUSINESS_INFO.phone}`}>
             <Button variant="outline" size="lg" className="border-yellow text-yellow hover:bg-yellow hover:text-navy">
               Call {BUSINESS_INFO.phone}
@@ -2078,11 +2108,8 @@ function GutterRepairContent() {
           Ready for reliable gutter care? Contact Shimmer Shine Property Detailing for comprehensive gutter cleaning, repair, and maintenance services throughout Orange County.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link href="/get-a-quote">
-            <Button size="lg" className="bg-yellow text-navy hover:bg-yellow/90">
-              Get Free Gutter Quote
-            </Button>
-          </Link>
+          <GetQuoteButton size="lg" className="bg-yellow text-navy hover:bg-yellow/90">Get Free Gutter Quote
+            </GetQuoteButton>
           <Link href={`tel:${BUSINESS_INFO.phone}`}>
             <Button variant="outline" size="lg" className="border-yellow text-yellow hover:bg-yellow hover:text-navy">
               Call {BUSINESS_INFO.phone}
@@ -2132,11 +2159,8 @@ function GutterInstallationContent() {
           Ready for a proper gutter system? Contact Shimmer Shine Property Detailing for expert gutter installation and replacement services throughout Los Angeles County.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link href="/get-a-quote">
-            <Button size="lg" className="bg-yellow text-navy hover:bg-yellow/90">
-              Get Free Installation Quote
-            </Button>
-          </Link>
+          <GetQuoteButton size="lg" className="bg-yellow text-navy hover:bg-yellow/90">Get Free Installation Quote
+            </GetQuoteButton>
           <Link href={`tel:${BUSINESS_INFO.phone}`}>
             <Button variant="outline" size="lg" className="border-yellow text-yellow hover:bg-yellow hover:text-navy">
               Call {BUSINESS_INFO.phone}
@@ -2183,11 +2207,8 @@ function SolarEfficiencyContent() {
           Ready to optimize your solar efficiency? Contact Shimmer Shine Property Detailing for expert solar panel cleaning and maintenance services throughout Orange County.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link href="/get-a-quote">
-            <Button size="lg" className="bg-yellow text-navy hover:bg-yellow/90">
-              Get Free Solar Quote
-            </Button>
-          </Link>
+          <GetQuoteButton size="lg" className="bg-yellow text-navy hover:bg-yellow/90">Get Free Solar Quote
+            </GetQuoteButton>
           <Link href={`tel:${BUSINESS_INFO.phone}`}>
             <Button variant="outline" size="lg" className="border-yellow text-yellow hover:bg-yellow hover:text-navy">
               Call {BUSINESS_INFO.phone}
@@ -2237,11 +2258,8 @@ function SolarMaintenanceContent() {
           Ready to optimize your solar performance? Contact Shimmer Shine Property Detailing for comprehensive solar panel maintenance and cleaning services throughout Los Angeles County.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link href="/get-a-quote">
-            <Button size="lg" className="bg-yellow text-navy hover:bg-yellow/90">
-              Get Free Solar Maintenance Quote
-            </Button>
-          </Link>
+          <GetQuoteButton size="lg" className="bg-yellow text-navy hover:bg-yellow/90">Get Free Solar Maintenance Quote
+            </GetQuoteButton>
           <Link href={`tel:${BUSINESS_INFO.phone}`}>
             <Button variant="outline" size="lg" className="border-yellow text-yellow hover:bg-yellow hover:text-navy">
               Call {BUSINESS_INFO.phone}
@@ -2288,11 +2306,8 @@ function ExteriorHouseContent() {
           Ready for a beautifully clean home exterior? Contact Shimmer Shine Property Detailing for expert house washing services throughout Orange County.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link href="/get-a-quote">
-            <Button size="lg" className="bg-yellow text-navy hover:bg-yellow/90">
-              Get Free House Washing Quote
-            </Button>
-          </Link>
+          <GetQuoteButton size="lg" className="bg-yellow text-navy hover:bg-yellow/90">Get Free House Washing Quote
+            </GetQuoteButton>
           <Link href={`tel:${BUSINESS_INFO.phone}`}>
             <Button variant="outline" size="lg" className="border-yellow text-yellow hover:bg-yellow hover:text-navy">
               Call {BUSINESS_INFO.phone}
@@ -2339,11 +2354,8 @@ function RoofCleaningContent() {
           Ready for a cleaner, healthier roof? Contact Shimmer Shine Property Detailing for expert roof cleaning and maintenance services throughout Los Angeles County.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link href="/get-a-quote">
-            <Button size="lg" className="bg-yellow text-navy hover:bg-yellow/90">
-              Get Free Roof Quote
-            </Button>
-          </Link>
+          <GetQuoteButton size="lg" className="bg-yellow text-navy hover:bg-yellow/90">Get Free Roof Quote
+            </GetQuoteButton>
           <Link href={`tel:${BUSINESS_INFO.phone}`}>
             <Button variant="outline" size="lg" className="border-yellow text-yellow hover:bg-yellow hover:text-navy">
               Call {BUSINESS_INFO.phone}
@@ -2390,11 +2402,8 @@ function SpringCleaningContent() {
           Ready for a fresh, clean start to spring? Contact Shimmer Shine Property Detailing for comprehensive spring cleaning services throughout Orange County.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link href="/get-a-quote">
-            <Button size="lg" className="bg-yellow text-navy hover:bg-yellow/90">
-              Get Free Spring Cleaning Quote
-            </Button>
-          </Link>
+          <GetQuoteButton size="lg" className="bg-yellow text-navy hover:bg-yellow/90">Get Free Spring Cleaning Quote
+            </GetQuoteButton>
           <Link href={`tel:${BUSINESS_INFO.phone}`}>
             <Button variant="outline" size="lg" className="border-yellow text-yellow hover:bg-yellow hover:text-navy">
               Call {BUSINESS_INFO.phone}
@@ -2441,11 +2450,8 @@ function FallPreparationContent() {
           Ready for comprehensive fall property preparation? Contact Shimmer Shine Property Detailing for expert fall cleaning and preparation services throughout Los Angeles County.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link href="/get-a-quote">
-            <Button size="lg" className="bg-yellow text-navy hover:bg-yellow/90">
-              Get Free Fall Prep Quote
-            </Button>
-          </Link>
+          <GetQuoteButton size="lg" className="bg-yellow text-navy hover:bg-yellow/90">Get Free Fall Prep Quote
+            </GetQuoteButton>
           <Link href={`tel:${BUSINESS_INFO.phone}`}>
             <Button variant="outline" size="lg" className="border-yellow text-yellow hover:bg-yellow hover:text-navy">
               Call {BUSINESS_INFO.phone}
@@ -2492,11 +2498,8 @@ function RestaurantCleaningContent() {
           Ready for professional restaurant exterior cleaning? Contact Shimmer Shine Property Detailing for specialized food service cleaning throughout Orange County.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link href="/get-a-quote">
-            <Button size="lg" className="bg-yellow text-navy hover:bg-yellow/90">
-              Get Free Restaurant Quote
-            </Button>
-          </Link>
+          <GetQuoteButton size="lg" className="bg-yellow text-navy hover:bg-yellow/90">Get Free Restaurant Quote
+            </GetQuoteButton>
           <Link href={`tel:${BUSINESS_INFO.phone}`}>
             <Button variant="outline" size="lg" className="border-yellow text-yellow hover:bg-yellow hover:text-navy">
               Call {BUSINESS_INFO.phone}
@@ -2543,11 +2546,8 @@ function OfficeBuildingContent() {
           Ready for professional office building cleaning? Contact Shimmer Shine Property Detailing for comprehensive commercial cleaning services throughout San Diego County.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link href="/get-a-quote">
-            <Button size="lg" className="bg-yellow text-navy hover:bg-yellow/90">
-              Get Free Commercial Quote
-            </Button>
-          </Link>
+          <GetQuoteButton size="lg" className="bg-yellow text-navy hover:bg-yellow/90">Get Free Commercial Quote
+            </GetQuoteButton>
           <Link href={`tel:${BUSINESS_INFO.phone}`}>
             <Button variant="outline" size="lg" className="border-yellow text-yellow hover:bg-yellow hover:text-navy">
               Call {BUSINESS_INFO.phone}
@@ -2594,11 +2594,8 @@ function AmazingTransformationsContent() {
           Ready for your own amazing before and after transformation? Contact Shimmer Shine Property Detailing for comprehensive cleaning services that deliver dramatic results throughout Orange County.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link href="/get-a-quote">
-            <Button size="lg" className="bg-yellow text-navy hover:bg-yellow/90">
-              Get Free Transformation Quote
-            </Button>
-          </Link>
+          <GetQuoteButton size="lg" className="bg-yellow text-navy hover:bg-yellow/90">Get Free Transformation Quote
+            </GetQuoteButton>
           <Link href={`tel:${BUSINESS_INFO.phone}`}>
             <Button variant="outline" size="lg" className="border-yellow text-yellow hover:bg-yellow hover:text-navy">
               Call {BUSINESS_INFO.phone}
@@ -2645,11 +2642,8 @@ function CleaningResultsContent() {
           Ready to see what professional cleaning can do for your property? Contact Shimmer Shine Property Detailing for comprehensive cleaning services that deliver amazing before and after results throughout Los Angeles County.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link href="/get-a-quote">
-            <Button size="lg" className="bg-yellow text-navy hover:bg-yellow/90">
-              Get Free Transformation Quote
-            </Button>
-          </Link>
+          <GetQuoteButton size="lg" className="bg-yellow text-navy hover:bg-yellow/90">Get Free Transformation Quote
+            </GetQuoteButton>
           <Link href={`tel:${BUSINESS_INFO.phone}`}>
             <Button variant="outline" size="lg" className="border-yellow text-yellow hover:bg-yellow hover:text-navy">
               Call {BUSINESS_INFO.phone}

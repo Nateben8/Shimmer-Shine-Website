@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import GetQuoteButton from "@/components/GetQuoteButton"
 
 export default function FallSpecial() {
   const [isVisible, setIsVisible] = useState(true)

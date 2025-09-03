@@ -7,6 +7,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { BUSINESS_INFO } from "@/lib/constants";
 import { Menu, X, Phone, MapPin } from "lucide-react";
+import GetQuoteButton from "./GetQuoteButton";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,6 +28,7 @@ export default function Header() {
   const navigation = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
+    { name: "Service Areas", href: "/service-areas" },
     { name: "Gallery", href: "/gallery" },
     { name: "About", href: "/about" },
     { name: "Blog", href: "/blog" },
@@ -48,14 +50,17 @@ export default function Header() {
           <div className="grid grid-cols-3 items-center -my-2 lg:-my-2">
             
             {/* Left Navigation - Desktop Only */}
-            <div className="hidden lg:flex items-center space-x-8">
-              <Link href="/" className="heading-primary text-gray-800 hover:text-navy font-bold transition-colors text-lg tracking-wide">
+            <div className="hidden lg:flex items-center space-x-6">
+              <Link href="/" className="heading-primary text-gray-800 hover:text-navy font-bold transition-colors text-base tracking-wide">
                 HOME
               </Link>
-              <Link href="/services" className="heading-primary text-gray-800 hover:text-navy font-bold transition-colors text-lg tracking-wide">
+              <Link href="/services" className="heading-primary text-gray-800 hover:text-navy font-bold transition-colors text-base tracking-wide">
                 SERVICES
               </Link>
-              <Link href="/gallery" className="heading-primary text-gray-800 hover:text-navy font-bold transition-colors text-lg tracking-wide">
+              <Link href="/service-areas" className="heading-primary text-gray-800 hover:text-navy font-bold transition-colors text-base tracking-wide">
+                AREAS
+              </Link>
+              <Link href="/gallery" className="heading-primary text-gray-800 hover:text-navy font-bold transition-colors text-base tracking-wide">
                 GALLERY
               </Link>
             </div>
@@ -100,11 +105,9 @@ export default function Header() {
               <Link href="/blog" className="heading-primary text-gray-800 hover:text-navy font-bold transition-colors text-lg tracking-wide">
                 BLOG
               </Link>
-              <Link href="/get-a-quote">
-                <Button variant="default" size="lg" className="heading-primary bg-yellow hover:bg-yellow/90 font-bold text-navy shadow-lg hover:shadow-xl transition-all hover:scale-105 border-2 border-navy">
-                  GET QUOTE
-                </Button>
-              </Link>
+              <GetQuoteButton variant="default" size="lg" className="heading-primary bg-yellow hover:bg-yellow/90 font-bold text-navy shadow-lg hover:shadow-xl transition-all hover:scale-105 border-2 border-navy">
+                GET QUOTE
+              </GetQuoteButton>
             </div>
 
             {/* Mobile Menu Button - Right Side */}
@@ -164,43 +167,55 @@ export default function Header() {
           <div className="flex-1 overflow-y-auto">
             <nav className="px-6 py-8 space-y-6">
               <div className="space-y-3">
-                {navigation.map((item) => {
+                                {navigation.map((item) => {
                   const active = isActive(item.href);
+                  
+                  // Special handling for Get Quote button
+                  if (item.name === 'Get Quote') {
+                    return (
+                      <GetQuoteButton
+                        key={item.name}
+                        className={`block w-full text-left font-bold py-5 px-6 rounded-xl border-2 transition-all duration-200 text-xl tracking-wide min-h-[64px] flex items-center touch-manipulation shadow-lg hover:shadow-xl ${
+                          active
+                            ? 'bg-yellow text-navy border-navy shadow-xl scale-105 ring-2 ring-yellow/50'
+                            : 'bg-yellow text-navy hover:bg-yellow/90 border-navy hover:border-navy'
+                        }`}
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        <div className="flex items-center justify-between w-full">
+                          <span className="heading-primary text-navy">
+                            {item.name.toUpperCase()}
+                          </span>
+                          <div className="w-3 h-3 rounded-full bg-navy opacity-60"></div>
+                        </div>
+                      </GetQuoteButton>
+                    );
+                  }
+                  
+                  // Regular navigation items
                   return (
                     <Link
                       key={item.name}
                       href={item.href}
                       className={`block w-full text-left font-bold py-5 px-6 rounded-xl border-2 transition-all duration-200 text-xl tracking-wide min-h-[64px] flex items-center touch-manipulation shadow-lg hover:shadow-xl ${
-                        item.name === 'Get Quote' 
-                          ? active
-                            ? 'bg-yellow text-navy border-navy shadow-xl scale-105 ring-2 ring-yellow/50'
-                            : 'bg-yellow text-navy hover:bg-yellow/90 border-navy hover:border-navy'
-                          : active
-                            ? 'bg-navy text-yellow border-yellow shadow-xl scale-105 ring-2 ring-navy/50'
-                            : 'bg-white text-navy hover:text-navy hover:bg-white/90 border-yellow hover:border-yellow'
+                        active
+                          ? 'bg-navy text-yellow border-yellow shadow-xl scale-105 ring-2 ring-navy/50'
+                          : 'bg-white text-navy hover:text-navy hover:bg-white/90 border-yellow hover:border-yellow'
                       }`}
                       onClick={() => setIsMenuOpen(false)}
                     >
                       <div className="flex items-center justify-between w-full">
                         <span className={`heading-primary ${
-                          item.name === 'Get Quote' 
-                            ? 'text-navy' 
-                            : active 
-                              ? 'text-yellow' 
-                              : 'text-navy'
+                          active 
+                            ? 'text-yellow' 
+                            : 'text-navy'
                         }`}>
                           {item.name.toUpperCase()}
                         </span>
                         <div className={`w-3 h-3 rounded-full ${
                           active 
-                            ? 'opacity-100 animate-pulse' 
-                            : 'opacity-60'
-                        } ${
-                          item.name === 'Get Quote' 
-                            ? 'bg-navy' 
-                            : active 
-                              ? 'bg-yellow' 
-                              : 'bg-navy'
+                            ? 'opacity-100 animate-pulse bg-yellow' 
+                            : 'opacity-60 bg-navy'
                         }`}></div>
                       </div>
                     </Link>

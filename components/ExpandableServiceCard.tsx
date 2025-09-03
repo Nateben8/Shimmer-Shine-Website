@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import GetQuoteButton from "@/components/GetQuoteButton"
 import Image from "next/image"
 import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react"
 
@@ -164,12 +165,10 @@ export default function ExpandableServiceCard({ service }: ExpandableServiceCard
       
       <CardContent className="text-center p-4 sm:p-6 pt-0 mt-auto">
         <div className="space-y-3">
-          <Link href="/get-a-quote">
-            <Button className="w-full bg-yellow hover:bg-yellow/90 text-navy font-bold py-3 px-4 rounded-xl transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-navy/10">
-              <span className="text-sm">Get Free Quote</span>
-              <ArrowRight className="h-4 w-4 ml-2 flex-shrink-0" />
-            </Button>
-          </Link>
+          <GetQuoteButton className="w-full bg-yellow hover:bg-yellow/90 text-navy font-bold py-3 px-4 rounded-xl transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-navy/10">
+            <span className="text-sm">Get Free Quote</span>
+            <ArrowRight className="h-4 w-4 ml-2 flex-shrink-0" />
+          </GetQuoteButton>
 
         </div>
       </CardContent>
