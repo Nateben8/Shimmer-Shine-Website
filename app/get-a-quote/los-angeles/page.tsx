@@ -347,14 +347,13 @@ export default function LosAngelesQuotePage() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <GetQuoteButton 
+              <ScrollToFormButton 
                 variant="retro-navy" 
                 size="lg" 
                 className="text-lg px-8 py-4 animate-pulse"
-                redirectPath="/get-a-quote/los-angeles"
               >
                 🚀 Claim My FREE Quote + <span style={{color: '#FF4500'}}>15% OFF</span> ↑
-              </GetQuoteButton>
+              </ScrollToFormButton>
               <Link href={`tel:${BUSINESS_INFO.phone}`}>
                 <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-navy text-navy hover:bg-navy hover:text-white">
                   <Phone className="h-5 w-5 mr-2" />

@@ -2,6 +2,13 @@
 const nextConfig = {
   experimental: {
     mdxRs: true,
+    optimizeCss: true,
+    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
+  },
+  // Performance optimizations
+  swcMinify: true,
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
   },
   // Enhanced image optimization
   images: {

@@ -1,0 +1,9 @@
+*.md
+test-*.js
+content/
+public/Before and After images/
+public/blog/
+.DS_Store
+*.tsbuildinfo
+node_modules/
+.git/

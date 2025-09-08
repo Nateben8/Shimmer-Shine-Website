@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useState, useRef, lazy, Suspense } from "react"
 import Hero from "@/components/Hero"
 import { SERVICES, BUSINESS_INFO, FAQ_DATA } from "@/lib/constants"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -9,12 +9,22 @@ import Link from "next/link"
 import Image from "next/image"
 import OptimizedImage from "@/components/OptimizedImage"
 import { Star, ArrowRight, CheckCircle, Award, Shield, Clock, MapPin, ChevronLeft, ChevronRight } from "lucide-react"
-import BubbleReviews from "@/components/BubbleReviews"
-import ExpandableServiceCard from "@/components/ExpandableServiceCard"
-// import RelatedContent from "@/components/RelatedContent"
-import { ScrollAnimation, WaterDroplets, BeforeAfterSlider } from "@/components/ScrollAnimations"
-import { getFAQSchema, getFallSpecialEventSchema, getServiceBundleSchema } from "@/lib/schema"
 import GetQuoteButton from "@/components/GetQuoteButton"
+
+// Lazy load heavy components
+const BubbleReviews = lazy(() => import("@/components/BubbleReviews"))
+const ExpandableServiceCard = lazy(() => import("@/components/ExpandableServiceCard"))
+const ScrollAnimations = lazy(() => import("@/components/ScrollAnimations").then(module => ({
+  default: module.ScrollAnimation
+})))
+const WaterDroplets = lazy(() => import("@/components/ScrollAnimations").then(module => ({
+  default: module.WaterDroplets
+})))
+const BeforeAfterSlider = lazy(() => import("@/components/ScrollAnimations").then(module => ({
+  default: module.BeforeAfterSlider
+})))
+
+import { getFAQSchema, getFallSpecialEventSchema, getServiceBundleSchema } from "@/lib/schema"
 
 export default function HomePage() {
   const featuredServices = SERVICES.slice(0, 4)
@@ -114,7 +124,9 @@ export default function HomePage() {
       {/* Services Section */}
       <section className="py-12 sm:py-16 bg-gradient-to-br from-gray-50 via-blue-50/30 to-gray-50 relative overflow-hidden">
         {/* Water Droplets Animation */}
-        <WaterDroplets count={6} />
+        <Suspense fallback={<div className="absolute inset-0 pointer-events-none" />}>
+          <WaterDroplets count={6} />
+        </Suspense>
         
         {/* Enhanced Background Sparkles - Mobile Safe */}
         <div className="absolute inset-0 opacity-40 pointer-events-none">
@@ -187,7 +199,9 @@ export default function HomePage() {
                   height={120}
                   className="w-24 h-24 mx-auto drop-shadow-lg hover:scale-110 transition-transform duration-300"
                   loading="lazy"
-                  quality={90}
+                  quality={80}
+                  placeholder="blur"
+                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
                 />
               </div>
               
@@ -203,25 +217,37 @@ export default function HomePage() {
             </div>
           </div>
           
-          <ScrollAnimation animation="fade-in-up" className="text-center mb-8 sm:mb-12">
-            <h2 className="heading-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 px-2" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
-              Why Southern California Trusts Shimmer Shine
-            </h2>
-            <p className="body-text text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed">
-              We believe every property has the potential to truly shine. At Shimmer Shine, we don't just clean – we restore that pride-of-ownership feeling. Whether it's crystal-clear windows, pressure-washed walkways, or spotless solar panels, we treat your property like our own. Licensed, insured, and dedicated to bringing out the best in every surface we touch.
-            </p>
-          </ScrollAnimation>
+          <Suspense fallback={<div className="text-center mb-8 sm:mb-12 animate-pulse">
+            <div className="h-12 bg-gray-200 rounded mb-4 mx-auto max-w-2xl"></div>
+            <div className="h-6 bg-gray-200 rounded mx-auto max-w-3xl"></div>
+          </div>}>
+            <ScrollAnimations animation="fade-in-up" className="text-center mb-8 sm:mb-12">
+              <h2 className="heading-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 px-2" style={{textShadow: '1px 1px 0px #FFC107, 2px 2px 0px #FFD54F'}}>
+                Why Southern California Trusts Shimmer Shine
+              </h2>
+              <p className="body-text text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed">
+                We believe every property has the potential to truly shine. At Shimmer Shine, we don't just clean – we restore that pride-of-ownership feeling. Whether it's crystal-clear windows, pressure-washed walkways, or spotless solar panels, we treat your property like our own. Licensed, insured, and dedicated to bringing out the best in every surface we touch.
+              </p>
+            </ScrollAnimations>
+          </Suspense>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {featuredServices.map((service, index) => (
-              <ScrollAnimation 
-                key={service.id} 
-                animation="fade-in-up" 
-                delay={index * 100}
-                className="hover-lift-subtle"
-              >
-                <ExpandableServiceCard service={service} />
-              </ScrollAnimation>
+              <Suspense key={service.id} fallback={
+                <div className="animate-pulse">
+                  <div className="bg-gray-200 rounded-lg h-64 mb-4"></div>
+                  <div className="h-4 bg-gray-200 rounded mb-2"></div>
+                  <div className="h-3 bg-gray-200 rounded"></div>
+                </div>
+              }>
+                <ScrollAnimations 
+                  animation="fade-in-up" 
+                  delay={index * 100}
+                  className="hover-lift-subtle"
+                >
+                  <ExpandableServiceCard service={service} />
+                </ScrollAnimations>
+              </Suspense>
             ))}
           </div>
 
@@ -508,7 +534,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        
+
         {/* Mascot Overlay */}
         <div className="absolute top-4 right-4 sm:top-8 sm:right-8 lg:top-12 lg:right-12 opacity-20 pointer-events-none">
           <Image
@@ -572,7 +598,27 @@ export default function HomePage() {
       </section>
 
       {/* Google Reviews Section */}
-      <BubbleReviews />
+      <Suspense fallback={
+        <div className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-8 animate-pulse">
+              <div className="h-8 bg-gray-200 rounded mb-4 mx-auto max-w-md"></div>
+              <div className="h-4 bg-gray-200 rounded mx-auto max-w-lg"></div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[1, 2, 3].map(i => (
+                <div key={i} className="bg-gray-100 rounded-lg p-6 animate-pulse">
+                  <div className="h-4 bg-gray-200 rounded mb-2"></div>
+                  <div className="h-4 bg-gray-200 rounded mb-2"></div>
+                  <div className="h-3 bg-gray-200 rounded"></div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      }>
+        <BubbleReviews />
+      </Suspense>
 
 
 
@@ -586,8 +632,8 @@ export default function HomePage() {
             <p className="text-lg text-gray-200 max-w-3xl mx-auto">
               From window cleaning in Costa Mesa to pressure washing in Beverly Hills, we serve over 139 cities with same-day availability and guaranteed results.
             </p>
-          </div>
-          
+        </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-sm">
             <div>
               <h3 className="font-bold text-yellow mb-3">Window Cleaning</h3>

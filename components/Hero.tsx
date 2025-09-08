@@ -168,6 +168,8 @@ export default function Hero() {
                       loop
                       muted
                       playsInline
+                      preload="metadata"
+                      loading="lazy"
                       className="w-full h-full object-cover"
                       style={{ objectFit: 'cover' }}
                     >
