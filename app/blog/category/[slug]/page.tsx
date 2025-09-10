@@ -301,9 +301,9 @@ const blogPosts = [
 ]
 
 interface CategoryPageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 // Generate static params for all categories
@@ -326,7 +326,8 @@ export async function generateStaticParams() {
 
 // Generate metadata for each category
 export async function generateMetadata({ params }: CategoryPageProps) {
-  const categorySlug = params.slug
+  const resolvedParams = await params
+  const categorySlug = resolvedParams.slug
   const categoryName = BLOG_CATEGORIES.find(cat => 
     createSlug(cat) === categorySlug
   )
@@ -360,8 +361,9 @@ export async function generateMetadata({ params }: CategoryPageProps) {
   }
 }
 
-export default function CategoryPage({ params }: CategoryPageProps) {
-  const categorySlug = params.slug
+export default async function CategoryPage({ params }: CategoryPageProps) {
+  const resolvedParams = await params
+  const categorySlug = resolvedParams.slug
   const categoryName = BLOG_CATEGORIES.find(cat => 
     createSlug(cat) === categorySlug
   )
