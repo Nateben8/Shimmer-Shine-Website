@@ -6,13 +6,14 @@ import Link from 'next/link'
 import { Phone, Clock, Shield, Zap, CheckCircle, AlertTriangle } from 'lucide-react'
 
 interface EmergencyCityPageProps {
-  params: {
+  params: Promise<{
     citySlug: string
-  }
+  }>
 }
 
 export async function generateMetadata({ params }: EmergencyCityPageProps) {
-  const cityName = params.citySlug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
+  const resolvedParams = await params
+  const cityName = resolvedParams.citySlug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
   return getEmergencyGeoSEO(cityName)
 }
 
@@ -29,8 +30,9 @@ export async function generateStaticParams() {
   }))
 }
 
-export default function EmergencyCityPage({ params }: EmergencyCityPageProps) {
-  const { citySlug } = params
+export default async function EmergencyCityPage({ params }: EmergencyCityPageProps) {
+  const resolvedParams = await params
+  const { citySlug } = resolvedParams
   const cityName = citySlug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
   const characteristics = getCityCharacteristics(cityName)
   
