@@ -8,15 +8,16 @@ import { MapPin, Star, Phone, Award, Shield, Clock, Users, CheckCircle, Sun, Sno
 import GetQuoteButton from "@/components/GetQuoteButton"
 
 interface SeasonalCityPageProps {
-  params: {
+  params: Promise<{
     season: 'spring' | 'summer' | 'fall' | 'winter'
     citySlug: string
-  }
+  }>
 }
 
 export async function generateMetadata({ params }: SeasonalCityPageProps) {
-  const cityName = params.citySlug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
-  return getSeasonalGeoSEO(cityName, params.season)
+  const resolvedParams = await params
+  const cityName = resolvedParams.citySlug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
+  return getSeasonalGeoSEO(cityName, resolvedParams.season)
 }
 
 export async function generateStaticParams() {
@@ -42,8 +43,9 @@ export async function generateStaticParams() {
   return paths
 }
 
-export default function SeasonalCityPage({ params }: SeasonalCityPageProps) {
-  const { season, citySlug } = params
+export default async function SeasonalCityPage({ params }: SeasonalCityPageProps) {
+  const resolvedParams = await params
+  const { season, citySlug } = resolvedParams
   const cityName = citySlug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
   const characteristics = getCityCharacteristics(cityName)
   
