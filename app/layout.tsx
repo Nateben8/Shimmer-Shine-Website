@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+// import { Inter } from "next/font/google"
 import "./globals.css"
 import { generateSEO, getPageSEO } from "@/lib/seo"
 import { getLocalBusinessSchema, getWebsiteSchema, getOrganizationSchema } from "@/lib/schema"
@@ -12,14 +12,14 @@ import LocalBusinessSchema from "@/components/LocalBusinessSchema"
 // import { ZipCodeProvider } from "@/components/ZipCodeProvider"
 
 // Optimized font loading with display swap for better performance
-const inter = Inter({ 
-  subsets: ["latin"],
-  display: 'swap',
-  preload: true,
-  fallback: ['system-ui', 'arial'],
-  adjustFontFallback: true,
-  variable: '--font-inter'
-})
+// const inter = Inter({ 
+//   subsets: ["latin"],
+//   display: 'swap',
+//   preload: true,
+//   fallback: ['system-ui', 'arial'],
+//   adjustFontFallback: true,
+//   variable: '--font-inter'
+// })
 
 export const metadata: Metadata = getPageSEO('home')
 
@@ -121,7 +121,7 @@ export default function RootLayout({
           </>
         )}
       </head>
-      <body className={`${inter.variable} font-roboto-condensed`}>
+      <body className="font-sans">
         <WebVitals />
         <PerformanceOptimizer />
         <LocalBusinessSchema />

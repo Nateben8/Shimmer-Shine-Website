@@ -93,12 +93,12 @@ export default function Breadcrumbs({ items, className = '' }: BreadcrumbsProps)
       
       {/* Breadcrumb Navigation */}
       <nav 
-        className={`flex items-center space-x-2 text-sm text-gray-600 ${className}`}
+        className={`flex items-center space-x-2 text-sm ${className || 'text-gray-600'}`}
         aria-label="Breadcrumb"
       >
         <Link 
           href="/" 
-          className="flex items-center hover:text-blue-600 transition-colors"
+          className={`flex items-center transition-colors ${className === 'text-white' ? 'text-white hover:text-yellow' : 'hover:text-blue-600'}`}
           aria-label="Go to homepage"
         >
           <Home className="w-4 h-4" />
@@ -107,11 +107,11 @@ export default function Breadcrumbs({ items, className = '' }: BreadcrumbsProps)
         
         {items.map((item, index) => (
           <div key={index} className="flex items-center space-x-2">
-            <ChevronRight className="w-4 h-4 text-gray-400" />
+            <ChevronRight className={`w-4 h-4 ${className === 'text-white' ? 'text-white/70' : 'text-gray-400'}`} />
             {index === items.length - 1 ? (
               // Current page - not a link
               <span 
-                className="text-gray-900 font-medium"
+                className={`font-medium ${className === 'text-white' ? 'text-white' : 'text-gray-900'}`}
                 aria-current="page"
               >
                 {item.name}
@@ -120,7 +120,7 @@ export default function Breadcrumbs({ items, className = '' }: BreadcrumbsProps)
               // Intermediate pages - links
               <Link 
                 href={item.url.replace('https://www.shimmershinepropertydetailing.com', '')}
-                className="hover:text-blue-600 transition-colors"
+                className={`transition-colors ${className === 'text-white' ? 'text-white hover:text-yellow' : 'hover:text-blue-600'}`}
               >
                 {item.name}
               </Link>

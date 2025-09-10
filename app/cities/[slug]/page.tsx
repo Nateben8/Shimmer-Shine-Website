@@ -11,8 +11,8 @@ import ContextualServiceLinks from "@/components/ContextualServiceLinks"
 import LocalAreaLinks from "@/components/LocalAreaLinks"
 import RelatedContentLinks from "@/components/RelatedContentLinks"
 import Breadcrumbs, { generateBreadcrumbs } from "@/components/Breadcrumbs"
-import { 
 import GetQuoteButton from "@/components/GetQuoteButton"
+import { 
   MapPin, 
   Phone, 
   Star, 
@@ -39,10 +39,6 @@ export async function generateStaticParams() {
   return BUSINESS_INFO.cities.map((city) => {
     // Generate both normalized and original slugs for special characters
     const originalSlug = city.toLowerCase().replace(/\s+/g, '-')
-    const normalizedSlug = city.toLowerCase()
-      .replace(/\s+/g, '-')
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '') // Remove diacritics
     
     return { slug: originalSlug }
   }).concat(
@@ -127,10 +123,9 @@ export default function CityPage({ params }: CityPageProps) {
   const localBusinessSchema = getLocalBusinessSchema()
 
   const featuredServices = SERVICES.slice(0, 4)
-  const breadcrumbs = generateBreadcrumbs('city', { 
-    cityName: cityName, 
-    slug: params.slug 
-  })
+  const breadcrumbs = typeof generateBreadcrumbs === 'function' 
+    ? generateBreadcrumbs('city', { cityName: cityName, slug: params.slug })
+    : [{ name: 'Cities', url: '/cities' }, { name: cityName, url: `/cities/${params.slug}` }]
 
   return (
     <>

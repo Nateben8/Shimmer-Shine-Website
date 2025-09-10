@@ -8,15 +8,16 @@ import { Star, Phone, Award, Shield, CheckCircle, Trophy, Target, Zap } from 'lu
 import GetQuoteButton from "@/components/GetQuoteButton"
 
 interface BestServiceCityPageProps {
-  params: {
+  params: Promise<{
     serviceSlug: string
     citySlug: string
-  }
+  }>
 }
 
 export async function generateMetadata({ params }: BestServiceCityPageProps) {
-  const cityName = params.citySlug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
-  const serviceName = params.serviceSlug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
+  const resolvedParams = await params
+  const cityName = resolvedParams.citySlug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
+  const serviceName = resolvedParams.serviceSlug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
   return getCompetitiveGeoSEO(cityName, serviceName)
 }
 
@@ -41,8 +42,9 @@ export async function generateStaticParams() {
   return paths
 }
 
-export default function BestServiceCityPage({ params }: BestServiceCityPageProps) {
-  const { serviceSlug, citySlug } = params
+export default async function BestServiceCityPage({ params }: BestServiceCityPageProps) {
+  const resolvedParams = await params
+  const { serviceSlug, citySlug } = resolvedParams
   const cityName = citySlug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
   const serviceName = serviceSlug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
   

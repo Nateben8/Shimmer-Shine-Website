@@ -137,7 +137,7 @@ export default function Hero() {
             {/* CTA Buttons */}
             <SlideUp delay={1100}>
               <div className="flex flex-col gap-4 relative z-10">
-                <GetQuoteButton className="retro-button w-full text-lg px-8 py-5 min-h-[60px] font-bold shadow-lg cursor-pointer text-center flex items-center justify-center relative z-10 select-none">
+                <GetQuoteButton variant="retro" className="w-full text-lg min-h-[60px] cursor-pointer text-center flex items-center justify-center relative z-10 select-none">
                   Get Free Quote in 60 Seconds
                 </GetQuoteButton>
                 <Link 
@@ -145,7 +145,7 @@ export default function Hero() {
                   className="w-full block relative z-10 no-underline"
                   style={{ textDecoration: 'none' }}
                 >
-                  <MotionButton className="retro-button-navy w-full text-lg px-8 py-5 bg-white text-navy min-h-[60px] font-bold cursor-pointer text-center flex items-center justify-center relative z-10 select-none">
+                  <MotionButton className="bg-white text-navy border-2 border-navy hover:bg-navy hover:text-white hover:border-white font-bold py-4 px-8 rounded-lg shadow-retro transition-all duration-300 w-full text-lg min-h-[60px] cursor-pointer text-center flex items-center justify-center relative z-10 select-none uppercase tracking-wide">
                     <Phone className="h-6 w-6 mr-3" />
                     Call {BUSINESS_INFO.phone}
                   </MotionButton>
@@ -162,25 +162,23 @@ export default function Hero() {
               <div className="polaroid-frame">
                 <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-2xl">
                   <div className="relative w-full h-full bg-navy">
-                    <video
-                      src="/Homepage video1.MOV"
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      preload="metadata"
-                      loading="lazy"
-                      className="w-full h-full object-cover"
-                      style={{ objectFit: 'cover' }}
-                    >
-                      Your browser does not support the video tag.
-                    </video>
-                    {/* Video Overlay */}
+                    <Image
+                      src="/robonladder2.png"
+                      alt="Professional cleaning equipment and ladder - Shimmer Shine Property Detailing"
+                      fill
+                      className="object-cover"
+                      priority
+                      quality={75}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      placeholder="blur"
+                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R+Kic6LbRw="
+                    />
+                    {/* Image Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-navy/30 via-transparent to-transparent pointer-events-none" />
                   </div>
                 </div>
                 <div className="text-center mt-4 text-navy">
-                  <p className="heading-md">See Our Work in Action!</p>
+                  <p className="heading-md">Proudly Serving With a Smile</p>
                   <p className="body-sm text-gray-600">Professional Property Detailing</p>
                 </div>
               </div>

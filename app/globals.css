@@ -181,7 +181,7 @@ html, body {
   .retro-button {
     @apply bg-yellow text-navy font-bold py-4 px-8 rounded-lg shadow-retro-yellow 
            border-2 border-navy hover:translate-x-1 hover:translate-y-1 
-           hover:shadow-none transition-all duration-300 uppercase tracking-wide
+           hover:shadow-none hover:bg-navy hover:text-yellow hover:border-white transition-all duration-300 uppercase tracking-wide
            focus:ring-4 focus:ring-yellow/50 focus:outline-none;
     letter-spacing: 0.05em;
     min-height: 48px;

@@ -5,8 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
-import { 
 import GetQuoteButton from "@/components/GetQuoteButton"
+import { 
   Award, 
   Users, 
   Heart, 

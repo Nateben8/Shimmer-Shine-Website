@@ -175,19 +175,21 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
   // Get preview text (first few words)
   const getPreviewText = (review: string, wordCount: number = 4) => {
     const words = review.split(' ')
-    return words.slice(0, wordCount).join(' ') + (words.length > wordCount ? '...' : '')
+    const preview = words.slice(0, wordCount).join(' ')
+    // Ensure preview text doesn't exceed 30 characters to fit in bubbles
+    return preview.length > 30 ? preview.substring(0, 27) + '...' : preview + (words.length > wordCount ? '...' : '')
   }
 
-  // Enhanced bubble size variations with more variety
+  // Enhanced bubble size variations with better content accommodation
   const getBubbleSize = (index: number) => {
     const sizes = [
-      'w-44 h-32', // 176x128px  
-      'w-48 h-36', // 192x144px
-      'w-52 h-40', // 208x160px
-      'w-56 h-44', // 224x176px
-      'w-60 h-48', // 240x192px
-      'w-64 h-52', // 256x208px
-      'w-40 h-28'  // 160x112px (smaller)
+      'w-48 h-40', // 192x160px - Better for longer names
+      'w-52 h-44', // 208x176px - Good balance
+      'w-56 h-48', // 224x192px - Spacious
+      'w-60 h-52', // 240x208px - Large
+      'w-64 h-56', // 256x224px - Extra large
+      'w-50 h-42', // 200x168px - Medium
+      'w-46 h-38'  // 184x152px - Compact but readable
     ]
     return sizes[index % sizes.length]
   }
@@ -492,31 +494,31 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                     <div className="absolute inset-1 rounded-full border border-navy-100/40" />
                     
                     {/* Content inside bubble */}
-                    <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
+                    <div className="absolute inset-0 flex flex-col items-center justify-center p-3">
                       {!isExpanded ? (
                         // Preview content
-                        <div className="text-center space-y-2 w-full">
-                          {/* Customer name */}
-                          <h3 className="font-bold text-navy-900 text-sm sm:text-base leading-tight">
+                        <div className="text-center space-y-1.5 w-full h-full flex flex-col justify-center">
+                          {/* Customer name - with better text handling */}
+                          <h3 className="font-bold text-navy-900 text-xs sm:text-sm leading-tight px-1 break-words hyphens-auto max-w-full">
                             {testimonial.name}
                           </h3>
                           
                           {/* Star rating */}
-                          <div className="flex items-center justify-center gap-1">
+                          <div className="flex items-center justify-center gap-0.5">
                             {[...Array(testimonial.rating)].map((_, i) => (
-                              <Star key={i} className="w-3 h-3 fill-yellow-500 text-yellow-500" />
+                              <Star key={i} className="w-2.5 h-2.5 fill-yellow-500 text-yellow-500" />
                             ))}
                           </div>
                           
-                          {/* Preview text */}
-                          <p className="text-xs text-navy-700 font-medium leading-relaxed px-2">
-                            "{getPreviewText(testimonial.review, 6)}"
+                          {/* Preview text - with better spacing */}
+                          <p className="text-xs text-navy-700 font-medium leading-tight px-1 break-words hyphens-auto flex-1 flex items-center justify-center">
+                            "{getPreviewText(testimonial.review, 4)}"
                           </p>
                           
-                          {/* Click indicator */}
-                          <div className="mt-2">
-                            <span className="text-xs text-navy-500 bg-navy-100/50 px-2 py-1 rounded-full">
-                              Click to read more
+                          {/* Click indicator - smaller */}
+                          <div className="mt-1">
+                            <span className="text-xs text-navy-500 bg-navy-100/50 px-1.5 py-0.5 rounded-full">
+                              Click to read
                             </span>
                           </div>
                         </div>
@@ -661,31 +663,31 @@ export default function BubbleReviews({ className = "", sectionClassName = "" }:
                     <div className="absolute inset-1 rounded-full border border-navy-100/40" />
                     
                     {/* Content inside bubble */}
-                    <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
+                    <div className="absolute inset-0 flex flex-col items-center justify-center p-3">
                       {!isExpanded ? (
                         // Preview content
-                        <div className="text-center space-y-2 w-full">
-                          {/* Customer name */}
-                          <h3 className="font-bold text-navy-900 text-sm sm:text-base leading-tight">
+                        <div className="text-center space-y-1.5 w-full h-full flex flex-col justify-center">
+                          {/* Customer name - with better text handling */}
+                          <h3 className="font-bold text-navy-900 text-xs sm:text-sm leading-tight px-1 break-words hyphens-auto max-w-full">
                             {testimonial.name}
                           </h3>
                           
                           {/* Star rating */}
-                          <div className="flex items-center justify-center gap-1">
+                          <div className="flex items-center justify-center gap-0.5">
                             {[...Array(testimonial.rating)].map((_, i) => (
-                              <Star key={i} className="w-3 h-3 fill-yellow-500 text-yellow-500" />
+                              <Star key={i} className="w-2.5 h-2.5 fill-yellow-500 text-yellow-500" />
                             ))}
                           </div>
                           
-                          {/* Preview text */}
-                          <p className="text-xs text-navy-700 font-medium leading-relaxed px-2">
-                            "{getPreviewText(testimonial.review, 6)}"
+                          {/* Preview text - with better spacing */}
+                          <p className="text-xs text-navy-700 font-medium leading-tight px-1 break-words hyphens-auto flex-1 flex items-center justify-center">
+                            "{getPreviewText(testimonial.review, 4)}"
                           </p>
                           
-                          {/* Click indicator */}
-                          <div className="mt-2">
-                            <span className="text-xs text-navy-500 bg-navy-100/50 px-2 py-1 rounded-full">
-                              Click to read more
+                          {/* Click indicator - smaller */}
+                          <div className="mt-1">
+                            <span className="text-xs text-navy-500 bg-navy-100/50 px-1.5 py-0.5 rounded-full">
+                              Click to read
                             </span>
                           </div>
                         </div>

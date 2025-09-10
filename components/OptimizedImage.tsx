@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { cn } from '@/lib/utils'
 
 interface OptimizedImageProps {
@@ -119,7 +119,7 @@ export function LazyComponent({
   const [isVisible, setIsVisible] = useState(false)
   const [ref, setRef] = useState<HTMLDivElement | null>(null)
 
-  useState(() => {
+  useEffect(() => {
     if (!ref || typeof window === 'undefined') return
 
     const observer = new IntersectionObserver(
@@ -135,7 +135,7 @@ export function LazyComponent({
     observer.observe(ref)
 
     return () => observer.disconnect()
-  })
+  }, [ref, rootMargin])
 
   return (
     <div ref={setRef}>

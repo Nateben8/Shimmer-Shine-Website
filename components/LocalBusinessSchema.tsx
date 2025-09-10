@@ -6,7 +6,7 @@ interface LocalBusinessSchemaProps {
   data?: any
 }
 
-export default function LocalBusinessSchema({ data }: LocalBusinessSchemaProps = {}) {
+export default function LocalBusinessSchema({ data }: LocalBusinessSchemaProps) {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",

@@ -1,3 +1,5 @@
+"use client"
+
 import { getPageSEO } from "@/lib/seo"
 import { getLocalBusinessSchema } from "@/lib/schema"
 import JobberForm from "@/components/JobberForm"
@@ -21,12 +23,21 @@ import {
 } from "lucide-react"
 import { BUSINESS_INFO, TESTIMONIALS } from "@/lib/constants"
 import { ScrollAnimation, WaterDroplets } from "@/components/ScrollAnimations"
+import { useSearchParams } from "next/navigation"
+import { getCityFromZipCode } from "@/lib/zipCodeMapping"
+import { Suspense } from "react"
 
-export const metadata = getPageSEO('get-a-quote')
-
-export default function GetQuotePage() {
+function GetQuotePageContent() {
+  const searchParams = useSearchParams()
   const localBusinessSchema = getLocalBusinessSchema()
   const featuredTestimonials = TESTIMONIALS.slice(0, 3)
+  
+  // Get ZIP code from URL parameters
+  const zipCode = searchParams?.get('zip')
+  const cityName = zipCode ? getCityFromZipCode(zipCode) : null
+  
+  // Create dynamic header text
+  const headerText = cityName ? `Free ${cityName} Cleaning Quote` : 'Free Orange County Cleaning Quote'
   
   // Enhanced Service Schema for better SEO
   const serviceSchema = {
@@ -152,7 +163,7 @@ export default function GetQuotePage() {
               </div>
               
               <h1 className="heading-decorative text-4xl md:text-6xl text-yellow mb-2 leading-tight" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
-                Free Orange County Cleaning Quote
+                {headerText}
               </h1>
               <h2 className="heading-primary text-2xl md:text-3xl text-white mb-4" style={{textShadow: '2px 2px 0px #000000, 3px 3px 0px #333333, 4px 4px 0px #666666'}}>
                 in 60 Seconds
@@ -635,5 +646,20 @@ export default function GetQuotePage() {
         </div>
       </section>
     </>
+  )
+}
+
+export default function GetQuotePage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-to-br from-navy to-navy-700 flex items-center justify-center">
+        <div className="text-white text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow mx-auto mb-4"></div>
+          <p>Loading your personalized quote page...</p>
+        </div>
+      </div>
+    }>
+      <GetQuotePageContent />
+    </Suspense>
   )
 }
