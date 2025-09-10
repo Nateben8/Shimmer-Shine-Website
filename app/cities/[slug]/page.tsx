@@ -67,7 +67,7 @@ export default async function CityPage({ params }: CityPageProps) {
     'la-cañada-flintridge': 'La Cañada Flintridge'
   }
   
-  const cityName = specialCases[params.slug] || decodedSlug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
+  const cityName = specialCases[resolvedParams.slug] || decodedSlug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
   
   // Function to normalize city names for comparison (handle special characters)
   const normalizeForSlug = (name: string) => {
