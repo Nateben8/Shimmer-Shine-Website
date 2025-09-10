@@ -1249,9 +1249,9 @@ function EcoFriendlyContent() {
 }
 
 interface BlogPostProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 // Blog posts data (same as in blog page)
@@ -1571,7 +1571,8 @@ const blogPosts = [
 ]
 
 export async function generateMetadata({ params }: BlogPostProps) {
-  const post = blogPosts.find(p => p.slug === params.slug)
+  const resolvedParams = await params
+  const post = blogPosts.find(p => p.slug === resolvedParams.slug)
   
   if (!post) {
     return {
@@ -1598,8 +1599,9 @@ export async function generateStaticParams() {
   }))
 }
 
-export default function BlogPostPage({ params }: BlogPostProps) {
-  const post = blogPosts.find(p => p.slug === params.slug)
+export default async function BlogPostPage({ params }: BlogPostProps) {
+  const resolvedParams = await params
+  const post = blogPosts.find(p => p.slug === resolvedParams.slug)
   
   if (!post) {
     notFound()
