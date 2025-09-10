@@ -9,14 +9,15 @@ import LocalBusinessSchema from '@/components/LocalBusinessSchema'
 import GetQuoteButton from "@/components/GetQuoteButton"
 
 interface ServiceCityPageProps {
-  params: {
+  params: Promise<{
     serviceId: string
     citySlug: string
-  }
+  }>
 }
 
 export async function generateMetadata({ params }: ServiceCityPageProps) {
-  return getServiceCitySEO(params.serviceId, params.citySlug)
+  const resolvedParams = await params
+  return getServiceCitySEO(resolvedParams.serviceId, resolvedParams.citySlug)
 }
 
 export async function generateStaticParams() {
@@ -35,8 +36,9 @@ export async function generateStaticParams() {
   return paths
 }
 
-export default function ServiceCityPage({ params }: ServiceCityPageProps) {
-  const { serviceId, citySlug } = params
+export default async function ServiceCityPage({ params }: ServiceCityPageProps) {
+  const resolvedParams = await params
+  const { serviceId, citySlug } = resolvedParams
   const cityName = citySlug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
   const service = SERVICES.find(s => s.id === serviceId)
   

@@ -8,13 +8,14 @@ import { MapPin, Star, Phone, Award, Shield, Clock, Users, CheckCircle, Building
 import GetQuoteButton from "@/components/GetQuoteButton"
 
 interface CountyPageProps {
-  params: {
+  params: Promise<{
     countySlug: string
-  }
+  }>
 }
 
 export async function generateMetadata({ params }: CountyPageProps) {
-  return getCountySEO(params.countySlug)
+  const resolvedParams = await params
+  return getCountySEO(resolvedParams.countySlug)
 }
 
 export async function generateStaticParams() {
@@ -25,8 +26,9 @@ export async function generateStaticParams() {
   ]
 }
 
-export default function CountyPage({ params }: CountyPageProps) {
-  const { countySlug } = params
+export default async function CountyPage({ params }: CountyPageProps) {
+  const resolvedParams = await params
+  const { countySlug } = resolvedParams
   const countyData = GEO_DATA.counties[countySlug as keyof typeof GEO_DATA.counties]
   
   if (!countyData) {

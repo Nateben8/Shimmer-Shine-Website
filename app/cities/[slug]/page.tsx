@@ -26,13 +26,14 @@ import {
 // import RelatedContent from "@/components/RelatedContent"
 
 interface CityPageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export async function generateMetadata({ params }: CityPageProps) {
-  return getCitySEO(params.slug)
+  const resolvedParams = await params
+  return getCitySEO(resolvedParams.slug)
 }
 
 export async function generateStaticParams() {
@@ -54,9 +55,10 @@ export async function generateStaticParams() {
   )
 }
 
-export default function CityPage({ params }: CityPageProps) {
+export default async function CityPage({ params }: CityPageProps) {
   // Decode URL and handle special characters
-  const decodedSlug = decodeURIComponent(params.slug)
+  const resolvedParams = await params
+  const decodedSlug = decodeURIComponent(resolvedParams.slug)
   
   // Special handling for La Cañada Flintridge URL encoding issues
   const specialCases: Record<string, string> = {
