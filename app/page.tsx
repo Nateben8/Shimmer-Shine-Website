@@ -354,7 +354,7 @@ export default function HomePage() {
           <div className="hidden sm:grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
             <ScrollAnimation animation="fade-in-left" delay={100}>
               <BeforeAfterSlider
-                beforeImage="/Before and After images/House siding & window wash.jpg"
+                beforeImage="/before-after-images/house-siding-and-window-wash.jpg"
                 afterImage="/window-cleaning-before-after.png"
                 beforeAlt="Dirty windows and stained house siding before professional window cleaning and pressure washing service in Orange County"
                 afterAlt="Crystal clear windows and spotless clean siding after professional cleaning by Shimmer Shine Property Detailing Orange County"
@@ -364,7 +364,7 @@ export default function HomePage() {
             
             <ScrollAnimation animation="fade-in-up" delay={200}>
               <BeforeAfterSlider
-                beforeImage="/Before and After images/concrete driveway pressure wash 6.jpg"
+                beforeImage="/before-after-images/concrete-driveway-pressure-wash-6.jpg"
                 afterImage="/pressure-washing-before-after.png"
                 beforeAlt="Heavily stained and dirty concrete driveway before professional pressure washing service in Orange County"
                 afterAlt="Completely restored and spotless concrete driveway after professional pressure washing by Shimmer Shine Property Detailing"
@@ -374,7 +374,7 @@ export default function HomePage() {
             
             <ScrollAnimation animation="fade-in-right" delay={300} className="lg:col-span-2 xl:col-span-1">
               <BeforeAfterSlider
-                beforeImage="/Post Construction Cleanup2.jpeg"
+                beforeImage="/post-construction-cleanup-2.jpeg"
                 afterImage="/Post construction cleanup.jpg"
                 beforeAlt="Construction site with debris, dust, and mess before professional post-construction cleanup service in Orange County"
                 afterAlt="Completely clean and spotless property ready for occupancy after professional post-construction cleanup by Shimmer Shine"
@@ -512,7 +512,7 @@ export default function HomePage() {
         {/* Mascot Overlay */}
         <div className="absolute top-4 right-4 sm:top-8 sm:right-8 lg:top-12 lg:right-12 opacity-20 pointer-events-none">
           <Image
-            src="/mascot.png2.png"
+            src="/mascot.png"
             alt="Shimmer Shine Property Detailing mascot logo - Trusted window cleaning and pressure washing services Orange County since 2021"
             width={150}
             height={150}
