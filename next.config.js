@@ -1,5 +1,10 @@
 /** @type {import('next').NextConfig} */
+const isProduction = process.env.NODE_ENV === 'production';
+const isVercel = process.env.VERCEL === '1';
+
 const nextConfig = {
+  // Fix workspace root warning
+  outputFileTracingRoot: __dirname,
   experimental: {
     mdxRs: true,
   },
@@ -26,15 +31,18 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
   generateEtags: true,
-  // Bundle analyzer for production builds
-  ...(process.env.ANALYZE === 'true' && {
+  // Bundle analyzer for production builds (disabled on Vercel)
+  ...(process.env.ANALYZE === 'true' && !isVercel && {
     webpack: (config) => {
-      config.plugins.push(
-        new (require('@next/bundle-analyzer')({
+      try {
+        const BundleAnalyzerPlugin = require('@next/bundle-analyzer')({
           enabled: true,
-        }))()
-      )
-      return config
+        });
+        config.plugins.push(new BundleAnalyzerPlugin());
+      } catch (error) {
+        console.warn('Bundle analyzer not available in production build');
+      }
+      return config;
     },
   }),
   async headers() {
