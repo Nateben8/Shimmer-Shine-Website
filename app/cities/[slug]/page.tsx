@@ -85,7 +85,7 @@ export default async function CityPage({ params }: CityPageProps) {
   
   const isValidCity = BUSINESS_INFO.cities.some(city => {
     const normalizedCity = normalizeForSlug(city)
-    const normalizedSlug = normalizeSlugForComparison(params.slug)
+    const normalizedSlug = normalizeSlugForComparison(resolvedParams.slug)
     const originalSlug = city.toLowerCase().replace(/\s+/g, '-')
     
     // Special handling for La Cañada Flintridge URL encoding issues
@@ -94,13 +94,13 @@ export default async function CityPage({ params }: CityPageProps) {
       'la-canada-flintridge': 'la-cañada-flintridge'
     }
     
-    const resolvedSlug = (specialCases as Record<string, string>)[params.slug] || params.slug
+    const resolvedSlug = (specialCases as Record<string, string>)[resolvedParams.slug] || resolvedParams.slug
     
     // Check multiple variations to handle URL encoding issues
     return normalizedCity === normalizedSlug || 
            originalSlug === decodedSlug ||
-           normalizedCity === params.slug ||
-           originalSlug === params.slug ||
+           normalizedCity === resolvedParams.slug ||
+           originalSlug === resolvedParams.slug ||
            originalSlug === resolvedSlug ||
            normalizedCity === resolvedSlug.toLowerCase().replace(/\s+/g, '-').normalize('NFD').replace(/[\u0300-\u036f]/g, '')
   })
@@ -125,9 +125,10 @@ export default async function CityPage({ params }: CityPageProps) {
   const localBusinessSchema = getLocalBusinessSchema()
 
   const featuredServices = SERVICES.slice(0, 4)
-  const breadcrumbs = typeof generateBreadcrumbs === 'function' 
-    ? generateBreadcrumbs('city', { cityName: cityName, slug: params.slug })
-    : [{ name: 'Cities', url: '/cities' }, { name: cityName, url: `/cities/${params.slug}` }]
+  const breadcrumbs = [
+    { name: 'Cities', url: '/cities' }, 
+    { name: cityName, url: `/cities/${resolvedParams.slug}` }
+  ]
 
   return (
     <>
@@ -750,8 +751,8 @@ export default async function CityPage({ params }: CityPageProps) {
               <div className="lg:col-span-1">
                 <Card className="retro-card h-full">
                   <CardContent className="p-6">
-                    <ContextualServiceLinks 
-                      currentCity={params.slug}
+                    <ContextualServiceLinks
+                      currentCity={resolvedParams.slug}
                       maxLinks={5}
                       className="h-full"
                     />
@@ -764,7 +765,7 @@ export default async function CityPage({ params }: CityPageProps) {
                 <Card className="retro-card h-full">
                   <CardContent className="p-6">
                     <LocalAreaLinks 
-                      currentCity={params.slug}
+                      currentCity={resolvedParams.slug}
                       showNearby={true}
                       maxLinks={6}
                       className="h-full"
@@ -779,7 +780,7 @@ export default async function CityPage({ params }: CityPageProps) {
                   <CardContent className="p-6">
                     <RelatedContentLinks 
                       currentPage="city"
-                      context={{ city: params.slug }}
+                      context={{ city: resolvedParams.slug }}
                       maxLinks={3}
                       className="h-full"
                     />

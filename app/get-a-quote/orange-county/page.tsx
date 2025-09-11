@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export const metadata = {
   title: "Free Orange County Cleaning Quote – Shimmer Shine Property Detailing",
   description: "Get a free quote for professional window cleaning, pressure washing, and property detailing services in Orange County. Same day service available with 15% discount for new customers.",
@@ -11,15 +13,15 @@ export default function OrangeCountyQuotePage() {
         <div className="container mx-auto flex justify-between items-center">
           <h1 className="text-xl font-bold">Shimmer & Shine</h1>
           <div className="space-x-6">
-            <a href="/" className="hover:text-blue-200">Home</a>
-            <a href="/about" className="hover:text-blue-200">About</a>
-            <a href="/services" className="hover:text-blue-200">Services</a>
-            <a href="/counties" className="hover:text-blue-200">Areas</a>
-            <a href="/gallery" className="hover:text-blue-200">Gallery</a>
-            <a href="/blog" className="hover:text-blue-200">Blog</a>
-            <a href="/get-a-quote" className="bg-yellow-500 text-blue-900 px-4 py-2 rounded font-semibold hover:bg-yellow-400">
+            <Link href="/" className="hover:text-blue-200">Home</Link>
+            <Link href="/about" className="hover:text-blue-200">About</Link>
+            <Link href="/services" className="hover:text-blue-200">Services</Link>
+            <Link href="/counties" className="hover:text-blue-200">Areas</Link>
+            <Link href="/gallery" className="hover:text-blue-200">Gallery</Link>
+            <Link href="/blog" className="hover:text-blue-200">Blog</Link>
+            <Link href="/get-a-quote" className="bg-yellow-500 text-blue-900 px-4 py-2 rounded font-semibold hover:bg-yellow-400">
               Get Quote
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
