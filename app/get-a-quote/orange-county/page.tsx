@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import ScrollAnimation from "@/components/ScrollAnimations"
+import { ScrollAnimation } from "@/components/ScrollAnimations"
 
 export const metadata = {
   title: "Free Orange County Cleaning Quote – Shimmer Shine Property Detailing",
