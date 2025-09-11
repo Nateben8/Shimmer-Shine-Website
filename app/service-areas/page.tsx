@@ -93,7 +93,7 @@ export default function ServiceAreasPage() {
                 {/* Service Areas Image */}
                 <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-2xl border-4 border-white bg-gray-100">
                   <Image
-                    src="/AreasPageimage.jpeg"
+                    src="/areas-page-image.jpeg"
                     alt="Shimmer Shine Property Detailing service areas across Southern California - Orange County, Los Angeles, and San Diego"
                     fill
                     className="object-cover"

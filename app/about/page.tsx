@@ -80,7 +80,7 @@ export default function AboutPage() {
               <div className="polaroid-frame">
                 <div className="relative h-64 sm:h-80 lg:h-96 rounded-lg overflow-hidden">
                   <Image
-                    src="/About us image.png"
+                    src="/about-us-image.png"
                     alt="Shimmer Shine Property Detailing - Professional Window Cleaning, Pressure Washing & Solar Panel Cleaning Team Orange County - Licensed & Insured Since 2021"
                     title="About Shimmer Shine Property Detailing - Best Cleaning Services Orange County"
                     fill

@@ -22,7 +22,7 @@ const galleryCategories = [
     id: "window-cleaning",
     name: "Window Cleaning",
     description: "Crystal clear transformations",
-    icon: "/interior window cleaning icon.png",
+    icon: "/interior-window-cleaning-icon.png",
     iconType: "image",
     items: [
       {
@@ -67,7 +67,7 @@ const galleryCategories = [
     id: "pressure-washing",
     name: "Pressure Washing",
     description: "Dramatic surface restoration",
-    icon: "/pressure washing icon.png",
+    icon: "/pressure-washing-icon.png",
     iconType: "image",
     items: [
       {
@@ -130,7 +130,7 @@ const galleryCategories = [
     id: "house-washing",
     name: "House Washing & Soft Wash",
     description: "Complete exterior home restoration",
-    icon: "/House Washing Icon.png",
+    icon: "/house-washing-icon.png",
     iconType: "image",
     items: [
       {
@@ -184,7 +184,7 @@ const galleryCategories = [
     id: "deck-restoration",
     name: "Deck Restoration",
     description: "Wood deck cleaning and restoration",
-    icon: "/House Washing Icon.png",
+    icon: "/house-washing-icon.png",
     iconType: "image",
     items: [
       {
@@ -229,7 +229,7 @@ const galleryCategories = [
     id: "post-construction",
     name: "Post-Construction Cleanup",
     description: "Complete site transformation",
-    icon: "/House Washing Icon.png",
+    icon: "/house-washing-icon.png",
     iconType: "image",
     items: [
       {
@@ -265,7 +265,7 @@ const galleryCategories = [
     id: "gutter-cleaning",
     name: "Gutter Cleaning",
     description: "Professional gutter maintenance",
-    icon: "/Gutter Cleaning icon.png",
+    icon: "/gutter-cleaning-icon.png",
     iconType: "image",
     items: [
       {
@@ -301,7 +301,7 @@ const galleryCategories = [
     id: "solar-panel",
     name: "Solar Panel Cleaning", 
     description: "Efficiency restoration",
-    icon: "/Solar panel cleaning icon.png",
+    icon: "/solar-panel-cleaning-icon.png",
     iconType: "image",
     items: [
       {

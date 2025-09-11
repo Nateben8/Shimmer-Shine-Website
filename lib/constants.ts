@@ -78,7 +78,7 @@ export const SERVICES = [
     features: ["Same-day service availability", "Free estimates and quotes", "Licensed and insured professionals", "Residential and commercial services", "Recurring maintenance plans", "Eco-friendly cleaning solutions"],
     priceRange: "Custom Quote",
     duration: "1-3 hours",
-    icon: "/interior window cleaning icon.png",
+    icon: "/interior-window-cleaning-icon.png",
     iconType: "image",
     category: "cleaning"
   },
@@ -90,7 +90,7 @@ export const SERVICES = [
     features: ["Professional-grade equipment", "Oil and stain removal", "Driveway and walkway cleaning", "Mold and mildew removal", "Commercial and residential", "Same-day service available"],
     priceRange: "Custom Quote",
     duration: "2-4 hours", 
-    icon: "/pressure washing icon.png",
+    icon: "/pressure-washing-icon.png",
     iconType: "image",
     category: "cleaning"
   },
@@ -102,7 +102,7 @@ export const SERVICES = [
     features: ["Efficiency restoration up to 30%", "Safe, specialized cleaning methods", "Purified water system", "Panel inspection included", "Residential and commercial", "Recurring maintenance plans"],
     priceRange: "Custom Quote",
     duration: "1-2 hours",
-    icon: "/Solar panel cleaning icon.png",
+    icon: "/solar-panel-cleaning-icon.png",
     iconType: "image",
     category: "specialty"
   },
@@ -114,7 +114,7 @@ export const SERVICES = [
     features: ["Complete debris removal", "Downspout cleaning included", "Gutter inspection service", "Seasonal maintenance programs", "Emergency service available", "Residential and commercial"],
     priceRange: "Custom Quote",
     duration: "1-3 hours",
-    icon: "/Gutter Cleaning icon.png",
+    icon: "/gutter-cleaning-icon.png",
     iconType: "image",
     category: "maintenance"
   },
