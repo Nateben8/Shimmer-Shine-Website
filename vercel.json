@@ -17,6 +17,7 @@
       "NEXT_TELEMETRY_DISABLED": "1"
     }
   },
+  "buildCommand": "npm run build",
   "regions": ["iad1"],
   "github": {
     "silent": true
