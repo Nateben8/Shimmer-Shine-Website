@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 // import { Inter } from "next/font/google"
 import "./globals.css"
+// Force redeploy for image cache refresh
 import { generateSEO, getPageSEO } from "@/lib/seo"
 import { getLocalBusinessSchema, getWebsiteSchema, getOrganizationSchema } from "@/lib/schema"
 import { SITE_CONFIG, BUSINESS_INFO } from "@/lib/constants"
