@@ -291,7 +291,7 @@ export default async function CityPage({ params }: CityPageProps) {
                       />
                     ) : service.id === 'post-construction-cleanup' ? (
                       <Image
-                        src="/Post-Construction%20Cleanup-hero.jpeg"
+                        src="/post-construction-cleanup-hero.jpeg"
                         alt={`Post construction cleanup ${cityName} - Professional construction site cleaning and debris removal ${county}`}
                         title={`Post Construction Cleanup ${cityName} - 24-48 Hour Response Time`}
                         fill

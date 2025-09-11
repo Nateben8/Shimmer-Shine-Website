@@ -42,7 +42,7 @@ export default function HomePage() {
       description: "Concrete restoration results"
     },
     {
-      src: "/Post construction cleanup.jpg",
+      src: "/post-construction-cleanup.jpg",
       alt: "Post-Construction Cleanup Before and After in Orange County, CA - Professional construction site cleaning service showing transformation from construction debris to spotless property by Shimmer Shine Property Detailing", 
       title: "Orange County Post-Construction Cleanup Results | Shimmer Shine Property Detailing",
       caption: "Post-Construction Cleanup - Orange County, CA",

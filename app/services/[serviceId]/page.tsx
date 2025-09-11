@@ -316,7 +316,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                     />
                   ) : service.id === 'post-construction-cleanup' ? (
                     <Image
-                      src="/Post-Construction%20Cleanup-hero.jpeg"
+                      src="/post-construction-cleanup-hero.jpeg"
                       alt="Post construction cleanup Orange County - Professional construction site cleaning, debris removal, and move-in ready preparation"
                       title="Post Construction Cleanup Orange County - 24-48 Hour Response Time"
                       fill

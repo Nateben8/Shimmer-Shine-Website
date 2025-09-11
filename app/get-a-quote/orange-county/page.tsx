@@ -1,4 +1,6 @@
 import Link from "next/link"
+import Image from "next/image"
+import ScrollAnimation from "@/components/ScrollAnimations"
 
 export const metadata = {
   title: "Free Orange County Cleaning Quote – Shimmer Shine Property Detailing",
@@ -28,21 +30,44 @@ export default function OrangeCountyQuotePage() {
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-yellow-400 mb-4">
-            Free Orange County Cleaning Quote
-          </h1>
-          <h2 className="text-2xl md:text-3xl mb-6">
-            Professional Service in 60 Seconds
-          </h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Professional window cleaning, pressure washing, and property detailing across Orange County. 
-            Family-owned since 2021 with 5-star rated service.
-          </p>
-          
-          <a href="tel:(714) 497-0035" className="bg-yellow-500 text-blue-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-400 transition-colors">
-            Call (714) 497-0035 Now
-          </a>
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Content */}
+            <ScrollAnimation animation="fade-in-left" delay={100} className="text-center lg:text-left">
+              <h1 className="text-4xl md:text-6xl font-bold text-yellow-400 mb-4">
+                Free Orange County Cleaning Quote
+              </h1>
+              <h2 className="text-2xl md:text-3xl mb-6">
+                Professional Service in 60 Seconds
+              </h2>
+              <p className="text-xl mb-8 max-w-3xl">
+                Professional window cleaning, pressure washing, and property detailing across Orange County. 
+                Family-owned since 2021 with 5-star rated service.
+              </p>
+              
+              <a href="tel:(714) 497-0035" className="bg-yellow-500 text-blue-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-400 transition-colors">
+                Call (714) 497-0035 Now
+              </a>
+            </ScrollAnimation>
+
+            {/* Right Side - Hero Image */}
+            <ScrollAnimation animation="fade-in-right" delay={200} className="w-full flex justify-center">
+              <div className="relative hover-lift-subtle w-full">
+                <div className="w-full h-96 overflow-hidden rounded-xl shadow-2xl">
+                  <Image
+                    src="/nateandaidenpic.jpg"
+                    alt="Nate and Aiden from Shimmer Shine Property Detailing - Professional window cleaning and pressure washing team serving Orange County with 5-star rated service"
+                    width={1200}
+                    height={100}
+                    className="w-full h-full object-cover"
+                    priority
+                    sizes="(max-width: 768px) 100vw, 1200px"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent rounded-xl"></div>
+              </div>
+            </ScrollAnimation>
+          </div>
         </div>
       </section>
 

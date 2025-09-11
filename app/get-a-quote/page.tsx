@@ -253,17 +253,19 @@ function GetQuotePageContent() {
             </ScrollAnimation>
 
             {/* Right Side - Hero Image */}
-            <ScrollAnimation animation="fade-in-right" delay={200} className="w-full">
-              <div className="relative hover-lift-subtle">
-                <Image
-                  src="/nateandaidenpic.jpg"
-                  alt="Nate and Aiden from Shimmer Shine Property Detailing - Professional window cleaning and pressure washing team serving Orange County with 5-star rated service"
-                  width={600}
-                  height={400}
-                  className="w-full h-auto rounded-xl shadow-2xl"
-                  priority
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                />
+            <ScrollAnimation animation="fade-in-right" delay={200} className="w-full flex justify-center">
+              <div className="relative hover-lift-subtle w-full">
+                <div className="w-full h-96 overflow-hidden rounded-xl shadow-2xl">
+                  <Image
+                    src="/nateandaidenpic.jpg"
+                    alt="Nate and Aiden from Shimmer Shine Property Detailing - Professional window cleaning and pressure washing team serving Orange County with 5-star rated service"
+                    width={1200}
+                    height={100}
+                    className="w-full h-full object-cover"
+                    priority
+                    sizes="(max-width: 768px) 100vw, 1200px"
+                  />
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent rounded-xl"></div>
               </div>
             </ScrollAnimation>
