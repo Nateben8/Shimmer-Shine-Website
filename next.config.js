@@ -8,6 +8,27 @@ const nextConfig = {
   experimental: {
     mdxRs: true,
   },
+  webpack: (config, { isServer }) => {
+    // Add webpack aliases for better module resolution
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': __dirname,
+    };
+    
+    // Handle bundle analyzer if needed
+    if (process.env.ANALYZE === 'true' && !isVercel) {
+      try {
+        const BundleAnalyzerPlugin = require('@next/bundle-analyzer')({
+          enabled: true,
+        });
+        config.plugins.push(new BundleAnalyzerPlugin());
+      } catch (error) {
+        console.warn('Bundle analyzer not available in production build');
+      }
+    }
+    
+    return config;
+  },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
@@ -31,20 +52,6 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
   generateEtags: true,
-  // Bundle analyzer for production builds (disabled on Vercel)
-  ...(process.env.ANALYZE === 'true' && !isVercel && {
-    webpack: (config) => {
-      try {
-        const BundleAnalyzerPlugin = require('@next/bundle-analyzer')({
-          enabled: true,
-        });
-        config.plugins.push(new BundleAnalyzerPlugin());
-      } catch (error) {
-        console.warn('Bundle analyzer not available in production build');
-      }
-      return config;
-    },
-  }),
   async headers() {
     return [
       // Security headers for all routes
