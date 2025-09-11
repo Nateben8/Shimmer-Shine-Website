@@ -256,8 +256,8 @@ function GetQuotePageContent() {
             <ScrollAnimation animation="fade-in-right" delay={200} className="w-full">
               <div className="relative hover-lift-subtle">
                 <Image
-                  src="/window-cleaning-quote.png"
-                  alt="Professional window cleaning service in Orange County - Shimmer Shine Property Detailing team providing residential and commercial window cleaning with guaranteed results"
+                  src="/nateandaidenpic.jpg"
+                  alt="Nate and Aiden from Shimmer Shine Property Detailing - Professional window cleaning and pressure washing team serving Orange County with 5-star rated service"
                   width={600}
                   height={400}
                   className="w-full h-auto rounded-xl shadow-2xl"
