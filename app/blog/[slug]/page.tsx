@@ -977,7 +977,7 @@ function PostConstructionContent() {
       <div className="my-8">
         <div className="relative h-64 md:h-96 rounded-lg overflow-hidden shadow-lg">
           <Image
-            src="/post-construction-cleanup-hero.jpg"
+            src="/post-construction-cleanup-hero.jpeg"
             alt="Professional post-construction cleanup service in Orange County showing debris removal and thorough site cleaning"
             fill
             className="object-cover"
