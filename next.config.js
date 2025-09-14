@@ -7,6 +7,8 @@ const nextConfig = {
   outputFileTracingRoot: __dirname,
   experimental: {
     mdxRs: true,
+    optimizeCss: true,
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
   },
   webpack: (config, { isServer }) => {
     // Add webpack aliases for better module resolution
@@ -32,12 +34,14 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
+  // Enable SWC minification for better performance
+  swcMinify: true,
   // Enhanced image optimization
   images: {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    qualities: [75, 90, 100],
+    qualities: [75, 85, 95],
     minimumCacheTTL: 31536000, // 1 year
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
@@ -52,6 +56,8 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
   generateEtags: true,
+  // Enable output file tracing for smaller deployments
+  output: 'standalone',
   async headers() {
     return [
       // Security headers for all routes

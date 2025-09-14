@@ -9,6 +9,7 @@ import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import WebVitals from "@/components/WebVitals"
 import PerformanceOptimizer from "@/components/PerformanceOptimizer"
+import PerformanceMonitor from "@/components/PerformanceMonitor"
 import LocalBusinessSchema from "@/components/LocalBusinessSchema"
 // import { ZipCodeProvider } from "@/components/ZipCodeProvider"
 
@@ -82,6 +83,13 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://api.getjobber.com" />
         <link rel="dns-prefetch" href="https://assets.getjobber.com" />
         
+        {/* Preload critical CSS for faster rendering */}
+        <link rel="preload" href="/globals.css" as="style" />
+        
+        {/* Preload critical images */}
+        <link rel="preload" href="/mascot.png" as="image" type="image/png" />
+        <link rel="preload" href="/logo.png" as="image" type="image/png" />
+        
         {/* Structured Data */}
         <script
           type="application/ld+json"
@@ -125,6 +133,7 @@ export default function RootLayout({
       <body className="font-sans">
         <WebVitals />
         <PerformanceOptimizer />
+        <PerformanceMonitor />
         <LocalBusinessSchema />
         <div className="min-h-screen flex flex-col">
           <Header />

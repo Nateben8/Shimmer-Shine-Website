@@ -30,7 +30,7 @@ export default function OptimizedImage({
   className,
   priority = false,
   sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw',
-  quality = 85,
+  quality = 80,
   placeholder = 'blur',
   blurDataURL,
   loading = 'lazy',

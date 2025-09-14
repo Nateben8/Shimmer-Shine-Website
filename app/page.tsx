@@ -9,7 +9,13 @@ import Link from "next/link"
 import Image from "next/image"
 import OptimizedImage from "@/components/OptimizedImage"
 import { Star, ArrowRight, CheckCircle, Award, Shield, Clock, MapPin, ChevronLeft, ChevronRight } from "lucide-react"
-import BubbleReviews from "@/components/BubbleReviews"
+import dynamic from "next/dynamic"
+
+// Lazy load heavy components for better performance
+const BubbleReviews = dynamic(() => import("@/components/BubbleReviews"), {
+  loading: () => <div className="animate-pulse bg-gray-200 h-64 rounded-lg" />,
+  ssr: false
+})
 import ExpandableServiceCard from "@/components/ExpandableServiceCard"
 // import RelatedContent from "@/components/RelatedContent"
 import { ScrollAnimation, WaterDroplets, BeforeAfterSlider } from "@/components/ScrollAnimations"

@@ -176,11 +176,11 @@ function JobberFormContent() {
   useEffect(() => {
     console.log('Starting optimized Jobber form load...')
     
-    // Reduced loading time for better performance
+    // Optimized loading time for better performance
     const loadingTimer = setTimeout(() => {
       setShowLoading(false)
       console.log('Loading animation complete')
-    }, 1500) // Reduced from 3000ms to 1500ms
+    }, 1000) // Further reduced to 1000ms for faster perceived loading
 
     // Check if CSS is already loaded from preload
     let cssLoaded = false
